@@ -1,0 +1,90 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-2026
+case_type: missing_item
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 200025, payer northfield). States: C2=met_scope, C6=missing, C7=core_positive_with_plan,
+  C8=switch_with_stop'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-2026/gi-note-2026-11-08
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-2026/labs-2026-10-07
+      quote: CALPROTECTIN FECAL ................ 1185 ug/g  (<50)
+    - doc_id: PT-2026/colonoscopy-2026-10-03
+      quote: 'Terminal ileum: multiple ulcers 0.5-2 cm with surrounding erythema and edema.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-2026/gi-note-2026-11-08
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-2026/demographics-2026-03-25
+      quote: 'Date of birth: 05/15/1966'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-2026/medication-history-2026-11-08
+      quote: Inadequate response after 10 weeks
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-2026/medication-history-2026-11-08
+      quote: 'Primary non-response: no clinical improvement after induction and 8 weeks of maintenance'
+    note: 'synthetic state: met_clean'
+  C6:
+    status: INSUFFICIENT_EVIDENCE
+    missing_item: TB screening result (IGRA or TST) dated within 12 months of the request.
+    note: 'synthetic state: missing'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-2026/gi-note-2026-11-08
+      quote: 'Resolved prior hepatitis B infection (HBsAg negative, anti-HBc positive, HBV DNA undetectable): monitor
+        HBV DNA and liver tests every 3 months on therapy.'
+    - doc_id: PT-2026/labs-2026-10-07
+      quote: HEP B SURFACE AG .................. Nonreactive  (Nonreactive)
+    - doc_id: PT-2026/labs-2026-10-07
+      quote: HEP B CORE AB TOTAL ............... Reactive  (Nonreactive)
+    note: 'synthetic state: core_positive_with_plan'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-2026/gi-note-2026-11-08
+      quote: Stop vedolizumab; ustekinumab induction on the date of the next scheduled vedolizumab infusion.
+    - doc_id: PT-2026/medication-history-2026-11-08
+      quote: Vedolizumab 300 mg IV every 8 weeks (last infusion 10/16/2026); to be discontinued when ustekinumab
+        starts.
+    note: 'synthetic state: switch_with_stop'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-2026/gi-note-2026-11-08
+      quote: Weight 52.7 kg.
+    - doc_id: PT-2026/gi-note-2026-11-08
+      quote: 260 mg IV once (weight 52.7 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-2026/gi-note-2026-11-08
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+packet_outcome: GAPS_TO_CLOSE

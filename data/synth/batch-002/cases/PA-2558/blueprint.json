@@ -1,0 +1,40 @@
+{
+  "seed": 200057,
+  "request_id": "PA-2558",
+  "patient_id": "PT-2558",
+  "request_date": "2026-11-18",
+  "payer": "calder",
+  "first_name": "Andre",
+  "last_name": "Petrakis",
+  "sex": "M",
+  "dob": "1996-07-19",
+  "disease": "cd",
+  "weight_kg": 85.0,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_clean",
+    "C5b": "met_clean",
+    "C6": "missing",
+    "C7": "met_clean",
+    "C8": "met_clean",
+    "C9": "met_borderline",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 1,
+    "provider": 0,
+    "medhx_format": "narrative",
+    "lab_vendor": 0,
+    "outside_quality": "ocr",
+    "outside_practice": 1,
+    "distractors": 1,
+    "date_style": "iso",
+    "copy_forward": true,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

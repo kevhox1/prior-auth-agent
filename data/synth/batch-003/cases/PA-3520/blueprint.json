@@ -1,0 +1,40 @@
+{
+  "seed": 300019,
+  "request_id": "PA-3520",
+  "patient_id": "PT-3520",
+  "request_date": "2026-11-18",
+  "payer": "calder",
+  "first_name": "Eli",
+  "last_name": "Jansen",
+  "sex": "M",
+  "dob": "1969-10-19",
+  "disease": "uc",
+  "weight_kg": 55.0,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_clean",
+    "C5b": "met_buried",
+    "C6": "met_clean",
+    "C7": "partial",
+    "C8": "switch_with_stop",
+    "C9": "met_borderline",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 1,
+    "provider": 1,
+    "medhx_format": "narrative",
+    "lab_vendor": 2,
+    "outside_quality": "ocr",
+    "outside_practice": 0,
+    "distractors": 1,
+    "date_style": "iso",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

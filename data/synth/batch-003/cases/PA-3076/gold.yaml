@@ -1,0 +1,88 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-3076
+case_type: not_met
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 300075, payer northfield). States: C2=stale_scope, C6=met_borderline'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-3076/gi-note-2026-11-10
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: NOT_MET
+    acceptable_alternates:
+    - INSUFFICIENT_EVIDENCE
+    evidence:
+    - doc_id: PT-3076/colonoscopy-2025-05-18
+      quote: 'Terminal ileum: multiple ulcers 0.3-1.5 cm with surrounding erythema and edema.'
+    missing_item: Objective disease activity measure dated within 12 months (most recent colonoscopy is from 05/18/2025).
+    note: 'synthetic state: stale_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-3076/gi-note-2026-11-10
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-3076/demographics-2026-04-19
+      quote: 'Date of birth: 12/25/1953'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-3076/medication-history-2026-11-09
+      quote: Intolerance (acute pancreatitis)
+    - doc_id: PT-3076/medication-history-2026-11-09
+      quote: Intolerance (nausea and ALT above 3 times the upper limit of normal)
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-3076/medication-history-2026-11-09
+      quote: Secondary loss of response; trough 1.4 mcg/mL with antibodies 53 U/mL (reference <10)
+    note: 'synthetic state: met_clean'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-3076/labs-2025-11-29
+      quote: QuantiFERON-TB Gold Plus              NEGATIVE      Negative
+    note: 'synthetic state: met_borderline'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-3076/labs-2026-09-24
+      quote: Hepatitis B surface antigen           Nonreactive   Nonreactive
+    - doc_id: PT-3076/labs-2026-09-24
+      quote: Hepatitis B core antibody, total      Nonreactive   Nonreactive
+    note: 'synthetic state: met_clean'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-3076/medication-history-2026-11-09
+      quote: Not currently on any advanced therapy (biologic, JAK inhibitor, or S1P receptor modulator).
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-3076/gi-note-2026-11-10
+      quote: Weight 102.1 kg.
+    - doc_id: PT-3076/gi-note-2026-11-10
+      quote: 520 mg IV once (weight 102.1 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-3076/gi-note-2026-11-10
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+packet_outcome: NEEDS_PHYSICIAN

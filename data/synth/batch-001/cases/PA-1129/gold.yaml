@@ -1,0 +1,89 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-1129
+case_type: not_met
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 100128, payer northfield). States: C2=met_buried, C7=core_positive_with_plan,
+  C9=met_borderline, C10=not_met_reference'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-1129/gi-note-2026-11-04
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-1129/gi-note-2026-11-04
+      quote: Her calprotectin from 08/26/2026 came back at 664 ug/g (lab reference <50).
+    note: 'synthetic state: met_buried'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-1129/gi-note-2026-11-04
+      quote: Start ustekinumab (reference product)
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-1129/demographics-2025-11-01
+      quote: 'Date of birth: 09/01/1991'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-1129/medication-history-2026-11-01
+      quote: Steroid dependent (flared each time the dose went below 15 mg)
+    - doc_id: PT-1129/medication-history-2026-11-01
+      quote: Inadequate response after 10 weeks
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-1129/medication-history-2026-11-01
+      quote: Intolerance (drug-induced lupus with positive anti-histone antibodies and arthralgias)
+    note: 'synthetic state: met_clean'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-1129/labs-2026-10-05
+      quote: QuantiFERON-TB Gold Plus              NEGATIVE      Negative
+    note: 'synthetic state: met_clean'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-1129/gi-note-2026-11-04
+      quote: 'Resolved prior hepatitis B infection (HBsAg negative, anti-HBc positive, HBV DNA undetectable): monitor
+        HBV DNA and liver tests every 3 months on therapy.'
+    - doc_id: PT-1129/labs-2026-10-05
+      quote: Hepatitis B surface antigen           Nonreactive   Nonreactive
+    - doc_id: PT-1129/labs-2026-10-05
+      quote: Hepatitis B core antibody, total      Reactive      Nonreactive
+    note: 'synthetic state: core_positive_with_plan'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-1129/medication-history-2026-11-01
+      quote: No current biologic, JAK inhibitor, or S1P receptor modulator.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-1129/gi-note-2026-11-04
+      quote: Weight 55.0 kg.
+    - doc_id: PT-1129/gi-note-2026-11-04
+      quote: 260 mg IV once (weight 55.0 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_borderline'
+  C10:
+    status: NOT_MET
+    evidence:
+    - doc_id: PT-1129/gi-note-2026-11-04
+      quote: Start ustekinumab (reference product)
+    note: 'synthetic state: not_met_reference'
+packet_outcome: NEEDS_PHYSICIAN

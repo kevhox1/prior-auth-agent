@@ -1,0 +1,89 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-1179
+case_type: not_met
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 100178, payer northfield). States: C2=met_scope, C8=not_met_combo'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-1179/gi-note-2026-11-03
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-1179/labs-2026-10-02
+      quote: Calprotectin, fecal | 855 ug/g | H | <50
+    - doc_id: PT-1179/colonoscopy-2026-09-29
+      quote: 'Terminal ileum: multiple ulcers 1-3 cm with surrounding erythema and edema.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-1179/gi-note-2026-11-03
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-1179/demographics-2026-01-27
+      quote: 'Date of birth: 02/23/1972'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-1179/medication-history-2026-10-31
+      quote: Inadequate response after 10 weeks
+    - doc_id: PT-1179/medication-history-2026-10-31
+      quote: Intolerance (acute pancreatitis)
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-1179/medication-history-2026-10-31
+      quote: Secondary loss of response; trough 0.9 mcg/mL with antibodies 46 U/mL (reference <10)
+    note: 'synthetic state: met_clean'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-1179/labs-2026-10-02
+      quote: QuantiFERON-TB Gold Plus | NEGATIVE | - | Negative
+    note: 'synthetic state: met_clean'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-1179/labs-2026-10-02
+      quote: HBsAg | Nonreactive | - | Nonreactive
+    - doc_id: PT-1179/labs-2026-10-02
+      quote: Anti-HBc (total) | Nonreactive | - | Nonreactive
+    note: 'synthetic state: met_clean'
+  C8:
+    status: NOT_MET
+    evidence:
+    - doc_id: PT-1179/gi-note-2026-11-03
+      quote: Continue upadacitinib 15 mg daily and add ustekinumab.
+    - doc_id: PT-1179/medication-history-2026-10-31
+      quote: Upadacitinib 15 mg daily
+    note: 'synthetic state: not_met_combo'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-1179/gi-note-2026-11-03
+      quote: Weight 71.6 kg.
+    - doc_id: PT-1179/gi-note-2026-11-03
+      quote: 390 mg IV once (weight 71.6 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-1179/gi-note-2026-11-03
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+packet_outcome: NEEDS_PHYSICIAN

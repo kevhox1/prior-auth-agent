@@ -1,0 +1,84 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-3547
+case_type: borderline
+policy_id: calder-ustekinumab-ibd
+description: 'Synthetic case (seed 300046, payer calder). States: C2=met_scope, C6=positive_with_plan, C8=switch_with_stop'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-3547/gi-note-2026-10-30
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-3547/colonoscopy-2026-10-13
+      quote: 'Terminal ileum: multiple ulcers 0.3-1.5 cm with surrounding erythema and edema.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-3547/gi-note-2026-10-30
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-3547/demographics-2025-11-15
+      quote: 'Date of birth: 1961-06-26'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-3547/medication-history-2026-10-29
+      quote: Inadequate response after 6 months at a therapeutic metabolite level
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-3547/medication-history-2026-10-29
+      quote: Secondary loss of response; trough 0.9 mcg/mL with antibodies 25 U/mL (reference <10)
+    note: 'synthetic state: met_clean'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-3547/gi-note-2026-10-30
+      quote: 'Latent TB infection: rifampin daily for 4 months, started 2026-10-16.'
+    - doc_id: PT-3547/labs-2026-10-11
+      quote: QuantiFERON-TB Gold Plus | POSITIVE | A | Negative
+    - doc_id: PT-3547/chest-xray-2026-10-14
+      quote: 'IMPRESSION: No evidence of active pulmonary tuberculosis.'
+    note: 'synthetic state: positive_with_plan'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-3547/labs-2026-10-11
+      quote: HBsAg | Nonreactive | - | Nonreactive
+    - doc_id: PT-3547/labs-2026-10-11
+      quote: Anti-HBc (total) | Nonreactive | - | Nonreactive
+    note: 'synthetic state: met_clean'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-3547/gi-note-2026-10-30
+      quote: Stop vedolizumab; ustekinumab induction on the date of the next scheduled vedolizumab infusion.
+    - doc_id: PT-3547/medication-history-2026-10-29
+      quote: Vedolizumab 300 mg IV every 8 weeks (last infusion 2026-10-11); to be discontinued when ustekinumab
+        starts.
+    note: 'synthetic state: switch_with_stop'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-3547/gi-note-2026-10-30
+      quote: Weight 100.0 kg.
+    - doc_id: PT-3547/gi-note-2026-10-30
+      quote: 520 mg IV once (weight 100.0 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+packet_outcome: READY_FOR_REVIEW

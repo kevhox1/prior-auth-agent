@@ -1,0 +1,91 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-3096
+case_type: multi_issue
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 300095, payer northfield). States: C2=met_scope, C5a=missing, C5b=contraindication,
+  C6=stale, C7=core_positive_with_plan'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-3096/gi-note-2026-11-03
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-3096/colonoscopy-2026-08-16
+      quote: 'Terminal ileum: multiple ulcers 0.5-2 cm with surrounding erythema and edema.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-3096/gi-note-2026-11-03
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-3096/demographics-2026-05-27
+      quote: 'Date of birth: 2006-05-08'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: INSUFFICIENT_EVIDENCE
+    acceptable_alternates:
+    - NOT_MET
+    missing_item: Documentation of a trial of at least one conventional therapy (corticosteroid, thiopurine, methotrexate,
+      or for UC an aminosalicylate) with dates and reason stopped.
+    note: 'synthetic state: missing'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-3096/gi-note-2026-11-03
+      quote: Anti-TNF agents are contraindicated because of multiple sclerosis (demyelinating disease).
+    note: 'synthetic state: contraindication'
+  C6:
+    status: NOT_MET
+    acceptable_alternates:
+    - INSUFFICIENT_EVIDENCE
+    evidence:
+    - doc_id: PT-3096/labs-2025-10-20
+      quote: QUANTIFERON TB GOLD PLUS .......... NEGATIVE  (Negative)
+    missing_item: TB screening dated within 12 months of the request (most recent is from 2025-10-20).
+    note: 'synthetic state: stale'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-3096/gi-note-2026-11-03
+      quote: 'Resolved prior hepatitis B infection (HBsAg negative, anti-HBc positive, HBV DNA undetectable): monitor
+        HBV DNA and liver tests every 3 months on therapy.'
+    - doc_id: PT-3096/labs-2026-10-13
+      quote: HEP B SURFACE AG .................. Nonreactive  (Nonreactive)
+    - doc_id: PT-3096/labs-2026-10-13
+      quote: HEP B CORE AB TOTAL ............... Reactive  (Nonreactive)
+    note: 'synthetic state: core_positive_with_plan'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-3096/gi-note-2026-11-03
+      quote: No biologic or small-molecule advanced therapy at present.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-3096/gi-note-2026-11-03
+      quote: Weight 101.7 kg.
+    - doc_id: PT-3096/gi-note-2026-11-03
+      quote: 520 mg IV once (weight 101.7 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-3096/gi-note-2026-11-03
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+packet_outcome: NEEDS_PHYSICIAN

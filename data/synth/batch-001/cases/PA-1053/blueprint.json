@@ -1,0 +1,40 @@
+{
+  "seed": 100052,
+  "request_id": "PA-1053",
+  "patient_id": "PT-1053",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Yuki",
+  "last_name": "Abara",
+  "sex": "F",
+  "dob": "1959-03-05",
+  "disease": "cd",
+  "weight_kg": 85.0,
+  "states": {
+    "C1": "met_clean",
+    "C2": "stale_scope",
+    "C5a": "met_clean",
+    "C5b": "met_clean",
+    "C6": "met_clean",
+    "C7": "core_positive_with_plan",
+    "C8": "switch_with_stop",
+    "C9": "met_borderline",
+    "C10": "not_met_reference",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 1,
+    "provider": 1,
+    "medhx_format": "table",
+    "lab_vendor": 0,
+    "outside_quality": "fax",
+    "outside_practice": 3,
+    "distractors": 2,
+    "date_style": "iso",
+    "copy_forward": true,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

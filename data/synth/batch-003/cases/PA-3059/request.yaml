@@ -1,0 +1,13 @@
+request_id: PA-3059
+patient_id: PT-3059
+drug: ustekinumab
+product: ustekinumab-aekn
+dose: 520 mg IV once (weight 95.8 kg), then 90 mg SC every 8 weeks starting 8 weeks
+  after the IV dose
+indication_icd10: K50.80
+payer: northfield
+plan_type: commercial
+ordering_provider: Dr. M. Chen, Gastroenterology
+urgency: standard
+request_date: 2026-11-18
+requested_start: '2026-12-01'

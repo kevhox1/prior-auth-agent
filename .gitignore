@@ -1,0 +1,18 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.pytest_cache/
+*.egg-info/
+.DS_Store
+
+# Runs: keep only the runs behind the reports in docs/. The response cache is not committed.
+runs/*
+!runs/m2-opus-heldout-v2/
+!runs/m2-blind-opus/
+!runs/m2-blind-sonnet/
+!runs/m2-blind-haiku/
+!runs/m3-opus-packets/
+!runs/m4-reuse-opus/
+runs/*/*/submission/
+runs/*/*/review.jsonl

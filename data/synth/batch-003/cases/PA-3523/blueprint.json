@@ -1,0 +1,40 @@
+{
+  "seed": 300022,
+  "request_id": "PA-3523",
+  "patient_id": "PT-3523",
+  "request_date": "2026-11-18",
+  "payer": "calder",
+  "first_name": "Malik",
+  "last_name": "Kowalczyk",
+  "sex": "M",
+  "dob": "1956-07-25",
+  "disease": "cd",
+  "weight_kg": 57.2,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_clean",
+    "C5b": "met_clean",
+    "C6": "met_borderline",
+    "C7": "met_clean",
+    "C8": "met_clean",
+    "C9": "stale_weight",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 0,
+    "provider": 1,
+    "medhx_format": "table",
+    "lab_vendor": 0,
+    "outside_quality": "fax",
+    "outside_practice": 3,
+    "distractors": 0,
+    "date_style": "iso",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

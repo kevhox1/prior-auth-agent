@@ -1,0 +1,40 @@
+{
+  "seed": 100047,
+  "request_id": "PA-1048",
+  "patient_id": "PT-1048",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Kenji",
+  "last_name": "Jansen",
+  "sex": "M",
+  "dob": "2001-07-16",
+  "disease": "cd",
+  "weight_kg": 85.0,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_borderline",
+    "C5a": "met_clean",
+    "C5b": "met_clean",
+    "C6": "ordered_not_resulted",
+    "C7": "met_clean",
+    "C8": "met_clean",
+    "C9": "met_borderline",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 2,
+    "provider": 1,
+    "medhx_format": "table",
+    "lab_vendor": 1,
+    "outside_quality": "ocr",
+    "outside_practice": 3,
+    "distractors": 0,
+    "date_style": "iso",
+    "copy_forward": true,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

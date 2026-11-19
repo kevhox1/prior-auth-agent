@@ -1,0 +1,88 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-3049
+case_type: missing_item
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 300048, payer northfield). States: C2=met_buried, C6=met_borderline, C9=stale_weight'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-3049/gi-note-2026-11-10
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-3049/gi-note-2026-11-10
+      quote: His calprotectin from 2026-08-21 came back at 908 ug/g (lab reference <50).
+    note: 'synthetic state: met_buried'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-3049/gi-note-2026-11-10
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-3049/demographics-2026-07-12
+      quote: 'Date of birth: 2000-08-12'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-3049/gi-note-2026-09-08
+      quote: 'History: Prednisone 40 mg daily, tapered, 2022-10 to 2023-03. Reason stopped: steroid dependent (flared
+        each time the dose went below 15 mg).'
+    - doc_id: PT-3049/gi-note-2026-09-08
+      quote: 'History: Azathioprine 2.5 mg/kg daily, 2023-04 to 2023-06. Reason stopped: intolerance (acute pancreatitis).'
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-3049/gi-note-2026-11-10
+      quote: 'Prior biologic: Infliximab 5 mg/kg IV every 8 weeks, 2023-08 to 2026-09. Reason stopped: secondary
+        loss of response; trough 0.9 mcg/mL with antibodies 27 U/mL (reference <10).'
+    note: 'synthetic state: met_clean'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-3049/labs-2025-11-26
+      quote: QUANTIFERON TB GOLD PLUS .......... NEGATIVE  (Negative)
+    note: 'synthetic state: met_borderline'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-3049/labs-2026-10-10
+      quote: HEP B SURFACE AG .................. Nonreactive  (Nonreactive)
+    - doc_id: PT-3049/labs-2026-10-10
+      quote: HEP B CORE AB TOTAL ............... Nonreactive  (Nonreactive)
+    note: 'synthetic state: met_clean'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-3049/gi-note-2026-11-10
+      quote: No biologic or small-molecule advanced therapy at present.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: INSUFFICIENT_EVIDENCE
+    evidence:
+    - doc_id: PT-3049/gi-note-2026-09-08
+      quote: Weight 89.1 kg.
+    - doc_id: PT-3049/gi-note-2026-11-10
+      quote: 520 mg IV once (weight 89.1 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    missing_item: Body weight documented within 30 days of the request (last weight is from more than 30 days ago).
+    note: 'synthetic state: stale_weight'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-3049/gi-note-2026-11-10
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+packet_outcome: GAPS_TO_CLOSE

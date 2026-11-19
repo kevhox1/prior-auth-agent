@@ -1,0 +1,40 @@
+{
+  "seed": 300083,
+  "request_id": "PA-3584",
+  "patient_id": "PT-3584",
+  "request_date": "2026-11-18",
+  "payer": "calder",
+  "first_name": "Grace",
+  "last_name": "Castellano",
+  "sex": "F",
+  "dob": "1983-12-16",
+  "disease": "uc",
+  "weight_kg": 58.7,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_clean",
+    "C5b": "met_clean",
+    "C6": "met_borderline",
+    "C7": "met_clean",
+    "C8": "switch_with_stop",
+    "C9": "wrong_tier",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 0,
+    "provider": 0,
+    "medhx_format": "scattered",
+    "lab_vendor": 1,
+    "outside_quality": "ocr",
+    "outside_practice": 1,
+    "distractors": 1,
+    "date_style": "iso",
+    "copy_forward": true,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

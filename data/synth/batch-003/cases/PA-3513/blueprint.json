@@ -1,0 +1,40 @@
+{
+  "seed": 300012,
+  "request_id": "PA-3513",
+  "patient_id": "PT-3513",
+  "request_date": "2026-11-18",
+  "payer": "calder",
+  "first_name": "Ana",
+  "last_name": "Umarov",
+  "sex": "F",
+  "dob": "1959-01-04",
+  "disease": "uc",
+  "weight_kg": 86.6,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_clean",
+    "C5b": "met_clean",
+    "C6": "met_borderline",
+    "C7": "met_clean",
+    "C8": "met_clean",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 2,
+    "provider": 2,
+    "medhx_format": "scattered",
+    "lab_vendor": 0,
+    "outside_quality": "ocr",
+    "outside_practice": 3,
+    "distractors": 1,
+    "date_style": "iso",
+    "copy_forward": true,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

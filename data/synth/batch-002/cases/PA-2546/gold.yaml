@@ -1,0 +1,86 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-2546
+case_type: multi_issue
+policy_id: calder-ustekinumab-ibd
+description: 'Synthetic case (seed 200045, payer calder). States: C2=met_buried, C5b=not_met_naive, C7=core_positive_with_plan,
+  C10=not_met_reference'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-2546/gi-note-2026-11-10
+      quote: Moderately to severely active ulcerative pancolitis.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: INSUFFICIENT_EVIDENCE
+    acceptable_alternates:
+    - NOT_MET
+    missing_item: Ileocolonoscopy, colonoscopy or flexible sigmoidoscopy report from the past 12 months showing
+      active inflammation (calprotectin and CRP do not count under this policy).
+    note: 'synthetic state: met_buried'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-2546/gi-note-2026-11-10
+      quote: Start ustekinumab (reference product)
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-2546/demographics-2026-02-23
+      quote: 'Date of birth: 12/16/1984'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-2546/medication-history-2026-11-08
+      quote: Inadequate response after 10 weeks
+    - doc_id: PT-2546/medication-history-2026-11-08
+      quote: Intolerance (acute pancreatitis)
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: NOT_MET
+    acceptable_alternates:
+    - INSUFFICIENT_EVIDENCE
+    evidence:
+    - doc_id: PT-2546/gi-note-2026-11-10
+      quote: Biologic-naive; no prior anti-TNF therapy.
+    note: 'synthetic state: not_met_naive'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-2546/labs-2026-09-23
+      quote: QuantiFERON-TB Gold Plus | NEGATIVE | - | Negative
+    note: 'synthetic state: met_clean'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-2546/gi-note-2026-11-10
+      quote: 'Resolved prior hepatitis B infection (HBsAg negative, anti-HBc positive, HBV DNA undetectable): monitor
+        HBV DNA and liver tests every 3 months on therapy.'
+    - doc_id: PT-2546/labs-2026-09-23
+      quote: HBsAg | Nonreactive | - | Nonreactive
+    - doc_id: PT-2546/labs-2026-09-23
+      quote: Anti-HBc (total) | Reactive | A | Nonreactive
+    note: 'synthetic state: core_positive_with_plan'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-2546/medication-history-2026-11-08
+      quote: No biologic or small-molecule advanced therapy at present.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-2546/gi-note-2026-11-10
+      quote: Weight 69.7 kg.
+    - doc_id: PT-2546/gi-note-2026-11-10
+      quote: 390 mg IV once (weight 69.7 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+packet_outcome: GAPS_TO_CLOSE

@@ -1,0 +1,83 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-3599
+case_type: missing_item
+policy_id: calder-ustekinumab-ibd
+description: 'Synthetic case (seed 300098, payer calder). States: C2=crp_only, C5b=met_buried, C7=core_positive_with_plan,
+  C9=met_borderline'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-3599/gi-note-2026-11-10
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: INSUFFICIENT_EVIDENCE
+    acceptable_alternates:
+    - NOT_MET
+    missing_item: Ileocolonoscopy, colonoscopy or flexible sigmoidoscopy report from the past 12 months showing
+      active inflammation (calprotectin and CRP do not count under this policy).
+    note: 'synthetic state: crp_only'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-3599/gi-note-2026-11-10
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-3599/demographics-2026-04-06
+      quote: 'Date of birth: 02/27/2002'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-3599/gi-note-2026-03-03
+      quote: 'History: Azathioprine 2.5 mg/kg daily, 07/2019 to 09/2019. Reason stopped: intolerance (acute pancreatitis).'
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-3599/outside-records-2023-12-18
+      quote: 'Infliximab 5 mg/kg IV every 8 weeks, 07/2023 to 11/2023. Reason stopped: primary non-response: no
+        clinical improvement after induction and 8 weeks of maintenance.'
+    note: 'synthetic state: met_buried'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-3599/labs-2026-10-05
+      quote: QUANTIFERON TB GOLD PLUS .......... NEGATIVE  (Negative)
+    note: 'synthetic state: met_clean'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-3599/gi-note-2026-11-10
+      quote: 'Resolved prior hepatitis B infection (HBsAg negative, anti-HBc positive, HBV DNA undetectable): monitor
+        HBV DNA and liver tests every 3 months on therapy.'
+    - doc_id: PT-3599/labs-2026-10-05
+      quote: HEP B SURFACE AG .................. Nonreactive  (Nonreactive)
+    - doc_id: PT-3599/labs-2026-10-05
+      quote: HEP B CORE AB TOTAL ............... Reactive  (Nonreactive)
+    note: 'synthetic state: core_positive_with_plan'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-3599/gi-note-2026-11-10
+      quote: No biologic or small-molecule advanced therapy at present.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-3599/gi-note-2026-11-10
+      quote: Weight 55.0 kg.
+    - doc_id: PT-3599/gi-note-2026-11-10
+      quote: 260 mg IV once (weight 55.0 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_borderline'
+packet_outcome: GAPS_TO_CLOSE

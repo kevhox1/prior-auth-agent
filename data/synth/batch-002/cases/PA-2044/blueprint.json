@@ -1,0 +1,40 @@
+{
+  "seed": 200043,
+  "request_id": "PA-2044",
+  "patient_id": "PT-2044",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Omar",
+  "last_name": "Bellweather",
+  "sex": "M",
+  "dob": "1953-12-04",
+  "disease": "cd",
+  "weight_kg": 82.4,
+  "states": {
+    "C1": "met_clean",
+    "C2": "stale_scope",
+    "C5a": "met_clean",
+    "C5b": "met_clean",
+    "C6": "indeterminate",
+    "C7": "met_clean",
+    "C8": "met_clean",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 0,
+    "provider": 0,
+    "medhx_format": "narrative",
+    "lab_vendor": 1,
+    "outside_quality": "fax",
+    "outside_practice": 2,
+    "distractors": 0,
+    "date_style": "iso",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

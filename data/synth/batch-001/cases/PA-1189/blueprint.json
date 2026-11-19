@@ -1,0 +1,40 @@
+{
+  "seed": 100188,
+  "request_id": "PA-1189",
+  "patient_id": "PT-1189",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Teresa",
+  "last_name": "Rasmussen",
+  "sex": "F",
+  "dob": "1992-07-23",
+  "disease": "cd",
+  "weight_kg": 73.9,
+  "states": {
+    "C1": "not_met_mild",
+    "C2": "met_scope",
+    "C5a": "met_clean",
+    "C5b": "contraindication",
+    "C6": "positive_with_plan",
+    "C7": "missing",
+    "C8": "met_clean",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 1,
+    "provider": 1,
+    "medhx_format": "table",
+    "lab_vendor": 1,
+    "outside_quality": "fax",
+    "outside_practice": 1,
+    "distractors": 0,
+    "date_style": "iso",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

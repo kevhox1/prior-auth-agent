@@ -1,0 +1,40 @@
+{
+  "seed": 100041,
+  "request_id": "PA-1042",
+  "patient_id": "PT-1042",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Sana",
+  "last_name": "Petrakis",
+  "sex": "F",
+  "dob": "1984-01-13",
+  "disease": "cd",
+  "weight_kg": 109.9,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_clean",
+    "C5b": "met_buried",
+    "C6": "met_clean",
+    "C7": "missing",
+    "C8": "met_clean",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 2,
+    "provider": 0,
+    "medhx_format": "table",
+    "lab_vendor": 1,
+    "outside_quality": "clean",
+    "outside_practice": 2,
+    "distractors": 0,
+    "date_style": "iso",
+    "copy_forward": false,
+    "requested_channel_wrong": true,
+    "expedited": false,
+    "injection": false
+  }
+}

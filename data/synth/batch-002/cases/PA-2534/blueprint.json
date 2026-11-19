@@ -1,0 +1,40 @@
+{
+  "seed": 200033,
+  "request_id": "PA-2534",
+  "patient_id": "PT-2534",
+  "request_date": "2026-11-18",
+  "payer": "calder",
+  "first_name": "Sana",
+  "last_name": "Rasmussen",
+  "sex": "F",
+  "dob": "1957-09-23",
+  "disease": "uc",
+  "weight_kg": 64.2,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_buried",
+    "C5b": "not_met_naive",
+    "C6": "met_clean",
+    "C7": "core_positive_with_plan",
+    "C8": "met_clean",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 2,
+    "provider": 0,
+    "medhx_format": "table",
+    "lab_vendor": 2,
+    "outside_quality": "ocr",
+    "outside_practice": 3,
+    "distractors": 2,
+    "date_style": "us",
+    "copy_forward": true,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

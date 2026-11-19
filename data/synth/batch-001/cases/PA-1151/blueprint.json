@@ -1,0 +1,40 @@
+{
+  "seed": 100150,
+  "request_id": "PA-1151",
+  "patient_id": "PT-1151",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Lucas",
+  "last_name": "Fairbanks",
+  "sex": "M",
+  "dob": "1989-03-22",
+  "disease": "cd",
+  "weight_kg": 55.0,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "missing",
+    "C5b": "met_clean",
+    "C6": "met_clean",
+    "C7": "core_positive_with_plan",
+    "C8": "switch_with_stop",
+    "C9": "met_borderline",
+    "C10": "not_met_reference",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 2,
+    "provider": 1,
+    "medhx_format": "narrative",
+    "lab_vendor": 1,
+    "outside_quality": "fax",
+    "outside_practice": 1,
+    "distractors": 0,
+    "date_style": "us",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

@@ -1,0 +1,64 @@
+# GOLD - evaluation only.
+request_id: PA-0101
+case_type: reuse
+policy_id: calder-evolocumab-lipids
+description: >
+  Reuse test, clean. NSTEMI with a stent in 03/2025, on atorvastatin 80 mg since then and
+  ezetimibe since 06/2026. LDL-C 98 mg/dL on 10/27/2026, above the 70 mg/dL ASCVD threshold.
+  Trap: two older LDL values (162 at admission, 131 in 05/2026) are outside the 3-month window
+  or drawn before the current regimen. Every criterion is met.
+routing:
+  pa_required: true
+  channels:
+    sc_injection: pharmacy
+packet_outcome: READY_FOR_REVIEW
+criteria:
+  C1:
+    status: MET
+    evidence:
+      - doc_id: PT-0101/cardiology-note-2026-11-10
+        quote: "Clinical ASCVD: NSTEMI 03/2025 with drug-eluting stent to the proximal LAD."
+  C2:
+    status: MET
+    evidence:
+      - doc_id: PT-0101/labs-2026-10-27
+        quote: "LDL cholesterol, calculated         98 mg/dL      <100"
+    note: "Drawn 22 days before the request, on atorvastatin 80 mg plus ezetimibe."
+  C3a:
+    status: MET
+    evidence:
+      - doc_id: PT-0101/medication-history-2026-11-10
+        quote: "Started at hospital discharge after NSTEMI. Fills on time every 90 days. No side effects reported."
+      - doc_id: PT-0101/cardiology-note-2026-11-10
+        quote: "Continue atorvastatin 80 mg and ezetimibe 10 mg."
+  C3b:
+    status: NOT_MET
+    acceptable_alternates: [INSUFFICIENT_EVIDENCE]
+    note: "Tolerates statins; this branch does not apply. C3 is MET through C3a."
+  C4:
+    status: MET
+    evidence:
+      - doc_id: PT-0101/medication-history-2026-11-10
+        quote: "Added for LDL 131 on atorvastatin alone. Fills on time."
+    note: "Ezetimibe since 2026-06-02, more than 4 weeks before the 10/27 LDL-C."
+  C5:
+    status: MET
+    evidence:
+      - doc_id: PT-0101/cardiology-note-2026-11-10
+        quote: "Electronically signed by Dr. M. Osei, MD, Cardiology, 11/10/2026"
+  C6:
+    status: MET
+    evidence:
+      - doc_id: PT-0101/demographics-2026-11-10
+        quote: "Date of birth: 06/02/1965"
+    note: "Age 61 on 2026-11-18."
+  C7:
+    status: MET
+    evidence:
+      - doc_id: PT-0101/medication-history-2026-11-10
+        quote: "No current or prior PCSK9 inhibitor (alirocumab, evolocumab) or inclisiran."
+  C8:
+    status: MET
+    evidence:
+      - doc_id: PT-0101/cardiology-note-2026-11-10
+        quote: "Start evolocumab 140 mg subcutaneously every 2 weeks."

@@ -1,0 +1,40 @@
+{
+  "seed": 300028,
+  "request_id": "PA-3029",
+  "patient_id": "PT-3029",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Beatriz",
+  "last_name": "Petrakis",
+  "sex": "F",
+  "dob": "1960-07-07",
+  "disease": "uc",
+  "weight_kg": 57.3,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_clean",
+    "C5b": "insurance_stop",
+    "C6": "met_clean",
+    "C7": "met_clean",
+    "C8": "met_clean",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 2,
+    "provider": 1,
+    "medhx_format": "narrative",
+    "lab_vendor": 0,
+    "outside_quality": "ocr",
+    "outside_practice": 3,
+    "distractors": 0,
+    "date_style": "iso",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

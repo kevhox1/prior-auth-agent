@@ -1,0 +1,40 @@
+{
+  "seed": 300009,
+  "request_id": "PA-3010",
+  "patient_id": "PT-3010",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Felix",
+  "last_name": "Galloway",
+  "sex": "M",
+  "dob": "1976-02-12",
+  "disease": "cd",
+  "weight_kg": 85.0,
+  "states": {
+    "C1": "met_clean",
+    "C2": "crp_only",
+    "C5a": "met_buried",
+    "C5b": "contraindication",
+    "C6": "met_clean",
+    "C7": "missing",
+    "C8": "switch_with_stop",
+    "C9": "met_borderline",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 1,
+    "provider": 2,
+    "medhx_format": "table",
+    "lab_vendor": 1,
+    "outside_quality": "fax",
+    "outside_practice": 3,
+    "distractors": 1,
+    "date_style": "us",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

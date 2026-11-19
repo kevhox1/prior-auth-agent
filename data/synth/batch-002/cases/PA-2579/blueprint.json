@@ -1,0 +1,40 @@
+{
+  "seed": 200078,
+  "request_id": "PA-2579",
+  "patient_id": "PT-2579",
+  "request_date": "2026-11-18",
+  "payer": "calder",
+  "first_name": "Leah",
+  "last_name": "Galloway",
+  "sex": "F",
+  "dob": "2007-06-16",
+  "disease": "cd",
+  "weight_kg": 89.0,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_buried",
+    "C5b": "met_clean",
+    "C6": "missing",
+    "C7": "met_clean",
+    "C8": "met_clean",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 2,
+    "provider": 1,
+    "medhx_format": "table",
+    "lab_vendor": 1,
+    "outside_quality": "ocr",
+    "outside_practice": 0,
+    "distractors": 1,
+    "date_style": "us",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

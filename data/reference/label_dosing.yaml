@@ -1,0 +1,12 @@
+# Step 6 dose check. Adult IBD labeling for ustekinumab (all products and
+# biosimilars share it). Written from the public label structure, not copied.
+ustekinumab:
+  iv_induction:
+    # Single IV dose by body weight. Tiers are (upper bound in kg, inclusive -> mg).
+    tiers:
+      - {max_kg: 55, mg: 260}
+      - {max_kg: 85, mg: 390}
+      - {max_kg: null, mg: 520}
+  sc_maintenance:
+    mg: 90
+    interval_weeks: 8

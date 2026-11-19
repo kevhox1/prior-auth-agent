@@ -1,0 +1,878 @@
+{
+  "request": {
+    "request_id": "PA-2083",
+    "patient_id": "PT-2083",
+    "drug": "ustekinumab",
+    "product": "ustekinumab-ttwe",
+    "dose": "390 mg IV once (weight 78.7 kg), then 90 mg SC every 8 weeks starting 8 weeks after the IV dose",
+    "indication_icd10": "K50.80",
+    "payer": "northfield",
+    "plan_type": "commercial",
+    "ordering_provider": "Dr. S. Adeyemi, Gastroenterology",
+    "urgency": "standard",
+    "request_date": "2026-11-18",
+    "requested_start": "2026-12-01",
+    "requested_channel": null,
+    "expedited_reason": null
+  },
+  "intake": {
+    "request": {
+      "request_id": "PA-2083",
+      "patient_id": "PT-2083",
+      "drug": "ustekinumab",
+      "product": "ustekinumab-ttwe",
+      "dose": "390 mg IV once (weight 78.7 kg), then 90 mg SC every 8 weeks starting 8 weeks after the IV dose",
+      "indication_icd10": "K50.80",
+      "payer": "northfield",
+      "plan_type": "commercial",
+      "ordering_provider": "Dr. S. Adeyemi, Gastroenterology",
+      "urgency": "standard",
+      "request_date": "2026-11-18",
+      "requested_start": "2026-12-01",
+      "requested_channel": null,
+      "expedited_reason": null
+    },
+    "policy_id": "northfield-ustekinumab-ibd",
+    "policy_version": "2026-10",
+    "n_documents": 6,
+    "decision_clock": "Standard review. Pharmacy-benefit phase: decision within 72 hours of a complete request (policy section 7). Medical-benefit phase: per plan documents.",
+    "notes": []
+  },
+  "policy_id": "northfield-ustekinumab-ibd",
+  "policy_version": "2026-10",
+  "routing": {
+    "pa_required": true,
+    "channels": {
+      "iv_induction": "medical",
+      "sc_maintenance": "pharmacy"
+    },
+    "requested_channel_ok": null,
+    "notes": [
+      "Two submissions: iv induction via the medical benefit; sc maintenance via the pharmacy benefit"
+    ]
+  },
+  "checklist": {
+    "policy_id": "northfield-ustekinumab-ibd",
+    "payer": "northfield",
+    "drug": "ustekinumab",
+    "version": "2026-10",
+    "effective_date": "2026-10-01",
+    "indications": [
+      "Moderately to severely active Crohn's disease (adults 18+)",
+      "Moderately to severely active ulcerative colitis (adults 18+)"
+    ],
+    "benefit_channel": {
+      "iv_induction": "medical",
+      "subcutaneous_maintenance": "pharmacy"
+    },
+    "auth_duration_months": 6,
+    "logic": "ALL",
+    "criteria": [
+      {
+        "id": "C1",
+        "policy_ref": "3.1",
+        "type": "diagnosis",
+        "text": "The member has a diagnosis of moderately to severely active Crohn's disease or moderately to severely active ulcerative colitis. The treating provider must describe disease severity (for example, by symptom burden, a validated disease activity index, or endoscopic severity).",
+        "evidence_needed": [
+          "Documented diagnosis of Crohn's disease or ulcerative colitis",
+          "Treating-provider description of moderate to severe disease activity (symptom burden, validated disease activity index, or endoscopic severity)"
+        ],
+        "lookback_months": null,
+        "logic": null,
+        "sub_criteria": []
+      },
+      {
+        "id": "C2",
+        "policy_ref": "3.2",
+        "type": "disease_activity",
+        "text": "Objective evidence of active disease dated within the 12 months before the request: either (a) an endoscopy, colonoscopy, or flexible sigmoidoscopy report describing active inflammation (such as ulceration, erosions, or friability), or (b) a fecal calprotectin result above the upper limit of the performing laboratory's reference range. An elevated C-reactive protein or erythrocyte sedimentation rate alone does not satisfy this criterion. Imaging alone does not satisfy this criterion.",
+        "evidence_needed": [
+          "Endoscopy/colonoscopy/flexible sigmoidoscopy report describing active inflammation, dated within 12 months before the request, OR fecal calprotectin result above the lab's reference range upper limit, dated within 12 months before the request",
+          "Date of the qualifying report or result",
+          "Lab reference range for fecal calprotectin, if used"
+        ],
+        "lookback_months": 12,
+        "logic": null,
+        "sub_criteria": []
+      },
+      {
+        "id": "C3",
+        "policy_ref": "3.3",
+        "type": "prescriber",
+        "text": "The medication is prescribed by, or in consultation with, a gastroenterologist.",
+        "evidence_needed": [
+          "Prescriber specialty is gastroenterology, or documentation of consultation with a gastroenterologist"
+        ],
+        "lookback_months": null,
+        "logic": null,
+        "sub_criteria": []
+      },
+      {
+        "id": "C4",
+        "policy_ref": "3.4",
+        "type": "age",
+        "text": "The member is 18 years of age or older. Requests for members under 18 fall under policy NHP-CCP-RX-0413 and are outside this policy.",
+        "evidence_needed": [
+          "Member date of birth or age showing 18 years or older"
+        ],
+        "lookback_months": null,
+        "logic": null,
+        "sub_criteria": []
+      },
+      {
+        "id": "C5",
+        "policy_ref": "3.5",
+        "type": "step_therapy",
+        "text": "Both conventional therapy and anti-TNF therapy history are documented. For each prior therapy, the record must name the drug, give approximate start and stop dates, and state why it was stopped. Prior therapy must be supported by pharmacy or medical claims, prescription records, or treating-provider chart notes; a treating-provider history without supporting records may be accepted on prescriber attestation. If claims or other records on file are inconsistent with the reported history, the request is referred for clinical review and is not approved on the reported history alone.",
+        "evidence_needed": [
+          "Drug name, approximate start and stop dates, and reason for stopping for each prior therapy",
+          "Supporting pharmacy/medical claims, prescription records, or treating-provider chart notes, or prescriber attestation",
+          "Consistency between claims/records on file and reported history"
+        ],
+        "lookback_months": null,
+        "logic": "ALL",
+        "sub_criteria": [
+          {
+            "id": "C5a",
+            "policy_ref": "3.5(a)",
+            "type": "step_therapy",
+            "text": "Inadequate response to, intolerance of, or contraindication to at least one conventional therapy. Conventional therapies are systemic corticosteroids (budesonide counts as a corticosteroid), azathioprine, 6-mercaptopurine, and methotrexate; for ulcerative colitis only, oral aminosalicylates (such as mesalamine) also count. Inadequate response to corticosteroids includes steroid dependence (relapse during taper or within 3 months of stopping) and steroid-refractory disease. Drug name, approximate start/stop dates, and reason for stopping must be documented and supported by claims, prescription records, chart notes, or prescriber attestation.",
+            "evidence_needed": [
+              "Name of conventional therapy tried (systemic corticosteroid incl. budesonide, azathioprine, 6-mercaptopurine, methotrexate, or for UC an oral aminosalicylate)",
+              "Approximate start and stop dates",
+              "Reason stopped: inadequate response (incl. steroid dependence or steroid-refractory disease), intolerance, or contraindication",
+              "Supporting claims, prescription records, chart notes, or prescriber attestation"
+            ],
+            "lookback_months": null,
+            "logic": null,
+            "sub_criteria": []
+          },
+          {
+            "id": "C5b",
+            "policy_ref": "3.5(b)",
+            "type": "step_therapy",
+            "text": "Inadequate response to, intolerance of, or contraindication to at least one TNF blocker: adalimumab or infliximab, including any biosimilar of either. Primary non-response, secondary loss of response, and intolerance each qualify. A contraindication must be specifically documented (for example, demyelinating disease or moderate to severe heart failure). Drug name, approximate start/stop dates, and reason for stopping must be documented and supported by claims, prescription records, chart notes, or prescriber attestation.",
+            "evidence_needed": [
+              "Name of TNF blocker tried (adalimumab, infliximab, or a biosimilar of either)",
+              "Approximate start and stop dates",
+              "Reason stopped: primary non-response, secondary loss of response, or intolerance; or a specifically documented contraindication",
+              "Supporting claims, prescription records, chart notes, or prescriber attestation"
+            ],
+            "lookback_months": null,
+            "logic": null,
+            "sub_criteria": []
+          }
+        ]
+      },
+      {
+        "id": "C6",
+        "policy_ref": "3.6",
+        "type": "safety_screen",
+        "text": "Negative tuberculosis screening test (interferon-gamma release assay or tuberculin skin test) dated within the 12 months before the request. An indeterminate IGRA is not a negative result. A test ordered but not resulted does not satisfy this criterion (per 2026-10 revision history). If the screening test is positive, the record must show active tuberculosis was excluded by chest imaging and that treatment for latent tuberculosis has been started.",
+        "evidence_needed": [
+          "Resulted IGRA or tuberculin skin test dated within 12 months before the request",
+          "Negative result (indeterminate IGRA does not count)",
+          "If positive: chest imaging excluding active TB and documentation that latent TB treatment has started"
+        ],
+        "lookback_months": 12,
+        "logic": null,
+        "sub_criteria": []
+      },
+      {
+        "id": "C7",
+        "policy_ref": "3.7",
+        "type": "safety_screen",
+        "text": "Results of both hepatitis B surface antigen (HBsAg) and total hepatitis B core antibody (anti-HBc) are on file. No lookback limit applies. If either result is positive, the record must include a plan for monitoring or antiviral prophylaxis. Hepatitis B vaccination history, or a hepatitis B surface antibody (anti-HBs) result alone, does not satisfy this criterion. A test that has been ordered but not resulted does not satisfy this criterion.",
+        "evidence_needed": [
+          "Resulted HBsAg test",
+          "Resulted total anti-HBc test",
+          "If either positive: documented monitoring or antiviral prophylaxis plan"
+        ],
+        "lookback_months": null,
+        "logic": null,
+        "sub_criteria": []
+      },
+      {
+        "id": "C8",
+        "policy_ref": "3.8",
+        "type": "exclusion",
+        "text": "Ustekinumab will not be used together with another biologic agent, a Janus kinase (JAK) inhibitor (such as tofacitinib or upadacitinib), or a sphingosine 1-phosphate (S1P) receptor modulator (such as ozanimod or etrasimod). If the member is switching from one of these agents, the record must show that the prior agent has been or will be stopped.",
+        "evidence_needed": [
+          "Current medication list showing no concurrent biologic, JAK inhibitor, or S1P receptor modulator",
+          "If switching from such an agent: documentation that it has been or will be stopped"
+        ],
+        "lookback_months": null,
+        "logic": null,
+        "sub_criteria": []
+      },
+      {
+        "id": "C9",
+        "policy_ref": "3.9",
+        "type": "dosing",
+        "text": "Requested dose follows FDA-approved adult labeling. Induction: a single IV dose by body weight — 260 mg for 55 kg or less; 390 mg for more than 55 kg up to 85 kg; 520 mg for more than 85 kg. A current body weight dated within 30 days of the request must be documented for the induction dose. Maintenance: 90 mg subcutaneously every 8 weeks, starting 8 weeks after the IV dose. Maintenance intervals shorter than every 8 weeks are not approved on initial authorization.",
+        "evidence_needed": [
+          "Requested induction dose and route (single IV dose)",
+          "Body weight dated within 30 days of the request",
+          "Induction dose matching weight band (260/390/520 mg)",
+          "Requested maintenance dose of 90 mg SC every 8 weeks starting 8 weeks after IV dose"
+        ],
+        "lookback_months": null,
+        "logic": null,
+        "sub_criteria": []
+      },
+      {
+        "id": "C10",
+        "policy_ref": "3.10",
+        "type": "preferred_product",
+        "text": "The request must name the specific ustekinumab product; a request for 'ustekinumab' without a product is incomplete. Preferred products are ustekinumab-aekn and ustekinumab-ttwe (IV and SC). All other ustekinumab products, including the reference (originator) product, are non-preferred and are covered only if the record documents either (a) an inadequate response to, or intolerance of, both preferred products (intolerance of only one preferred product does not satisfy this), or (b) a contraindication or documented hypersensitivity to an inactive ingredient present in both preferred products and absent from the requested product.",
+        "evidence_needed": [
+          "Specific ustekinumab product named in the request",
+          "If non-preferred product: documented inadequate response to or intolerance of both ustekinumab-aekn and ustekinumab-ttwe, OR documented contraindication/hypersensitivity to an inactive ingredient present in both preferred products and absent from the requested product"
+        ],
+        "lookback_months": null,
+        "logic": null,
+        "sub_criteria": []
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "criterion_id": "C1",
+      "status": "MET",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "doc_id": "PT-2083/gi-note-2026-10-30",
+          "quote": "- Moderately to severely active ileocolonic Crohn's disease.",
+          "doc_date": "2026-10-30"
+        },
+        {
+          "doc_id": "PT-2083/gi-note-2026-10-30",
+          "quote": "- Harvey-Bradshaw Index today: 10.",
+          "doc_date": "2026-10-30"
+        },
+        {
+          "doc_id": "PT-2083/problem-list-2026-10-30",
+          "quote": "1. Crohn's disease of both small and large intestine without complications (K50.80). Diagnosed 2019.",
+          "doc_date": "2026-10-30"
+        }
+      ],
+      "reasoning": "The treating GI note documents moderately to severely active ileocolonic Crohn's disease and gives a Harvey-Bradshaw Index of 10. The problem list confirms the Crohn's diagnosis (K50.80).",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C2",
+      "status": "MET",
+      "confidence": 0.72,
+      "evidence": [
+        {
+          "doc_id": "PT-2083/gi-note-2026-10-30",
+          "quote": "- His calprotectin from 08/21/2026 came back at 1075 ug/g (lab reference <50).",
+          "doc_date": "2026-10-30"
+        }
+      ],
+      "reasoning": "The fecal calprotectin of 1075 ug/g, dated 08/21/2026, is about 3 months before the request and well above the lab reference of <50. The result is reported in the provider note with its date and reference range, but the lab report itself is not in the chart, so the reviewer may want the source report. CRP alone and the 2019 colonoscopy do not count.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": true,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C3",
+      "status": "MET",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "doc_id": "PT-2083/gi-note-2026-10-30",
+          "quote": "- Start ustekinumab-ttwe: 390 mg IV once (weight 78.7 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the IV dose.",
+          "doc_date": "2026-10-30"
+        }
+      ],
+      "reasoning": "The prescription is in the GI follow-up note, and the request lists the ordering provider as Dr. S. Adeyemi, Gastroenterology.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C4",
+      "status": "MET",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "doc_id": "PT-2083/demographics-2026-09-22",
+          "quote": "Date of birth: 04/28/1991",
+          "doc_date": "2026-09-22"
+        }
+      ],
+      "reasoning": "With a date of birth of 04/28/1991, the member is 35 on the request date. The outside record shows the same date of birth.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": true,
+        "dose_in_label": null,
+        "notes": [
+          "age 35 on 2026-11-18 from DOB 1991-04-28"
+        ]
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C5a",
+      "status": "MET",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "doc_id": "PT-2083/gi-note-2026-05-10",
+          "quote": "- History: Prednisone 40 mg daily, tapered, 09/2019 to 02/2020. Reason stopped: steroid dependent (flared each time the dose went below 15 mg).",
+          "doc_date": "2026-05-10"
+        }
+      ],
+      "reasoning": "A treating-provider chart note names prednisone, gives dates (09/2019 to 02/2020) and gives the reason stopped: steroid dependence, which the policy counts as inadequate response. The blank treatment history in the 2019 outside record is missing information, not a conflict. No claims are on file to back this up.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C5b",
+      "status": "NOT_MET",
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "doc_id": "PT-2083/gi-note-2026-10-30",
+          "quote": "- Biologic-naive; no prior anti-TNF therapy.",
+          "doc_date": "2026-10-30"
+        }
+      ],
+      "reasoning": "The treating GI note states outright that the member has had no prior anti-TNF therapy. No specific contraindication to adalimumab or infliximab is documented.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C6",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "confidence": 0.9,
+      "evidence": [],
+      "reasoning": "None of the retrieved passages contains a TB screening result. The 09/2026 labs do not include an IGRA or TST.",
+      "missing_items": [
+        "Resulted tuberculosis screening test (IGRA or tuberculin skin test) dated within 12 months before 2026-11-18, showing a negative result"
+      ],
+      "deterministic_checks": {
+        "quote_found": null,
+        "doc_date_matches": null,
+        "patient_matches": null,
+        "date_in_window": null,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C7",
+      "status": "MET",
+      "confidence": 0.92,
+      "evidence": [
+        {
+          "doc_id": "PT-2083/labs-2026-09-25",
+          "quote": "HEP B SURFACE AG .................. Nonreactive  (Nonreactive)",
+          "doc_date": "2026-09-25"
+        },
+        {
+          "doc_id": "PT-2083/labs-2026-09-25",
+          "quote": "HEP B CORE AB TOTAL ............... Reactive  (Nonreactive)",
+          "doc_date": "2026-09-25"
+        },
+        {
+          "doc_id": "PT-2083/gi-note-2026-10-30",
+          "quote": "- Resolved prior hepatitis B infection (HBsAg negative, anti-HBc positive, HBV DNA undetectable): monitor HBV DNA and liver tests every 3 months on therapy.",
+          "doc_date": "2026-10-30"
+        }
+      ],
+      "reasoning": "Both HBsAg (nonreactive) and total anti-HBc (reactive) have results on file. Because anti-HBc is positive, a plan is required, and the GI note documents HBV DNA and liver test monitoring every 3 months.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C8",
+      "status": "MET",
+      "confidence": 0.88,
+      "evidence": [
+        {
+          "doc_id": "PT-2083/gi-note-2026-10-30",
+          "quote": "- No current biologic, JAK inhibitor, or S1P receptor modulator.",
+          "doc_date": "2026-10-30"
+        }
+      ],
+      "reasoning": "The current GI note states the member is not taking a biologic, JAK inhibitor, or S1P receptor modulator. The member is biologic-naive, so no switch applies.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C9",
+      "status": "MET",
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "doc_id": "PT-2083/gi-note-2026-10-30",
+          "quote": "- Weight 78.7 kg.",
+          "doc_date": "2026-10-30"
+        },
+        {
+          "doc_id": "PT-2083/gi-note-2026-10-30",
+          "quote": "- Start ustekinumab-ttwe: 390 mg IV once (weight 78.7 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the IV dose.",
+          "doc_date": "2026-10-30"
+        }
+      ],
+      "reasoning": "The weight of 78.7 kg is dated 19 days before the request and falls in the >55 to 85 kg band, which calls for 390 mg IV. Maintenance of 90 mg SC every 8 weeks, starting 8 weeks after the IV dose, matches the label.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": null,
+        "dose_in_label": true,
+        "notes": [
+          "weight 78.7 kg (2026-10-30) -> label tier 390 mg; requested 390 mg"
+        ]
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C10",
+      "status": "MET",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "doc_id": "PT-2083/gi-note-2026-10-30",
+          "quote": "- Start ustekinumab-ttwe: 390 mg IV once (weight 78.7 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the IV dose.",
+          "doc_date": "2026-10-30"
+        }
+      ],
+      "reasoning": "The request names the specific product ustekinumab-ttwe, which is one of the preferred products.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    }
+  ],
+  "rolled_up": {
+    "C1": "MET",
+    "C2": "MET",
+    "C3": "MET",
+    "C4": "MET",
+    "C5a": "MET",
+    "C5b": "NOT_MET",
+    "C5": "NOT_MET",
+    "C6": "INSUFFICIENT_EVIDENCE",
+    "C7": "MET",
+    "C8": "MET",
+    "C9": "MET",
+    "C10": "MET"
+  },
+  "retrieval": [
+    {
+      "criterion_id": "C1",
+      "passages": [
+        {
+          "doc_id": "PT-2083/gi-note-2026-10-30",
+          "quote": "- Moderately to severely active ileocolonic Crohn's disease.",
+          "doc_date": "2026-10-30",
+          "why_relevant": "Treating GI provider states the diagnosis and that disease is moderately to severely active."
+        },
+        {
+          "doc_id": "PT-2083/gi-note-2026-10-30",
+          "quote": "- Harvey-Bradshaw Index today: 10.",
+          "doc_date": "2026-10-30",
+          "why_relevant": "Validated disease activity index score supporting the severity description."
+        },
+        {
+          "doc_id": "PT-2083/gi-note-2026-10-30",
+          "quote": "- Symptoms not controlled on current therapy; missing work.",
+          "doc_date": "2026-10-30",
+          "why_relevant": "Describes symptom burden."
+        },
+        {
+          "doc_id": "PT-2083/problem-list-2026-10-30",
+          "quote": "1. Crohn's disease of both small and large intestine without complications (K50.80). Diagnosed 2019.",
+          "doc_date": "2026-10-30",
+          "why_relevant": "Crohn's disease diagnosis on the problem list."
+        },
+        {
+          "doc_id": "PT-2083/outside-records-2019-11-18",
+          "quote": "Dx: Crohn's disease, diagnosed 08/2019 by colonoscopy.",
+          "doc_date": "2019-11-18",
+          "why_relevant": "Outside record confirming the original diagnosis."
+        },
+        {
+          "doc_id": "PT-2083/gi-note-2026-05-10",
+          "quote": "- Crohn's disease, active.",
+          "doc_date": "2026-05-10",
+          "why_relevant": "Earlier note says disease is active but does not give a severity grade."
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-2083/outside-records-2019-11-18",
+        "PT-2083/gi-note-2026-05-10",
+        "PT-2083/demographics-2026-09-22",
+        "PT-2083/labs-2026-09-25",
+        "PT-2083/gi-note-2026-10-30",
+        "PT-2083/problem-list-2026-10-30"
+      ]
+    },
+    {
+      "criterion_id": "C2",
+      "passages": [
+        {
+          "doc_id": "PT-2083/gi-note-2026-10-30",
+          "quote": "- His calprotectin from 08/21/2026 came back at 1075 ug/g (lab reference <50).",
+          "doc_date": "2026-10-30",
+          "why_relevant": "Fecal calprotectin above the lab's reference limit, dated 08/21/2026 (within 12 months). It is reported in the provider note; no lab report for it is in the chart."
+        },
+        {
+          "doc_id": "PT-2083/labs-2026-09-25",
+          "quote": "C REACTIVE PROTEIN ................ 12.5 mg/L  (<5.0)",
+          "doc_date": "2026-09-25",
+          "why_relevant": "CRP is elevated, but CRP alone does not satisfy this criterion."
+        },
+        {
+          "doc_id": "PT-2083/outside-records-2019-11-18",
+          "quote": "Dx: Crohn's disease, diagnosed 08/2019 by colonoscopy.",
+          "doc_date": "2019-11-18",
+          "why_relevant": "This colonoscopy is from 2019, outside the 12-month window, and no findings are given."
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-2083/outside-records-2019-11-18",
+        "PT-2083/gi-note-2026-05-10",
+        "PT-2083/demographics-2026-09-22",
+        "PT-2083/labs-2026-09-25",
+        "PT-2083/gi-note-2026-10-30",
+        "PT-2083/problem-list-2026-10-30"
+      ]
+    },
+    {
+      "criterion_id": "C3",
+      "passages": [
+        {
+          "doc_id": "PT-2083/gi-note-2026-10-30",
+          "quote": "- Start ustekinumab-ttwe: 390 mg IV once (weight 78.7 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the IV dose.",
+          "doc_date": "2026-10-30",
+          "why_relevant": "Prescribed in a note written by Dr. S. Adeyemi, Gastroenterology."
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-2083/outside-records-2019-11-18",
+        "PT-2083/gi-note-2026-05-10",
+        "PT-2083/demographics-2026-09-22",
+        "PT-2083/labs-2026-09-25",
+        "PT-2083/gi-note-2026-10-30",
+        "PT-2083/problem-list-2026-10-30"
+      ]
+    },
+    {
+      "criterion_id": "C4",
+      "passages": [
+        {
+          "doc_id": "PT-2083/demographics-2026-09-22",
+          "quote": "Date of birth: 04/28/1991",
+          "doc_date": "2026-09-22",
+          "why_relevant": "Date of birth puts the member at 35 years old."
+        },
+        {
+          "doc_id": "PT-2083/outside-records-2019-11-18",
+          "quote": "PT: VASQUEZ, KWAME     DOB 04/28/1991",
+          "doc_date": "2019-11-18",
+          "why_relevant": "Same date of birth in the outside record."
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-2083/outside-records-2019-11-18",
+        "PT-2083/gi-note-2026-05-10",
+        "PT-2083/demographics-2026-09-22",
+        "PT-2083/labs-2026-09-25",
+        "PT-2083/gi-note-2026-10-30",
+        "PT-2083/problem-list-2026-10-30"
+      ]
+    },
+    {
+      "criterion_id": "C5a",
+      "passages": [
+        {
+          "doc_id": "PT-2083/gi-note-2026-05-10",
+          "quote": "- History: Prednisone 40 mg daily, tapered, 09/2019 to 02/2020. Reason stopped: steroid dependent (flared each time the dose went below 15 mg).",
+          "doc_date": "2026-05-10",
+          "why_relevant": "Corticosteroid trial with drug name, dates and reason stopped (steroid dependence). Supported only by a provider chart note; no claims are on file."
+        },
+        {
+          "doc_id": "PT-2083/outside-records-2019-11-18",
+          "quote": "Treatment history:",
+          "doc_date": "2019-11-18",
+          "why_relevant": "The treatment history section in the outside record from the same period is blank, so it gives no corroboration."
+        },
+        {
+          "doc_id": "PT-2083/gi-note-2026-10-30",
+          "quote": "- No steroids at present",
+          "doc_date": "2026-10-30",
+          "why_relevant": "Current status: not on steroids."
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-2083/outside-records-2019-11-18",
+        "PT-2083/gi-note-2026-05-10",
+        "PT-2083/demographics-2026-09-22",
+        "PT-2083/labs-2026-09-25",
+        "PT-2083/gi-note-2026-10-30",
+        "PT-2083/problem-list-2026-10-30"
+      ]
+    },
+    {
+      "criterion_id": "C5b",
+      "passages": [
+        {
+          "doc_id": "PT-2083/gi-note-2026-10-30",
+          "quote": "- Biologic-naive; no prior anti-TNF therapy.",
+          "doc_date": "2026-10-30",
+          "why_relevant": "Directly says there was no prior TNF blocker trial, which contradicts the requirement. No contraindication to anti-TNF therapy is documented."
+        },
+        {
+          "doc_id": "PT-2083/outside-records-2019-11-18",
+          "quote": "Treatment history:",
+          "doc_date": "2019-11-18",
+          "why_relevant": "The outside record's treatment history is blank; no anti-TNF therapy is documented."
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-2083/outside-records-2019-11-18",
+        "PT-2083/gi-note-2026-05-10",
+        "PT-2083/demographics-2026-09-22",
+        "PT-2083/labs-2026-09-25",
+        "PT-2083/gi-note-2026-10-30",
+        "PT-2083/problem-list-2026-10-30"
+      ]
+    },
+    {
+      "criterion_id": "C6",
+      "passages": [],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-2083/outside-records-2019-11-18",
+        "PT-2083/gi-note-2026-05-10",
+        "PT-2083/demographics-2026-09-22",
+        "PT-2083/labs-2026-09-25",
+        "PT-2083/gi-note-2026-10-30",
+        "PT-2083/problem-list-2026-10-30"
+      ]
+    },
+    {
+      "criterion_id": "C7",
+      "passages": [
+        {
+          "doc_id": "PT-2083/labs-2026-09-25",
+          "quote": "HEP B SURFACE AG .................. Nonreactive  (Nonreactive)",
+          "doc_date": "2026-09-25",
+          "why_relevant": "HBsAg resulted negative."
+        },
+        {
+          "doc_id": "PT-2083/labs-2026-09-25",
+          "quote": "HEP B CORE AB TOTAL ............... Reactive  (Nonreactive)",
+          "doc_date": "2026-09-25",
+          "why_relevant": "Total anti-HBc resulted positive, so a monitoring plan is required."
+        },
+        {
+          "doc_id": "PT-2083/labs-2026-09-25",
+          "quote": "HBV DNA QUANT ..................... Not detected  (Not detected)",
+          "doc_date": "2026-09-25",
+          "why_relevant": "HBV DNA was not detected."
+        },
+        {
+          "doc_id": "PT-2083/gi-note-2026-10-30",
+          "quote": "- Resolved prior hepatitis B infection (HBsAg negative, anti-HBc positive, HBV DNA undetectable): monitor HBV DNA and liver tests every 3 months on therapy.",
+          "doc_date": "2026-10-30",
+          "why_relevant": "Documented monitoring plan for the positive anti-HBc."
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-2083/outside-records-2019-11-18",
+        "PT-2083/gi-note-2026-05-10",
+        "PT-2083/demographics-2026-09-22",
+        "PT-2083/labs-2026-09-25",
+        "PT-2083/gi-note-2026-10-30",
+        "PT-2083/problem-list-2026-10-30"
+      ]
+    },
+    {
+      "criterion_id": "C8",
+      "passages": [
+        {
+          "doc_id": "PT-2083/gi-note-2026-10-30",
+          "quote": "- No current biologic, JAK inhibitor, or S1P receptor modulator.",
+          "doc_date": "2026-10-30",
+          "why_relevant": "Medication list shows no concurrent biologic, JAK inhibitor or S1P receptor modulator."
+        },
+        {
+          "doc_id": "PT-2083/gi-note-2026-10-30",
+          "quote": "- Vitamin D3 2000 units daily",
+          "doc_date": "2026-10-30",
+          "why_relevant": "Current medication, which is not an excluded agent."
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-2083/outside-records-2019-11-18",
+        "PT-2083/gi-note-2026-05-10",
+        "PT-2083/demographics-2026-09-22",
+        "PT-2083/labs-2026-09-25",
+        "PT-2083/gi-note-2026-10-30",
+        "PT-2083/problem-list-2026-10-30"
+      ]
+    },
+    {
+      "criterion_id": "C9",
+      "passages": [
+        {
+          "doc_id": "PT-2083/gi-note-2026-10-30",
+          "quote": "- Weight 78.7 kg.",
+          "doc_date": "2026-10-30",
+          "why_relevant": "Body weight dated 19 days before the request (within 30 days); it falls in the >55 to 85 kg band, which calls for 390 mg."
+        },
+        {
+          "doc_id": "PT-2083/gi-note-2026-10-30",
+          "quote": "- Start ustekinumab-ttwe: 390 mg IV once (weight 78.7 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the IV dose.",
+          "doc_date": "2026-10-30",
+          "why_relevant": "Induction and maintenance dosing as prescribed."
+        },
+        {
+          "doc_id": "PT-2083/gi-note-2026-05-10",
+          "quote": "- Weight 76.6 kg.",
+          "doc_date": "2026-05-10",
+          "why_relevant": "Older weight, outside the 30-day window."
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-2083/outside-records-2019-11-18",
+        "PT-2083/gi-note-2026-05-10",
+        "PT-2083/demographics-2026-09-22",
+        "PT-2083/labs-2026-09-25",
+        "PT-2083/gi-note-2026-10-30",
+        "PT-2083/problem-list-2026-10-30"
+      ]
+    },
+    {
+      "criterion_id": "C10",
+      "passages": [
+        {
+          "doc_id": "PT-2083/gi-note-2026-10-30",
+          "quote": "- Start ustekinumab-ttwe: 390 mg IV once (weight 78.7 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the IV dose.",
+          "doc_date": "2026-10-30",
+          "why_relevant": "Names a specific product, ustekinumab-ttwe, which is a preferred product."
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-2083/outside-records-2019-11-18",
+        "PT-2083/gi-note-2026-05-10",
+        "PT-2083/demographics-2026-09-22",
+        "PT-2083/labs-2026-09-25",
+        "PT-2083/gi-note-2026-10-30",
+        "PT-2083/problem-list-2026-10-30"
+      ]
+    }
+  ],
+  "injection_flags": [],
+  "gaps": [
+    {
+      "criterion_id": "C5b",
+      "missing_item": "Provider review of prior TNF blocker history or a documented contraindication to adalimumab/infliximab",
+      "who_can_supply": "ordering_provider",
+      "clinician_query": "Dr. Adeyemi, for PA-2083 (PT-2083, ustekinumab-ttwe), Northfield policy 3.5(b) requires an inadequate response to, intolerance of, or contraindication to adalimumab or infliximab. Your GI note dated 2026-10-30 says \"Biologic-naive; no prior anti-TNF therapy,\" and no contraindication to either drug is documented. Please review and tell us whether any prior TNF blocker trial or specifically documented contraindication exists that the chart does not show."
+    },
+    {
+      "criterion_id": "C6",
+      "missing_item": "Negative IGRA or TST result dated 2025-11-18 or later",
+      "who_can_supply": "lab",
+      "clinician_query": "For PA-2083 (PT-2083, ustekinumab-ttwe), Northfield policy 3.6 requires a negative TB screening result (IGRA or tuberculin skin test) dated within 12 months before 2026-11-18. The 09/2026 labs do not include an IGRA or TST, and the chart has no TB screening result. Please send a resulted test if one exists. If not, a test needs to be drawn and resulted, because an ordered or indeterminate test does not count."
+    }
+  ],
+  "outcome": "NEEDS_PHYSICIAN",
+  "packet": null,
+  "verification": null
+}

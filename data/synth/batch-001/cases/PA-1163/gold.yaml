@@ -1,0 +1,83 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-1163
+case_type: missing_item
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 100162, payer northfield). States: C2=met_fcp, C6=met_borderline, C7=missing,
+  C9=met_borderline'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+  requested_channel_ok: false
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-1163/gi-note-2026-11-09
+      quote: Moderately to severely active ulcerative pancolitis.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-1163/labs-2026-09-19
+      quote: Fecal calprotectin                    724 ug/g      <50
+    note: 'synthetic state: met_fcp'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-1163/gi-note-2026-11-09
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-1163/demographics-2025-11-10
+      quote: 'Date of birth: 07/09/1998'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-1163/medication-history-2026-11-08
+      quote: Inadequate response after 6 months at a therapeutic metabolite level
+    - doc_id: PT-1163/medication-history-2026-11-08
+      quote: Intolerance (acute pancreatitis)
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-1163/medication-history-2026-11-08
+      quote: Intolerance (drug-induced lupus with positive anti-histone antibodies and arthralgias)
+    note: 'synthetic state: met_clean'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-1163/labs-2025-11-24
+      quote: QuantiFERON-TB Gold Plus              NEGATIVE      Negative
+    note: 'synthetic state: met_borderline'
+  C7:
+    status: INSUFFICIENT_EVIDENCE
+    missing_item: Hepatitis B surface antigen (HBsAg) and total core antibody (anti-HBc) results.
+    note: 'synthetic state: missing'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-1163/medication-history-2026-11-08
+      quote: No biologic or small-molecule advanced therapy at present.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-1163/gi-note-2026-11-09
+      quote: Weight 85.0 kg.
+    - doc_id: PT-1163/gi-note-2026-11-09
+      quote: 390 mg IV once (weight 85.0 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_borderline'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-1163/gi-note-2026-11-09
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+packet_outcome: GAPS_TO_CLOSE

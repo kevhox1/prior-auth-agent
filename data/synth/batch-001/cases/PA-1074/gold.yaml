@@ -1,0 +1,89 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-1074
+case_type: multi_issue
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 100073, payer northfield). States: C2=crp_only, C7=partial, C8=switch_with_stop'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-1074/gi-note-2026-10-27
+      quote: Moderately to severely active ulcerative pancolitis.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: NOT_MET
+    acceptable_alternates:
+    - INSUFFICIENT_EVIDENCE
+    missing_item: Endoscopy/colonoscopy report or fecal calprotectin result from the past 12 months (CRP alone does
+      not count).
+    note: 'synthetic state: crp_only'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-1074/gi-note-2026-10-27
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-1074/demographics-2026-01-06
+      quote: 'Date of birth: 04/19/1986'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-1074/medication-history-2026-10-24
+      quote: 'Mesalamine 4.8 g daily, 06/2022 to 10/2022. Reason stopped: inadequate response at full dose after
+        12 weeks.'
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-1074/medication-history-2026-10-24
+      quote: 'Infliximab 5 mg/kg IV every 8 weeks, 07/2023 to 11/2023. Reason stopped: primary non-response: no
+        clinical improvement after induction and 8 weeks of maintenance.'
+    note: 'synthetic state: met_clean'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-1074/labs-2026-09-20
+      quote: QUANTIFERON TB GOLD PLUS .......... NEGATIVE  (Negative)
+    note: 'synthetic state: met_clean'
+  C7:
+    status: INSUFFICIENT_EVIDENCE
+    evidence:
+    - doc_id: PT-1074/outside-records-2022-08-18
+      quote: HEP B SURFACE AG .................. Non-reactive  (Non-reactive)
+    missing_item: Total hepatitis B core antibody (anti-HBc) result.
+    note: 'synthetic state: partial'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-1074/gi-note-2026-10-27
+      quote: Stop vedolizumab; ustekinumab induction on the date of the next scheduled vedolizumab infusion.
+    - doc_id: PT-1074/medication-history-2026-10-24
+      quote: Vedolizumab 300 mg IV every 8 weeks (last infusion 10/10/2026); to be discontinued when ustekinumab
+        starts.
+    note: 'synthetic state: switch_with_stop'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-1074/gi-note-2026-10-27
+      quote: Weight 49.8 kg.
+    - doc_id: PT-1074/gi-note-2026-10-27
+      quote: 260 mg IV once (weight 49.8 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-1074/gi-note-2026-10-27
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+packet_outcome: NEEDS_PHYSICIAN
+expect_injection_flag: true

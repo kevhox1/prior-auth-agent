@@ -1,0 +1,25 @@
+# Code-checkable parameters of each policy, keyed by policy section (policy_ref).
+# Step 6 enforces these regardless of what the model extracted in step 3, so a
+# missed lookback in extraction cannot produce a false MET. A human updates this
+# file when a policy version changes; the version must match or the run stops.
+northfield-ustekinumab-ibd:
+  version: "2026-10"
+  min_age: 18
+  lookback_months:
+    "3.2": 12
+    "3.6": 12
+  weight_recency_days:
+    "3.9": 30
+calder-ustekinumab-ibd:
+  version: "2026-07"
+  min_age: 18
+  lookback_months:
+    "B.2": 12
+    "B.6": 6
+  weight_recency_days:
+    "B.9": 90
+calder-evolocumab-lipids:
+  version: "2026-09"
+  min_age: 18
+  lookback_months:
+    "B.2": 3

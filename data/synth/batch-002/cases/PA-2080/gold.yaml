@@ -1,0 +1,83 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-2080
+case_type: missing_item
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 200079, payer northfield). States: C2=met_buried, C6=met_borderline, C7=missing'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-2080/gi-note-2026-10-30
+      quote: Moderately to severely active ulcerative pancolitis.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-2080/gi-note-2026-10-30
+      quote: His calprotectin from 09/24/2026 came back at 467 ug/g (lab reference <50).
+    note: 'synthetic state: met_buried'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-2080/gi-note-2026-10-30
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-2080/demographics-2026-08-23
+      quote: 'Date of birth: 03/01/1984'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-2080/gi-note-2026-01-22
+      quote: 'History: Budesonide 9 mg daily, 09/2020 to 12/2020. Reason stopped: inadequate response after 10 weeks.'
+    - doc_id: PT-2080/gi-note-2026-01-22
+      quote: 'History: Mesalamine 4.8 g daily, 01/2021 to 05/2021. Reason stopped: inadequate response at full dose
+        after 12 weeks.'
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-2080/gi-note-2026-10-30
+      quote: 'Prior biologic: Adalimumab 40 mg every 2 weeks, 07/2023 to 11/2023. Reason stopped: primary non-response:
+        no clinical improvement after induction and 8 weeks of maintenance.'
+    note: 'synthetic state: met_clean'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-2080/labs-2025-11-23
+      quote: QuantiFERON-TB Gold Plus              NEGATIVE      Negative
+    note: 'synthetic state: met_borderline'
+  C7:
+    status: INSUFFICIENT_EVIDENCE
+    missing_item: Hepatitis B surface antigen (HBsAg) and total core antibody (anti-HBc) results.
+    note: 'synthetic state: missing'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-2080/gi-note-2026-10-30
+      quote: No current biologic, JAK inhibitor, or S1P receptor modulator.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-2080/gi-note-2026-10-30
+      quote: Weight 100.9 kg.
+    - doc_id: PT-2080/gi-note-2026-10-30
+      quote: 520 mg IV once (weight 100.9 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-2080/gi-note-2026-10-30
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+packet_outcome: GAPS_TO_CLOSE

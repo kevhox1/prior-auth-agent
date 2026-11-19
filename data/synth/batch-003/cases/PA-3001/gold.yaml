@@ -1,0 +1,89 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-3001
+case_type: multi_issue
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 300000, payer northfield). States: C2=met_scope, C5b=not_met_naive, C8=not_met_combo'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+  requested_channel_ok: false
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-3001/gi-note-2026-11-01
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-3001/colonoscopy-2026-08-17
+      quote: 'Terminal ileum: multiple ulcers 0.3-1.5 cm with surrounding erythema and edema.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-3001/gi-note-2026-11-01
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-3001/demographics-2026-10-03
+      quote: 'Date of birth: 1952-05-03'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-3001/medication-history-2026-10-29
+      quote: 'Budesonide 9 mg daily, 2023-08 to 2023-11. Reason stopped: inadequate response after 10 weeks.'
+    - doc_id: PT-3001/medication-history-2026-10-29
+      quote: 'Mercaptopurine 1.5 mg/kg daily, 2023-12 to 2024-06. Reason stopped: inadequate response after 6 months
+        at a therapeutic metabolite level.'
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: NOT_MET
+    evidence:
+    - doc_id: PT-3001/gi-note-2026-11-01
+      quote: Biologic-naive; no prior anti-TNF therapy.
+    note: 'synthetic state: not_met_naive'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-3001/labs-2026-09-21
+      quote: QuantiFERON-TB Gold Plus              NEGATIVE      Negative
+    note: 'synthetic state: met_clean'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-3001/labs-2026-09-21
+      quote: Hepatitis B surface antigen           Nonreactive   Nonreactive
+    - doc_id: PT-3001/labs-2026-09-21
+      quote: Hepatitis B core antibody, total      Nonreactive   Nonreactive
+    note: 'synthetic state: met_clean'
+  C8:
+    status: NOT_MET
+    evidence:
+    - doc_id: PT-3001/gi-note-2026-11-01
+      quote: Continue upadacitinib 15 mg daily and add ustekinumab.
+    - doc_id: PT-3001/medication-history-2026-10-29
+      quote: Upadacitinib 15 mg daily
+    note: 'synthetic state: not_met_combo'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-3001/gi-note-2026-11-01
+      quote: Weight 81.1 kg.
+    - doc_id: PT-3001/gi-note-2026-11-01
+      quote: 390 mg IV once (weight 81.1 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-3001/gi-note-2026-11-01
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+packet_outcome: NEEDS_PHYSICIAN

@@ -1,0 +1,40 @@
+{
+  "seed": 200096,
+  "request_id": "PA-2597",
+  "patient_id": "PT-2597",
+  "request_date": "2026-11-18",
+  "payer": "calder",
+  "first_name": "Ingrid",
+  "last_name": "Jansen",
+  "sex": "F",
+  "dob": "1974-05-05",
+  "disease": "uc",
+  "weight_kg": 53.9,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "missing",
+    "C5b": "met_clean",
+    "C6": "stale",
+    "C7": "met_clean",
+    "C8": "met_clean",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 1,
+    "provider": 1,
+    "medhx_format": "scattered",
+    "lab_vendor": 2,
+    "outside_quality": "ocr",
+    "outside_practice": 1,
+    "distractors": 1,
+    "date_style": "iso",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

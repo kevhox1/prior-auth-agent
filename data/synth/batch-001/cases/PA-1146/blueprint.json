@@ -1,0 +1,40 @@
+{
+  "seed": 100145,
+  "request_id": "PA-1146",
+  "patient_id": "PT-1146",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Noor",
+  "last_name": "Abara",
+  "sex": "F",
+  "dob": "1963-07-06",
+  "disease": "cd",
+  "weight_kg": 106.2,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_buried",
+    "C5b": "met_clean",
+    "C6": "met_clean",
+    "C7": "missing",
+    "C8": "switch_with_stop",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 1,
+    "provider": 0,
+    "medhx_format": "scattered",
+    "lab_vendor": 2,
+    "outside_quality": "ocr",
+    "outside_practice": 3,
+    "distractors": 0,
+    "date_style": "us",
+    "copy_forward": false,
+    "requested_channel_wrong": true,
+    "expedited": false,
+    "injection": false
+  }
+}

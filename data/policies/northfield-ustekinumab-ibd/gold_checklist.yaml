@@ -1,0 +1,89 @@
+# GOLD - evaluation only. The agent never sees this file; it builds its own
+# checklist from policy.md (step 3) and is scored against this one.
+# Extracted criteria are aligned to these by policy_ref, not by id.
+policy_id: northfield-ustekinumab-ibd
+payer: northfield
+drug: ustekinumab
+version: "2026-10"
+effective_date: 2026-10-01
+indications:
+  - moderately to severely active Crohn's disease (adults)
+  - moderately to severely active ulcerative colitis (adults)
+benefit_channel:
+  iv_induction: medical
+  sc_maintenance: pharmacy
+auth_duration_months: 6
+logic: ALL
+criteria:
+  - id: C1
+    policy_ref: "3.1"
+    type: diagnosis
+    text: "Diagnosis of moderately to severely active Crohn's disease or ulcerative colitis, with severity described by the treating provider"
+    evidence_needed: ["diagnosis in a GI note or problem list", "provider description of moderate to severe activity"]
+
+  - id: C2
+    policy_ref: "3.2"
+    type: disease_activity
+    text: "Objective evidence of active disease within 12 months: endoscopy/colonoscopy/flexible sigmoidoscopy showing active inflammation, OR fecal calprotectin above the lab's upper reference limit. CRP or ESR alone, or imaging alone, does not count"
+    evidence_needed: ["procedure report or fecal calprotectin result", "date of the result", "lab reference range for calprotectin"]
+    lookback_months: 12
+
+  - id: C3
+    policy_ref: "3.3"
+    type: prescriber
+    text: "Prescribed by or in consultation with a gastroenterologist"
+    evidence_needed: ["prescriber specialty"]
+
+  - id: C4
+    policy_ref: "3.4"
+    type: age
+    text: "Member is 18 years of age or older"
+    evidence_needed: ["date of birth"]
+
+  - id: C5
+    policy_ref: "3.5"
+    type: step_therapy
+    text: "Both prior-therapy requirements are documented"
+    logic: ALL
+    sub_criteria:
+      - id: C5a
+        policy_ref: "3.5(a)"
+        type: step_therapy
+        text: "Inadequate response, intolerance, or contraindication to at least one conventional therapy (systemic corticosteroids including budesonide, azathioprine, 6-mercaptopurine, methotrexate; for UC also oral aminosalicylates). Steroid dependence and steroid-refractory disease count as inadequate response"
+        evidence_needed: ["drug name", "approximate start and stop dates", "reason stopped"]
+      - id: C5b
+        policy_ref: "3.5(b)"
+        type: step_therapy
+        text: "Inadequate response, intolerance, or documented contraindication to at least one anti-TNF agent (adalimumab or infliximab, including biosimilars). Must be supported by claims, prescription records, or treating-provider notes; provider history without records is accepted on attestation; if other records are inconsistent, refer for clinical review"
+        evidence_needed: ["drug name", "approximate start and stop dates", "reason stopped", "no inconsistent record on file"]
+
+  - id: C6
+    policy_ref: "3.6"
+    type: safety_screen
+    text: "Negative TB screening (IGRA or TST) within 12 months. Indeterminate IGRA is not negative. If positive: active TB excluded by chest imaging and latent TB treatment started"
+    evidence_needed: ["TB test type", "result", "date"]
+    lookback_months: 12
+
+  - id: C7
+    policy_ref: "3.7"
+    type: safety_screen
+    text: "Both HBsAg and total anti-HBc results on file (no lookback). If either positive, monitoring or prophylaxis plan documented. Vaccination history, anti-HBs alone, or an unresulted order does not count"
+    evidence_needed: ["HBsAg result", "total anti-HBc result"]
+
+  - id: C8
+    policy_ref: "3.8"
+    type: exclusion
+    text: "Not used together with another biologic, JAK inhibitor, or S1P receptor modulator; any prior such agent has been or will be stopped"
+    evidence_needed: ["current medication list", "stop date of any prior advanced therapy"]
+
+  - id: C9
+    policy_ref: "3.9"
+    type: dosing
+    text: "Requested dose follows adult labeling: single IV induction dose by weight (<=55 kg 260 mg; >55-85 kg 390 mg; >85 kg 520 mg), then 90 mg SC every 8 weeks starting 8 weeks after IV dose. Weight documented within 30 days of request"
+    evidence_needed: ["current body weight and date", "requested dose"]
+
+  - id: C10
+    policy_ref: "3.10"
+    type: preferred_product
+    text: "Requested product is a preferred product (ustekinumab-aekn or ustekinumab-ttwe), OR for a non-preferred product: inadequate response or intolerance to both preferred products, or a contraindication to an inactive ingredient in both preferred products that is absent from the requested product"
+    evidence_needed: ["specific product ordered", "for non-preferred: trial of both preferred products or excipient contraindication"]

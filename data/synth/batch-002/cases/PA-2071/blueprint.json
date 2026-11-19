@@ -1,0 +1,40 @@
+{
+  "seed": 200070,
+  "request_id": "PA-2071",
+  "patient_id": "PT-2071",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Samuel",
+  "last_name": "Galloway",
+  "sex": "M",
+  "dob": "1976-12-01",
+  "disease": "uc",
+  "weight_kg": 84.2,
+  "states": {
+    "C1": "met_clean",
+    "C2": "stale_scope",
+    "C5a": "met_clean",
+    "C5b": "met_clean",
+    "C6": "met_clean",
+    "C7": "met_clean",
+    "C8": "switch_with_stop",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 1,
+    "provider": 1,
+    "medhx_format": "scattered",
+    "lab_vendor": 0,
+    "outside_quality": "ocr",
+    "outside_practice": 1,
+    "distractors": 1,
+    "date_style": "us",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

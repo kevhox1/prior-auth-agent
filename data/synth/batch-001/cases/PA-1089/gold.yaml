@@ -1,0 +1,92 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-1089
+case_type: multi_issue
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 100088, payer northfield). States: C2=met_scope, C6=indeterminate, C8=not_met_combo'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-1089/gi-note-2026-11-03
+      quote: Moderately to severely active ulcerative pancolitis.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-1089/labs-2026-09-28
+      quote: CALPROTECTIN FECAL ................ 465 ug/g  (<50)
+    - doc_id: PT-1089/flexible-sigmoidoscopy-2026-10-08
+      quote: 'Rectum to 26 cm: continuous inflammation with friability and erosions; Mayo endoscopic subscore 3.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-1089/gi-note-2026-11-03
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-1089/demographics-2026-10-10
+      quote: 'Date of birth: 10/06/1992'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-1089/gi-note-2026-04-28
+      quote: 'History: Budesonide 9 mg daily, 07/2019 to 10/2019. Reason stopped: inadequate response after 10 weeks.'
+    - doc_id: PT-1089/gi-note-2026-04-28
+      quote: 'History: Mercaptopurine 1.5 mg/kg daily, 11/2019 to 05/2020. Reason stopped: inadequate response after
+        6 months at a therapeutic metabolite level.'
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-1089/gi-note-2026-11-03
+      quote: 'Prior biologic: Infliximab 5 mg/kg IV every 8 weeks, 07/2023 to 07/2026. Reason stopped: intolerance
+        (drug-induced lupus with positive anti-histone antibodies and arthralgias).'
+    note: 'synthetic state: met_clean'
+  C6:
+    status: INSUFFICIENT_EVIDENCE
+    evidence:
+    - doc_id: PT-1089/labs-2026-09-28
+      quote: QUANTIFERON TB GOLD PLUS .......... INDETERMINATE  (Negative)
+    missing_item: Repeat TB screening (IGRA or TST) with a determinate result.
+    note: 'synthetic state: indeterminate'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-1089/labs-2026-09-28
+      quote: HEP B SURFACE AG .................. Nonreactive  (Nonreactive)
+    - doc_id: PT-1089/labs-2026-09-28
+      quote: HEP B CORE AB TOTAL ............... Nonreactive  (Nonreactive)
+    note: 'synthetic state: met_clean'
+  C8:
+    status: NOT_MET
+    evidence:
+    - doc_id: PT-1089/gi-note-2026-11-03
+      quote: Upadacitinib 15 mg daily
+    - doc_id: PT-1089/gi-note-2026-11-03
+      quote: Continue upadacitinib 15 mg daily and add ustekinumab.
+    note: 'synthetic state: not_met_combo'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-1089/gi-note-2026-11-03
+      quote: Weight 95.1 kg.
+    - doc_id: PT-1089/gi-note-2026-11-03
+      quote: 520 mg IV once (weight 95.1 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-1089/gi-note-2026-11-03
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+packet_outcome: NEEDS_PHYSICIAN

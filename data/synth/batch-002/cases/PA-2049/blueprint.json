@@ -1,0 +1,40 @@
+{
+  "seed": 200048,
+  "request_id": "PA-2049",
+  "patient_id": "PT-2049",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Kwame",
+  "last_name": "Fairbanks",
+  "sex": "M",
+  "dob": "1967-08-08",
+  "disease": "uc",
+  "weight_kg": 51.7,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_clean",
+    "C5b": "met_clean",
+    "C6": "ordered_not_resulted",
+    "C7": "core_positive_with_plan",
+    "C8": "met_clean",
+    "C9": "wrong_tier",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 0,
+    "provider": 0,
+    "medhx_format": "narrative",
+    "lab_vendor": 0,
+    "outside_quality": "clean",
+    "outside_practice": 2,
+    "distractors": 0,
+    "date_style": "iso",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

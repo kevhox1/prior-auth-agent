@@ -1,0 +1,40 @@
+{
+  "seed": 100081,
+  "request_id": "PA-1082",
+  "patient_id": "PT-1082",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Jonah",
+  "last_name": "Brennagh",
+  "sex": "M",
+  "dob": "1966-09-19",
+  "disease": "cd",
+  "weight_kg": 53.5,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_clean",
+    "C5b": "not_met_naive",
+    "C6": "met_borderline",
+    "C7": "missing",
+    "C8": "met_clean",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 2,
+    "provider": 0,
+    "medhx_format": "table",
+    "lab_vendor": 0,
+    "outside_quality": "fax",
+    "outside_practice": 3,
+    "distractors": 0,
+    "date_style": "iso",
+    "copy_forward": true,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

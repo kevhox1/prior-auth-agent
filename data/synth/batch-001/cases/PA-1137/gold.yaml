@@ -1,0 +1,83 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-1137
+case_type: multi_issue
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 100136, payer northfield). States: C2=crp_only, C7=decoy'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-1137/gi-note-2026-11-03
+      quote: Moderately to severely active ulcerative pancolitis.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: NOT_MET
+    acceptable_alternates:
+    - INSUFFICIENT_EVIDENCE
+    missing_item: Endoscopy/colonoscopy report or fecal calprotectin result from the past 12 months (CRP alone does
+      not count).
+    note: 'synthetic state: crp_only'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-1137/gi-note-2026-11-03
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-1137/demographics-2026-10-07
+      quote: 'Date of birth: 1952-08-17'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-1137/medication-history-2026-11-03
+      quote: 'Azathioprine 2.5 mg/kg daily, 2019-09 to 2019-11. Reason stopped: intolerance (acute pancreatitis).'
+    - doc_id: PT-1137/medication-history-2026-11-03
+      quote: 'Budesonide 9 mg daily, 2019-12 to 2020-03. Reason stopped: inadequate response after 10 weeks.'
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-1137/medication-history-2026-11-03
+      quote: 'Infliximab 5 mg/kg IV every 8 weeks, 2023-07 to 2026-07. Reason stopped: secondary loss of response;
+        trough 0.9 mcg/mL with antibodies 53 U/mL (reference <10).'
+    note: 'synthetic state: met_clean'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-1137/labs-2026-09-18
+      quote: QuantiFERON-TB Gold Plus | NEGATIVE | - | Negative
+    note: 'synthetic state: met_clean'
+  C7:
+    status: INSUFFICIENT_EVIDENCE
+    missing_item: HBsAg and total anti-HBc results (vaccination history and anti-HBs do not count).
+    note: 'synthetic state: decoy'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-1137/medication-history-2026-11-03
+      quote: No current biologic, JAK inhibitor, or S1P receptor modulator.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-1137/gi-note-2026-11-03
+      quote: Weight 47.7 kg.
+    - doc_id: PT-1137/gi-note-2026-11-03
+      quote: 260 mg IV once (weight 47.7 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-1137/gi-note-2026-11-03
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+packet_outcome: NEEDS_PHYSICIAN

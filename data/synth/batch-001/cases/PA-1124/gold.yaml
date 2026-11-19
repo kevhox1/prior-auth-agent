@@ -1,0 +1,93 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-1124
+case_type: missing_item
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 100123, payer northfield). States: C2=met_scope, C5a=met_buried, C6=indeterminate,
+  C8=switch_with_stop'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-1124/gi-note-2026-10-29
+      quote: Moderately to severely active ulcerative pancolitis.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-1124/labs-2026-09-10
+      quote: Calprotectin, fecal | 360 ug/g | H | <50
+    - doc_id: PT-1124/flexible-sigmoidoscopy-2026-08-17
+      quote: 'Rectum to 31 cm: continuous inflammation with friability and erosions; Mayo endoscopic subscore 2.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-1124/gi-note-2026-10-29
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-1124/demographics-2026-03-14
+      quote: 'Date of birth: 03/11/1993'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-1124/outside-records-2022-09-18
+      quote: 'Budesonide 9 mg daily, 07/2021 to 10/2021. Reason stopped: inadequate response after 10 weeks.'
+    - doc_id: PT-1124/outside-records-2022-09-18
+      quote: 'Prednisone 40 mg daily, tapered, 11/2021 to 08/2022. Reason stopped: steroid dependent (flared each
+        time the dose went below 15 mg).'
+    note: 'synthetic state: met_buried'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-1124/medication-history-2026-10-26
+      quote: Intolerance (drug-induced lupus with positive anti-histone antibodies and arthralgias)
+    note: 'synthetic state: met_clean'
+  C6:
+    status: INSUFFICIENT_EVIDENCE
+    evidence:
+    - doc_id: PT-1124/labs-2026-09-10
+      quote: QuantiFERON-TB Gold Plus | INDETERMINATE | A | Negative
+    missing_item: Repeat TB screening (IGRA or TST) with a determinate result.
+    note: 'synthetic state: indeterminate'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-1124/labs-2026-09-10
+      quote: HBsAg | Nonreactive | - | Nonreactive
+    - doc_id: PT-1124/labs-2026-09-10
+      quote: Anti-HBc (total) | Nonreactive | - | Nonreactive
+    note: 'synthetic state: met_clean'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-1124/gi-note-2026-10-29
+      quote: Stop vedolizumab; ustekinumab induction on the date of the next scheduled vedolizumab infusion.
+    - doc_id: PT-1124/medication-history-2026-10-26
+      quote: Vedolizumab 300 mg IV every 8 weeks (last infusion 10/25/2026); to be discontinued when ustekinumab
+        starts.
+    note: 'synthetic state: switch_with_stop'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-1124/gi-note-2026-10-29
+      quote: Weight 93.9 kg.
+    - doc_id: PT-1124/gi-note-2026-10-29
+      quote: 520 mg IV once (weight 93.9 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-1124/gi-note-2026-10-29
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+packet_outcome: GAPS_TO_CLOSE

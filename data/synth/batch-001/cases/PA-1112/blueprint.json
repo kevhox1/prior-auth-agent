@@ -1,0 +1,40 @@
+{
+  "seed": 100111,
+  "request_id": "PA-1112",
+  "patient_id": "PT-1112",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Lucas",
+  "last_name": "Petrakis",
+  "sex": "M",
+  "dob": "1989-12-01",
+  "disease": "cd",
+  "weight_kg": 69.6,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_clean",
+    "C5b": "met_clean",
+    "C6": "met_clean",
+    "C7": "missing",
+    "C8": "met_clean",
+    "C9": "wrong_tier",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 0,
+    "provider": 0,
+    "medhx_format": "table",
+    "lab_vendor": 0,
+    "outside_quality": "clean",
+    "outside_practice": 2,
+    "distractors": 0,
+    "date_style": "iso",
+    "copy_forward": true,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": true
+  }
+}

@@ -1,0 +1,96 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-2088
+case_type: not_met
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 200087, payer northfield). States: C2=met_scope, C5a=met_buried, C5b=met_buried,
+  C6=positive_with_plan, C7=core_positive_with_plan, C8=not_met_combo'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-2088/gi-note-2026-10-26
+      quote: Moderately to severely active ulcerative pancolitis.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-2088/labs-2026-09-12
+      quote: CALPROTECTIN FECAL ................ 483 ug/g  (<50)
+    - doc_id: PT-2088/flexible-sigmoidoscopy-2026-09-28
+      quote: 'Rectum to 27 cm: continuous inflammation with friability and erosions; Mayo endoscopic subscore 3.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-2088/gi-note-2026-10-26
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-2088/demographics-2026-08-03
+      quote: 'Date of birth: 05/02/1964'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-2088/outside-records-2024-06-18
+      quote: 'Budesonide 9 mg daily, 08/2023 to 11/2023. Reason stopped: inadequate response after 10 weeks.'
+    note: 'synthetic state: met_buried'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-2088/outside-records-2024-06-18
+      quote: 'Infliximab 5 mg/kg IV every 8 weeks, 01/2024 to 05/2024. Reason stopped: primary non-response: no
+        clinical improvement after induction and 8 weeks of maintenance.'
+    note: 'synthetic state: met_buried'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-2088/gi-note-2026-10-26
+      quote: 'Latent TB infection: rifampin daily for 4 months, started 09/22/2026.'
+    - doc_id: PT-2088/labs-2026-09-12
+      quote: QUANTIFERON TB GOLD PLUS .......... POSITIVE  (Negative)
+    - doc_id: PT-2088/chest-xray-2026-09-15
+      quote: 'IMPRESSION: No evidence of active pulmonary tuberculosis.'
+    note: 'synthetic state: positive_with_plan'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-2088/gi-note-2026-10-26
+      quote: 'Resolved prior hepatitis B infection (HBsAg negative, anti-HBc positive, HBV DNA undetectable): monitor
+        HBV DNA and liver tests every 3 months on therapy.'
+    - doc_id: PT-2088/labs-2026-09-12
+      quote: HEP B SURFACE AG .................. Nonreactive  (Nonreactive)
+    - doc_id: PT-2088/labs-2026-09-12
+      quote: HEP B CORE AB TOTAL ............... Reactive  (Nonreactive)
+    note: 'synthetic state: core_positive_with_plan'
+  C8:
+    status: NOT_MET
+    evidence:
+    - doc_id: PT-2088/gi-note-2026-10-26
+      quote: Continue upadacitinib 15 mg daily and add ustekinumab.
+    - doc_id: PT-2088/medication-history-2026-10-26
+      quote: Upadacitinib 15 mg daily
+    note: 'synthetic state: not_met_combo'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-2088/gi-note-2026-10-26
+      quote: Weight 104.3 kg.
+    - doc_id: PT-2088/gi-note-2026-10-26
+      quote: 520 mg IV once (weight 104.3 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-2088/gi-note-2026-10-26
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+packet_outcome: NEEDS_PHYSICIAN

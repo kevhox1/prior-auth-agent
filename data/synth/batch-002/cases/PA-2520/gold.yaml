@@ -1,0 +1,77 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-2520
+case_type: multi_issue
+policy_id: calder-ustekinumab-ibd
+description: 'Synthetic case (seed 200019, payer calder). States: C2=met_scope, C7=decoy, C8=not_met_combo, C9=met_borderline'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-2520/gi-note-2026-10-26
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-2520/colonoscopy-2026-09-29
+      quote: 'Terminal ileum: multiple ulcers 0.3-1.5 cm with surrounding erythema and edema.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-2520/gi-note-2026-10-26
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-2520/demographics-2026-02-13
+      quote: 'Date of birth: 11/20/1978'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-2520/gi-note-2026-03-19
+      quote: 'History: Prednisone 40 mg daily, tapered, 09/2019 to 03/2020. Reason stopped: steroid dependent (flared
+        each time the dose went below 15 mg).'
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-2520/gi-note-2026-10-26
+      quote: 'Prior biologic: Adalimumab 40 mg every 2 weeks, 07/2023 to 11/2023. Reason stopped: primary non-response:
+        no clinical improvement after induction and 8 weeks of maintenance.'
+    note: 'synthetic state: met_clean'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-2520/labs-2026-10-18
+      quote: QuantiFERON-TB Gold Plus | NEGATIVE | - | Negative
+    note: 'synthetic state: met_clean'
+  C7:
+    status: INSUFFICIENT_EVIDENCE
+    missing_item: HBsAg and total anti-HBc results (vaccination history and anti-HBs do not count).
+    note: 'synthetic state: decoy'
+  C8:
+    status: NOT_MET
+    evidence:
+    - doc_id: PT-2520/gi-note-2026-10-26
+      quote: Upadacitinib 15 mg daily
+    - doc_id: PT-2520/gi-note-2026-10-26
+      quote: Continue upadacitinib 15 mg daily and add ustekinumab.
+    note: 'synthetic state: not_met_combo'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-2520/gi-note-2026-10-26
+      quote: Weight 55.0 kg.
+    - doc_id: PT-2520/gi-note-2026-10-26
+      quote: 260 mg IV once (weight 55.0 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_borderline'
+packet_outcome: NEEDS_PHYSICIAN

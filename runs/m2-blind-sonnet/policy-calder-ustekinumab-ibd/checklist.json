@@ -1,0 +1,137 @@
+{
+  "policy_id": "calder-ustekinumab-ibd",
+  "payer": "calder",
+  "drug": "ustekinumab",
+  "version": "2026-07",
+  "effective_date": "2026-07-01",
+  "indications": [
+    "Moderately to severely active Crohn's disease",
+    "Moderately to severely active ulcerative colitis"
+  ],
+  "benefit_channel": {
+    "iv_induction": "medical",
+    "subcutaneous_maintenance": "pharmacy"
+  },
+  "auth_duration_months": 12,
+  "logic": "ALL",
+  "criteria": [
+    {
+      "id": "C1",
+      "policy_ref": "B.1",
+      "type": "diagnosis",
+      "text": "The member has moderately to severely active Crohn's disease or ulcerative colitis, as stated by the prescriber in the clinical record.",
+      "evidence_needed": [
+        "Prescriber statement in clinical record of moderately to severely active CD or UC"
+      ],
+      "lookback_months": null,
+      "logic": null,
+      "sub_criteria": []
+    },
+    {
+      "id": "C2",
+      "policy_ref": "B.2",
+      "type": "disease_activity",
+      "text": "Disease activity has been confirmed by direct visualization: an ileocolonoscopy, colonoscopy, or flexible sigmoidoscopy performed within the past 12 months that documents active mucosal inflammation. Laboratory markers (including fecal calprotectin, C-reactive protein, sedimentation rate) do not meet this requirement on their own, and neither do cross-sectional imaging studies.",
+      "evidence_needed": [
+        "Ileocolonoscopy, colonoscopy, or flexible sigmoidoscopy report dated within the past 12 months documenting active mucosal inflammation"
+      ],
+      "lookback_months": 12,
+      "logic": null,
+      "sub_criteria": []
+    },
+    {
+      "id": "C3",
+      "policy_ref": "B.3",
+      "type": "prescriber",
+      "text": "The prescriber is a gastroenterologist, or the prescriber has consulted with a gastroenterologist about this treatment.",
+      "evidence_needed": [
+        "Prescriber specialty",
+        "Documentation of consultation with a gastroenterologist if prescriber is not one"
+      ],
+      "lookback_months": null,
+      "logic": null,
+      "sub_criteria": []
+    },
+    {
+      "id": "C4",
+      "policy_ref": "B.4",
+      "type": "age",
+      "text": "The member is at least 18 years old on the date of the request.",
+      "evidence_needed": [
+        "Date of birth and request date"
+      ],
+      "lookback_months": null,
+      "logic": null,
+      "sub_criteria": []
+    },
+    {
+      "id": "C5",
+      "policy_ref": "B.5",
+      "type": "step_therapy",
+      "text": "The member has tried at least one prior therapy for CD or UC, shown by either (a) a conventional agent (oral or intravenous corticosteroid, budesonide, azathioprine, mercaptopurine, or methotrexate; for UC, an oral 5-aminosalicylate) that was stopped or found insufficient because of inadequate response, intolerance, or contraindication; or (b) a biologic or targeted synthetic agent for CD or UC (for example adalimumab, infliximab, vedolizumab, certolizumab, risankizumab, tofacitinib, upadacitinib, ozanimod) that was stopped or found insufficient because of inadequate response or intolerance, or a documented contraindication to TNF blockers. One is enough. The record should identify the drug, roughly when it was used, and why it was stopped. A trial of a TNF blocker is not required before ustekinumab.",
+      "evidence_needed": [
+        "Drug name",
+        "Approximate dates of use",
+        "Reason stopped or found insufficient (inadequate response, intolerance, or contraindication)",
+        "Documented TNF blocker contraindication if relied upon"
+      ],
+      "lookback_months": null,
+      "logic": null,
+      "sub_criteria": []
+    },
+    {
+      "id": "C6",
+      "policy_ref": "B.6",
+      "type": "safety_screen",
+      "text": "Tuberculosis has been screened with an interferon-gamma release assay or tuberculin skin test with a negative result in the past 6 months. An indeterminate or borderline result is not negative. A member with a positive screen qualifies only if the record shows a chest radiograph without active disease and that treatment for latent infection has begun.",
+      "evidence_needed": [
+        "IGRA or TST result with date within past 6 months",
+        "If positive: chest radiograph report without active disease",
+        "If positive: documentation that latent TB treatment has begun"
+      ],
+      "lookback_months": 6,
+      "logic": null,
+      "sub_criteria": []
+    },
+    {
+      "id": "C7",
+      "policy_ref": "B.7",
+      "type": "safety_screen",
+      "text": "Hepatitis B status is documented with results for both hepatitis B surface antigen and total hepatitis B core antibody (results may be of any age). A reactive result requires a documented plan for antiviral prophylaxis or monitoring. Surface antibody results and vaccination records are not sufficient. Pending orders are not sufficient.",
+      "evidence_needed": [
+        "HBsAg result",
+        "Total hepatitis B core antibody result",
+        "If reactive: documented plan for antiviral prophylaxis or monitoring"
+      ],
+      "lookback_months": null,
+      "logic": null,
+      "sub_criteria": []
+    },
+    {
+      "id": "C8",
+      "policy_ref": "B.8",
+      "type": "exclusion",
+      "text": "Ustekinumab will not be combined with any other biologic, JAK inhibitor, or S1P receptor modulator for CD or UC. When the member is switching from one of these, the record shows the earlier agent is stopping.",
+      "evidence_needed": [
+        "Current medication list",
+        "Documentation that earlier biologic, JAK inhibitor, or S1P modulator is being stopped if switching"
+      ],
+      "lookback_months": null,
+      "logic": null,
+      "sub_criteria": []
+    },
+    {
+      "id": "C9",
+      "policy_ref": "B.9",
+      "type": "dosing",
+      "text": "The requested regimen is the labeled adult regimen: one weight-based intravenous induction infusion (260 mg up to and including 55 kg; 390 mg above 55 kg up to and including 85 kg; 520 mg above 85 kg), then 90 mg subcutaneously every 8 weeks beginning 8 weeks after the infusion. A body weight recorded in the 90 days before the request must be on file.",
+      "evidence_needed": [
+        "Requested induction dose and maintenance dose/frequency",
+        "Body weight recorded within the 90 days before the request"
+      ],
+      "lookback_months": 3,
+      "logic": null,
+      "sub_criteria": []
+    }
+  ]
+}

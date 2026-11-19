@@ -1,0 +1,40 @@
+{
+  "seed": 100176,
+  "request_id": "PA-1177",
+  "patient_id": "PT-1177",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Marisol",
+  "last_name": "Castellano",
+  "sex": "F",
+  "dob": "1957-10-04",
+  "disease": "cd",
+  "weight_kg": 55.0,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_clean",
+    "C5b": "met_clean",
+    "C6": "stale",
+    "C7": "core_positive_with_plan",
+    "C8": "switch_with_stop",
+    "C9": "met_borderline",
+    "C10": "not_met_reference",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 2,
+    "provider": 1,
+    "medhx_format": "narrative",
+    "lab_vendor": 1,
+    "outside_quality": "clean",
+    "outside_practice": 1,
+    "distractors": 0,
+    "date_style": "iso",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

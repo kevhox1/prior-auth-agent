@@ -1,0 +1,81 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-1166
+case_type: multi_issue
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 100165, payer northfield). States: C2=met_scope, C5b=contraindication, C6=ordered_not_resulted,
+  C7=partial'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-1166/gi-note-2026-10-28
+      quote: Moderately to severely active ulcerative pancolitis.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-1166/flexible-sigmoidoscopy-2026-10-13
+      quote: 'Rectum to 36 cm: continuous inflammation with friability and erosions; Mayo endoscopic subscore 3.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-1166/gi-note-2026-10-28
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-1166/demographics-2026-02-07
+      quote: 'Date of birth: 02/06/1979'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-1166/medication-history-2026-10-26
+      quote: Inadequate response after 10 weeks
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-1166/gi-note-2026-10-28
+      quote: Anti-TNF agents are contraindicated because of multiple sclerosis (demyelinating disease).
+    note: 'synthetic state: contraindication'
+  C6:
+    status: INSUFFICIENT_EVIDENCE
+    missing_item: Result of the TB screening test (QuantiFERON) ordered 10/28/2026.
+    note: 'synthetic state: ordered_not_resulted'
+  C7:
+    status: INSUFFICIENT_EVIDENCE
+    evidence:
+    - doc_id: PT-1166/outside-records-2020-10-18
+      quote: HBsAg | Non-reactive | - | Non-reactive
+    missing_item: Total hepatitis B core antibody (anti-HBc) result.
+    note: 'synthetic state: partial'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-1166/medication-history-2026-10-26
+      quote: No current biologic, JAK inhibitor, or S1P receptor modulator.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-1166/gi-note-2026-10-28
+      quote: Weight 87.9 kg.
+    - doc_id: PT-1166/gi-note-2026-10-28
+      quote: 520 mg IV once (weight 87.9 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-1166/gi-note-2026-10-28
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+packet_outcome: GAPS_TO_CLOSE

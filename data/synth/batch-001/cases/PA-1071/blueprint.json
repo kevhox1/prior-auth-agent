@@ -1,0 +1,40 @@
+{
+  "seed": 100070,
+  "request_id": "PA-1071",
+  "patient_id": "PT-1071",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Mei",
+  "last_name": "Abara",
+  "sex": "F",
+  "dob": "1960-04-08",
+  "disease": "uc",
+  "weight_kg": 61.5,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_borderline",
+    "C5a": "met_buried",
+    "C5b": "met_clean",
+    "C6": "met_borderline",
+    "C7": "met_clean",
+    "C8": "met_clean",
+    "C9": "wrong_tier",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 1,
+    "provider": 2,
+    "medhx_format": "narrative",
+    "lab_vendor": 2,
+    "outside_quality": "ocr",
+    "outside_practice": 2,
+    "distractors": 2,
+    "date_style": "iso",
+    "copy_forward": true,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "seed": 100172,
+  "request_id": "PA-1173",
+  "patient_id": "PT-1173",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Peter",
+  "last_name": "Ekwueme",
+  "sex": "M",
+  "dob": "2001-10-04",
+  "disease": "cd",
+  "weight_kg": 97.1,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_clean",
+    "C5b": "met_clean",
+    "C6": "met_clean",
+    "C7": "missing",
+    "C8": "met_clean",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 0,
+    "provider": 0,
+    "medhx_format": "scattered",
+    "lab_vendor": 0,
+    "outside_quality": "ocr",
+    "outside_practice": 2,
+    "distractors": 0,
+    "date_style": "iso",
+    "copy_forward": true,
+    "requested_channel_wrong": true,
+    "expedited": false,
+    "injection": false
+  }
+}

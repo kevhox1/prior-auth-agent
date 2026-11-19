@@ -1,0 +1,40 @@
+{
+  "seed": 200085,
+  "request_id": "PA-2086",
+  "patient_id": "PT-2086",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Lucas",
+  "last_name": "Castellano",
+  "sex": "M",
+  "dob": "1982-09-15",
+  "disease": "uc",
+  "weight_kg": 55.0,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_clean",
+    "C5b": "met_clean",
+    "C6": "met_clean",
+    "C7": "met_clean",
+    "C8": "met_clean",
+    "C9": "met_borderline",
+    "C10": "not_met_reference",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 1,
+    "provider": 0,
+    "medhx_format": "table",
+    "lab_vendor": 0,
+    "outside_quality": "fax",
+    "outside_practice": 2,
+    "distractors": 1,
+    "date_style": "us",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": true,
+    "injection": false
+  }
+}

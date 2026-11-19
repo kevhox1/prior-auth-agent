@@ -1,0 +1,79 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-2577
+case_type: multi_issue
+policy_id: calder-ustekinumab-ibd
+description: 'Synthetic case (seed 200076, payer calder). States: C2=met_fcp, C5a=missing, C9=stale_weight'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-2577/gi-note-2026-11-06
+      quote: Moderately to severely active ulcerative pancolitis.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: NOT_MET
+    acceptable_alternates:
+    - INSUFFICIENT_EVIDENCE
+    missing_item: Ileocolonoscopy, colonoscopy or flexible sigmoidoscopy report from the past 12 months showing
+      active inflammation (calprotectin and CRP do not count under this policy).
+    note: 'synthetic state: met_fcp'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-2577/gi-note-2026-11-06
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-2577/demographics-2026-05-09
+      quote: 'Date of birth: 1989-07-26'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: INSUFFICIENT_EVIDENCE
+    acceptable_alternates:
+    - NOT_MET
+    missing_item: Documentation of a trial of at least one conventional therapy (corticosteroid, thiopurine, methotrexate,
+      or for UC an aminosalicylate) with dates and reason stopped.
+    note: 'synthetic state: missing'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-2577/medication-history-2026-11-06
+      quote: Intolerance (drug-induced lupus with positive anti-histone antibodies and arthralgias)
+    note: 'synthetic state: met_clean'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-2577/labs-2026-09-24
+      quote: QuantiFERON-TB Gold Plus | NEGATIVE | - | Negative
+    note: 'synthetic state: met_clean'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-2577/labs-2026-09-24
+      quote: HBsAg | Nonreactive | - | Nonreactive
+    - doc_id: PT-2577/labs-2026-09-24
+      quote: Anti-HBc (total) | Nonreactive | - | Nonreactive
+    note: 'synthetic state: met_clean'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-2577/medication-history-2026-11-06
+      quote: No biologic or small-molecule advanced therapy at present.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-2577/gi-note-2026-09-09
+      quote: Weight 102.7 kg.
+    - doc_id: PT-2577/gi-note-2026-11-06
+      quote: 520 mg IV once (weight 102.7 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: stale_weight'
+packet_outcome: NEEDS_PHYSICIAN

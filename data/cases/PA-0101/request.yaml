@@ -1,0 +1,12 @@
+request_id: PA-0101
+patient_id: PT-0101
+drug: evolocumab
+product: evolocumab
+dose: "140 mg subcutaneously every 2 weeks"
+indication_icd10: I25.10
+payer: calder
+plan_type: commercial
+ordering_provider: "Dr. M. Osei, Cardiology"
+urgency: standard
+request_date: 2026-11-18
+requested_start: 2026-12-01

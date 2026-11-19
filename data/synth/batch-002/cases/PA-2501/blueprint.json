@@ -1,0 +1,40 @@
+{
+  "seed": 200000,
+  "request_id": "PA-2501",
+  "patient_id": "PT-2501",
+  "request_date": "2026-11-18",
+  "payer": "calder",
+  "first_name": "Noor",
+  "last_name": "Quintero",
+  "sex": "F",
+  "dob": "2002-06-02",
+  "disease": "uc",
+  "weight_kg": 61.0,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_clean",
+    "C5b": "met_clean",
+    "C6": "met_clean",
+    "C7": "core_positive_with_plan",
+    "C8": "not_met_combo",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 1,
+    "provider": 2,
+    "medhx_format": "narrative",
+    "lab_vendor": 0,
+    "outside_quality": "fax",
+    "outside_practice": 1,
+    "distractors": 1,
+    "date_style": "us",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

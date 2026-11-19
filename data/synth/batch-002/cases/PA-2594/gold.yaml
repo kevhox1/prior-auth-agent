@@ -1,0 +1,86 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-2594
+case_type: multi_issue
+policy_id: calder-ustekinumab-ibd
+description: 'Synthetic case (seed 200093, payer calder). States: C2=met_scope, C5b=conflicting, C6=indeterminate'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-2594/gi-note-2026-10-29
+      quote: Moderately to severely active ulcerative pancolitis.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-2594/flexible-sigmoidoscopy-2026-09-17
+      quote: 'Rectum to 36 cm: continuous inflammation with friability and erosions; Mayo endoscopic subscore 3.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-2594/gi-note-2026-10-29
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-2594/demographics-2026-05-04
+      quote: 'Date of birth: 1969-12-11'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-2594/medication-history-2026-10-29
+      quote: Steroid dependent (flared each time the dose went below 15 mg)
+    - doc_id: PT-2594/medication-history-2026-10-29
+      quote: Inadequate response after 10 weeks
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: CONFLICTING
+    acceptable_alternates:
+    - NOT_MET
+    evidence:
+    - doc_id: PT-2594/medication-history-2026-10-29
+      quote: Per patient report, worked at first and then stopped working; outside records requested
+    - doc_id: PT-2594/outside-records-2025-03-18
+      quote: Biologic-naive. Infliximab was recommended 2024-08 but the patient declined.
+    missing_item: Records that settle whether infliximab was ever given (pharmacy claims or fill history, or prescribing
+      records).
+    note: 'synthetic state: conflicting'
+  C6:
+    status: INSUFFICIENT_EVIDENCE
+    evidence:
+    - doc_id: PT-2594/labs-2026-10-07
+      quote: QuantiFERON-TB Gold Plus              INDETERMINATE Negative
+    missing_item: Repeat TB screening (IGRA or TST) with a determinate result.
+    note: 'synthetic state: indeterminate'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-2594/labs-2026-10-07
+      quote: Hepatitis B surface antigen           Nonreactive   Nonreactive
+    - doc_id: PT-2594/labs-2026-10-07
+      quote: Hepatitis B core antibody, total      Nonreactive   Nonreactive
+    note: 'synthetic state: met_clean'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-2594/medication-history-2026-10-29
+      quote: No biologic or small-molecule advanced therapy at present.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-2594/gi-note-2026-10-29
+      quote: Weight 74.0 kg.
+    - doc_id: PT-2594/gi-note-2026-10-29
+      quote: 390 mg IV once (weight 74.0 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+packet_outcome: GAPS_TO_CLOSE

@@ -1,0 +1,82 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-2597
+case_type: multi_issue
+policy_id: calder-ustekinumab-ibd
+description: 'Synthetic case (seed 200096, payer calder). States: C2=met_scope, C5a=missing, C6=stale'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-2597/gi-note-2026-11-01
+      quote: Moderately to severely active ulcerative pancolitis.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-2597/flexible-sigmoidoscopy-2026-10-09
+      quote: 'Rectum to 27 cm: continuous inflammation with friability and erosions; Mayo endoscopic subscore 3.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-2597/gi-note-2026-11-01
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-2597/demographics-2026-07-21
+      quote: 'Date of birth: 1974-05-05'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: INSUFFICIENT_EVIDENCE
+    acceptable_alternates:
+    - NOT_MET
+    missing_item: Documentation of a trial of at least one conventional therapy (corticosteroid, thiopurine, methotrexate,
+      or for UC an aminosalicylate) with dates and reason stopped.
+    note: 'synthetic state: missing'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-2597/gi-note-2026-11-01
+      quote: 'Prior biologic: Adalimumab 40 mg every 2 weeks, 2023-07 to 2026-06. Reason stopped: intolerance (drug-induced
+        lupus with positive anti-histone antibodies and arthralgias).'
+    note: 'synthetic state: met_clean'
+  C6:
+    status: NOT_MET
+    acceptable_alternates:
+    - INSUFFICIENT_EVIDENCE
+    evidence:
+    - doc_id: PT-2597/labs-2025-10-13
+      quote: QUANTIFERON TB GOLD PLUS .......... NEGATIVE  (Negative)
+    missing_item: TB screening (IGRA or TST) with a negative result dated within 6 months of the request.
+    note: 'synthetic state: stale'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-2597/labs-2026-09-18
+      quote: HEP B SURFACE AG .................. Nonreactive  (Nonreactive)
+    - doc_id: PT-2597/labs-2026-09-18
+      quote: HEP B CORE AB TOTAL ............... Nonreactive  (Nonreactive)
+    note: 'synthetic state: met_clean'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-2597/gi-note-2026-11-01
+      quote: No biologic or small-molecule advanced therapy at present.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-2597/gi-note-2026-11-01
+      quote: Weight 53.9 kg.
+    - doc_id: PT-2597/gi-note-2026-11-01
+      quote: 260 mg IV once (weight 53.9 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+packet_outcome: NEEDS_PHYSICIAN

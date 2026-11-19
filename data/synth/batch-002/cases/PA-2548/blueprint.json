@@ -1,0 +1,40 @@
+{
+  "seed": 200047,
+  "request_id": "PA-2548",
+  "patient_id": "PT-2548",
+  "request_date": "2026-11-18",
+  "payer": "calder",
+  "first_name": "Andre",
+  "last_name": "Castellano",
+  "sex": "M",
+  "dob": "1964-01-08",
+  "disease": "cd",
+  "weight_kg": 111.6,
+  "states": {
+    "C1": "met_clean",
+    "C2": "stale_scope",
+    "C5a": "met_clean",
+    "C5b": "met_clean",
+    "C6": "positive_with_plan",
+    "C7": "met_clean",
+    "C8": "met_clean",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 1,
+    "provider": 1,
+    "medhx_format": "table",
+    "lab_vendor": 1,
+    "outside_quality": "clean",
+    "outside_practice": 2,
+    "distractors": 0,
+    "date_style": "iso",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

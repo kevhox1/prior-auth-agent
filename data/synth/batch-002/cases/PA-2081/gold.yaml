@@ -1,0 +1,86 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-2081
+case_type: buried_evidence
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 200080, payer northfield). States: C2=met_fcp, C5b=met_buried'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-2081/gi-note-2026-10-30
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-2081/labs-2026-09-07
+      quote: Fecal calprotectin                    772 ug/g      <50
+    note: 'synthetic state: met_fcp'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-2081/gi-note-2026-10-30
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-2081/demographics-2026-10-20
+      quote: 'Date of birth: 02/22/1976'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-2081/medication-history-2026-10-28
+      quote: Inadequate response after 6 months at a therapeutic metabolite level
+    - doc_id: PT-2081/medication-history-2026-10-28
+      quote: Intolerance (nausea and ALT above 3 times the upper limit of normal)
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-2081/outside-records-2026-09-18
+      quote: 'Infliximab 5 mg/kg IV every 8 weeks, 07/2023 to 08/2026. Reason stopped: intolerance (drug-induced
+        lupus with positive anti-histone antibodies and arthralgias).'
+    note: 'synthetic state: met_buried'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-2081/labs-2026-09-07
+      quote: QuantiFERON-TB Gold Plus              NEGATIVE      Negative
+    note: 'synthetic state: met_clean'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-2081/labs-2026-09-07
+      quote: Hepatitis B surface antigen           Nonreactive   Nonreactive
+    - doc_id: PT-2081/labs-2026-09-07
+      quote: Hepatitis B core antibody, total      Nonreactive   Nonreactive
+    note: 'synthetic state: met_clean'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-2081/medication-history-2026-10-28
+      quote: Not currently on any advanced therapy (biologic, JAK inhibitor, or S1P receptor modulator).
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-2081/gi-note-2026-10-30
+      quote: Weight 101.4 kg.
+    - doc_id: PT-2081/gi-note-2026-10-30
+      quote: 520 mg IV once (weight 101.4 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-2081/gi-note-2026-10-30
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+packet_outcome: READY_FOR_REVIEW

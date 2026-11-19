@@ -1,0 +1,81 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-3595
+case_type: multi_issue
+policy_id: calder-ustekinumab-ibd
+description: 'Synthetic case (seed 300094, payer calder). States: C2=crp_only, C6=missing, C7=core_positive_with_plan'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-3595/gi-note-2026-11-09
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: NOT_MET
+    acceptable_alternates:
+    - INSUFFICIENT_EVIDENCE
+    missing_item: Ileocolonoscopy, colonoscopy or flexible sigmoidoscopy report from the past 12 months showing
+      active inflammation (calprotectin and CRP do not count under this policy).
+    note: 'synthetic state: crp_only'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-3595/gi-note-2026-11-09
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-3595/demographics-2026-11-02
+      quote: 'Date of birth: 1952-09-10'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-3595/medication-history-2026-11-09
+      quote: 'Prednisone 40 mg daily, tapered, 2023-02 to 2023-06. Reason stopped: steroid dependent (flared each
+        time the dose went below 15 mg).'
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-3595/medication-history-2026-11-09
+      quote: 'Infliximab 5 mg/kg IV every 8 weeks, 2023-08 to 2026-09. Reason stopped: secondary loss of response;
+        trough 1.4 mcg/mL with antibodies 31 U/mL (reference <10).'
+    note: 'synthetic state: met_clean'
+  C6:
+    status: INSUFFICIENT_EVIDENCE
+    missing_item: TB screening (IGRA or TST) with a negative result dated within 6 months of the request.
+    note: 'synthetic state: missing'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-3595/gi-note-2026-11-09
+      quote: 'Resolved prior hepatitis B infection (HBsAg negative, anti-HBc positive, HBV DNA undetectable): monitor
+        HBV DNA and liver tests every 3 months on therapy.'
+    - doc_id: PT-3595/labs-2026-09-16
+      quote: HEP B SURFACE AG .................. Nonreactive  (Nonreactive)
+    - doc_id: PT-3595/labs-2026-09-16
+      quote: HEP B CORE AB TOTAL ............... Reactive  (Nonreactive)
+    note: 'synthetic state: core_positive_with_plan'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-3595/medication-history-2026-11-09
+      quote: No current biologic, JAK inhibitor, or S1P receptor modulator.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-3595/gi-note-2026-11-09
+      quote: Weight 48.6 kg.
+    - doc_id: PT-3595/gi-note-2026-11-09
+      quote: 260 mg IV once (weight 48.6 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+packet_outcome: NEEDS_PHYSICIAN

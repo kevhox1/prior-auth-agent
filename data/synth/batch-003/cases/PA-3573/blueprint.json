@@ -1,0 +1,40 @@
+{
+  "seed": 300072,
+  "request_id": "PA-3573",
+  "patient_id": "PT-3573",
+  "request_date": "2026-11-18",
+  "payer": "calder",
+  "first_name": "Leo",
+  "last_name": "Lindahl",
+  "sex": "M",
+  "dob": "2003-11-05",
+  "disease": "cd",
+  "weight_kg": 68.3,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_clean",
+    "C5b": "met_clean",
+    "C6": "indeterminate",
+    "C7": "met_clean",
+    "C8": "met_clean",
+    "C9": "stale_weight",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 2,
+    "provider": 1,
+    "medhx_format": "table",
+    "lab_vendor": 0,
+    "outside_quality": "clean",
+    "outside_practice": 1,
+    "distractors": 1,
+    "date_style": "iso",
+    "copy_forward": true,
+    "requested_channel_wrong": false,
+    "expedited": true,
+    "injection": false
+  }
+}

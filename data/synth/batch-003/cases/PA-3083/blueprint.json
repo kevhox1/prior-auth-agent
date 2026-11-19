@@ -1,0 +1,40 @@
+{
+  "seed": 300082,
+  "request_id": "PA-3083",
+  "patient_id": "PT-3083",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Felix",
+  "last_name": "Zielinski",
+  "sex": "M",
+  "dob": "1979-08-13",
+  "disease": "cd",
+  "weight_kg": 49.1,
+  "states": {
+    "C1": "met_clean",
+    "C2": "crp_only",
+    "C5a": "met_clean",
+    "C5b": "contraindication",
+    "C6": "met_clean",
+    "C7": "met_clean",
+    "C8": "met_clean",
+    "C9": "wrong_tier",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 1,
+    "provider": 2,
+    "medhx_format": "table",
+    "lab_vendor": 2,
+    "outside_quality": "clean",
+    "outside_practice": 3,
+    "distractors": 0,
+    "date_style": "us",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

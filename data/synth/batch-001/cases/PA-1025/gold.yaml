@@ -1,0 +1,89 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-1025
+case_type: multi_issue
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 100024, payer northfield). States: C2=met_borderline, C5a=met_buried, C5b=insurance_stop,
+  C7=decoy, C8=switch_with_stop'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-1025/gi-note-2026-11-04
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-1025/labs-2026-10-11
+      quote: Fecal calprotectin                    106 ug/g      <50
+    note: 'synthetic state: met_borderline'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-1025/gi-note-2026-11-04
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-1025/demographics-2026-08-28
+      quote: 'Date of birth: 10/23/1976'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-1025/outside-records-2022-04-18
+      quote: 'Azathioprine 2.5 mg/kg daily, 05/2021 to 07/2021. Reason stopped: intolerance (acute pancreatitis).'
+    - doc_id: PT-1025/outside-records-2022-04-18
+      quote: 'Prednisone 40 mg daily, tapered, 08/2021 to 03/2022. Reason stopped: steroid dependent (flared each
+        time the dose went below 15 mg).'
+    note: 'synthetic state: met_buried'
+  C5b:
+    status: NOT_MET
+    acceptable_alternates:
+    - INSUFFICIENT_EVIDENCE
+    evidence:
+    - doc_id: PT-1025/medication-history-2026-11-02
+      quote: 'Adalimumab 40 mg every 2 weeks, 07/2023 to 07/2026. Reason stopped: stopped when insurance coverage
+        changed; disease was controlled at the time.'
+    note: 'synthetic state: insurance_stop'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-1025/labs-2026-10-11
+      quote: QuantiFERON-TB Gold Plus              NEGATIVE      Negative
+    note: 'synthetic state: met_clean'
+  C7:
+    status: INSUFFICIENT_EVIDENCE
+    missing_item: HBsAg and total anti-HBc results (vaccination history and anti-HBs do not count).
+    note: 'synthetic state: decoy'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-1025/gi-note-2026-11-04
+      quote: Stop vedolizumab; ustekinumab induction on the date of the next scheduled vedolizumab infusion.
+    - doc_id: PT-1025/medication-history-2026-11-02
+      quote: Vedolizumab 300 mg IV every 8 weeks (last infusion 10/21/2026); to be discontinued when ustekinumab
+        starts.
+    note: 'synthetic state: switch_with_stop'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-1025/gi-note-2026-11-04
+      quote: Weight 51.7 kg.
+    - doc_id: PT-1025/gi-note-2026-11-04
+      quote: 260 mg IV once (weight 51.7 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-1025/gi-note-2026-11-04
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+packet_outcome: NEEDS_PHYSICIAN

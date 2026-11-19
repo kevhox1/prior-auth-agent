@@ -1,0 +1,40 @@
+{
+  "seed": 200008,
+  "request_id": "PA-2509",
+  "patient_id": "PT-2509",
+  "request_date": "2026-11-18",
+  "payer": "calder",
+  "first_name": "Mei",
+  "last_name": "Whitcombe",
+  "sex": "F",
+  "dob": "2001-02-23",
+  "disease": "uc",
+  "weight_kg": 48.0,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_clean",
+    "C5b": "insurance_stop",
+    "C6": "met_clean",
+    "C7": "met_clean",
+    "C8": "switch_with_stop",
+    "C9": "wrong_tier",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 0,
+    "provider": 1,
+    "medhx_format": "scattered",
+    "lab_vendor": 2,
+    "outside_quality": "clean",
+    "outside_practice": 0,
+    "distractors": 0,
+    "date_style": "iso",
+    "copy_forward": true,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

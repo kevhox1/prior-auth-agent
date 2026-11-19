@@ -1,0 +1,13 @@
+request_id: PA-3540
+patient_id: PT-3540
+drug: ustekinumab
+product: ustekinumab-ttwe
+dose: 520 mg IV once (weight 106.6 kg), then 90 mg SC every 8 weeks starting 8 weeks
+  after the IV dose
+indication_icd10: K50.80
+payer: calder
+plan_type: commercial
+ordering_provider: Dr. A. Rivera, Gastroenterology
+urgency: standard
+request_date: 2026-11-18
+requested_start: '2026-12-01'

@@ -1,0 +1,82 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-1082
+case_type: multi_issue
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 100081, payer northfield). States: C2=met_scope, C5b=not_met_naive, C6=met_borderline,
+  C7=missing'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-1082/gi-note-2026-10-25
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-1082/colonoscopy-2026-09-07
+      quote: 'Terminal ileum: multiple ulcers 0.5-2 cm with surrounding erythema and edema.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-1082/gi-note-2026-10-25
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-1082/demographics-2026-11-01
+      quote: 'Date of birth: 1966-09-19'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-1082/medication-history-2026-10-22
+      quote: Steroid dependent (flared each time the dose went below 15 mg)
+    - doc_id: PT-1082/medication-history-2026-10-22
+      quote: Inadequate response after 6 months at a therapeutic metabolite level
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: NOT_MET
+    evidence:
+    - doc_id: PT-1082/gi-note-2026-10-25
+      quote: Biologic-naive; no prior anti-TNF therapy.
+    note: 'synthetic state: not_met_naive'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-1082/labs-2025-11-26
+      quote: QuantiFERON-TB Gold Plus              NEGATIVE      Negative
+    note: 'synthetic state: met_borderline'
+  C7:
+    status: INSUFFICIENT_EVIDENCE
+    missing_item: Hepatitis B surface antigen (HBsAg) and total core antibody (anti-HBc) results.
+    note: 'synthetic state: missing'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-1082/medication-history-2026-10-22
+      quote: No current biologic, JAK inhibitor, or S1P receptor modulator.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-1082/gi-note-2026-10-25
+      quote: Weight 53.5 kg.
+    - doc_id: PT-1082/gi-note-2026-10-25
+      quote: 260 mg IV once (weight 53.5 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-1082/gi-note-2026-10-25
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+packet_outcome: NEEDS_PHYSICIAN

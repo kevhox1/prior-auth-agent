@@ -1,0 +1,93 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-1017
+case_type: conflicting
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 100016, payer northfield). States: C2=met_scope, C5b=conflicting'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-1017/gi-note-2026-11-10
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-1017/colonoscopy-2026-09-02
+      quote: 'Terminal ileum: multiple ulcers 0.3-1.5 cm with surrounding erythema and edema.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-1017/gi-note-2026-11-10
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-1017/demographics-2025-11-02
+      quote: 'Date of birth: 07/12/1993'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-1017/gi-note-2026-02-14
+      quote: 'History: Azathioprine 2.5 mg/kg daily, 04/2020 to 06/2020. Reason stopped: intolerance (acute pancreatitis).'
+    - doc_id: PT-1017/gi-note-2026-02-14
+      quote: 'History: Methotrexate 25 mg subcutaneously weekly, 07/2020 to 10/2020. Reason stopped: intolerance
+        (nausea and ALT above 3 times the upper limit of normal).'
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: CONFLICTING
+    acceptable_alternates:
+    - NOT_MET
+    evidence:
+    - doc_id: PT-1017/gi-note-2026-11-10
+      quote: 'Prior biologic: Infliximab 5 mg/kg IV every 8 weeks, 07/2023 to 07/2026. Reason stopped: per patient
+        report, worked at first and then stopped working; outside records requested.'
+    - doc_id: PT-1017/outside-records-2024-03-18
+      quote: Biologic-naive. Infliximab was recommended 07/2023 but the patient declined.
+    missing_item: Records that settle whether infliximab was ever given (pharmacy claims or fill history, or prescribing
+      records).
+    note: 'synthetic state: conflicting'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-1017/labs-2026-09-29
+      quote: QuantiFERON-TB Gold Plus | NEGATIVE | - | Negative
+    note: 'synthetic state: met_clean'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-1017/labs-2026-09-29
+      quote: HBsAg | Nonreactive | - | Nonreactive
+    - doc_id: PT-1017/labs-2026-09-29
+      quote: Anti-HBc (total) | Nonreactive | - | Nonreactive
+    note: 'synthetic state: met_clean'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-1017/gi-note-2026-11-10
+      quote: No current biologic, JAK inhibitor, or S1P receptor modulator.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-1017/gi-note-2026-11-10
+      quote: Weight 81.5 kg.
+    - doc_id: PT-1017/gi-note-2026-11-10
+      quote: 390 mg IV once (weight 81.5 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-1017/gi-note-2026-11-10
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+packet_outcome: NEEDS_PHYSICIAN

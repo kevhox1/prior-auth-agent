@@ -1,0 +1,89 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-1187
+case_type: buried_evidence
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 100186, payer northfield). States: C2=met_borderline, C5a=met_buried, C8=switch_with_stop'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-1187/gi-note-2026-10-30
+      quote: Moderately to severely active ulcerative pancolitis.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-1187/labs-2026-10-07
+      quote: Fecal calprotectin                    87 ug/g       <50
+    note: 'synthetic state: met_borderline'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-1187/gi-note-2026-10-30
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-1187/demographics-2026-02-12
+      quote: 'Date of birth: 1969-09-10'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-1187/outside-records-2021-09-18
+      quote: 'Methotrexate 25 mg subcutaneously weekly, 2020-08 to 2021-04. Reason stopped: intolerance (nausea
+        and ALT above 3 times the upper limit of normal).'
+    - doc_id: PT-1187/outside-records-2021-09-18
+      quote: 'Budesonide 9 mg daily, 2021-05 to 2021-08. Reason stopped: inadequate response after 10 weeks.'
+    note: 'synthetic state: met_buried'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-1187/medication-history-2026-10-27
+      quote: 'Primary non-response: no clinical improvement after induction and 8 weeks of maintenance'
+    note: 'synthetic state: met_clean'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-1187/labs-2026-10-07
+      quote: QuantiFERON-TB Gold Plus              NEGATIVE      Negative
+    note: 'synthetic state: met_clean'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-1187/labs-2026-10-07
+      quote: Hepatitis B surface antigen           Nonreactive   Nonreactive
+    - doc_id: PT-1187/labs-2026-10-07
+      quote: Hepatitis B core antibody, total      Nonreactive   Nonreactive
+    note: 'synthetic state: met_clean'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-1187/gi-note-2026-10-30
+      quote: Stop vedolizumab; ustekinumab induction on the date of the next scheduled vedolizumab infusion.
+    - doc_id: PT-1187/medication-history-2026-10-27
+      quote: Vedolizumab 300 mg IV every 8 weeks (last infusion 2026-10-26); to be discontinued when ustekinumab
+        starts.
+    note: 'synthetic state: switch_with_stop'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-1187/gi-note-2026-10-30
+      quote: Weight 93.7 kg.
+    - doc_id: PT-1187/gi-note-2026-10-30
+      quote: 520 mg IV once (weight 93.7 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-1187/gi-note-2026-10-30
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+packet_outcome: READY_FOR_REVIEW

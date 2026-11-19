@@ -1,0 +1,40 @@
+{
+  "seed": 200091,
+  "request_id": "PA-2592",
+  "patient_id": "PT-2592",
+  "request_date": "2026-11-18",
+  "payer": "calder",
+  "first_name": "Hannah",
+  "last_name": "Zielinski",
+  "sex": "F",
+  "dob": "2000-02-09",
+  "disease": "uc",
+  "weight_kg": 55.0,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_fcp",
+    "C5a": "met_buried",
+    "C5b": "met_buried",
+    "C6": "met_clean",
+    "C7": "met_clean",
+    "C8": "not_met_combo",
+    "C9": "met_borderline",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 0,
+    "provider": 2,
+    "medhx_format": "scattered",
+    "lab_vendor": 1,
+    "outside_quality": "ocr",
+    "outside_practice": 0,
+    "distractors": 0,
+    "date_style": "us",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

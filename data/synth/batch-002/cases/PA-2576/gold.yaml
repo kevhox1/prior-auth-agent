@@ -1,0 +1,77 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-2576
+case_type: multi_issue
+policy_id: calder-ustekinumab-ibd
+description: 'Synthetic case (seed 200075, payer calder). States: C2=met_scope, C5a=met_buried, C7=partial, C9=wrong_tier'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-2576/gi-note-2026-11-01
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-2576/colonoscopy-2026-10-03
+      quote: 'Terminal ileum: multiple ulcers 0.3-1.5 cm with surrounding erythema and edema.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-2576/gi-note-2026-11-01
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-2576/demographics-2025-10-26
+      quote: 'Date of birth: 06/12/2004'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-2576/outside-records-2024-07-18
+      quote: 'Budesonide 9 mg daily, 03/2024 to 06/2024. Reason stopped: inadequate response after 10 weeks.'
+    note: 'synthetic state: met_buried'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-2576/medication-history-2026-10-31
+      quote: 'Infliximab 5 mg/kg IV every 8 weeks, 08/2024 to 12/2024. Reason stopped: primary non-response: no
+        clinical improvement after induction and 8 weeks of maintenance.'
+    note: 'synthetic state: met_clean'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-2576/labs-2026-09-23
+      quote: QUANTIFERON TB GOLD PLUS .......... NEGATIVE  (Negative)
+    note: 'synthetic state: met_clean'
+  C7:
+    status: INSUFFICIENT_EVIDENCE
+    evidence:
+    - doc_id: PT-2576/outside-records-2024-07-18
+      quote: HEP B SURFACE AG .................. Non-reactive  (Non-reactive)
+    missing_item: Total hepatitis B core antibody (anti-HBc) result.
+    note: 'synthetic state: partial'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-2576/medication-history-2026-10-31
+      quote: Not currently on any advanced therapy (biologic, JAK inhibitor, or S1P receptor modulator).
+    note: 'synthetic state: met_clean'
+  C9:
+    status: NOT_MET
+    evidence:
+    - doc_id: PT-2576/gi-note-2026-11-01
+      quote: Weight 78.4 kg.
+    - doc_id: PT-2576/gi-note-2026-11-01
+      quote: 520 mg IV once (weight 78.4 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: wrong_tier'
+packet_outcome: NEEDS_PHYSICIAN

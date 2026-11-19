@@ -1,0 +1,79 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-3507
+case_type: missing_item
+policy_id: calder-ustekinumab-ibd
+description: 'Synthetic case (seed 300006, payer calder). States: C2=crp_only, C5a=met_buried'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-3507/gi-note-2026-11-05
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: INSUFFICIENT_EVIDENCE
+    acceptable_alternates:
+    - NOT_MET
+    missing_item: Ileocolonoscopy, colonoscopy or flexible sigmoidoscopy report from the past 12 months showing
+      active inflammation (calprotectin and CRP do not count under this policy).
+    note: 'synthetic state: crp_only'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-3507/gi-note-2026-11-05
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-3507/demographics-2026-05-23
+      quote: 'Date of birth: 08/01/1980'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-3507/outside-records-2021-12-18
+      quote: 'Methotrexate 25 mg subcutaneously weekly, 06/2021 to 11/2021. Reason stopped: intolerance (nausea
+        and ALT above 3 times the upper limit of normal).'
+    note: 'synthetic state: met_buried'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-3507/medication-history-2026-11-02
+      quote: 'Primary non-response: no clinical improvement after induction and 8 weeks of maintenance'
+    note: 'synthetic state: met_clean'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-3507/labs-2026-10-03
+      quote: QUANTIFERON TB GOLD PLUS .......... NEGATIVE  (Negative)
+    note: 'synthetic state: met_clean'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-3507/labs-2026-10-03
+      quote: HEP B SURFACE AG .................. Nonreactive  (Nonreactive)
+    - doc_id: PT-3507/labs-2026-10-03
+      quote: HEP B CORE AB TOTAL ............... Nonreactive  (Nonreactive)
+    note: 'synthetic state: met_clean'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-3507/medication-history-2026-11-02
+      quote: No current biologic, JAK inhibitor, or S1P receptor modulator.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-3507/gi-note-2026-11-05
+      quote: Weight 63.6 kg.
+    - doc_id: PT-3507/gi-note-2026-11-05
+      quote: 390 mg IV once (weight 63.6 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+packet_outcome: GAPS_TO_CLOSE

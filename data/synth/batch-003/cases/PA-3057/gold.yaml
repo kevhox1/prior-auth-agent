@@ -1,0 +1,86 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-3057
+case_type: missing_item
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 300056, payer northfield). States: C2=met_scope, C5a=missing, C5b=contraindication'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-3057/gi-note-2026-11-03
+      quote: Moderately to severely active ulcerative pancolitis.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-3057/labs-2026-10-20
+      quote: Calprotectin, fecal | 844 ug/g | H | <50
+    - doc_id: PT-3057/flexible-sigmoidoscopy-2026-09-04
+      quote: 'Rectum to 34 cm: continuous inflammation with friability and erosions; Mayo endoscopic subscore 3.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-3057/gi-note-2026-11-03
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-3057/demographics-2026-05-01
+      quote: 'Date of birth: 06/14/1983'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: INSUFFICIENT_EVIDENCE
+    acceptable_alternates:
+    - NOT_MET
+    missing_item: Documentation of a trial of at least one conventional therapy (corticosteroid, thiopurine, methotrexate,
+      or for UC an aminosalicylate) with dates and reason stopped.
+    note: 'synthetic state: missing'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-3057/gi-note-2026-11-03
+      quote: Anti-TNF agents are contraindicated because of multiple sclerosis (demyelinating disease).
+    note: 'synthetic state: contraindication'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-3057/labs-2026-10-20
+      quote: QuantiFERON-TB Gold Plus | NEGATIVE | - | Negative
+    note: 'synthetic state: met_clean'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-3057/labs-2026-10-20
+      quote: HBsAg | Nonreactive | - | Nonreactive
+    - doc_id: PT-3057/labs-2026-10-20
+      quote: Anti-HBc (total) | Nonreactive | - | Nonreactive
+    note: 'synthetic state: met_clean'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-3057/gi-note-2026-11-03
+      quote: No biologic or small-molecule advanced therapy at present.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-3057/gi-note-2026-11-03
+      quote: Weight 68.8 kg.
+    - doc_id: PT-3057/gi-note-2026-11-03
+      quote: 390 mg IV once (weight 68.8 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-3057/gi-note-2026-11-03
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+packet_outcome: GAPS_TO_CLOSE

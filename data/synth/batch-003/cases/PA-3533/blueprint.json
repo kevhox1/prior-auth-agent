@@ -1,0 +1,40 @@
+{
+  "seed": 300032,
+  "request_id": "PA-3533",
+  "patient_id": "PT-3533",
+  "request_date": "2026-11-18",
+  "payer": "calder",
+  "first_name": "Priya",
+  "last_name": "Kowalczyk",
+  "sex": "F",
+  "dob": "1978-03-14",
+  "disease": "cd",
+  "weight_kg": 55.0,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_clean",
+    "C5b": "insurance_stop",
+    "C6": "met_clean",
+    "C7": "met_clean",
+    "C8": "switch_with_stop",
+    "C9": "met_borderline",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 2,
+    "provider": 1,
+    "medhx_format": "table",
+    "lab_vendor": 2,
+    "outside_quality": "ocr",
+    "outside_practice": 2,
+    "distractors": 1,
+    "date_style": "iso",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

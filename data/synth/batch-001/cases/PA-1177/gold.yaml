@@ -1,0 +1,96 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-1177
+case_type: multi_issue
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 100176, payer northfield). States: C2=met_scope, C6=stale, C7=core_positive_with_plan,
+  C8=switch_with_stop, C9=met_borderline, C10=not_met_reference'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-1177/gi-note-2026-10-30
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-1177/labs-2026-09-07
+      quote: Calprotectin, fecal | 956 ug/g | H | <50
+    - doc_id: PT-1177/colonoscopy-2026-10-04
+      quote: 'Terminal ileum: multiple ulcers 0.5-2 cm with surrounding erythema and edema.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-1177/gi-note-2026-10-30
+      quote: Start ustekinumab (reference product)
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-1177/demographics-2026-03-07
+      quote: 'Date of birth: 1957-10-04'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-1177/medication-history-2026-10-26
+      quote: 'Azathioprine 2.5 mg/kg daily, 2022-12 to 2023-02. Reason stopped: intolerance (acute pancreatitis).'
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-1177/medication-history-2026-10-26
+      quote: 'Adalimumab 40 mg every 2 weeks, 2023-07 to 2026-07. Reason stopped: secondary loss of response; trough
+        0.9 mcg/mL with antibodies 52 U/mL (reference <10).'
+    note: 'synthetic state: met_clean'
+  C6:
+    status: NOT_MET
+    acceptable_alternates:
+    - INSUFFICIENT_EVIDENCE
+    evidence:
+    - doc_id: PT-1177/labs-2025-10-20
+      quote: QuantiFERON-TB Gold Plus | NEGATIVE | - | Negative
+    missing_item: TB screening dated within 12 months of the request (most recent is from 2025-10-20).
+    note: 'synthetic state: stale'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-1177/gi-note-2026-10-30
+      quote: 'Resolved prior hepatitis B infection (HBsAg negative, anti-HBc positive, HBV DNA undetectable): monitor
+        HBV DNA and liver tests every 3 months on therapy.'
+    - doc_id: PT-1177/labs-2026-09-07
+      quote: HBsAg | Nonreactive | - | Nonreactive
+    - doc_id: PT-1177/labs-2026-09-07
+      quote: Anti-HBc (total) | Reactive | A | Nonreactive
+    note: 'synthetic state: core_positive_with_plan'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-1177/gi-note-2026-10-30
+      quote: Stop vedolizumab; ustekinumab induction on the date of the next scheduled vedolizumab infusion.
+    - doc_id: PT-1177/medication-history-2026-10-26
+      quote: Vedolizumab 300 mg IV every 8 weeks (last infusion 2026-10-22); to be discontinued when ustekinumab
+        starts.
+    note: 'synthetic state: switch_with_stop'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-1177/gi-note-2026-10-30
+      quote: Weight 55.0 kg.
+    - doc_id: PT-1177/gi-note-2026-10-30
+      quote: 260 mg IV once (weight 55.0 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_borderline'
+  C10:
+    status: NOT_MET
+    evidence:
+    - doc_id: PT-1177/gi-note-2026-10-30
+      quote: Start ustekinumab (reference product)
+    note: 'synthetic state: not_met_reference'
+packet_outcome: NEEDS_PHYSICIAN

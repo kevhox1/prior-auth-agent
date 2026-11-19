@@ -1,0 +1,76 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-2558
+case_type: missing_item
+policy_id: calder-ustekinumab-ibd
+description: 'Synthetic case (seed 200057, payer calder). States: C2=met_scope, C6=missing, C9=met_borderline'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-2558/gi-note-2026-11-05
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-2558/colonoscopy-2026-09-05
+      quote: 'Terminal ileum: multiple ulcers 0.5-2 cm with surrounding erythema and edema.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-2558/gi-note-2026-11-05
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-2558/demographics-2025-11-09
+      quote: 'Date of birth: 1996-07-19'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-2558/medication-history-2026-11-03
+      quote: 'Budesonide 9 mg daily, 2021-05 to 2021-08. Reason stopped: inadequate response after 10 weeks.'
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-2558/medication-history-2026-11-03
+      quote: 'Adalimumab 40 mg every 2 weeks, 2023-07 to 2026-09. Reason stopped: secondary loss of response; trough
+        0.9 mcg/mL with antibodies 42 U/mL (reference <10).'
+    note: 'synthetic state: met_clean'
+  C6:
+    status: INSUFFICIENT_EVIDENCE
+    missing_item: TB screening (IGRA or TST) with a negative result dated within 6 months of the request.
+    note: 'synthetic state: missing'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-2558/labs-2026-09-20
+      quote: Hepatitis B surface antigen           Nonreactive   Nonreactive
+    - doc_id: PT-2558/labs-2026-09-20
+      quote: Hepatitis B core antibody, total      Nonreactive   Nonreactive
+    note: 'synthetic state: met_clean'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-2558/medication-history-2026-11-03
+      quote: No biologic or small-molecule advanced therapy at present.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-2558/gi-note-2026-11-05
+      quote: Weight 85.0 kg.
+    - doc_id: PT-2558/gi-note-2026-11-05
+      quote: 390 mg IV once (weight 85.0 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_borderline'
+packet_outcome: GAPS_TO_CLOSE

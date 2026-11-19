@@ -1,0 +1,40 @@
+{
+  "seed": 100017,
+  "request_id": "PA-1018",
+  "patient_id": "PT-1018",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Dana",
+  "last_name": "Brennagh",
+  "sex": "F",
+  "dob": "1992-09-27",
+  "disease": "cd",
+  "weight_kg": 106.5,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_clean",
+    "C5b": "met_clean",
+    "C6": "met_clean",
+    "C7": "met_clean",
+    "C8": "switch_with_stop",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 1,
+    "provider": 2,
+    "medhx_format": "table",
+    "lab_vendor": 0,
+    "outside_quality": "clean",
+    "outside_practice": 1,
+    "distractors": 1,
+    "date_style": "us",
+    "copy_forward": true,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": true
+  }
+}

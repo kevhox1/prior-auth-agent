@@ -1,0 +1,40 @@
+{
+  "seed": 100178,
+  "request_id": "PA-1179",
+  "patient_id": "PT-1179",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Olivia",
+  "last_name": "Halvorsen",
+  "sex": "F",
+  "dob": "1972-02-23",
+  "disease": "cd",
+  "weight_kg": 71.6,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_clean",
+    "C5b": "met_clean",
+    "C6": "met_clean",
+    "C7": "met_clean",
+    "C8": "not_met_combo",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 0,
+    "provider": 0,
+    "medhx_format": "table",
+    "lab_vendor": 1,
+    "outside_quality": "ocr",
+    "outside_practice": 3,
+    "distractors": 0,
+    "date_style": "us",
+    "copy_forward": true,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

@@ -1,0 +1,77 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-2524
+case_type: missing_item
+policy_id: calder-ustekinumab-ibd
+description: 'Synthetic case (seed 200023, payer calder). States: C2=met_scope, C5b=contraindication, C6=ordered_not_resulted'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-2524/gi-note-2026-11-07
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-2524/colonoscopy-2026-08-11
+      quote: 'Terminal ileum: multiple ulcers 0.3-1.5 cm with surrounding erythema and edema.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-2524/gi-note-2026-11-07
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-2524/demographics-2026-05-18
+      quote: 'Date of birth: 2006-05-08'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-2524/medication-history-2026-11-05
+      quote: Inadequate response after 10 weeks
+    - doc_id: PT-2524/medication-history-2026-11-05
+      quote: Inadequate response after 6 months at a therapeutic metabolite level
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-2524/gi-note-2026-11-07
+      quote: Anti-TNF agents are contraindicated because of multiple sclerosis (demyelinating disease).
+    note: 'synthetic state: contraindication'
+  C6:
+    status: INSUFFICIENT_EVIDENCE
+    missing_item: Result of the TB screening test (QuantiFERON) ordered 2026-11-07.
+    note: 'synthetic state: ordered_not_resulted'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-2524/labs-2026-09-19
+      quote: HEP B SURFACE AG .................. Nonreactive  (Nonreactive)
+    - doc_id: PT-2524/labs-2026-09-19
+      quote: HEP B CORE AB TOTAL ............... Nonreactive  (Nonreactive)
+    note: 'synthetic state: met_clean'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-2524/medication-history-2026-11-05
+      quote: No current biologic, JAK inhibitor, or S1P receptor modulator.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-2524/gi-note-2026-11-07
+      quote: Weight 52.6 kg.
+    - doc_id: PT-2524/gi-note-2026-11-07
+      quote: 260 mg IV once (weight 52.6 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+packet_outcome: GAPS_TO_CLOSE

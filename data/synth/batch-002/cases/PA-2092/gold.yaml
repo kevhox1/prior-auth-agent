@@ -1,0 +1,88 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-2092
+case_type: not_met
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 200091, payer northfield). States: C2=met_fcp, C5a=met_buried, C5b=met_buried,
+  C8=not_met_combo, C9=met_borderline'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-2092/gi-note-2026-10-28
+      quote: Moderately to severely active ulcerative pancolitis.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-2092/labs-2026-09-20
+      quote: Calprotectin, fecal | 615 ug/g | H | <50
+    note: 'synthetic state: met_fcp'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-2092/gi-note-2026-10-28
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-2092/demographics-2026-07-21
+      quote: 'Date of birth: 02/09/2000'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-2092/outside-records-2023-12-18
+      quote: 'Mercaptopurine 1.5 mg/kg daily, 05/2019 to 12/2019. Reason stopped: inadequate response after 6 months
+        at a therapeutic metabolite level.'
+    note: 'synthetic state: met_buried'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-2092/outside-records-2023-12-18
+      quote: 'Adalimumab 40 mg every 2 weeks, 07/2023 to 11/2023. Reason stopped: primary non-response: no clinical
+        improvement after induction and 8 weeks of maintenance.'
+    note: 'synthetic state: met_buried'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-2092/labs-2026-09-20
+      quote: QuantiFERON-TB Gold Plus | NEGATIVE | - | Negative
+    note: 'synthetic state: met_clean'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-2092/labs-2026-09-20
+      quote: HBsAg | Nonreactive | - | Nonreactive
+    - doc_id: PT-2092/labs-2026-09-20
+      quote: Anti-HBc (total) | Nonreactive | - | Nonreactive
+    note: 'synthetic state: met_clean'
+  C8:
+    status: NOT_MET
+    evidence:
+    - doc_id: PT-2092/gi-note-2026-10-28
+      quote: Upadacitinib 15 mg daily
+    - doc_id: PT-2092/gi-note-2026-10-28
+      quote: Continue upadacitinib 15 mg daily and add ustekinumab.
+    note: 'synthetic state: not_met_combo'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-2092/gi-note-2026-10-28
+      quote: Weight 55.0 kg.
+    - doc_id: PT-2092/gi-note-2026-10-28
+      quote: 260 mg IV once (weight 55.0 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_borderline'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-2092/gi-note-2026-10-28
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+packet_outcome: NEEDS_PHYSICIAN

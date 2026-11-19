@@ -1,0 +1,77 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-2515
+case_type: missing_item
+policy_id: calder-ustekinumab-ibd
+description: 'Synthetic case (seed 200014, payer calder). States: C2=met_scope, C7=missing, C9=met_borderline'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-2515/gi-note-2026-10-27
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-2515/colonoscopy-2026-09-25
+      quote: 'Terminal ileum: multiple ulcers 0.3-1.5 cm with surrounding erythema and edema.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-2515/gi-note-2026-10-27
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-2515/demographics-2026-10-22
+      quote: 'Date of birth: 08/24/2007'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-2515/medication-history-2026-10-27
+      quote: 'Methotrexate 25 mg subcutaneously weekly, 12/2021 to 03/2022. Reason stopped: intolerance (nausea
+        and ALT above 3 times the upper limit of normal).'
+    - doc_id: PT-2515/medication-history-2026-10-27
+      quote: 'Budesonide 9 mg daily, 04/2022 to 07/2022. Reason stopped: inadequate response after 10 weeks.'
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-2515/medication-history-2026-10-27
+      quote: 'Infliximab 5 mg/kg IV every 8 weeks, 07/2023 to 11/2023. Reason stopped: primary non-response: no
+        clinical improvement after induction and 8 weeks of maintenance.'
+    note: 'synthetic state: met_clean'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-2515/labs-2026-09-18
+      quote: QuantiFERON-TB Gold Plus              NEGATIVE      Negative
+    note: 'synthetic state: met_clean'
+  C7:
+    status: INSUFFICIENT_EVIDENCE
+    missing_item: Hepatitis B surface antigen (HBsAg) and total core antibody (anti-HBc) results.
+    note: 'synthetic state: missing'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-2515/medication-history-2026-10-27
+      quote: No biologic or small-molecule advanced therapy at present.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-2515/gi-note-2026-10-27
+      quote: Weight 55.0 kg.
+    - doc_id: PT-2515/gi-note-2026-10-27
+      quote: 260 mg IV once (weight 55.0 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_borderline'
+packet_outcome: GAPS_TO_CLOSE

@@ -1,0 +1,40 @@
+{
+  "seed": 100024,
+  "request_id": "PA-1025",
+  "patient_id": "PT-1025",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Tamsin",
+  "last_name": "Whitcombe",
+  "sex": "F",
+  "dob": "1976-10-23",
+  "disease": "cd",
+  "weight_kg": 51.7,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_borderline",
+    "C5a": "met_buried",
+    "C5b": "insurance_stop",
+    "C6": "met_clean",
+    "C7": "decoy",
+    "C8": "switch_with_stop",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 0,
+    "provider": 0,
+    "medhx_format": "narrative",
+    "lab_vendor": 0,
+    "outside_quality": "clean",
+    "outside_practice": 3,
+    "distractors": 1,
+    "date_style": "us",
+    "copy_forward": true,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

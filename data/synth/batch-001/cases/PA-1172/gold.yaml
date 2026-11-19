@@ -1,0 +1,85 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-1172
+case_type: buried_evidence
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 100171, payer northfield). States: C2=met_buried, C6=met_borderline'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-1172/gi-note-2026-10-27
+      quote: Moderately to severely active ulcerative pancolitis.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-1172/gi-note-2026-10-27
+      quote: Her calprotectin from 2026-08-28 came back at 615 ug/g (lab reference <50).
+    note: 'synthetic state: met_buried'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-1172/gi-note-2026-10-27
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-1172/demographics-2026-07-15
+      quote: 'Date of birth: 2006-11-26'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-1172/gi-note-2026-06-18
+      quote: 'History: Mercaptopurine 1.5 mg/kg daily, 2024-02 to 2024-08. Reason stopped: inadequate response after
+        6 months at a therapeutic metabolite level.'
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-1172/gi-note-2026-10-27
+      quote: 'Prior biologic: Infliximab 5 mg/kg IV every 8 weeks, 2024-10 to 2025-02. Reason stopped: primary non-response:
+        no clinical improvement after induction and 8 weeks of maintenance.'
+    note: 'synthetic state: met_clean'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-1172/labs-2025-11-29
+      quote: QuantiFERON-TB Gold Plus | NEGATIVE | - | Negative
+    note: 'synthetic state: met_borderline'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-1172/labs-2026-09-25
+      quote: HBsAg | Nonreactive | - | Nonreactive
+    - doc_id: PT-1172/labs-2026-09-25
+      quote: Anti-HBc (total) | Nonreactive | - | Nonreactive
+    note: 'synthetic state: met_clean'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-1172/gi-note-2026-10-27
+      quote: No biologic or small-molecule advanced therapy at present.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-1172/gi-note-2026-10-27
+      quote: Weight 68.9 kg.
+    - doc_id: PT-1172/gi-note-2026-10-27
+      quote: 390 mg IV once (weight 68.9 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-1172/gi-note-2026-10-27
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+packet_outcome: READY_FOR_REVIEW

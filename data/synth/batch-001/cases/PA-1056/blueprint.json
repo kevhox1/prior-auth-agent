@@ -1,0 +1,40 @@
+{
+  "seed": 100055,
+  "request_id": "PA-1056",
+  "patient_id": "PT-1056",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Ana",
+  "last_name": "Sorensen",
+  "sex": "F",
+  "dob": "2004-07-18",
+  "disease": "cd",
+  "weight_kg": 79.2,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_clean",
+    "C5b": "met_clean",
+    "C6": "met_clean",
+    "C7": "met_clean",
+    "C8": "switch_with_stop",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 0,
+    "provider": 2,
+    "medhx_format": "narrative",
+    "lab_vendor": 0,
+    "outside_quality": "clean",
+    "outside_practice": 0,
+    "distractors": 0,
+    "date_style": "iso",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

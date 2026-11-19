@@ -1,0 +1,40 @@
+{
+  "seed": 100190,
+  "request_id": "PA-1191",
+  "patient_id": "PT-1191",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Noor",
+  "last_name": "Nakashima",
+  "sex": "F",
+  "dob": "1974-01-19",
+  "disease": "cd",
+  "weight_kg": 67.2,
+  "states": {
+    "C1": "met_clean",
+    "C2": "stale_scope",
+    "C5a": "met_buried",
+    "C5b": "contraindication",
+    "C6": "met_clean",
+    "C7": "partial",
+    "C8": "switch_with_stop",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 2,
+    "provider": 1,
+    "medhx_format": "scattered",
+    "lab_vendor": 2,
+    "outside_quality": "clean",
+    "outside_practice": 0,
+    "distractors": 1,
+    "date_style": "iso",
+    "copy_forward": false,
+    "requested_channel_wrong": true,
+    "expedited": false,
+    "injection": false
+  }
+}

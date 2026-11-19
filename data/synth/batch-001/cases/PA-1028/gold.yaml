@@ -1,0 +1,84 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-1028
+case_type: multi_issue
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 100027, payer northfield). States: C2=crp_only, C5a=met_buried, C6=missing, C9=met_borderline'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-1028/gi-note-2026-10-28
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: INSUFFICIENT_EVIDENCE
+    acceptable_alternates:
+    - NOT_MET
+    missing_item: Endoscopy/colonoscopy report or fecal calprotectin result from the past 12 months (CRP alone does
+      not count).
+    note: 'synthetic state: crp_only'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-1028/gi-note-2026-10-28
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-1028/demographics-2026-01-26
+      quote: 'Date of birth: 1996-08-17'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-1028/outside-records-2021-09-18
+      quote: 'Methotrexate 25 mg subcutaneously weekly, 2021-04 to 2021-08. Reason stopped: intolerance (nausea
+        and ALT above 3 times the upper limit of normal).'
+    note: 'synthetic state: met_buried'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-1028/medication-history-2026-10-26
+      quote: 'Adalimumab 40 mg every 2 weeks, 2023-07 to 2026-06. Reason stopped: intolerance (drug-induced lupus
+        with positive anti-histone antibodies and arthralgias).'
+    note: 'synthetic state: met_clean'
+  C6:
+    status: INSUFFICIENT_EVIDENCE
+    missing_item: TB screening result (IGRA or TST) dated within 12 months of the request.
+    note: 'synthetic state: missing'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-1028/labs-2026-09-25
+      quote: HEP B SURFACE AG .................. Nonreactive  (Nonreactive)
+    - doc_id: PT-1028/labs-2026-09-25
+      quote: HEP B CORE AB TOTAL ............... Nonreactive  (Nonreactive)
+    note: 'synthetic state: met_clean'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-1028/medication-history-2026-10-26
+      quote: No current biologic, JAK inhibitor, or S1P receptor modulator.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-1028/gi-note-2026-10-28
+      quote: Weight 55.0 kg.
+    - doc_id: PT-1028/gi-note-2026-10-28
+      quote: 260 mg IV once (weight 55.0 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_borderline'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-1028/gi-note-2026-10-28
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+packet_outcome: GAPS_TO_CLOSE

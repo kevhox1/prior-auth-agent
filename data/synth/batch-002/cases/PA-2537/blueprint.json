@@ -1,0 +1,40 @@
+{
+  "seed": 200036,
+  "request_id": "PA-2537",
+  "patient_id": "PT-2537",
+  "request_date": "2026-11-18",
+  "payer": "calder",
+  "first_name": "Henry",
+  "last_name": "Fairbanks",
+  "sex": "M",
+  "dob": "1986-02-02",
+  "disease": "uc",
+  "weight_kg": 109.0,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_buried",
+    "C5a": "missing",
+    "C5b": "met_clean",
+    "C6": "met_clean",
+    "C7": "missing",
+    "C8": "switch_with_stop",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 0,
+    "provider": 1,
+    "medhx_format": "narrative",
+    "lab_vendor": 0,
+    "outside_quality": "clean",
+    "outside_practice": 2,
+    "distractors": 1,
+    "date_style": "iso",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "seed": 100161,
+  "request_id": "PA-1162",
+  "patient_id": "PT-1162",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Arjun",
+  "last_name": "Bellweather",
+  "sex": "M",
+  "dob": "1977-02-23",
+  "disease": "cd",
+  "weight_kg": 53.5,
+  "states": {
+    "C1": "met_clean",
+    "C2": "stale_scope",
+    "C5a": "met_clean",
+    "C5b": "insurance_stop",
+    "C6": "met_clean",
+    "C7": "core_positive_with_plan",
+    "C8": "met_clean",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 0,
+    "provider": 0,
+    "medhx_format": "scattered",
+    "lab_vendor": 0,
+    "outside_quality": "ocr",
+    "outside_practice": 1,
+    "distractors": 0,
+    "date_style": "us",
+    "copy_forward": true,
+    "requested_channel_wrong": true,
+    "expedited": false,
+    "injection": false
+  }
+}

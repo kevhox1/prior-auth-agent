@@ -1,0 +1,40 @@
+{
+  "seed": 100177,
+  "request_id": "PA-1178",
+  "patient_id": "PT-1178",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Olivia",
+  "last_name": "Lindahl",
+  "sex": "F",
+  "dob": "2005-04-07",
+  "disease": "cd",
+  "weight_kg": 104.9,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_buried",
+    "C5b": "contraindication",
+    "C6": "positive_with_plan",
+    "C7": "met_clean",
+    "C8": "switch_with_stop",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 2,
+    "provider": 0,
+    "medhx_format": "scattered",
+    "lab_vendor": 0,
+    "outside_quality": "fax",
+    "outside_practice": 2,
+    "distractors": 0,
+    "date_style": "us",
+    "copy_forward": true,
+    "requested_channel_wrong": false,
+    "expedited": true,
+    "injection": false
+  }
+}

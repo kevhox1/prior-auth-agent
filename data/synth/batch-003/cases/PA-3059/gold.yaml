@@ -1,0 +1,86 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-3059
+case_type: missing_item
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 300058, payer northfield). States: C2=met_scope, C7=partial'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-3059/gi-note-2026-10-28
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-3059/labs-2026-09-24
+      quote: Calprotectin, fecal | 310 ug/g | H | <50
+    - doc_id: PT-3059/colonoscopy-2026-09-27
+      quote: 'Terminal ileum: multiple ulcers 0.3-1.5 cm with surrounding erythema and edema.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-3059/gi-note-2026-10-28
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-3059/demographics-2026-08-06
+      quote: 'Date of birth: 04/20/1977'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-3059/medication-history-2026-10-25
+      quote: 'Methotrexate 25 mg subcutaneously weekly, 05/2023 to 09/2023. Reason stopped: intolerance (nausea
+        and ALT above 3 times the upper limit of normal).'
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-3059/medication-history-2026-10-25
+      quote: 'Infliximab 5 mg/kg IV every 8 weeks, 11/2023 to 03/2024. Reason stopped: primary non-response: no
+        clinical improvement after induction and 8 weeks of maintenance.'
+    note: 'synthetic state: met_clean'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-3059/labs-2026-09-24
+      quote: QuantiFERON-TB Gold Plus | NEGATIVE | - | Negative
+    note: 'synthetic state: met_clean'
+  C7:
+    status: INSUFFICIENT_EVIDENCE
+    evidence:
+    - doc_id: PT-3059/outside-records-2023-08-18
+      quote: HBsAg | Non-reactive | - | Non-reactive
+    missing_item: Total hepatitis B core antibody (anti-HBc) result.
+    note: 'synthetic state: partial'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-3059/medication-history-2026-10-25
+      quote: No current biologic, JAK inhibitor, or S1P receptor modulator.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-3059/gi-note-2026-10-28
+      quote: Weight 95.8 kg.
+    - doc_id: PT-3059/gi-note-2026-10-28
+      quote: 520 mg IV once (weight 95.8 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-3059/gi-note-2026-10-28
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+packet_outcome: GAPS_TO_CLOSE

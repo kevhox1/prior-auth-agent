@@ -1,0 +1,40 @@
+{
+  "seed": 200062,
+  "request_id": "PA-2063",
+  "patient_id": "PT-2063",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Noor",
+  "last_name": "Petrakis",
+  "sex": "F",
+  "dob": "1963-04-22",
+  "disease": "cd",
+  "weight_kg": 85.0,
+  "states": {
+    "C1": "met_clean",
+    "C2": "crp_only",
+    "C5a": "met_clean",
+    "C5b": "met_clean",
+    "C6": "met_clean",
+    "C7": "met_clean",
+    "C8": "switch_with_stop",
+    "C9": "met_borderline",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 1,
+    "provider": 0,
+    "medhx_format": "scattered",
+    "lab_vendor": 2,
+    "outside_quality": "fax",
+    "outside_practice": 3,
+    "distractors": 1,
+    "date_style": "iso",
+    "copy_forward": false,
+    "requested_channel_wrong": true,
+    "expedited": false,
+    "injection": false
+  }
+}

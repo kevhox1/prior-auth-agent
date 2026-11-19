@@ -1,0 +1,89 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-2061
+case_type: borderline
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 200060, payer northfield). States: C2=met_scope, C9=met_borderline'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-2061/gi-note-2026-10-26
+      quote: Moderately to severely active ulcerative pancolitis.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-2061/labs-2026-09-04
+      quote: CALPROTECTIN FECAL ................ 1225 ug/g  (<50)
+    - doc_id: PT-2061/flexible-sigmoidoscopy-2026-09-29
+      quote: 'Rectum to 33 cm: continuous inflammation with friability and erosions; Mayo endoscopic subscore 3.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-2061/gi-note-2026-10-26
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-2061/demographics-2026-01-27
+      quote: 'Date of birth: 02/25/1988'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-2061/medication-history-2026-10-23
+      quote: 'Methotrexate 25 mg subcutaneously weekly, 02/2024 to 06/2024. Reason stopped: intolerance (nausea
+        and ALT above 3 times the upper limit of normal).'
+    - doc_id: PT-2061/medication-history-2026-10-23
+      quote: 'Azathioprine 2.5 mg/kg daily, 07/2024 to 09/2024. Reason stopped: intolerance (acute pancreatitis).'
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-2061/medication-history-2026-10-23
+      quote: 'Adalimumab 40 mg every 2 weeks, 11/2024 to 07/2026. Reason stopped: intolerance (drug-induced lupus
+        with positive anti-histone antibodies and arthralgias).'
+    note: 'synthetic state: met_clean'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-2061/labs-2026-09-04
+      quote: QUANTIFERON TB GOLD PLUS .......... NEGATIVE  (Negative)
+    note: 'synthetic state: met_clean'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-2061/labs-2026-09-04
+      quote: HEP B SURFACE AG .................. Nonreactive  (Nonreactive)
+    - doc_id: PT-2061/labs-2026-09-04
+      quote: HEP B CORE AB TOTAL ............... Nonreactive  (Nonreactive)
+    note: 'synthetic state: met_clean'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-2061/medication-history-2026-10-23
+      quote: No current biologic, JAK inhibitor, or S1P receptor modulator.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-2061/gi-note-2026-10-26
+      quote: Weight 55.0 kg.
+    - doc_id: PT-2061/gi-note-2026-10-26
+      quote: 260 mg IV once (weight 55.0 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_borderline'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-2061/gi-note-2026-10-26
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+packet_outcome: READY_FOR_REVIEW

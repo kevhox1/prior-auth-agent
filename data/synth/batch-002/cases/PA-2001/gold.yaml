@@ -1,0 +1,94 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-2001
+case_type: not_met
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 200000, payer northfield). States: C2=met_scope, C7=core_positive_with_plan,
+  C8=not_met_combo'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-2001/gi-note-2026-11-09
+      quote: Moderately to severely active ulcerative pancolitis.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-2001/flexible-sigmoidoscopy-2026-10-13
+      quote: 'Rectum to 33 cm: continuous inflammation with friability and erosions; Mayo endoscopic subscore 2.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-2001/gi-note-2026-11-09
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-2001/demographics-2025-12-27
+      quote: 'Date of birth: 06/02/2002'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-2001/medication-history-2026-11-07
+      quote: 'Methotrexate 25 mg subcutaneously weekly, 08/2023 to 04/2024. Reason stopped: intolerance (nausea
+        and ALT above 3 times the upper limit of normal).'
+    - doc_id: PT-2001/medication-history-2026-11-07
+      quote: 'Mesalamine 4.8 g daily, 05/2024 to 09/2024. Reason stopped: inadequate response at full dose after
+        12 weeks.'
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-2001/medication-history-2026-11-07
+      quote: 'Adalimumab 40 mg every 2 weeks, 11/2024 to 03/2025. Reason stopped: primary non-response: no clinical
+        improvement after induction and 8 weeks of maintenance.'
+    note: 'synthetic state: met_clean'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-2001/labs-2026-09-27
+      quote: QuantiFERON-TB Gold Plus              NEGATIVE      Negative
+    note: 'synthetic state: met_clean'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-2001/gi-note-2026-11-09
+      quote: 'Resolved prior hepatitis B infection (HBsAg negative, anti-HBc positive, HBV DNA undetectable): monitor
+        HBV DNA and liver tests every 3 months on therapy.'
+    - doc_id: PT-2001/labs-2026-09-27
+      quote: Hepatitis B surface antigen           Nonreactive   Nonreactive
+    - doc_id: PT-2001/labs-2026-09-27
+      quote: Hepatitis B core antibody, total      Reactive      Nonreactive
+    note: 'synthetic state: core_positive_with_plan'
+  C8:
+    status: NOT_MET
+    evidence:
+    - doc_id: PT-2001/gi-note-2026-11-09
+      quote: Continue upadacitinib 15 mg daily and add ustekinumab.
+    - doc_id: PT-2001/medication-history-2026-11-07
+      quote: Upadacitinib 15 mg daily
+    note: 'synthetic state: not_met_combo'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-2001/gi-note-2026-11-09
+      quote: Weight 61.0 kg.
+    - doc_id: PT-2001/gi-note-2026-11-09
+      quote: 390 mg IV once (weight 61.0 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-2001/gi-note-2026-11-09
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+packet_outcome: NEEDS_PHYSICIAN

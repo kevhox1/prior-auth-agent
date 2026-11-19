@@ -1,0 +1,82 @@
+# GOLD - evaluation only.
+request_id: PA-0002
+case_type: missing_item
+policy_id: northfield-ustekinumab-ibd
+description: >
+  Ulcerative pancolitis with a complete step-therapy history. Hepatitis B screening
+  is incomplete: HBsAg is on file from 2024 outside records, but no total anti-HBc
+  result exists anywhere. Traps: hepatitis B vaccine series, a protective anti-HBs
+  level, and an anti-HBc order whose specimen was never collected. None of these satisfy C7.
+  Weight 58.2 kg sits just above the 55 kg tier line, so 390 mg is correct.
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+packet_outcome: GAPS_TO_CLOSE
+criteria:
+  C1:
+    status: MET
+    evidence:
+      - doc_id: PT-0002/gi-note-2026-10-30
+        quote: "Moderately to severely active ulcerative pancolitis."
+  C2:
+    status: MET
+    evidence:
+      - doc_id: PT-0002/flex-sig-2026-10-01
+        quote: "Mayo endoscopic subscore: 3."
+      - doc_id: PT-0002/labs-2026-10-06
+        quote: "Fecal calprotectin                    1150 ug/g     <50"
+  C3:
+    status: MET
+    evidence:
+      - doc_id: PT-0002/gi-note-2026-10-30
+        quote: "Start ustekinumab"
+  C4:
+    status: MET
+    evidence:
+      - doc_id: PT-0002/demographics-2026-10-30
+        quote: "Date of birth: 11/02/1984"
+    note: "Age 42 on 2026-11-18."
+  C5a:
+    status: MET
+    evidence:
+      - doc_id: PT-0002/medication-history-2026-10-30
+        quote: "Inadequate response at full dose; added rectal mesalamine 2023-10 without benefit"
+      - doc_id: PT-0002/medication-history-2026-10-30
+        quote: "Intolerance: acute pancreatitis (lipase 1,840)"
+  C5b:
+    status: MET
+    evidence:
+      - doc_id: PT-0002/medication-history-2026-10-30
+        quote: "Secondary loss of response; infliximab level undetectable with high-titer antibodies to infliximab"
+  C6:
+    status: MET
+    evidence:
+      - doc_id: PT-0002/labs-2026-10-06
+        quote: "QuantiFERON-TB Gold Plus              NEGATIVE"
+    note: "The 2024-08-21 outside QuantiFERON is outside the 12-month window; the 2026-10-06 result is the one that counts."
+  C7:
+    status: INSUFFICIENT_EVIDENCE
+    evidence:
+      - doc_id: PT-0002/outside-records-2024-08-21
+        quote: "HEPATITIS B SURF AG ............. Non-reactive"
+    missing_item: "Total hepatitis B core antibody (anti-HBc) result. Ordered 2026-10-30; specimen not yet collected as of 2026-11-14."
+    note: "HBsAg half is satisfied. Vaccination history and anti-HBs do not count (policy 3.7)."
+  C8:
+    status: MET
+    evidence:
+      - doc_id: PT-0002/medication-history-2026-10-30
+        quote: "No current biologic, JAK inhibitor, or S1P receptor modulator. Infliximab discontinued after 07/08/2026 infusion."
+  C10:
+    status: MET
+    evidence:
+      - doc_id: PT-0002/gi-note-2026-10-30
+        quote: "Start ustekinumab-ttwe (preferred biosimilar)"
+  C9:
+    status: MET
+    evidence:
+      - doc_id: PT-0002/gi-note-2026-10-30
+        quote: "Weight 58.2 kg."
+      - doc_id: PT-0002/gi-note-2026-10-30
+        quote: "390 mg IV once (weight 58.2 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the IV dose."

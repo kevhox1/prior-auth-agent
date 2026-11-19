@@ -1,0 +1,13 @@
+request_id: PA-1058
+patient_id: PT-1058
+drug: ustekinumab
+product: ustekinumab-ttwe
+dose: 520 mg IV once (weight 86.9 kg), then 90 mg SC every 8 weeks starting 8 weeks
+  after the IV dose
+indication_icd10: K51.00
+payer: northfield
+plan_type: commercial
+ordering_provider: Dr. S. Adeyemi, Gastroenterology
+urgency: standard
+request_date: 2026-11-18
+requested_start: '2026-12-01'

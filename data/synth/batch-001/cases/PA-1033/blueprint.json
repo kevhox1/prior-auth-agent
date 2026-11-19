@@ -1,0 +1,40 @@
+{
+  "seed": 100032,
+  "request_id": "PA-1033",
+  "patient_id": "PT-1033",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Grace",
+  "last_name": "Sorensen",
+  "sex": "F",
+  "dob": "1984-02-16",
+  "disease": "cd",
+  "weight_kg": 55.0,
+  "states": {
+    "C1": "not_met_mild",
+    "C2": "met_scope",
+    "C5a": "met_clean",
+    "C5b": "not_met_naive",
+    "C6": "met_clean",
+    "C7": "core_positive_with_plan",
+    "C8": "met_clean",
+    "C9": "met_borderline",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 1,
+    "provider": 1,
+    "medhx_format": "scattered",
+    "lab_vendor": 2,
+    "outside_quality": "ocr",
+    "outside_practice": 2,
+    "distractors": 1,
+    "date_style": "iso",
+    "copy_forward": true,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

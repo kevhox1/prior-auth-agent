@@ -1,0 +1,89 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-1003
+case_type: multi_issue
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 100002, payer northfield). States: C2=met_scope, C5a=missing, C5b=contraindication,
+  C7=partial, C8=switch_with_stop'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-1003/gi-note-2026-11-06
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-1003/labs-2026-10-21
+      quote: Calprotectin, fecal | 694 ug/g | H | <50
+    - doc_id: PT-1003/colonoscopy-2026-09-22
+      quote: 'Terminal ileum: multiple ulcers 0.5-2 cm with surrounding erythema and edema.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-1003/gi-note-2026-11-06
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-1003/demographics-2025-12-05
+      quote: 'Date of birth: 1988-02-23'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: INSUFFICIENT_EVIDENCE
+    acceptable_alternates:
+    - NOT_MET
+    missing_item: Documentation of a trial of at least one conventional therapy (corticosteroid, thiopurine, methotrexate,
+      or for UC an aminosalicylate) with dates and reason stopped.
+    note: 'synthetic state: missing'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-1003/gi-note-2026-11-06
+      quote: Anti-TNF agents are contraindicated because of multiple sclerosis (demyelinating disease).
+    note: 'synthetic state: contraindication'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-1003/labs-2026-10-21
+      quote: QuantiFERON-TB Gold Plus | NEGATIVE | - | Negative
+    note: 'synthetic state: met_clean'
+  C7:
+    status: INSUFFICIENT_EVIDENCE
+    evidence:
+    - doc_id: PT-1003/outside-records-2021-02-18
+      quote: HBsAg | Non-reactive | - | Non-reactive
+    missing_item: Total hepatitis B core antibody (anti-HBc) result.
+    note: 'synthetic state: partial'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-1003/gi-note-2026-11-06
+      quote: Stop vedolizumab; ustekinumab induction on the date of the next scheduled vedolizumab infusion.
+    - doc_id: PT-1003/medication-history-2026-11-06
+      quote: Vedolizumab 300 mg IV every 8 weeks (last infusion 2026-10-25); to be discontinued when ustekinumab
+        starts.
+    note: 'synthetic state: switch_with_stop'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-1003/gi-note-2026-11-06
+      quote: Weight 100.0 kg.
+    - doc_id: PT-1003/gi-note-2026-11-06
+      quote: 520 mg IV once (weight 100.0 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-1003/gi-note-2026-11-06
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+packet_outcome: GAPS_TO_CLOSE

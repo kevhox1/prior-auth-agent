@@ -1,0 +1,39 @@
+# Step 2 lookup: does this payer require PA for this drug, which policy governs,
+# which benefit pays for each phase of therapy, and the decision clock. Maintained
+# by staff from the payer's published drug lists; reviewed whenever a policy
+# version changes. Synthetic, fictional payers only.
+- payer: northfield
+  drug: ustekinumab
+  plan_types: [commercial]
+  pa_required: true
+  policy_id: northfield-ustekinumab-ibd
+  policy_version: "2026-10"
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+  decision_clock:
+    standard: "Standard review. Pharmacy-benefit phase: decision within 72 hours of a complete request (policy section 7). Medical-benefit phase: per plan documents."
+    expedited: "EXPEDITED review. Pharmacy-benefit phase: decision within 24 hours of a complete request (policy section 7). Prescriber statement of clinical urgency is required. Work this case first."
+- payer: calder
+  drug: ustekinumab
+  plan_types: [commercial]
+  pa_required: true
+  policy_id: calder-ustekinumab-ibd
+  policy_version: "2026-07"
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+  decision_clock:
+    standard: "Standard review. Pharmacy benefit: 72 hours; medical benefit: 7 calendar days, from receipt of all required information (policy section E)."
+    expedited: "URGENT review. Decision within 24 hours of receiving all required information (policy section E). Prescriber attestation of urgency is required. Work this case first."
+- payer: calder
+  drug: evolocumab
+  plan_types: [commercial]
+  pa_required: true
+  policy_id: calder-evolocumab-lipids
+  policy_version: "2026-09"
+  channels:
+    sc_injection: pharmacy
+  decision_clock:
+    standard: "Standard review. Pharmacy benefit: decision within 72 hours of receiving all required information (policy section E)."
+    expedited: "URGENT review. Decision within 24 hours of receiving all required information (policy section E). Prescriber attestation of urgency is required. Work this case first."

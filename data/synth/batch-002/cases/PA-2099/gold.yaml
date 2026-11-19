@@ -1,0 +1,85 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-2099
+case_type: clean
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 200098, payer northfield). States: C2=met_scope'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-2099/gi-note-2026-11-09
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-2099/colonoscopy-2026-08-24
+      quote: 'Terminal ileum: multiple ulcers 0.5-2 cm with surrounding erythema and edema.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-2099/gi-note-2026-11-09
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-2099/demographics-2026-06-30
+      quote: 'Date of birth: 01/23/1987'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-2099/medication-history-2026-11-06
+      quote: Intolerance (nausea and ALT above 3 times the upper limit of normal)
+    - doc_id: PT-2099/medication-history-2026-11-06
+      quote: Intolerance (acute pancreatitis)
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-2099/medication-history-2026-11-06
+      quote: Secondary loss of response; trough 0.9 mcg/mL with antibodies 27 U/mL (reference <10)
+    note: 'synthetic state: met_clean'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-2099/labs-2026-10-13
+      quote: QuantiFERON-TB Gold Plus | NEGATIVE | - | Negative
+    note: 'synthetic state: met_clean'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-2099/labs-2026-10-13
+      quote: HBsAg | Nonreactive | - | Nonreactive
+    - doc_id: PT-2099/labs-2026-10-13
+      quote: Anti-HBc (total) | Nonreactive | - | Nonreactive
+    note: 'synthetic state: met_clean'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-2099/medication-history-2026-11-06
+      quote: No current biologic, JAK inhibitor, or S1P receptor modulator.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-2099/gi-note-2026-11-09
+      quote: Weight 93.9 kg.
+    - doc_id: PT-2099/gi-note-2026-11-09
+      quote: 520 mg IV once (weight 93.9 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-2099/gi-note-2026-11-09
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+packet_outcome: READY_FOR_REVIEW

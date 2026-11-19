@@ -1,0 +1,40 @@
+{
+  "seed": 100082,
+  "request_id": "PA-1083",
+  "patient_id": "PT-1083",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Lucas",
+  "last_name": "Lindahl",
+  "sex": "M",
+  "dob": "1963-08-26",
+  "disease": "cd",
+  "weight_kg": 79.3,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_borderline",
+    "C5a": "met_clean",
+    "C5b": "conflicting",
+    "C6": "met_clean",
+    "C7": "missing",
+    "C8": "met_clean",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 2,
+    "provider": 2,
+    "medhx_format": "narrative",
+    "lab_vendor": 0,
+    "outside_quality": "ocr",
+    "outside_practice": 1,
+    "distractors": 0,
+    "date_style": "us",
+    "copy_forward": true,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

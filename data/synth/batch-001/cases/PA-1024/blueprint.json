@@ -1,0 +1,40 @@
+{
+  "seed": 100023,
+  "request_id": "PA-1024",
+  "patient_id": "PT-1024",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Grace",
+  "last_name": "Bellweather",
+  "sex": "F",
+  "dob": "1993-10-13",
+  "disease": "cd",
+  "weight_kg": 55.0,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_borderline",
+    "C5a": "met_clean",
+    "C5b": "met_buried",
+    "C6": "met_clean",
+    "C7": "met_clean",
+    "C8": "not_met_combo",
+    "C9": "met_borderline",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 0,
+    "provider": 2,
+    "medhx_format": "scattered",
+    "lab_vendor": 2,
+    "outside_quality": "ocr",
+    "outside_practice": 0,
+    "distractors": 0,
+    "date_style": "us",
+    "copy_forward": false,
+    "requested_channel_wrong": true,
+    "expedited": false,
+    "injection": false
+  }
+}

@@ -1,0 +1,88 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-1192
+case_type: borderline
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 100191, payer northfield). States: C2=met_scope, C8=switch_with_stop'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-1192/gi-note-2026-11-08
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-1192/labs-2026-10-21
+      quote: Calprotectin, fecal | 655 ug/g | H | <50
+    - doc_id: PT-1192/colonoscopy-2026-10-02
+      quote: 'Terminal ileum: multiple ulcers 1-3 cm with surrounding erythema and edema.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-1192/gi-note-2026-11-08
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-1192/demographics-2026-04-10
+      quote: 'Date of birth: 01/14/1960'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-1192/medication-history-2026-11-07
+      quote: Inadequate response after 10 weeks
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-1192/medication-history-2026-11-07
+      quote: 'Primary non-response: no clinical improvement after induction and 8 weeks of maintenance'
+    note: 'synthetic state: met_clean'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-1192/labs-2026-10-21
+      quote: QuantiFERON-TB Gold Plus | NEGATIVE | - | Negative
+    note: 'synthetic state: met_clean'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-1192/labs-2026-10-21
+      quote: HBsAg | Nonreactive | - | Nonreactive
+    - doc_id: PT-1192/labs-2026-10-21
+      quote: Anti-HBc (total) | Nonreactive | - | Nonreactive
+    note: 'synthetic state: met_clean'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-1192/gi-note-2026-11-08
+      quote: Stop vedolizumab; ustekinumab induction on the date of the next scheduled vedolizumab infusion.
+    - doc_id: PT-1192/medication-history-2026-11-07
+      quote: Vedolizumab 300 mg IV every 8 weeks (last infusion 10/13/2026); to be discontinued when ustekinumab
+        starts.
+    note: 'synthetic state: switch_with_stop'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-1192/gi-note-2026-11-08
+      quote: Weight 95.8 kg.
+    - doc_id: PT-1192/gi-note-2026-11-08
+      quote: 520 mg IV once (weight 95.8 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-1192/gi-note-2026-11-08
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+packet_outcome: READY_FOR_REVIEW

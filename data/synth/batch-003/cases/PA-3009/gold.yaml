@@ -1,0 +1,90 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-3009
+case_type: borderline
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 300008, payer northfield). States: C2=met_scope, C9=met_borderline'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-3009/gi-note-2026-10-29
+      quote: Moderately to severely active ulcerative pancolitis.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-3009/labs-2026-10-01
+      quote: Fecal calprotectin                    860 ug/g      <50
+    - doc_id: PT-3009/flexible-sigmoidoscopy-2026-08-28
+      quote: 'Rectum to 36 cm: continuous inflammation with friability and erosions; Mayo endoscopic subscore 3.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-3009/gi-note-2026-10-29
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-3009/demographics-2026-03-21
+      quote: 'Date of birth: 1972-07-24'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-3009/medication-history-2026-10-26
+      quote: 'Mercaptopurine 1.5 mg/kg daily, 2024-06 to 2025-01. Reason stopped: inadequate response after 6 months
+        at a therapeutic metabolite level.'
+    - doc_id: PT-3009/medication-history-2026-10-26
+      quote: 'Methotrexate 25 mg subcutaneously weekly, 2025-02 to 2025-05. Reason stopped: intolerance (nausea
+        and ALT above 3 times the upper limit of normal).'
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-3009/medication-history-2026-10-26
+      quote: 'Infliximab 5 mg/kg IV every 8 weeks, 2025-07 to 2026-07. Reason stopped: intolerance (drug-induced
+        lupus with positive anti-histone antibodies and arthralgias).'
+    note: 'synthetic state: met_clean'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-3009/labs-2026-10-01
+      quote: QuantiFERON-TB Gold Plus              NEGATIVE      Negative
+    note: 'synthetic state: met_clean'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-3009/labs-2026-10-01
+      quote: Hepatitis B surface antigen           Nonreactive   Nonreactive
+    - doc_id: PT-3009/labs-2026-10-01
+      quote: Hepatitis B core antibody, total      Nonreactive   Nonreactive
+    note: 'synthetic state: met_clean'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-3009/medication-history-2026-10-26
+      quote: Not currently on any advanced therapy (biologic, JAK inhibitor, or S1P receptor modulator).
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-3009/gi-note-2026-10-29
+      quote: Weight 55.0 kg.
+    - doc_id: PT-3009/gi-note-2026-10-29
+      quote: 260 mg IV once (weight 55.0 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_borderline'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-3009/gi-note-2026-10-29
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+packet_outcome: READY_FOR_REVIEW

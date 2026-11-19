@@ -1,0 +1,94 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-3071
+case_type: multi_issue
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 300070, payer northfield). States: C2=met_scope, C5b=conflicting, C8=not_met_combo'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-3071/gi-note-2026-11-06
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-3071/labs-2026-09-05
+      quote: Fecal calprotectin                    407 ug/g      <50
+    - doc_id: PT-3071/colonoscopy-2026-09-18
+      quote: 'Terminal ileum: multiple ulcers 0.5-2 cm with surrounding erythema and edema.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-3071/gi-note-2026-11-06
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-3071/demographics-2025-11-12
+      quote: 'Date of birth: 10/23/1957'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-3071/gi-note-2026-05-25
+      quote: 'History: Azathioprine 2.5 mg/kg daily, 04/2019 to 06/2019. Reason stopped: intolerance (acute pancreatitis).'
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: CONFLICTING
+    acceptable_alternates:
+    - NOT_MET
+    evidence:
+    - doc_id: PT-3071/gi-note-2026-11-06
+      quote: 'Prior biologic: Adalimumab 40 mg every 2 weeks, 07/2023 to 05/2026. Reason stopped: per patient report,
+        worked at first and then stopped working; outside records requested.'
+    - doc_id: PT-3071/outside-records-2023-12-18
+      quote: Biologic-naive. Adalimumab was recommended 07/2023 but the patient declined.
+    missing_item: Records that settle whether adalimumab was ever given (pharmacy claims or fill history, or prescribing
+      records).
+    note: 'synthetic state: conflicting'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-3071/labs-2026-09-05
+      quote: QuantiFERON-TB Gold Plus              NEGATIVE      Negative
+    note: 'synthetic state: met_clean'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-3071/labs-2026-09-05
+      quote: Hepatitis B surface antigen           Nonreactive   Nonreactive
+    - doc_id: PT-3071/labs-2026-09-05
+      quote: Hepatitis B core antibody, total      Nonreactive   Nonreactive
+    note: 'synthetic state: met_clean'
+  C8:
+    status: NOT_MET
+    evidence:
+    - doc_id: PT-3071/gi-note-2026-11-06
+      quote: Upadacitinib 15 mg daily
+    - doc_id: PT-3071/gi-note-2026-11-06
+      quote: Continue upadacitinib 15 mg daily and add ustekinumab.
+    note: 'synthetic state: not_met_combo'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-3071/gi-note-2026-11-06
+      quote: Weight 94.5 kg.
+    - doc_id: PT-3071/gi-note-2026-11-06
+      quote: 520 mg IV once (weight 94.5 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-3071/gi-note-2026-11-06
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+packet_outcome: NEEDS_PHYSICIAN

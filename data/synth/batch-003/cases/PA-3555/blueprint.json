@@ -1,0 +1,40 @@
+{
+  "seed": 300054,
+  "request_id": "PA-3555",
+  "patient_id": "PT-3555",
+  "request_date": "2026-11-18",
+  "payer": "calder",
+  "first_name": "Mei",
+  "last_name": "Vasquez",
+  "sex": "F",
+  "dob": "1959-06-27",
+  "disease": "uc",
+  "weight_kg": 100.4,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_fcp",
+    "C5a": "met_clean",
+    "C5b": "met_clean",
+    "C6": "met_clean",
+    "C7": "met_clean",
+    "C8": "switch_with_stop",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 0,
+    "provider": 0,
+    "medhx_format": "table",
+    "lab_vendor": 2,
+    "outside_quality": "fax",
+    "outside_practice": 3,
+    "distractors": 1,
+    "date_style": "iso",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

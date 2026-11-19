@@ -1,0 +1,40 @@
+{
+  "seed": 200028,
+  "request_id": "PA-2029",
+  "patient_id": "PT-2029",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Malik",
+  "last_name": "Fairbanks",
+  "sex": "M",
+  "dob": "1993-06-19",
+  "disease": "cd",
+  "weight_kg": 110.7,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_clean",
+    "C5b": "met_clean",
+    "C6": "met_clean",
+    "C7": "met_clean",
+    "C8": "met_clean",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 1,
+    "provider": 2,
+    "medhx_format": "table",
+    "lab_vendor": 2,
+    "outside_quality": "clean",
+    "outside_practice": 3,
+    "distractors": 0,
+    "date_style": "iso",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

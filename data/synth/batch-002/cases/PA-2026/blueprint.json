@@ -1,0 +1,40 @@
+{
+  "seed": 200025,
+  "request_id": "PA-2026",
+  "patient_id": "PT-2026",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Eli",
+  "last_name": "Whitcombe",
+  "sex": "M",
+  "dob": "1966-05-15",
+  "disease": "cd",
+  "weight_kg": 52.7,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_clean",
+    "C5b": "met_clean",
+    "C6": "missing",
+    "C7": "core_positive_with_plan",
+    "C8": "switch_with_stop",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 1,
+    "provider": 1,
+    "medhx_format": "table",
+    "lab_vendor": 2,
+    "outside_quality": "clean",
+    "outside_practice": 1,
+    "distractors": 2,
+    "date_style": "us",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

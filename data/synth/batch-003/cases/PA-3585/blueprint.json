@@ -1,0 +1,40 @@
+{
+  "seed": 300084,
+  "request_id": "PA-3585",
+  "patient_id": "PT-3585",
+  "request_date": "2026-11-18",
+  "payer": "calder",
+  "first_name": "Tamsin",
+  "last_name": "Abara",
+  "sex": "F",
+  "dob": "1995-10-19",
+  "disease": "uc",
+  "weight_kg": 91.9,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_clean",
+    "C5b": "met_clean",
+    "C6": "met_clean",
+    "C7": "met_clean",
+    "C8": "met_clean",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 0,
+    "provider": 0,
+    "medhx_format": "scattered",
+    "lab_vendor": 1,
+    "outside_quality": "clean",
+    "outside_practice": 3,
+    "distractors": 0,
+    "date_style": "us",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "seed": 200075,
+  "request_id": "PA-2076",
+  "patient_id": "PT-2076",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Rosa",
+  "last_name": "Whitcombe",
+  "sex": "F",
+  "dob": "2004-06-12",
+  "disease": "cd",
+  "weight_kg": 78.4,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_buried",
+    "C5b": "met_clean",
+    "C6": "met_clean",
+    "C7": "partial",
+    "C8": "met_clean",
+    "C9": "wrong_tier",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 1,
+    "provider": 1,
+    "medhx_format": "narrative",
+    "lab_vendor": 2,
+    "outside_quality": "clean",
+    "outside_practice": 0,
+    "distractors": 1,
+    "date_style": "us",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

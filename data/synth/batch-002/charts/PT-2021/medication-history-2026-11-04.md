@@ -1,0 +1,17 @@
+---
+doc_id: PT-2021/medication-history-2026-11-04
+doc_type: medication_history
+date: 2026-11-04
+author: R. Patel, RN, Harbor Digestive Associates
+title: IBD medication history
+---
+IBD MEDICATION HISTORY - reconciled 11/04/2026
+
+| Medication | Dose | Start | Stop | Reason stopped |
+|---|---|---|---|---|
+| Adalimumab | 40 mg every 2 weeks | 08/2023 | 08/2026 | Stopped when insurance coverage changed; disease was controlled at the time |
+
+CURRENT MEDICATIONS
+- No biologic or small-molecule advanced therapy at present.
+- Budesonide 9 mg daily (bridge)
+- Ferrous sulfate 325 mg daily

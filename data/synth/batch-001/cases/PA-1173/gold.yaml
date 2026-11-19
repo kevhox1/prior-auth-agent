@@ -1,0 +1,85 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-1173
+case_type: missing_item
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 100172, payer northfield). States: C2=met_scope, C7=missing'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+  requested_channel_ok: false
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-1173/gi-note-2026-11-09
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-1173/colonoscopy-2026-09-20
+      quote: 'Terminal ileum: multiple ulcers 0.3-1.5 cm with surrounding erythema and edema.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-1173/gi-note-2026-11-09
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-1173/demographics-2026-07-02
+      quote: 'Date of birth: 2001-10-04'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-1173/gi-note-2026-03-29
+      quote: 'History: Prednisone 40 mg daily, tapered, 2023-02 to 2023-07. Reason stopped: steroid dependent (flared
+        each time the dose went below 15 mg).'
+    - doc_id: PT-1173/gi-note-2026-03-29
+      quote: 'History: Methotrexate 25 mg subcutaneously weekly, 2023-08 to 2023-12. Reason stopped: intolerance
+        (nausea and ALT above 3 times the upper limit of normal).'
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-1173/gi-note-2026-11-09
+      quote: 'Prior biologic: Adalimumab 40 mg every 2 weeks, 2024-02 to 2026-05. Reason stopped: intolerance (drug-induced
+        lupus with positive anti-histone antibodies and arthralgias).'
+    note: 'synthetic state: met_clean'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-1173/labs-2026-09-06
+      quote: QuantiFERON-TB Gold Plus              NEGATIVE      Negative
+    note: 'synthetic state: met_clean'
+  C7:
+    status: INSUFFICIENT_EVIDENCE
+    missing_item: Hepatitis B surface antigen (HBsAg) and total core antibody (anti-HBc) results.
+    note: 'synthetic state: missing'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-1173/gi-note-2026-11-09
+      quote: No biologic or small-molecule advanced therapy at present.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-1173/gi-note-2026-11-09
+      quote: Weight 97.1 kg.
+    - doc_id: PT-1173/gi-note-2026-11-09
+      quote: 520 mg IV once (weight 97.1 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-1173/gi-note-2026-11-09
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+packet_outcome: GAPS_TO_CLOSE

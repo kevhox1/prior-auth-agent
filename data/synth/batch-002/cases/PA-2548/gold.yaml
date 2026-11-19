@@ -1,0 +1,85 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-2548
+case_type: not_met
+policy_id: calder-ustekinumab-ibd
+description: 'Synthetic case (seed 200047, payer calder). States: C2=stale_scope, C6=positive_with_plan'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-2548/gi-note-2026-11-10
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: NOT_MET
+    acceptable_alternates:
+    - INSUFFICIENT_EVIDENCE
+    evidence:
+    - doc_id: PT-2548/colonoscopy-2025-04-18
+      quote: 'Terminal ileum: multiple ulcers 0.3-1.5 cm with surrounding erythema and edema.'
+    missing_item: Ileocolonoscopy, colonoscopy or flexible sigmoidoscopy report from the past 12 months showing
+      active inflammation (calprotectin and CRP do not count under this policy).
+    note: 'synthetic state: stale_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-2548/gi-note-2026-11-10
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-2548/demographics-2026-01-01
+      quote: 'Date of birth: 1964-01-08'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-2548/medication-history-2026-11-10
+      quote: Intolerance (nausea and ALT above 3 times the upper limit of normal)
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-2548/medication-history-2026-11-10
+      quote: Secondary loss of response; trough 0.9 mcg/mL with antibodies 60 U/mL (reference <10)
+    note: 'synthetic state: met_clean'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-2548/gi-note-2026-11-10
+      quote: 'Latent TB infection: rifampin daily for 4 months, started 2026-10-01.'
+    - doc_id: PT-2548/labs-2026-09-21
+      quote: QuantiFERON-TB Gold Plus | POSITIVE | A | Negative
+    - doc_id: PT-2548/chest-xray-2026-09-24
+      quote: 'IMPRESSION: No evidence of active pulmonary tuberculosis.'
+    note: 'synthetic state: positive_with_plan'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-2548/labs-2026-09-21
+      quote: HBsAg | Nonreactive | - | Nonreactive
+    - doc_id: PT-2548/labs-2026-09-21
+      quote: Anti-HBc (total) | Nonreactive | - | Nonreactive
+    note: 'synthetic state: met_clean'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-2548/medication-history-2026-11-10
+      quote: No biologic or small-molecule advanced therapy at present.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-2548/gi-note-2026-11-10
+      quote: Weight 111.6 kg.
+    - doc_id: PT-2548/gi-note-2026-11-10
+      quote: 520 mg IV once (weight 111.6 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+packet_outcome: NEEDS_PHYSICIAN

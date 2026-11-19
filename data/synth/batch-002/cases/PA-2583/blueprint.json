@@ -1,0 +1,40 @@
+{
+  "seed": 200082,
+  "request_id": "PA-2583",
+  "patient_id": "PT-2583",
+  "request_date": "2026-11-18",
+  "payer": "calder",
+  "first_name": "Kwame",
+  "last_name": "Vasquez",
+  "sex": "M",
+  "dob": "1991-04-28",
+  "disease": "cd",
+  "weight_kg": 78.7,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_buried",
+    "C5a": "met_clean",
+    "C5b": "not_met_naive",
+    "C6": "missing",
+    "C7": "core_positive_with_plan",
+    "C8": "met_clean",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 2,
+    "provider": 2,
+    "medhx_format": "scattered",
+    "lab_vendor": 2,
+    "outside_quality": "fax",
+    "outside_practice": 3,
+    "distractors": 0,
+    "date_style": "us",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

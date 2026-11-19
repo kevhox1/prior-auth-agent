@@ -1,0 +1,40 @@
+{
+  "seed": 200079,
+  "request_id": "PA-2580",
+  "patient_id": "PT-2580",
+  "request_date": "2026-11-18",
+  "payer": "calder",
+  "first_name": "Dev",
+  "last_name": "Abara",
+  "sex": "M",
+  "dob": "1984-03-01",
+  "disease": "uc",
+  "weight_kg": 100.9,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_buried",
+    "C5a": "met_clean",
+    "C5b": "met_clean",
+    "C6": "met_borderline",
+    "C7": "missing",
+    "C8": "met_clean",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 1,
+    "provider": 0,
+    "medhx_format": "scattered",
+    "lab_vendor": 0,
+    "outside_quality": "fax",
+    "outside_practice": 0,
+    "distractors": 1,
+    "date_style": "us",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

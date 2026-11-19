@@ -1,0 +1,40 @@
+{
+  "seed": 300017,
+  "request_id": "PA-3518",
+  "patient_id": "PT-3518",
+  "request_date": "2026-11-18",
+  "payer": "calder",
+  "first_name": "Teresa",
+  "last_name": "Marchetti",
+  "sex": "F",
+  "dob": "1971-07-19",
+  "disease": "uc",
+  "weight_kg": 97.3,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "missing",
+    "C5b": "conflicting",
+    "C6": "met_clean",
+    "C7": "met_clean",
+    "C8": "met_clean",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 0,
+    "provider": 1,
+    "medhx_format": "scattered",
+    "lab_vendor": 2,
+    "outside_quality": "ocr",
+    "outside_practice": 1,
+    "distractors": 1,
+    "date_style": "iso",
+    "copy_forward": false,
+    "requested_channel_wrong": true,
+    "expedited": false,
+    "injection": false
+  }
+}

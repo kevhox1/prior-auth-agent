@@ -1,0 +1,86 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-3525
+case_type: multi_issue
+policy_id: calder-ustekinumab-ibd
+description: 'Synthetic case (seed 300024, payer calder). States: C2=met_scope, C5b=conflicting, C6=missing, C9=met_borderline'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-3525/gi-note-2026-11-06
+      quote: Moderately to severely active ulcerative pancolitis.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-3525/flexible-sigmoidoscopy-2026-08-12
+      quote: 'Rectum to 27 cm: continuous inflammation with friability and erosions; Mayo endoscopic subscore 2.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-3525/gi-note-2026-11-06
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-3525/demographics-2025-11-16
+      quote: 'Date of birth: 01/03/1974'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-3525/medication-history-2026-11-06
+      quote: 'Methotrexate 25 mg subcutaneously weekly, 06/2019 to 02/2020. Reason stopped: intolerance (nausea
+        and ALT above 3 times the upper limit of normal).'
+    - doc_id: PT-3525/medication-history-2026-11-06
+      quote: 'Mesalamine 4.8 g daily, 03/2020 to 07/2020. Reason stopped: inadequate response at full dose after
+        12 weeks.'
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: CONFLICTING
+    acceptable_alternates:
+    - NOT_MET
+    evidence:
+    - doc_id: PT-3525/medication-history-2026-11-06
+      quote: 'Adalimumab 40 mg every 2 weeks, 07/2023 to 09/2026. Reason stopped: per patient report, worked at
+        first and then stopped working; outside records requested.'
+    - doc_id: PT-3525/outside-records-2024-02-18
+      quote: Biologic-naive. Adalimumab was recommended 07/2023 but the patient declined.
+    missing_item: Records that settle whether adalimumab was ever given (pharmacy claims or fill history, or prescribing
+      records).
+    note: 'synthetic state: conflicting'
+  C6:
+    status: INSUFFICIENT_EVIDENCE
+    missing_item: TB screening (IGRA or TST) with a negative result dated within 6 months of the request.
+    note: 'synthetic state: missing'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-3525/labs-2026-09-10
+      quote: HBsAg | Nonreactive | - | Nonreactive
+    - doc_id: PT-3525/labs-2026-09-10
+      quote: Anti-HBc (total) | Nonreactive | - | Nonreactive
+    note: 'synthetic state: met_clean'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-3525/medication-history-2026-11-06
+      quote: No current biologic, JAK inhibitor, or S1P receptor modulator.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-3525/gi-note-2026-11-06
+      quote: Weight 55.0 kg.
+    - doc_id: PT-3525/gi-note-2026-11-06
+      quote: 260 mg IV once (weight 55.0 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_borderline'
+packet_outcome: GAPS_TO_CLOSE

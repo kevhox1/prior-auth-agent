@@ -1,0 +1,92 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-1174
+case_type: buried_evidence
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 100173, payer northfield). States: C2=met_scope, C5a=met_buried, C5b=met_buried,
+  C6=met_borderline, C7=core_positive_with_plan'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+  requested_channel_ok: false
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-1174/gi-note-2026-11-01
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-1174/colonoscopy-2026-08-29
+      quote: 'Terminal ileum: multiple ulcers 0.5-2 cm with surrounding erythema and edema.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-1174/gi-note-2026-11-01
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-1174/demographics-2026-08-15
+      quote: 'Date of birth: 1975-01-10'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-1174/outside-records-2026-10-18
+      quote: 'Budesonide 9 mg daily, 2019-06 to 2019-09. Reason stopped: inadequate response after 10 weeks.'
+    - doc_id: PT-1174/outside-records-2026-10-18
+      quote: 'Mercaptopurine 1.5 mg/kg daily, 2019-10 to 2020-05. Reason stopped: inadequate response after 6 months
+        at a therapeutic metabolite level.'
+    note: 'synthetic state: met_buried'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-1174/outside-records-2026-10-18
+      quote: 'Adalimumab 40 mg every 2 weeks, 2023-07 to 2026-09. Reason stopped: intolerance (drug-induced lupus
+        with positive anti-histone antibodies and arthralgias).'
+    note: 'synthetic state: met_buried'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-1174/labs-2025-11-29
+      quote: QuantiFERON-TB Gold Plus | NEGATIVE | - | Negative
+    note: 'synthetic state: met_borderline'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-1174/gi-note-2026-11-01
+      quote: 'Resolved prior hepatitis B infection (HBsAg negative, anti-HBc positive, HBV DNA undetectable): monitor
+        HBV DNA and liver tests every 3 months on therapy.'
+    - doc_id: PT-1174/labs-2026-09-26
+      quote: HBsAg | Nonreactive | - | Nonreactive
+    - doc_id: PT-1174/labs-2026-09-26
+      quote: Anti-HBc (total) | Reactive | A | Nonreactive
+    note: 'synthetic state: core_positive_with_plan'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-1174/medication-history-2026-10-28
+      quote: No current biologic, JAK inhibitor, or S1P receptor modulator.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-1174/gi-note-2026-11-01
+      quote: Weight 47.0 kg.
+    - doc_id: PT-1174/gi-note-2026-11-01
+      quote: 260 mg IV once (weight 47.0 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-1174/gi-note-2026-11-01
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+packet_outcome: READY_FOR_REVIEW

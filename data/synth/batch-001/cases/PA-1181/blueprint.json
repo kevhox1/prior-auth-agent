@@ -1,0 +1,40 @@
+{
+  "seed": 100180,
+  "request_id": "PA-1181",
+  "patient_id": "PT-1181",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Teresa",
+  "last_name": "Vasquez",
+  "sex": "F",
+  "dob": "1998-06-05",
+  "disease": "cd",
+  "weight_kg": 58.7,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_borderline",
+    "C5a": "met_clean",
+    "C5b": "met_clean",
+    "C6": "met_clean",
+    "C7": "met_clean",
+    "C8": "met_clean",
+    "C9": "wrong_tier",
+    "C10": "not_met_reference",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 1,
+    "provider": 1,
+    "medhx_format": "table",
+    "lab_vendor": 1,
+    "outside_quality": "clean",
+    "outside_practice": 1,
+    "distractors": 1,
+    "date_style": "us",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

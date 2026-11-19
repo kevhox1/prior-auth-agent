@@ -1,0 +1,93 @@
+# GOLD - evaluation only.
+request_id: PA-0003
+case_type: conflicting
+policy_id: northfield-ustekinumab-ibd
+description: >
+  Ileal Crohn's, transferred from an outside practice. Harbor's intake medication
+  history and both Harbor notes record adalimumab 2024-01 to 2025-06 with loss of
+  response, sourced only from patient report. The outside transfer summary, dated
+  2025-09-12 (after that supposed course), says the patient is biologic-naive and
+  declined adalimumab. Policy 3.5 says inconsistent records send the request to
+  clinical review rather than approval on the reported history, so C5b is
+  CONFLICTING. A later Harbor note (2026-01-20) records the outside records as
+  scanned but repeats the adalimumab history without reconciling it. Everything else is met.
+  The agent must state the conflict and stop. It must not pick a side and must not
+  suggest a different drug.
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+packet_outcome: NEEDS_PHYSICIAN
+criteria:
+  C1:
+    status: MET
+    evidence:
+      - doc_id: PT-0003/gi-note-2026-10-28
+        quote: "Moderately to severely active ileal Crohn's disease."
+  C2:
+    status: MET
+    evidence:
+      - doc_id: PT-0003/colonoscopy-2026-10-20
+        quote: "Terminal ileum: multiple ulcers 0.5 to 2 cm over the distal 20 cm, with nodularity and erythema."
+      - doc_id: PT-0003/labs-2026-10-14
+        quote: "Fecal calprotectin                    410 ug/g      <50"
+  C3:
+    status: MET
+    evidence:
+      - doc_id: PT-0003/gi-note-2026-10-28
+        quote: "Start ustekinumab"
+  C4:
+    status: MET
+    evidence:
+      - doc_id: PT-0003/demographics-2025-10-14
+        quote: "Date of birth: 07/30/1979"
+    note: "Age 47 on 2026-11-18."
+  C5a:
+    status: MET
+    evidence:
+      - doc_id: PT-0003/medication-history-2025-10-14
+        quote: "Intolerance: ALT more than 3 times upper limit of normal"
+      - doc_id: PT-0003/outside-records-2025-09-12
+        quote: "d/c'd for\n   transaminitis (ALT 168; ref <40)."
+    note: "Both sources agree on methotrexate intolerance and steroid dependence."
+  C5b:
+    status: CONFLICTING
+    acceptable_alternates: [NOT_MET]
+    evidence:
+      - doc_id: PT-0003/medication-history-2025-10-14
+        quote: "Per patient: worked at first, then symptoms came back; stopped by prior GI"
+      - doc_id: PT-0003/outside-records-2025-09-12
+        quote: "Biologic-naive. Adalimumab recommended 01/2024; pt\n   declined at that time (cost concerns, needle aversion)."
+    missing_item: "Records that settle whether adalimumab was ever dispensed (pharmacy claims or fill history, or Lakeshore prescribing records)."
+    note: "Harbor history is patient-reported only. The outside summary postdates the claimed course. NOT_MET is a defensible payer-side reading; it routes the same way (NEEDS_PHYSICIAN) and is not a false MET."
+  C6:
+    status: MET
+    evidence:
+      - doc_id: PT-0003/labs-2026-10-14
+        quote: "QuantiFERON-TB Gold Plus              NEGATIVE"
+  C7:
+    status: MET
+    evidence:
+      - doc_id: PT-0003/labs-2026-10-14
+        quote: "Hepatitis B surface antigen           Nonreactive"
+      - doc_id: PT-0003/labs-2026-10-14
+        quote: "Hepatitis B core antibody, total      Nonreactive"
+  C8:
+    status: MET
+    evidence:
+      - doc_id: PT-0003/gi-note-2026-10-28
+        quote: "Not on any biologic, JAK inhibitor, or S1P receptor modulator."
+    note: "Not on any advanced therapy under either version of the history."
+  C10:
+    status: MET
+    evidence:
+      - doc_id: PT-0003/gi-note-2026-10-28
+        quote: "Start ustekinumab-aekn (preferred biosimilar)"
+  C9:
+    status: MET
+    evidence:
+      - doc_id: PT-0003/gi-note-2026-10-28
+        quote: "Weight 92.4 kg."
+      - doc_id: PT-0003/gi-note-2026-10-28
+        quote: "520 mg IV once (weight 92.4 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the IV dose."

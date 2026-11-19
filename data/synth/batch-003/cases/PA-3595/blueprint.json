@@ -1,0 +1,40 @@
+{
+  "seed": 300094,
+  "request_id": "PA-3595",
+  "patient_id": "PT-3595",
+  "request_date": "2026-11-18",
+  "payer": "calder",
+  "first_name": "Kenji",
+  "last_name": "Dunmore",
+  "sex": "M",
+  "dob": "1952-09-10",
+  "disease": "cd",
+  "weight_kg": 48.6,
+  "states": {
+    "C1": "met_clean",
+    "C2": "crp_only",
+    "C5a": "met_clean",
+    "C5b": "met_clean",
+    "C6": "missing",
+    "C7": "core_positive_with_plan",
+    "C8": "met_clean",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 0,
+    "provider": 1,
+    "medhx_format": "narrative",
+    "lab_vendor": 2,
+    "outside_quality": "clean",
+    "outside_practice": 3,
+    "distractors": 2,
+    "date_style": "iso",
+    "copy_forward": true,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

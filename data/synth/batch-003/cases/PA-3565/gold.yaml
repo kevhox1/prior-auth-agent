@@ -1,0 +1,83 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-3565
+case_type: multi_issue
+policy_id: calder-ustekinumab-ibd
+description: 'Synthetic case (seed 300064, payer calder). States: C1=not_met_mild, C2=met_scope, C5a=missing, C6=positive_with_plan'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: NOT_MET
+    evidence:
+    - doc_id: PT-3565/gi-note-2026-11-01
+      quote: Mildly active ulcerative pancolitis.
+    note: 'synthetic state: not_met_mild'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-3565/flexible-sigmoidoscopy-2026-08-16
+      quote: 'Rectum to 36 cm: continuous inflammation with friability and erosions; Mayo endoscopic subscore 2.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-3565/gi-note-2026-11-01
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-3565/demographics-2025-10-17
+      quote: 'Date of birth: 02/27/1990'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: INSUFFICIENT_EVIDENCE
+    acceptable_alternates:
+    - NOT_MET
+    missing_item: Documentation of a trial of at least one conventional therapy (corticosteroid, thiopurine, methotrexate,
+      or for UC an aminosalicylate) with dates and reason stopped.
+    note: 'synthetic state: missing'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-3565/gi-note-2026-11-01
+      quote: 'Prior biologic: Adalimumab 40 mg every 2 weeks, 06/2024 to 05/2026. Reason stopped: intolerance (drug-induced
+        lupus with positive anti-histone antibodies and arthralgias).'
+    note: 'synthetic state: met_clean'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-3565/gi-note-2026-11-01
+      quote: 'Latent TB infection: rifampin daily for 4 months, started 10/15/2026.'
+    - doc_id: PT-3565/labs-2026-10-10
+      quote: QuantiFERON-TB Gold Plus | POSITIVE | A | Negative
+    - doc_id: PT-3565/chest-xray-2026-10-13
+      quote: 'IMPRESSION: No evidence of active pulmonary tuberculosis.'
+    note: 'synthetic state: positive_with_plan'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-3565/labs-2026-10-10
+      quote: HBsAg | Nonreactive | - | Nonreactive
+    - doc_id: PT-3565/labs-2026-10-10
+      quote: Anti-HBc (total) | Nonreactive | - | Nonreactive
+    note: 'synthetic state: met_clean'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-3565/gi-note-2026-11-01
+      quote: No biologic or small-molecule advanced therapy at present.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-3565/gi-note-2026-11-01
+      quote: Weight 110.3 kg.
+    - doc_id: PT-3565/gi-note-2026-11-01
+      quote: 520 mg IV once (weight 110.3 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+packet_outcome: NEEDS_PHYSICIAN

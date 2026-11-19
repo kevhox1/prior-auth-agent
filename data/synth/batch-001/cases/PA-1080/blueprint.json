@@ -1,0 +1,40 @@
+{
+  "seed": 100079,
+  "request_id": "PA-1080",
+  "patient_id": "PT-1080",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Rafael",
+  "last_name": "Umarov",
+  "sex": "M",
+  "dob": "1990-06-02",
+  "disease": "cd",
+  "weight_kg": 54.0,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "missing",
+    "C5b": "met_clean",
+    "C6": "met_clean",
+    "C7": "met_clean",
+    "C8": "met_clean",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 0,
+    "provider": 0,
+    "medhx_format": "table",
+    "lab_vendor": 2,
+    "outside_quality": "fax",
+    "outside_practice": 2,
+    "distractors": 2,
+    "date_style": "iso",
+    "copy_forward": false,
+    "requested_channel_wrong": true,
+    "expedited": false,
+    "injection": false
+  }
+}

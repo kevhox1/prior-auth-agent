@@ -1,0 +1,40 @@
+{
+  "seed": 100077,
+  "request_id": "PA-1078",
+  "patient_id": "PT-1078",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Leo",
+  "last_name": "Abara",
+  "sex": "M",
+  "dob": "1971-06-03",
+  "disease": "cd",
+  "weight_kg": 68.2,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_clean",
+    "C5b": "met_clean",
+    "C6": "met_clean",
+    "C7": "met_clean",
+    "C8": "met_clean",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 0,
+    "provider": 2,
+    "medhx_format": "table",
+    "lab_vendor": 1,
+    "outside_quality": "fax",
+    "outside_practice": 3,
+    "distractors": 0,
+    "date_style": "us",
+    "copy_forward": true,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

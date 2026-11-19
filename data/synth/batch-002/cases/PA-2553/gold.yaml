@@ -1,0 +1,80 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-2553
+case_type: multi_issue
+policy_id: calder-ustekinumab-ibd
+description: 'Synthetic case (seed 200052, payer calder). States: C2=met_scope, C5a=met_buried, C6=stale, C7=missing'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-2553/gi-note-2026-11-03
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-2553/colonoscopy-2026-09-29
+      quote: 'Terminal ileum: multiple ulcers 0.3-1.5 cm with surrounding erythema and edema.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-2553/gi-note-2026-11-03
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-2553/demographics-2026-07-07
+      quote: 'Date of birth: 1994-08-22'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-2553/outside-records-2021-12-18
+      quote: 'Mercaptopurine 1.5 mg/kg daily, 2020-08 to 2021-02. Reason stopped: inadequate response after 6 months
+        at a therapeutic metabolite level.'
+    - doc_id: PT-2553/outside-records-2021-12-18
+      quote: 'Prednisone 40 mg daily, tapered, 2021-03 to 2021-11. Reason stopped: steroid dependent (flared each
+        time the dose went below 15 mg).'
+    note: 'synthetic state: met_buried'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-2553/medication-history-2026-11-02
+      quote: Intolerance (drug-induced lupus with positive anti-histone antibodies and arthralgias)
+    note: 'synthetic state: met_clean'
+  C6:
+    status: NOT_MET
+    acceptable_alternates:
+    - INSUFFICIENT_EVIDENCE
+    evidence:
+    - doc_id: PT-2553/labs-2025-11-03
+      quote: QuantiFERON-TB Gold Plus | NEGATIVE | - | Negative
+    missing_item: TB screening (IGRA or TST) with a negative result dated within 6 months of the request.
+    note: 'synthetic state: stale'
+  C7:
+    status: INSUFFICIENT_EVIDENCE
+    missing_item: Hepatitis B surface antigen (HBsAg) and total core antibody (anti-HBc) results.
+    note: 'synthetic state: missing'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-2553/medication-history-2026-11-02
+      quote: No biologic or small-molecule advanced therapy at present.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-2553/gi-note-2026-11-03
+      quote: Weight 88.4 kg.
+    - doc_id: PT-2553/gi-note-2026-11-03
+      quote: 520 mg IV once (weight 88.4 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+packet_outcome: NEEDS_PHYSICIAN

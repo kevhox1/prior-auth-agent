@@ -1,0 +1,40 @@
+{
+  "seed": 300077,
+  "request_id": "PA-3078",
+  "patient_id": "PT-3078",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Andre",
+  "last_name": "Marchetti",
+  "sex": "M",
+  "dob": "1994-01-25",
+  "disease": "cd",
+  "weight_kg": 108.2,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_clean",
+    "C5b": "met_clean",
+    "C6": "met_clean",
+    "C7": "met_clean",
+    "C8": "switch_with_stop",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 0,
+    "provider": 0,
+    "medhx_format": "narrative",
+    "lab_vendor": 0,
+    "outside_quality": "fax",
+    "outside_practice": 2,
+    "distractors": 0,
+    "date_style": "iso",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

@@ -1,0 +1,68 @@
+# GOLD - evaluation only.
+request_id: PA-0103
+case_type: reuse
+policy_id: calder-evolocumab-lipids
+description: >
+  Reuse test, not met. Atherosclerotic stroke, on rosuvastatin 40 mg and ezetimibe. Current
+  LDL-C is 64 mg/dL, below the policy's 70 mg/dL ASCVD threshold. The cardiologist's own target
+  is below 55 mg/dL, which is a clinical judgment the policy does not adopt. Trap: the 152 mg/dL
+  value is from 2025, before treatment and outside the window. Needs a physician decision
+  (wait, appeal, or not submit), not a gap the staff can close.
+routing:
+  pa_required: true
+  channels:
+    sc_injection: pharmacy
+packet_outcome: NEEDS_PHYSICIAN
+criteria:
+  C1:
+    status: MET
+    evidence:
+      - doc_id: PT-0103/outside-records-2025-04-09
+        quote: "Acute ischemic stroke, left middle cerebral artery territory, due to large-artery atherosclerosis (70% stenosis of the left internal carotid artery)."
+  C2:
+    status: NOT_MET
+    evidence:
+      - doc_id: PT-0103/labs-2026-10-15
+        quote: "LDL cholesterol, calculated         64 mg/dL      <100"
+    note: "64 is below 70. The 152 mg/dL value is pre-treatment and from 2025."
+  C3a:
+    status: MET
+    evidence:
+      - doc_id: PT-0103/medication-history-2026-11-12
+        quote: "Started at stroke discharge. Fills on time. No side effects reported."
+      - doc_id: PT-0103/cardiology-note-2026-11-12
+        quote: "Continue rosuvastatin 40 mg and ezetimibe 10 mg."
+  C3b:
+    status: NOT_MET
+    acceptable_alternates: [INSUFFICIENT_EVIDENCE]
+    note: "Tolerates statins; this branch does not apply."
+  C4:
+    status: NOT_MET
+    evidence:
+      - doc_id: PT-0103/medication-history-2026-11-12
+        quote: "| Ezetimibe | 10 mg daily | 2025-09-15 | ongoing | Fills on time. |"
+    note: >
+      Gold fixed after the M4 run (B41). Ezetimibe was taken long enough, but B.4 also requires LDL-C
+      to remain at or above the B.2 threshold, and 64 is below 70. The agent read this correctly; the
+      first gold label did not.
+  C5:
+    status: MET
+    evidence:
+      - doc_id: PT-0103/cardiology-note-2026-11-12
+        quote: "Electronically signed by Dr. M. Osei, MD, Cardiology, 11/12/2026"
+  C6:
+    status: MET
+    evidence:
+      - doc_id: PT-0103/demographics-2026-11-12
+        quote: "Date of birth: 01/08/1959"
+    note: "Age 67 on 2026-11-18."
+  C7:
+    status: MET
+    evidence:
+      - doc_id: PT-0103/medication-history-2026-11-12
+        quote: "No current or prior PCSK9 inhibitor (alirocumab, evolocumab) or inclisiran."
+  C8:
+    status: MET
+    evidence:
+      - doc_id: PT-0103/cardiology-note-2026-11-12
+        quote: "Add evolocumab 140 mg subcutaneously every 2 weeks to reach LDL-C below 55 mg/dL."

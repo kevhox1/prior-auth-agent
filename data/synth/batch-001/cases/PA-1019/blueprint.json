@@ -1,0 +1,40 @@
+{
+  "seed": 100018,
+  "request_id": "PA-1019",
+  "patient_id": "PT-1019",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Priya",
+  "last_name": "Oyelaran",
+  "sex": "F",
+  "dob": "1985-05-28",
+  "disease": "uc",
+  "weight_kg": 86.1,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_buried",
+    "C5b": "met_clean",
+    "C6": "indeterminate",
+    "C7": "met_clean",
+    "C8": "switch_with_stop",
+    "C9": "stale_weight",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 0,
+    "provider": 0,
+    "medhx_format": "scattered",
+    "lab_vendor": 0,
+    "outside_quality": "fax",
+    "outside_practice": 3,
+    "distractors": 2,
+    "date_style": "us",
+    "copy_forward": true,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "seed": 100095,
+  "request_id": "PA-1096",
+  "patient_id": "PT-1096",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Omar",
+  "last_name": "Zielinski",
+  "sex": "M",
+  "dob": "1987-09-13",
+  "disease": "uc",
+  "weight_kg": 111.9,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_buried",
+    "C5a": "met_clean",
+    "C5b": "insurance_stop",
+    "C6": "ordered_not_resulted",
+    "C7": "met_clean",
+    "C8": "met_clean",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 0,
+    "provider": 2,
+    "medhx_format": "table",
+    "lab_vendor": 0,
+    "outside_quality": "clean",
+    "outside_practice": 1,
+    "distractors": 1,
+    "date_style": "us",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

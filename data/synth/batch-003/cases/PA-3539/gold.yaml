@@ -1,0 +1,78 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-3539
+case_type: multi_issue
+policy_id: calder-ustekinumab-ibd
+description: 'Synthetic case (seed 300038, payer calder). States: C2=met_scope, C5b=insurance_stop, C6=ordered_not_resulted'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-3539/gi-note-2026-11-07
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-3539/colonoscopy-2026-08-20
+      quote: 'Terminal ileum: multiple ulcers 0.3-1.5 cm with surrounding erythema and edema.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-3539/gi-note-2026-11-07
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-3539/demographics-2026-09-30
+      quote: 'Date of birth: 1971-02-27'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-3539/medication-history-2026-11-03
+      quote: 'Budesonide 9 mg daily, 2024-04 to 2024-07. Reason stopped: inadequate response after 10 weeks.'
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: NOT_MET
+    acceptable_alternates:
+    - INSUFFICIENT_EVIDENCE
+    evidence:
+    - doc_id: PT-3539/medication-history-2026-11-03
+      quote: 'Infliximab 5 mg/kg IV every 8 weeks, 2024-09 to 2026-08. Reason stopped: stopped when insurance coverage
+        changed; disease was controlled at the time.'
+    note: 'synthetic state: insurance_stop'
+  C6:
+    status: INSUFFICIENT_EVIDENCE
+    missing_item: Result of the TB screening test (QuantiFERON) ordered 2026-11-07.
+    note: 'synthetic state: ordered_not_resulted'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-3539/labs-2026-09-18
+      quote: HBsAg | Nonreactive | - | Nonreactive
+    - doc_id: PT-3539/labs-2026-09-18
+      quote: Anti-HBc (total) | Nonreactive | - | Nonreactive
+    note: 'synthetic state: met_clean'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-3539/medication-history-2026-11-03
+      quote: Not currently on any advanced therapy (biologic, JAK inhibitor, or S1P receptor modulator).
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-3539/gi-note-2026-11-07
+      quote: Weight 47.8 kg.
+    - doc_id: PT-3539/gi-note-2026-11-07
+      quote: 260 mg IV once (weight 47.8 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+packet_outcome: GAPS_TO_CLOSE

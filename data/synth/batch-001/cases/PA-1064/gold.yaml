@@ -1,0 +1,89 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-1064
+case_type: missing_item
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 100063, payer northfield). States: C2=met_scope, C5b=met_buried, C6=met_borderline,
+  C7=partial'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-1064/gi-note-2026-10-26
+      quote: Moderately to severely active ulcerative pancolitis.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-1064/labs-2026-09-05
+      quote: Fecal calprotectin                    1143 ug/g     <50
+    - doc_id: PT-1064/flexible-sigmoidoscopy-2026-09-25
+      quote: 'Rectum to 40 cm: continuous inflammation with friability and erosions; Mayo endoscopic subscore 2.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-1064/gi-note-2026-10-26
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-1064/demographics-2026-06-22
+      quote: 'Date of birth: 1980-10-08'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-1064/gi-note-2026-05-13
+      quote: 'History: Methotrexate 25 mg subcutaneously weekly, 2023-02 to 2023-09. Reason stopped: intolerance
+        (nausea and ALT above 3 times the upper limit of normal).'
+    - doc_id: PT-1064/gi-note-2026-05-13
+      quote: 'History: Budesonide 9 mg daily, 2023-10 to 2024-01. Reason stopped: inadequate response after 10 weeks.'
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-1064/outside-records-2024-08-18
+      quote: 'Adalimumab 40 mg every 2 weeks, 2024-03 to 2024-07. Reason stopped: primary non-response: no clinical
+        improvement after induction and 8 weeks of maintenance.'
+    note: 'synthetic state: met_buried'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-1064/labs-2025-11-23
+      quote: QuantiFERON-TB Gold Plus              NEGATIVE      Negative
+    note: 'synthetic state: met_borderline'
+  C7:
+    status: INSUFFICIENT_EVIDENCE
+    evidence:
+    - doc_id: PT-1064/outside-records-2024-08-18
+      quote: Hepatitis B surface antigen           Non-reactive  Non-reactive
+    missing_item: Total hepatitis B core antibody (anti-HBc) result.
+    note: 'synthetic state: partial'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-1064/gi-note-2026-10-26
+      quote: No current biologic, JAK inhibitor, or S1P receptor modulator.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-1064/gi-note-2026-10-26
+      quote: Weight 79.0 kg.
+    - doc_id: PT-1064/gi-note-2026-10-26
+      quote: 390 mg IV once (weight 79.0 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-1064/gi-note-2026-10-26
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+packet_outcome: GAPS_TO_CLOSE

@@ -1,0 +1,40 @@
+{
+  "seed": 200042,
+  "request_id": "PA-2543",
+  "patient_id": "PT-2543",
+  "request_date": "2026-11-18",
+  "payer": "calder",
+  "first_name": "Rosa",
+  "last_name": "Brennagh",
+  "sex": "F",
+  "dob": "1979-04-28",
+  "disease": "uc",
+  "weight_kg": 107.8,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_clean",
+    "C5b": "met_clean",
+    "C6": "met_clean",
+    "C7": "met_clean",
+    "C8": "met_clean",
+    "C9": "wrong_tier",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 1,
+    "provider": 1,
+    "medhx_format": "scattered",
+    "lab_vendor": 1,
+    "outside_quality": "ocr",
+    "outside_practice": 2,
+    "distractors": 0,
+    "date_style": "us",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "seed": 300021,
+  "request_id": "PA-3522",
+  "patient_id": "PT-3522",
+  "request_date": "2026-11-18",
+  "payer": "calder",
+  "first_name": "Sana",
+  "last_name": "Kowalczyk",
+  "sex": "F",
+  "dob": "1974-11-12",
+  "disease": "cd",
+  "weight_kg": 77.4,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "missing",
+    "C5b": "insurance_stop",
+    "C6": "met_borderline",
+    "C7": "core_positive_with_plan",
+    "C8": "met_clean",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 1,
+    "provider": 1,
+    "medhx_format": "table",
+    "lab_vendor": 0,
+    "outside_quality": "clean",
+    "outside_practice": 0,
+    "distractors": 0,
+    "date_style": "iso",
+    "copy_forward": true,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

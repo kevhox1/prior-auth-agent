@@ -1,0 +1,40 @@
+{
+  "seed": 100013,
+  "request_id": "PA-1014",
+  "patient_id": "PT-1014",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Hannah",
+  "last_name": "Thibodeaux",
+  "sex": "F",
+  "dob": "1978-04-11",
+  "disease": "uc",
+  "weight_kg": 64.0,
+  "states": {
+    "C1": "met_clean",
+    "C2": "stale_scope",
+    "C5a": "missing",
+    "C5b": "met_clean",
+    "C6": "met_clean",
+    "C7": "met_clean",
+    "C8": "switch_with_stop",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 2,
+    "provider": 0,
+    "medhx_format": "scattered",
+    "lab_vendor": 0,
+    "outside_quality": "fax",
+    "outside_practice": 2,
+    "distractors": 1,
+    "date_style": "iso",
+    "copy_forward": false,
+    "requested_channel_wrong": true,
+    "expedited": false,
+    "injection": false
+  }
+}

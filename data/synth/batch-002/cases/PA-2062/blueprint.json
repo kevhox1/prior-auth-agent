@@ -1,0 +1,40 @@
+{
+  "seed": 200061,
+  "request_id": "PA-2062",
+  "patient_id": "PT-2062",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Mateo",
+  "last_name": "Zielinski",
+  "sex": "M",
+  "dob": "1966-04-14",
+  "disease": "uc",
+  "weight_kg": 61.9,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_clean",
+    "C5b": "met_buried",
+    "C6": "met_clean",
+    "C7": "met_clean",
+    "C8": "met_clean",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 0,
+    "provider": 0,
+    "medhx_format": "narrative",
+    "lab_vendor": 0,
+    "outside_quality": "clean",
+    "outside_practice": 1,
+    "distractors": 0,
+    "date_style": "us",
+    "copy_forward": true,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

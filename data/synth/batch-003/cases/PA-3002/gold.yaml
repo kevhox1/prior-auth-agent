@@ -1,0 +1,89 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-3002
+case_type: borderline
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 300001, payer northfield). States: C2=met_borderline, C6=positive_with_plan'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-3002/gi-note-2026-10-25
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-3002/labs-2026-10-20
+      quote: CALPROTECTIN FECAL ................ 77 ug/g  (<50)
+    note: 'synthetic state: met_borderline'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-3002/gi-note-2026-10-25
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-3002/demographics-2026-08-18
+      quote: 'Date of birth: 1983-05-05'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-3002/medication-history-2026-10-24
+      quote: Intolerance (nausea and ALT above 3 times the upper limit of normal)
+    - doc_id: PT-3002/medication-history-2026-10-24
+      quote: Steroid dependent (flared each time the dose went below 15 mg)
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-3002/medication-history-2026-10-24
+      quote: 'Primary non-response: no clinical improvement after induction and 8 weeks of maintenance'
+    note: 'synthetic state: met_clean'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-3002/gi-note-2026-10-25
+      quote: 'Latent TB infection: rifampin daily for 4 months, started 2026-10-24.'
+    - doc_id: PT-3002/labs-2026-10-20
+      quote: QUANTIFERON TB GOLD PLUS .......... POSITIVE  (Negative)
+    - doc_id: PT-3002/chest-xray-2026-10-23
+      quote: 'IMPRESSION: No evidence of active pulmonary tuberculosis.'
+    note: 'synthetic state: positive_with_plan'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-3002/labs-2026-10-20
+      quote: HEP B SURFACE AG .................. Nonreactive  (Nonreactive)
+    - doc_id: PT-3002/labs-2026-10-20
+      quote: HEP B CORE AB TOTAL ............... Nonreactive  (Nonreactive)
+    note: 'synthetic state: met_clean'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-3002/medication-history-2026-10-24
+      quote: No current biologic, JAK inhibitor, or S1P receptor modulator.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-3002/gi-note-2026-10-25
+      quote: Weight 52.6 kg.
+    - doc_id: PT-3002/gi-note-2026-10-25
+      quote: 260 mg IV once (weight 52.6 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-3002/gi-note-2026-10-25
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+packet_outcome: READY_FOR_REVIEW

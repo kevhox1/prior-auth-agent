@@ -1,0 +1,40 @@
+{
+  "seed": 100186,
+  "request_id": "PA-1187",
+  "patient_id": "PT-1187",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Andre",
+  "last_name": "Nakashima",
+  "sex": "M",
+  "dob": "1969-09-10",
+  "disease": "uc",
+  "weight_kg": 93.7,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_borderline",
+    "C5a": "met_buried",
+    "C5b": "met_clean",
+    "C6": "met_clean",
+    "C7": "met_clean",
+    "C8": "switch_with_stop",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 1,
+    "provider": 1,
+    "medhx_format": "table",
+    "lab_vendor": 0,
+    "outside_quality": "ocr",
+    "outside_practice": 3,
+    "distractors": 1,
+    "date_style": "iso",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

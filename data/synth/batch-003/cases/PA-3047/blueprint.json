@@ -1,0 +1,40 @@
+{
+  "seed": 300046,
+  "request_id": "PA-3047",
+  "patient_id": "PT-3047",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Kwame",
+  "last_name": "Ekwueme",
+  "sex": "M",
+  "dob": "1961-06-26",
+  "disease": "cd",
+  "weight_kg": 100.0,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_clean",
+    "C5b": "met_clean",
+    "C6": "positive_with_plan",
+    "C7": "met_clean",
+    "C8": "switch_with_stop",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 0,
+    "provider": 2,
+    "medhx_format": "table",
+    "lab_vendor": 1,
+    "outside_quality": "fax",
+    "outside_practice": 1,
+    "distractors": 0,
+    "date_style": "iso",
+    "copy_forward": true,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

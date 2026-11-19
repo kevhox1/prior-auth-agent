@@ -1,0 +1,12 @@
+request_id: PA-0102
+patient_id: PT-0102
+drug: evolocumab
+product: evolocumab
+dose: "140 mg subcutaneously every 2 weeks"
+indication_icd10: E78.01
+payer: calder
+plan_type: commercial
+ordering_provider: "Dr. J. Varga, Cardiology (Lipid Clinic)"
+urgency: standard
+request_date: 2026-11-18
+requested_start: 2026-12-01

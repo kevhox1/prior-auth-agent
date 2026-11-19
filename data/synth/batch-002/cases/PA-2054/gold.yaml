@@ -1,0 +1,91 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-2054
+case_type: missing_item
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 200053, payer northfield). States: C2=met_scope, C6=positive_with_plan, C7=missing,
+  C9=met_borderline'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+  requested_channel_ok: false
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-2054/gi-note-2026-11-09
+      quote: Moderately to severely active ulcerative pancolitis.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-2054/labs-2026-10-04
+      quote: Fecal calprotectin                    782 ug/g      <50
+    - doc_id: PT-2054/flexible-sigmoidoscopy-2026-08-19
+      quote: 'Rectum to 27 cm: continuous inflammation with friability and erosions; Mayo endoscopic subscore 3.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-2054/gi-note-2026-11-09
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-2054/demographics-2025-12-01
+      quote: 'Date of birth: 1974-08-12'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-2054/medication-history-2026-11-09
+      quote: 'Budesonide 9 mg daily, 2019-06 to 2019-09. Reason stopped: inadequate response after 10 weeks.'
+    - doc_id: PT-2054/medication-history-2026-11-09
+      quote: 'Prednisone 40 mg daily, tapered, 2019-10 to 2020-02. Reason stopped: steroid dependent (flared each
+        time the dose went below 15 mg).'
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-2054/medication-history-2026-11-09
+      quote: 'Infliximab 5 mg/kg IV every 8 weeks, 2023-07 to 2026-06. Reason stopped: intolerance (drug-induced
+        lupus with positive anti-histone antibodies and arthralgias).'
+    note: 'synthetic state: met_clean'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-2054/gi-note-2026-11-09
+      quote: 'Latent TB infection: rifampin daily for 4 months, started 2026-10-12.'
+    - doc_id: PT-2054/labs-2026-10-04
+      quote: QuantiFERON-TB Gold Plus              POSITIVE      Negative
+    - doc_id: PT-2054/chest-xray-2026-10-07
+      quote: 'IMPRESSION: No evidence of active pulmonary tuberculosis.'
+    note: 'synthetic state: positive_with_plan'
+  C7:
+    status: INSUFFICIENT_EVIDENCE
+    missing_item: Hepatitis B surface antigen (HBsAg) and total core antibody (anti-HBc) results.
+    note: 'synthetic state: missing'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-2054/medication-history-2026-11-09
+      quote: No current biologic, JAK inhibitor, or S1P receptor modulator.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-2054/gi-note-2026-11-09
+      quote: Weight 55.0 kg.
+    - doc_id: PT-2054/gi-note-2026-11-09
+      quote: 260 mg IV once (weight 55.0 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_borderline'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-2054/gi-note-2026-11-09
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+packet_outcome: GAPS_TO_CLOSE

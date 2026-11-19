@@ -1,0 +1,90 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-1077
+case_type: not_met
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 100076, payer northfield). States: C2=met_scope, C8=not_met_combo'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-1077/gi-note-2026-11-05
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-1077/colonoscopy-2026-10-11
+      quote: 'Terminal ileum: multiple ulcers 0.3-1.5 cm with surrounding erythema and edema.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-1077/gi-note-2026-11-05
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-1077/demographics-2026-01-27
+      quote: 'Date of birth: 01/05/1954'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-1077/medication-history-2026-11-02
+      quote: 'Methotrexate 25 mg subcutaneously weekly, 01/2024 to 09/2024. Reason stopped: intolerance (nausea
+        and ALT above 3 times the upper limit of normal).'
+    - doc_id: PT-1077/medication-history-2026-11-02
+      quote: 'Mercaptopurine 1.5 mg/kg daily, 10/2024 to 04/2025. Reason stopped: inadequate response after 6 months
+        at a therapeutic metabolite level.'
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-1077/medication-history-2026-11-02
+      quote: 'Infliximab 5 mg/kg IV every 8 weeks, 06/2025 to 08/2026. Reason stopped: secondary loss of response;
+        trough 2.1 mcg/mL with antibodies 39 U/mL (reference <10).'
+    note: 'synthetic state: met_clean'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-1077/labs-2026-09-07
+      quote: QuantiFERON-TB Gold Plus | NEGATIVE | - | Negative
+    note: 'synthetic state: met_clean'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-1077/labs-2026-09-07
+      quote: HBsAg | Nonreactive | - | Nonreactive
+    - doc_id: PT-1077/labs-2026-09-07
+      quote: Anti-HBc (total) | Nonreactive | - | Nonreactive
+    note: 'synthetic state: met_clean'
+  C8:
+    status: NOT_MET
+    evidence:
+    - doc_id: PT-1077/gi-note-2026-11-05
+      quote: Continue upadacitinib 15 mg daily and add ustekinumab.
+    - doc_id: PT-1077/medication-history-2026-11-02
+      quote: Upadacitinib 15 mg daily
+    note: 'synthetic state: not_met_combo'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-1077/gi-note-2026-11-05
+      quote: Weight 90.6 kg.
+    - doc_id: PT-1077/gi-note-2026-11-05
+      quote: 520 mg IV once (weight 90.6 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-1077/gi-note-2026-11-05
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+packet_outcome: NEEDS_PHYSICIAN

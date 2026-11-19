@@ -1,0 +1,77 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-2512
+case_type: missing_item
+policy_id: calder-ustekinumab-ibd
+description: 'Synthetic case (seed 200011, payer calder). States: C2=met_scope, C5b=met_buried, C6=ordered_not_resulted'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-2512/gi-note-2026-11-05
+      quote: Moderately to severely active ulcerative pancolitis.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-2512/flexible-sigmoidoscopy-2026-08-22
+      quote: 'Rectum to 30 cm: continuous inflammation with friability and erosions; Mayo endoscopic subscore 2.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-2512/gi-note-2026-11-05
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-2512/demographics-2025-10-19
+      quote: 'Date of birth: 1963-11-06'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-2512/gi-note-2026-03-03
+      quote: 'History: Methotrexate 25 mg subcutaneously weekly, 2021-11 to 2022-03. Reason stopped: intolerance
+        (nausea and ALT above 3 times the upper limit of normal).'
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-2512/outside-records-2026-08-18
+      quote: 'Infliximab 5 mg/kg IV every 8 weeks, 2023-07 to 2026-07. Reason stopped: intolerance (drug-induced
+        lupus with positive anti-histone antibodies and arthralgias).'
+    note: 'synthetic state: met_buried'
+  C6:
+    status: INSUFFICIENT_EVIDENCE
+    missing_item: Result of the TB screening test (QuantiFERON) ordered 2026-11-05.
+    note: 'synthetic state: ordered_not_resulted'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-2512/labs-2026-09-14
+      quote: HBsAg | Nonreactive | - | Nonreactive
+    - doc_id: PT-2512/labs-2026-09-14
+      quote: Anti-HBc (total) | Nonreactive | - | Nonreactive
+    note: 'synthetic state: met_clean'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-2512/gi-note-2026-11-05
+      quote: No biologic or small-molecule advanced therapy at present.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-2512/gi-note-2026-11-05
+      quote: Weight 92.3 kg.
+    - doc_id: PT-2512/gi-note-2026-11-05
+      quote: 520 mg IV once (weight 92.3 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+packet_outcome: GAPS_TO_CLOSE

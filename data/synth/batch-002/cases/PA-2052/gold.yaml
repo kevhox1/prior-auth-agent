@@ -1,0 +1,83 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-2052
+case_type: multi_issue
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 200051, payer northfield). States: C2=met_borderline, C6=ordered_not_resulted,
+  C7=missing, C9=met_borderline'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-2052/gi-note-2026-10-31
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-2052/labs-2026-09-26
+      quote: Calprotectin, fecal | 76 ug/g | H | <50
+    note: 'synthetic state: met_borderline'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-2052/gi-note-2026-10-31
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-2052/demographics-2026-08-05
+      quote: 'Date of birth: 04/03/1957'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-2052/gi-note-2026-06-17
+      quote: 'History: Prednisone 40 mg daily, tapered, 05/2020 to 12/2020. Reason stopped: steroid dependent (flared
+        each time the dose went below 15 mg).'
+    - doc_id: PT-2052/gi-note-2026-06-17
+      quote: 'History: Methotrexate 25 mg subcutaneously weekly, 01/2021 to 06/2021. Reason stopped: intolerance
+        (nausea and ALT above 3 times the upper limit of normal).'
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-2052/gi-note-2026-10-31
+      quote: 'Prior biologic: Infliximab 5 mg/kg IV every 8 weeks, 07/2023 to 08/2026. Reason stopped: intolerance
+        (drug-induced lupus with positive anti-histone antibodies and arthralgias).'
+    note: 'synthetic state: met_clean'
+  C6:
+    status: INSUFFICIENT_EVIDENCE
+    missing_item: Result of the TB screening test (QuantiFERON) ordered 10/31/2026.
+    note: 'synthetic state: ordered_not_resulted'
+  C7:
+    status: INSUFFICIENT_EVIDENCE
+    missing_item: Hepatitis B surface antigen (HBsAg) and total core antibody (anti-HBc) results.
+    note: 'synthetic state: missing'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-2052/gi-note-2026-10-31
+      quote: No current biologic, JAK inhibitor, or S1P receptor modulator.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-2052/gi-note-2026-10-31
+      quote: Weight 55.0 kg.
+    - doc_id: PT-2052/gi-note-2026-10-31
+      quote: 260 mg IV once (weight 55.0 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_borderline'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-2052/gi-note-2026-10-31
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+packet_outcome: GAPS_TO_CLOSE

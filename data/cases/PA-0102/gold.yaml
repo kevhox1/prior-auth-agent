@@ -1,0 +1,79 @@
+# GOLD - evaluation only.
+request_id: PA-0102
+case_type: reuse
+policy_id: calder-evolocumab-lipids
+description: >
+  Reuse test, missing item. Probable HeFH (DLCN 8), LDL-C 188 mg/dL on ezetimibe alone.
+  The chart calls her "statin intolerant", but documents only one statin (simvastatin 20 mg,
+  muscle aches, 2021). Policy B.3(b) needs two statins, one at the lowest starting dose,
+  each with dose, symptom and resolution, or a contraindication. Not on a statin, so B.3(a)
+  fails too. The gap is documentation, which the prescriber may be able to supply.
+routing:
+  pa_required: true
+  channels:
+    sc_injection: pharmacy
+packet_outcome: GAPS_TO_CLOSE
+criteria:
+  C1:
+    status: INSUFFICIENT_EVIDENCE
+    evidence:
+      - doc_id: PT-0102/problem-list-2026-11-05
+        quote: "Heterozygous familial hypercholesterolemia (E78.01). Dutch Lipid Clinic Network score 8 (probable FH)."
+    missing_item: "Support for the DLCN score of 6 or higher (arcus documented before age 45, the 2019 untreated LDL-C report), or a genetic test result"
+    note: >
+      Gold fixed after the M4 run (B41). The note scores 4 points for corneal arcus before age 45, but
+      the only arcus finding is from today's exam at age 54, and the 2019 untreated LDL-C is not on file.
+      Without the arcus points the score is 4, below the policy's 6. The agent caught this; the chart
+      author (the build) did not.
+  C2:
+    status: MET
+    acceptable_alternates: [INSUFFICIENT_EVIDENCE]
+    evidence:
+      - doc_id: PT-0102/labs-2026-10-21
+        quote: "LDL cholesterol, calculated         188 mg/dL     <100"
+    note: >
+      HeFH without ASCVD: threshold 100 mg/dL. Drawn 28 days before the request, on ezetimibe alone. B.2
+      asks for the LDL-C on the B.3 and B.4 therapy, which for a member who cannot take a statin is
+      ezetimibe. INSUFFICIENT is defensible while B.3(b) is unresolved; NOT_MET is not, because nothing
+      shows the value fails.
+  C3a:
+    status: NOT_MET
+    acceptable_alternates: [INSUFFICIENT_EVIDENCE]
+    evidence:
+      - doc_id: PT-0102/lipid-clinic-note-2026-11-05
+        quote: "Statin intolerant (myalgias on simvastatin)."
+    note: "No current statin."
+  C3b:
+    status: INSUFFICIENT_EVIDENCE
+    acceptable_alternates: [NOT_MET]
+    evidence:
+      - doc_id: PT-0102/medication-history-2026-11-05
+        quote: "Stopped: muscle aches in both thighs"
+    missing_item: "A second statin trial (drug, dose, symptom, improvement after stopping), one at the lowest starting dose, or a documented statin contraindication"
+    note: "Only one statin documented; fill history starts in 2021, so earlier trials may exist outside the record."
+  C4:
+    status: MET
+    evidence:
+      - doc_id: PT-0102/lipid-clinic-note-2026-11-05
+        quote: "LDL-C 188 mg/dL on 10/21/2026 on ezetimibe 10 mg daily (since 03/2022)."
+  C5:
+    status: MET
+    evidence:
+      - doc_id: PT-0102/lipid-clinic-note-2026-11-05
+        quote: "Electronically signed by Dr. J. Varga, MD, Cardiology (Lipid Clinic), 11/05/2026"
+  C6:
+    status: MET
+    evidence:
+      - doc_id: PT-0102/demographics-2026-11-05
+        quote: "Date of birth: 03/19/1972"
+    note: "Age 54 on 2026-11-18."
+  C7:
+    status: MET
+    evidence:
+      - doc_id: PT-0102/medication-history-2026-11-05
+        quote: "No current or prior PCSK9 inhibitor (alirocumab, evolocumab) or inclisiran."
+  C8:
+    status: MET
+    evidence:
+      - doc_id: PT-0102/lipid-clinic-note-2026-11-05
+        quote: "Start evolocumab 140 mg subcutaneously every 2 weeks."

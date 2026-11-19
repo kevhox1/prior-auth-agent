@@ -1,0 +1,87 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-2051
+case_type: buried_evidence
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 200050, payer northfield). States: C2=met_scope, C5a=met_buried, C7=core_positive_with_plan'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-2051/gi-note-2026-11-09
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-2051/colonoscopy-2026-08-10
+      quote: 'Terminal ileum: multiple ulcers 0.3-1.5 cm with surrounding erythema and edema.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-2051/gi-note-2026-11-09
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-2051/demographics-2026-04-06
+      quote: 'Date of birth: 05/24/1960'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-2051/outside-records-2019-12-18
+      quote: 'Methotrexate 25 mg subcutaneously weekly, 05/2019 to 11/2019. Reason stopped: intolerance (nausea
+        and ALT above 3 times the upper limit of normal).'
+    note: 'synthetic state: met_buried'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-2051/medication-history-2026-11-05
+      quote: Secondary loss of response; trough 0.9 mcg/mL with antibodies 53 U/mL (reference <10)
+    note: 'synthetic state: met_clean'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-2051/labs-2026-10-02
+      quote: QuantiFERON-TB Gold Plus | NEGATIVE | - | Negative
+    note: 'synthetic state: met_clean'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-2051/gi-note-2026-11-09
+      quote: 'Resolved prior hepatitis B infection (HBsAg negative, anti-HBc positive, HBV DNA undetectable): monitor
+        HBV DNA and liver tests every 3 months on therapy.'
+    - doc_id: PT-2051/labs-2026-10-02
+      quote: HBsAg | Nonreactive | - | Nonreactive
+    - doc_id: PT-2051/labs-2026-10-02
+      quote: Anti-HBc (total) | Reactive | A | Nonreactive
+    note: 'synthetic state: core_positive_with_plan'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-2051/medication-history-2026-11-05
+      quote: No biologic or small-molecule advanced therapy at present.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-2051/gi-note-2026-11-09
+      quote: Weight 53.6 kg.
+    - doc_id: PT-2051/gi-note-2026-11-09
+      quote: 260 mg IV once (weight 53.6 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-2051/gi-note-2026-11-09
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+packet_outcome: READY_FOR_REVIEW

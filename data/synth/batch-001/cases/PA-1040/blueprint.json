@@ -1,0 +1,40 @@
+{
+  "seed": 100039,
+  "request_id": "PA-1040",
+  "patient_id": "PT-1040",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Kwame",
+  "last_name": "Vasquez",
+  "sex": "M",
+  "dob": "1999-10-04",
+  "disease": "uc",
+  "weight_kg": 99.2,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "missing",
+    "C5b": "met_clean",
+    "C6": "met_clean",
+    "C7": "met_clean",
+    "C8": "switch_with_stop",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 1,
+    "provider": 0,
+    "medhx_format": "scattered",
+    "lab_vendor": 0,
+    "outside_quality": "fax",
+    "outside_practice": 0,
+    "distractors": 1,
+    "date_style": "iso",
+    "copy_forward": true,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

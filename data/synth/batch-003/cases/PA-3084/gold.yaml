@@ -1,0 +1,94 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-3084
+case_type: not_met
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 300083, payer northfield). States: C2=met_scope, C6=met_borderline, C8=switch_with_stop,
+  C9=wrong_tier'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-3084/gi-note-2026-10-31
+      quote: Moderately to severely active ulcerative pancolitis.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-3084/labs-2026-09-25
+      quote: Calprotectin, fecal | 1486 ug/g | H | <50
+    - doc_id: PT-3084/flexible-sigmoidoscopy-2026-09-30
+      quote: 'Rectum to 30 cm: continuous inflammation with friability and erosions; Mayo endoscopic subscore 2.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-3084/gi-note-2026-10-31
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-3084/demographics-2025-11-07
+      quote: 'Date of birth: 1983-12-16'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-3084/gi-note-2026-02-13
+      quote: 'History: Mercaptopurine 1.5 mg/kg daily, 2024-01 to 2024-07. Reason stopped: inadequate response after
+        6 months at a therapeutic metabolite level.'
+    - doc_id: PT-3084/gi-note-2026-02-13
+      quote: 'History: Prednisone 40 mg daily, tapered, 2024-08 to 2024-12. Reason stopped: steroid dependent (flared
+        each time the dose went below 15 mg).'
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-3084/gi-note-2026-10-31
+      quote: 'Prior biologic: Infliximab 5 mg/kg IV every 8 weeks, 2025-02 to 2026-06. Reason stopped: secondary
+        loss of response; trough 2.1 mcg/mL with antibodies 28 U/mL (reference <10).'
+    note: 'synthetic state: met_clean'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-3084/labs-2025-11-30
+      quote: QuantiFERON-TB Gold Plus | NEGATIVE | - | Negative
+    note: 'synthetic state: met_borderline'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-3084/labs-2026-09-25
+      quote: HBsAg | Nonreactive | - | Nonreactive
+    - doc_id: PT-3084/labs-2026-09-25
+      quote: Anti-HBc (total) | Nonreactive | - | Nonreactive
+    note: 'synthetic state: met_clean'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-3084/gi-note-2026-10-31
+      quote: Vedolizumab 300 mg IV every 8 weeks (last infusion 2026-10-18); to be discontinued when ustekinumab
+        starts.
+    - doc_id: PT-3084/gi-note-2026-10-31
+      quote: Stop vedolizumab; ustekinumab induction on the date of the next scheduled vedolizumab infusion.
+    note: 'synthetic state: switch_with_stop'
+  C9:
+    status: NOT_MET
+    evidence:
+    - doc_id: PT-3084/gi-note-2026-10-31
+      quote: Weight 58.7 kg.
+    - doc_id: PT-3084/gi-note-2026-10-31
+      quote: 260 mg IV once (weight 58.7 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: wrong_tier'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-3084/gi-note-2026-10-31
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+packet_outcome: NEEDS_PHYSICIAN

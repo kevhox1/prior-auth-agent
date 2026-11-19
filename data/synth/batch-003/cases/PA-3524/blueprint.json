@@ -1,0 +1,40 @@
+{
+  "seed": 300023,
+  "request_id": "PA-3524",
+  "patient_id": "PT-3524",
+  "request_date": "2026-11-18",
+  "payer": "calder",
+  "first_name": "Ana",
+  "last_name": "Oyelaran",
+  "sex": "F",
+  "dob": "1992-09-28",
+  "disease": "cd",
+  "weight_kg": 73.3,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_clean",
+    "C5b": "met_clean",
+    "C6": "met_clean",
+    "C7": "core_positive_with_plan",
+    "C8": "met_clean",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 0,
+    "provider": 2,
+    "medhx_format": "narrative",
+    "lab_vendor": 1,
+    "outside_quality": "ocr",
+    "outside_practice": 2,
+    "distractors": 0,
+    "date_style": "us",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

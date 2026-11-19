@@ -1,0 +1,40 @@
+{
+  "seed": 100160,
+  "request_id": "PA-1161",
+  "patient_id": "PT-1161",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Marisol",
+  "last_name": "Kowalczyk",
+  "sex": "F",
+  "dob": "1985-02-20",
+  "disease": "uc",
+  "weight_kg": 83.8,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_fcp",
+    "C5a": "met_buried",
+    "C5b": "conflicting",
+    "C6": "positive_with_plan",
+    "C7": "core_positive_with_plan",
+    "C8": "met_clean",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 1,
+    "provider": 0,
+    "medhx_format": "narrative",
+    "lab_vendor": 0,
+    "outside_quality": "ocr",
+    "outside_practice": 2,
+    "distractors": 2,
+    "date_style": "us",
+    "copy_forward": true,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

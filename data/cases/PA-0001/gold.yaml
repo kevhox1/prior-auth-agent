@@ -1,0 +1,84 @@
+# GOLD - evaluation only.
+request_id: PA-0001
+case_type: clean
+policy_id: northfield-ustekinumab-ibd
+description: >
+  Baseline. Ileocolonic Crohn's, steroid dependent, failed azathioprine, secondary
+  loss of response to adalimumab with antibodies. Colonoscopy and calprotectin both
+  current, TB and HBV complete, weight recent. Every criterion is met.
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+packet_outcome: READY_FOR_REVIEW
+criteria:
+  C1:
+    status: MET
+    evidence:
+      - doc_id: PT-0001/gi-note-2026-10-28
+        quote: "Moderately to severely active ileocolonic Crohn's disease."
+  C2:
+    status: MET
+    evidence:
+      - doc_id: PT-0001/colonoscopy-2026-09-15
+        quote: "Terminal ileum: multiple large ulcers (>2 cm) over 15 cm, with surrounding erythema and edema."
+      - doc_id: PT-0001/labs-2026-09-22
+        quote: "Fecal calprotectin                    820 ug/g      <50"
+  C3:
+    status: MET
+    evidence:
+      - doc_id: PT-0001/gi-note-2026-10-28
+        quote: "Start ustekinumab"
+    note: "Author of the note is Dr. A. Rivera, Gastroenterology (document header and request)."
+  C4:
+    status: MET
+    evidence:
+      - doc_id: PT-0001/demographics-2026-11-03
+        quote: "Date of birth: 04/12/1991"
+    note: "Age 35 on 2026-11-18."
+  C5a:
+    status: MET
+    evidence:
+      - doc_id: PT-0001/medication-history-2026-11-03
+        quote: "Steroid dependent: symptoms returned at 15 mg during taper"
+      - doc_id: PT-0001/medication-history-2026-11-03
+        quote: "Inadequate response after 12 months; active disease on colonoscopy 12/2023"
+  C5b:
+    status: MET
+    evidence:
+      - doc_id: PT-0001/medication-history-2026-11-03
+        quote: "Secondary loss of response despite weekly dosing; trough 1.8 mcg/mL with anti-adalimumab antibodies"
+      - doc_id: PT-0001/gi-note-2026-08-20
+        quote: "Crohn's disease with secondary loss of response to adalimumab, immunogenic, despite dose escalation."
+  C6:
+    status: MET
+    evidence:
+      - doc_id: PT-0001/labs-2026-09-22
+        quote: "QuantiFERON-TB Gold Plus              NEGATIVE"
+    note: "Collected 2026-09-22, about 2 months before request."
+  C7:
+    status: MET
+    evidence:
+      - doc_id: PT-0001/labs-2026-09-22
+        quote: "Hepatitis B surface antigen           Nonreactive"
+      - doc_id: PT-0001/labs-2026-09-22
+        quote: "Hepatitis B core antibody, total      Nonreactive"
+  C8:
+    status: MET
+    evidence:
+      - doc_id: PT-0001/medication-history-2026-11-03
+        quote: "No current biologic, JAK inhibitor, or S1P receptor modulator. Adalimumab discontinued 2026-08-20."
+  C10:
+    status: MET
+    evidence:
+      - doc_id: PT-0001/gi-note-2026-10-28
+        quote: "Start ustekinumab-aekn (preferred biosimilar)"
+  C9:
+    status: MET
+    evidence:
+      - doc_id: PT-0001/gi-note-2026-10-28
+        quote: "Weight 78.0 kg."
+      - doc_id: PT-0001/gi-note-2026-10-28
+        quote: "390 mg IV once (weight 78 kg, >55 to 85 kg tier), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the IV dose."
+    note: "Weight dated 2026-10-28, 21 days before request; 78 kg is in the 390 mg tier."

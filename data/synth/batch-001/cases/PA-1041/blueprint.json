@@ -1,0 +1,40 @@
+{
+  "seed": 100040,
+  "request_id": "PA-1041",
+  "patient_id": "PT-1041",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Priya",
+  "last_name": "Zielinski",
+  "sex": "F",
+  "dob": "2007-06-26",
+  "disease": "uc",
+  "weight_kg": 93.8,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "missing",
+    "C5b": "met_clean",
+    "C6": "met_borderline",
+    "C7": "met_clean",
+    "C8": "switch_with_stop",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 1,
+    "provider": 2,
+    "medhx_format": "scattered",
+    "lab_vendor": 2,
+    "outside_quality": "fax",
+    "outside_practice": 3,
+    "distractors": 0,
+    "date_style": "us",
+    "copy_forward": true,
+    "requested_channel_wrong": true,
+    "expedited": false,
+    "injection": false
+  }
+}

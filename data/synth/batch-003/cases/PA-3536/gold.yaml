@@ -1,0 +1,82 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-3536
+case_type: multi_issue
+policy_id: calder-ustekinumab-ibd
+description: 'Synthetic case (seed 300035, payer calder). States: C2=met_scope, C5a=met_buried, C5b=contraindication,
+  C6=indeterminate, C8=not_met_combo'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-3536/gi-note-2026-10-25
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-3536/colonoscopy-2026-09-09
+      quote: 'Terminal ileum: multiple ulcers 0.3-1.5 cm with surrounding erythema and edema.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-3536/gi-note-2026-10-25
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-3536/demographics-2026-11-02
+      quote: 'Date of birth: 08/24/2006'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-3536/outside-records-2020-08-18
+      quote: 'Methotrexate 25 mg subcutaneously weekly, 11/2019 to 07/2020. Reason stopped: intolerance (nausea
+        and ALT above 3 times the upper limit of normal).'
+    note: 'synthetic state: met_buried'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-3536/gi-note-2026-10-25
+      quote: Anti-TNF agents are contraindicated because of multiple sclerosis (demyelinating disease).
+    note: 'synthetic state: contraindication'
+  C6:
+    status: INSUFFICIENT_EVIDENCE
+    evidence:
+    - doc_id: PT-3536/labs-2026-09-07
+      quote: QuantiFERON-TB Gold Plus              INDETERMINATE Negative
+    missing_item: Repeat TB screening (IGRA or TST) with a determinate result.
+    note: 'synthetic state: indeterminate'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-3536/labs-2026-09-07
+      quote: Hepatitis B surface antigen           Nonreactive   Nonreactive
+    - doc_id: PT-3536/labs-2026-09-07
+      quote: Hepatitis B core antibody, total      Nonreactive   Nonreactive
+    note: 'synthetic state: met_clean'
+  C8:
+    status: NOT_MET
+    evidence:
+    - doc_id: PT-3536/gi-note-2026-10-25
+      quote: Continue upadacitinib 15 mg daily and add ustekinumab.
+    - doc_id: PT-3536/medication-history-2026-10-21
+      quote: Upadacitinib 15 mg daily
+    note: 'synthetic state: not_met_combo'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-3536/gi-note-2026-10-25
+      quote: Weight 52.2 kg.
+    - doc_id: PT-3536/gi-note-2026-10-25
+      quote: 260 mg IV once (weight 52.2 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+packet_outcome: NEEDS_PHYSICIAN

@@ -1,0 +1,40 @@
+{
+  "seed": 100143,
+  "request_id": "PA-1144",
+  "patient_id": "PT-1144",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Rafael",
+  "last_name": "Marchetti",
+  "sex": "M",
+  "dob": "1968-11-18",
+  "disease": "uc",
+  "weight_kg": 55.0,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "missing",
+    "C5b": "conflicting",
+    "C6": "positive_with_plan",
+    "C7": "core_positive_with_plan",
+    "C8": "switch_with_stop",
+    "C9": "met_borderline",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 0,
+    "provider": 2,
+    "medhx_format": "table",
+    "lab_vendor": 1,
+    "outside_quality": "ocr",
+    "outside_practice": 3,
+    "distractors": 2,
+    "date_style": "iso",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": true
+  }
+}

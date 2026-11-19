@@ -1,0 +1,40 @@
+{
+  "seed": 100058,
+  "request_id": "PA-1059",
+  "patient_id": "PT-1059",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Claire",
+  "last_name": "Zielinski",
+  "sex": "F",
+  "dob": "1958-02-21",
+  "disease": "cd",
+  "weight_kg": 110.6,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "missing",
+    "C5b": "met_clean",
+    "C6": "indeterminate",
+    "C7": "met_clean",
+    "C8": "switch_with_stop",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 2,
+    "provider": 1,
+    "medhx_format": "table",
+    "lab_vendor": 0,
+    "outside_quality": "fax",
+    "outside_practice": 1,
+    "distractors": 0,
+    "date_style": "us",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

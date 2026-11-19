@@ -1,0 +1,85 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-1199
+case_type: not_met
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 100198, payer northfield). States: C2=met_scope, C9=wrong_tier'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-1199/gi-note-2026-11-09
+      quote: Moderately to severely active ulcerative pancolitis.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-1199/flexible-sigmoidoscopy-2026-08-29
+      quote: 'Rectum to 34 cm: continuous inflammation with friability and erosions; Mayo endoscopic subscore 3.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-1199/gi-note-2026-11-09
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-1199/demographics-2025-11-25
+      quote: 'Date of birth: 03/14/1995'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-1199/gi-note-2026-05-12
+      quote: 'History: Prednisone 40 mg daily, tapered, 05/2020 to 09/2020. Reason stopped: steroid dependent (flared
+        each time the dose went below 15 mg).'
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-1199/gi-note-2026-11-09
+      quote: 'Prior biologic: Adalimumab 40 mg every 2 weeks, 07/2023 to 11/2023. Reason stopped: primary non-response:
+        no clinical improvement after induction and 8 weeks of maintenance.'
+    note: 'synthetic state: met_clean'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-1199/labs-2026-10-11
+      quote: QuantiFERON-TB Gold Plus | NEGATIVE | - | Negative
+    note: 'synthetic state: met_clean'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-1199/labs-2026-10-11
+      quote: HBsAg | Nonreactive | - | Nonreactive
+    - doc_id: PT-1199/labs-2026-10-11
+      quote: Anti-HBc (total) | Nonreactive | - | Nonreactive
+    note: 'synthetic state: met_clean'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-1199/gi-note-2026-11-09
+      quote: No biologic or small-molecule advanced therapy at present.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: NOT_MET
+    evidence:
+    - doc_id: PT-1199/gi-note-2026-11-09
+      quote: Weight 54.2 kg.
+    - doc_id: PT-1199/gi-note-2026-11-09
+      quote: 390 mg IV once (weight 54.2 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: wrong_tier'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-1199/gi-note-2026-11-09
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+packet_outcome: NEEDS_PHYSICIAN

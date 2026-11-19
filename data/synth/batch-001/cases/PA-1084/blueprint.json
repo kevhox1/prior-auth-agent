@@ -1,0 +1,40 @@
+{
+  "seed": 100083,
+  "request_id": "PA-1084",
+  "patient_id": "PT-1084",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Rosa",
+  "last_name": "Ibarra",
+  "sex": "F",
+  "dob": "1983-04-20",
+  "disease": "uc",
+  "weight_kg": 59.2,
+  "states": {
+    "C1": "not_met_mild",
+    "C2": "met_scope",
+    "C5a": "met_buried",
+    "C5b": "met_clean",
+    "C6": "met_clean",
+    "C7": "missing",
+    "C8": "switch_with_stop",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 2,
+    "provider": 2,
+    "medhx_format": "scattered",
+    "lab_vendor": 1,
+    "outside_quality": "ocr",
+    "outside_practice": 3,
+    "distractors": 0,
+    "date_style": "iso",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

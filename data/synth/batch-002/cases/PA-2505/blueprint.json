@@ -1,0 +1,40 @@
+{
+  "seed": 200004,
+  "request_id": "PA-2505",
+  "patient_id": "PT-2505",
+  "request_date": "2026-11-18",
+  "payer": "calder",
+  "first_name": "Leo",
+  "last_name": "Abara",
+  "sex": "M",
+  "dob": "2007-12-09",
+  "disease": "cd",
+  "weight_kg": 70.1,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_clean",
+    "C5b": "insurance_stop",
+    "C6": "met_clean",
+    "C7": "core_positive_with_plan",
+    "C8": "met_clean",
+    "C9": "wrong_tier",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 2,
+    "provider": 1,
+    "medhx_format": "table",
+    "lab_vendor": 1,
+    "outside_quality": "ocr",
+    "outside_practice": 2,
+    "distractors": 0,
+    "date_style": "iso",
+    "copy_forward": true,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

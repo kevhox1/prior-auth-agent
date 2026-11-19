@@ -1,0 +1,13 @@
+request_id: PA-2526
+patient_id: PT-2526
+drug: ustekinumab
+product: ustekinumab-aekn
+dose: 260 mg IV once (weight 52.7 kg), then 90 mg SC every 8 weeks starting 8 weeks
+  after the IV dose
+indication_icd10: K50.80
+payer: calder
+plan_type: commercial
+ordering_provider: Dr. M. Chen, Gastroenterology
+urgency: standard
+request_date: 2026-11-18
+requested_start: '2026-12-01'

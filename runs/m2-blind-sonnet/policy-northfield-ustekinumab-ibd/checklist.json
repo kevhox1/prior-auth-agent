@@ -1,0 +1,179 @@
+{
+  "policy_id": "northfield-ustekinumab-ibd",
+  "payer": "northfield",
+  "drug": "ustekinumab",
+  "version": "2026-10",
+  "effective_date": "2026-10-01",
+  "indications": [
+    "Moderately to severely active Crohn's disease (adults 18+)",
+    "Moderately to severely active ulcerative colitis (adults 18+)"
+  ],
+  "benefit_channel": {
+    "iv_induction": "medical",
+    "subcutaneous_maintenance": "pharmacy"
+  },
+  "auth_duration_months": 6,
+  "logic": "ALL",
+  "criteria": [
+    {
+      "id": "C1",
+      "policy_ref": "3.1",
+      "type": "diagnosis",
+      "text": "The member has a diagnosis of moderately to severely active Crohn's disease or moderately to severely active ulcerative colitis. Disease severity must be described by the treating provider (for example, by symptom burden, a validated disease activity index, or endoscopic severity).",
+      "evidence_needed": [
+        "Gastroenterology/treating provider note with diagnosis of Crohn's disease or ulcerative colitis",
+        "Provider description of moderate to severe disease severity (symptom burden, validated activity index, or endoscopic severity)"
+      ],
+      "lookback_months": null,
+      "logic": null,
+      "sub_criteria": []
+    },
+    {
+      "id": "C2",
+      "policy_ref": "3.2",
+      "type": "disease_activity",
+      "text": "The record includes at least one of the following, dated within the 12 months before the request: (a) an endoscopy, colonoscopy, or flexible sigmoidoscopy report describing active inflammation (such as ulceration, erosions, or friability); or (b) a fecal calprotectin result above the upper limit of the performing laboratory's reference range. An elevated C-reactive protein or erythrocyte sedimentation rate alone does not satisfy this criterion. Imaging alone does not satisfy this criterion.",
+      "evidence_needed": [
+        "Endoscopy/colonoscopy/flexible sigmoidoscopy report with date describing active inflammation",
+        "OR fecal calprotectin result with date, value, and laboratory reference range showing value above upper limit"
+      ],
+      "lookback_months": 12,
+      "logic": null,
+      "sub_criteria": []
+    },
+    {
+      "id": "C3",
+      "policy_ref": "3.3",
+      "type": "prescriber",
+      "text": "The medication is prescribed by, or in consultation with, a gastroenterologist.",
+      "evidence_needed": [
+        "Prescriber specialty is gastroenterology, or documentation of consultation with a gastroenterologist"
+      ],
+      "lookback_months": null,
+      "logic": null,
+      "sub_criteria": []
+    },
+    {
+      "id": "C4",
+      "policy_ref": "3.4",
+      "type": "age",
+      "text": "The member is 18 years of age or older.",
+      "evidence_needed": [
+        "Member date of birth or age in the record"
+      ],
+      "lookback_months": null,
+      "logic": null,
+      "sub_criteria": []
+    },
+    {
+      "id": "C5",
+      "policy_ref": "3.5",
+      "type": "step_therapy",
+      "text": "Both prior therapy requirements are documented. The record must name the drug, give approximate start and stop dates, and state why it was stopped. Prior therapy must be supported by pharmacy or medical claims, prescription records, or treating-provider chart notes. A treating-provider history without supporting records may be accepted on prescriber attestation. If claims or other records on file are inconsistent with the reported history, the request is referred for clinical review and is not approved on the reported history alone.",
+      "evidence_needed": [
+        "Drug name, approximate start and stop dates, and reason stopped for each prior therapy",
+        "Supporting claims, prescription records, or treating-provider chart notes (or prescriber attestation)"
+      ],
+      "lookback_months": null,
+      "logic": "ALL",
+      "sub_criteria": [
+        {
+          "id": "C5a",
+          "policy_ref": "3.5(a)",
+          "type": "step_therapy",
+          "text": "Conventional therapy: an inadequate response to, intolerance of, or contraindication to at least one conventional therapy. Conventional therapies are systemic corticosteroids, azathioprine, 6-mercaptopurine, and methotrexate; for ulcerative colitis, oral aminosalicylates (such as mesalamine) also count. An inadequate response to corticosteroids includes steroid dependence (relapse during taper or within 3 months of stopping) and steroid-refractory disease. Budesonide counts as a corticosteroid for this purpose.",
+          "evidence_needed": [
+            "Drug name, approximate start and stop dates, and reason stopped",
+            "Claims, prescription records, or treating-provider chart notes (or prescriber attestation)",
+            "Documentation of inadequate response, intolerance, or contraindication"
+          ],
+          "lookback_months": null,
+          "logic": null,
+          "sub_criteria": []
+        },
+        {
+          "id": "C5b",
+          "policy_ref": "3.5(b)",
+          "type": "step_therapy",
+          "text": "Anti-TNF therapy: an inadequate response to, intolerance of, or contraindication to at least one TNF blocker: adalimumab or infliximab, including any biosimilar of either. Primary non-response, secondary loss of response, and intolerance each qualify. A contraindication must be specifically documented (for example, demyelinating disease or moderate to severe heart failure).",
+          "evidence_needed": [
+            "Drug name (adalimumab or infliximab or biosimilar), approximate start and stop dates, and reason stopped",
+            "Claims, prescription records, or treating-provider chart notes (or prescriber attestation)",
+            "Specific documentation of the contraindication if applicable"
+          ],
+          "lookback_months": null,
+          "logic": null,
+          "sub_criteria": []
+        }
+      ]
+    },
+    {
+      "id": "C6",
+      "policy_ref": "3.6",
+      "type": "safety_screen",
+      "text": "The member has a negative tuberculosis screening test (interferon-gamma release assay or tuberculin skin test) dated within the 12 months before the request. An indeterminate interferon-gamma release assay is not a negative result. If the screening test is positive, the record must show that active tuberculosis has been excluded by chest imaging and that treatment for latent tuberculosis has been started. A test ordered but not resulted does not satisfy this criterion.",
+      "evidence_needed": [
+        "Resulted IGRA or TST with date and negative result",
+        "If positive: chest imaging excluding active TB and documentation that latent TB treatment has started"
+      ],
+      "lookback_months": 12,
+      "logic": null,
+      "sub_criteria": []
+    },
+    {
+      "id": "C7",
+      "policy_ref": "3.7",
+      "type": "safety_screen",
+      "text": "Results of both hepatitis B surface antigen (HBsAg) and total hepatitis B core antibody (anti-HBc) are on file. There is no lookback limit. If either result is positive, the record must include a plan for monitoring or antiviral prophylaxis. Hepatitis B vaccination history, or a hepatitis B surface antibody (anti-HBs) result alone, does not satisfy this criterion. A test that has been ordered but not resulted does not satisfy this criterion.",
+      "evidence_needed": [
+        "Resulted HBsAg",
+        "Resulted total anti-HBc",
+        "If either positive: monitoring or antiviral prophylaxis plan"
+      ],
+      "lookback_months": null,
+      "logic": null,
+      "sub_criteria": []
+    },
+    {
+      "id": "C8",
+      "policy_ref": "3.8",
+      "type": "exclusion",
+      "text": "Ustekinumab will not be used together with another biologic agent, a Janus kinase (JAK) inhibitor (such as tofacitinib or upadacitinib), or a sphingosine 1-phosphate (S1P) receptor modulator (such as ozanimod or etrasimod). If the member is switching from one of these agents, the record must show that the prior agent has been or will be stopped.",
+      "evidence_needed": [
+        "Current medication list showing no concurrent biologic, JAK inhibitor, or S1P modulator",
+        "If switching: documentation that the prior agent has been or will be stopped"
+      ],
+      "lookback_months": null,
+      "logic": null,
+      "sub_criteria": []
+    },
+    {
+      "id": "C9",
+      "policy_ref": "3.9",
+      "type": "dosing",
+      "text": "The requested dose follows the FDA-approved adult labeling. Induction: a single intravenous dose based on body weight: 260 mg for 55 kg or less; 390 mg for more than 55 kg up to 85 kg; 520 mg for more than 85 kg. Maintenance: 90 mg subcutaneously every 8 weeks, starting 8 weeks after the intravenous dose. A current body weight (within 30 days of the request) must be documented for the induction dose. Maintenance intervals shorter than every 8 weeks are not approved on initial authorization.",
+      "evidence_needed": [
+        "Requested IV induction dose matching weight band",
+        "Body weight with date within 30 days of the request",
+        "Requested maintenance dose 90 mg SC every 8 weeks starting 8 weeks after IV dose"
+      ],
+      "lookback_months": null,
+      "logic": null,
+      "sub_criteria": []
+    },
+    {
+      "id": "C10",
+      "policy_ref": "3.10",
+      "type": "preferred_product",
+      "text": "The request names the specific ustekinumab product (a request for 'ustekinumab' without a product is incomplete). Preferred products are ustekinumab-aekn and ustekinumab-ttwe, in IV and SC forms. All other ustekinumab products, including the reference (originator) product, are non-preferred. A non-preferred product is covered only when the record documents one of: (a) an inadequate response to, or intolerance of, both preferred products; or (b) a contraindication or documented hypersensitivity to an inactive ingredient present in both preferred products and absent from the requested product. Intolerance of one preferred product does not satisfy (a).",
+      "evidence_needed": [
+        "Specific product name in the request",
+        "If non-preferred: documented inadequate response or intolerance to both ustekinumab-aekn and ustekinumab-ttwe",
+        "OR documented contraindication/hypersensitivity to an inactive ingredient present in both preferred products and absent from the requested product"
+      ],
+      "lookback_months": null,
+      "logic": null,
+      "sub_criteria": []
+    }
+  ]
+}

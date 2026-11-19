@@ -1,0 +1,90 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-1141
+case_type: multi_issue
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 100140, payer northfield). States: C2=met_buried, C5b=insurance_stop, C6=stale'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-1141/gi-note-2026-11-03
+      quote: Moderately to severely active ulcerative pancolitis.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-1141/gi-note-2026-11-03
+      quote: His calprotectin from 2026-08-24 came back at 698 ug/g (lab reference <50).
+    note: 'synthetic state: met_buried'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-1141/gi-note-2026-11-03
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-1141/demographics-2025-10-15
+      quote: 'Date of birth: 1974-01-02'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-1141/medication-history-2026-11-03
+      quote: 'Prednisone 40 mg daily, tapered, 2024-06 to 2024-10. Reason stopped: steroid dependent (flared each
+        time the dose went below 15 mg).'
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: NOT_MET
+    acceptable_alternates:
+    - INSUFFICIENT_EVIDENCE
+    evidence:
+    - doc_id: PT-1141/medication-history-2026-11-03
+      quote: 'Adalimumab 40 mg every 2 weeks, 2024-12 to 2026-07. Reason stopped: stopped when insurance coverage
+        changed; disease was controlled at the time.'
+    note: 'synthetic state: insurance_stop'
+  C6:
+    status: NOT_MET
+    acceptable_alternates:
+    - INSUFFICIENT_EVIDENCE
+    evidence:
+    - doc_id: PT-1141/labs-2025-10-13
+      quote: QuantiFERON-TB Gold Plus              NEGATIVE      Negative
+    missing_item: TB screening dated within 12 months of the request (most recent is from 2025-10-13).
+    note: 'synthetic state: stale'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-1141/labs-2026-09-14
+      quote: Hepatitis B surface antigen           Nonreactive   Nonreactive
+    - doc_id: PT-1141/labs-2026-09-14
+      quote: Hepatitis B core antibody, total      Nonreactive   Nonreactive
+    note: 'synthetic state: met_clean'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-1141/medication-history-2026-11-03
+      quote: Not currently on any advanced therapy (biologic, JAK inhibitor, or S1P receptor modulator).
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-1141/gi-note-2026-11-03
+      quote: Weight 78.1 kg.
+    - doc_id: PT-1141/gi-note-2026-11-03
+      quote: 390 mg IV once (weight 78.1 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-1141/gi-note-2026-11-03
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+packet_outcome: NEEDS_PHYSICIAN

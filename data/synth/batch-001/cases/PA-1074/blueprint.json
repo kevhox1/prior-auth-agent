@@ -1,0 +1,40 @@
+{
+  "seed": 100073,
+  "request_id": "PA-1074",
+  "patient_id": "PT-1074",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Beatriz",
+  "last_name": "Galloway",
+  "sex": "F",
+  "dob": "1986-04-19",
+  "disease": "uc",
+  "weight_kg": 49.8,
+  "states": {
+    "C1": "met_clean",
+    "C2": "crp_only",
+    "C5a": "met_clean",
+    "C5b": "met_clean",
+    "C6": "met_clean",
+    "C7": "partial",
+    "C8": "switch_with_stop",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 0,
+    "provider": 0,
+    "medhx_format": "narrative",
+    "lab_vendor": 2,
+    "outside_quality": "fax",
+    "outside_practice": 3,
+    "distractors": 0,
+    "date_style": "us",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": true
+  }
+}

@@ -1,0 +1,727 @@
+{
+  "request": {
+    "request_id": "PA-3541",
+    "patient_id": "PT-3541",
+    "drug": "ustekinumab",
+    "product": "ustekinumab-aekn",
+    "dose": "260 mg IV once (weight 55.0 kg), then 90 mg SC every 8 weeks starting 8 weeks after the IV dose",
+    "indication_icd10": "K50.80",
+    "payer": "calder",
+    "plan_type": "commercial",
+    "ordering_provider": "Dr. A. Rivera, Gastroenterology",
+    "urgency": "standard",
+    "request_date": "2026-11-18",
+    "requested_start": "2026-12-01",
+    "requested_channel": null,
+    "expedited_reason": null
+  },
+  "intake": {
+    "request": {
+      "request_id": "PA-3541",
+      "patient_id": "PT-3541",
+      "drug": "ustekinumab",
+      "product": "ustekinumab-aekn",
+      "dose": "260 mg IV once (weight 55.0 kg), then 90 mg SC every 8 weeks starting 8 weeks after the IV dose",
+      "indication_icd10": "K50.80",
+      "payer": "calder",
+      "plan_type": "commercial",
+      "ordering_provider": "Dr. A. Rivera, Gastroenterology",
+      "urgency": "standard",
+      "request_date": "2026-11-18",
+      "requested_start": "2026-12-01",
+      "requested_channel": null,
+      "expedited_reason": null
+    },
+    "policy_id": "calder-ustekinumab-ibd",
+    "policy_version": "2026-07",
+    "n_documents": 8,
+    "decision_clock": "Standard review. Pharmacy benefit: 72 hours; medical benefit: 7 calendar days, from receipt of all required information (policy section E).",
+    "notes": []
+  },
+  "policy_id": "calder-ustekinumab-ibd",
+  "policy_version": "2026-07",
+  "routing": {
+    "pa_required": true,
+    "channels": {
+      "iv_induction": "medical",
+      "sc_maintenance": "pharmacy"
+    },
+    "requested_channel_ok": null,
+    "notes": [
+      "Two submissions: iv induction via the medical benefit; sc maintenance via the pharmacy benefit"
+    ]
+  },
+  "checklist": {
+    "policy_id": "calder-ustekinumab-ibd",
+    "payer": "calder",
+    "drug": "ustekinumab",
+    "version": "2026-07",
+    "effective_date": "2026-07-01",
+    "indications": [
+      "Moderately to severely active Crohn's disease",
+      "Moderately to severely active ulcerative colitis"
+    ],
+    "benefit_channel": {
+      "iv_induction": "medical",
+      "subcutaneous_maintenance": "pharmacy"
+    },
+    "auth_duration_months": 12,
+    "logic": "ALL",
+    "criteria": [
+      {
+        "id": "C1",
+        "policy_ref": "B.1",
+        "type": "diagnosis",
+        "text": "The member has moderately to severely active Crohn's disease or ulcerative colitis, as stated by the prescriber in the clinical record.",
+        "evidence_needed": [
+          "Prescriber statement in clinical record of moderately to severely active CD or UC"
+        ],
+        "lookback_months": null,
+        "logic": null,
+        "sub_criteria": []
+      },
+      {
+        "id": "C2",
+        "policy_ref": "B.2",
+        "type": "disease_activity",
+        "text": "Disease activity has been confirmed by direct visualization: an ileocolonoscopy, colonoscopy, or flexible sigmoidoscopy performed within the past 12 months that documents active mucosal inflammation. Laboratory markers (including fecal calprotectin, C-reactive protein, sedimentation rate) do not meet this requirement on their own, and neither do cross-sectional imaging studies.",
+        "evidence_needed": [
+          "Ileocolonoscopy, colonoscopy, or flexible sigmoidoscopy report dated within the past 12 months documenting active mucosal inflammation"
+        ],
+        "lookback_months": 12,
+        "logic": null,
+        "sub_criteria": []
+      },
+      {
+        "id": "C3",
+        "policy_ref": "B.3",
+        "type": "prescriber",
+        "text": "The prescriber is a gastroenterologist, or the prescriber has consulted with a gastroenterologist about this treatment.",
+        "evidence_needed": [
+          "Prescriber specialty",
+          "Documentation of consultation with a gastroenterologist if prescriber is not one"
+        ],
+        "lookback_months": null,
+        "logic": null,
+        "sub_criteria": []
+      },
+      {
+        "id": "C4",
+        "policy_ref": "B.4",
+        "type": "age",
+        "text": "The member is at least 18 years old on the date of the request.",
+        "evidence_needed": [
+          "Date of birth and request date"
+        ],
+        "lookback_months": null,
+        "logic": null,
+        "sub_criteria": []
+      },
+      {
+        "id": "C5",
+        "policy_ref": "B.5",
+        "type": "step_therapy",
+        "text": "The member has tried at least one prior therapy for CD or UC, shown by either (a) a conventional agent (oral or intravenous corticosteroid, budesonide, azathioprine, mercaptopurine, or methotrexate; for UC, an oral 5-aminosalicylate) that was stopped or found insufficient because of inadequate response, intolerance, or contraindication; or (b) a biologic or targeted synthetic agent for CD or UC (for example adalimumab, infliximab, vedolizumab, certolizumab, risankizumab, tofacitinib, upadacitinib, ozanimod) that was stopped or found insufficient because of inadequate response or intolerance, or a documented contraindication to TNF blockers. One is enough. The record should identify the drug, roughly when it was used, and why it was stopped. A trial of a TNF blocker is not required before ustekinumab.",
+        "evidence_needed": [
+          "Drug name",
+          "Approximate dates of use",
+          "Reason stopped or found insufficient (inadequate response, intolerance, or contraindication)",
+          "Documented TNF blocker contraindication if relied upon"
+        ],
+        "lookback_months": null,
+        "logic": null,
+        "sub_criteria": []
+      },
+      {
+        "id": "C6",
+        "policy_ref": "B.6",
+        "type": "safety_screen",
+        "text": "Tuberculosis has been screened with an interferon-gamma release assay or tuberculin skin test with a negative result in the past 6 months. An indeterminate or borderline result is not negative. A member with a positive screen qualifies only if the record shows a chest radiograph without active disease and that treatment for latent infection has begun.",
+        "evidence_needed": [
+          "IGRA or TST result with date within past 6 months",
+          "If positive: chest radiograph report without active disease",
+          "If positive: documentation that latent TB treatment has begun"
+        ],
+        "lookback_months": 6,
+        "logic": null,
+        "sub_criteria": []
+      },
+      {
+        "id": "C7",
+        "policy_ref": "B.7",
+        "type": "safety_screen",
+        "text": "Hepatitis B status is documented with results for both hepatitis B surface antigen and total hepatitis B core antibody (results may be of any age). A reactive result requires a documented plan for antiviral prophylaxis or monitoring. Surface antibody results and vaccination records are not sufficient. Pending orders are not sufficient.",
+        "evidence_needed": [
+          "HBsAg result",
+          "Total hepatitis B core antibody result",
+          "If reactive: documented plan for antiviral prophylaxis or monitoring"
+        ],
+        "lookback_months": null,
+        "logic": null,
+        "sub_criteria": []
+      },
+      {
+        "id": "C8",
+        "policy_ref": "B.8",
+        "type": "exclusion",
+        "text": "Ustekinumab will not be combined with any other biologic, JAK inhibitor, or S1P receptor modulator for CD or UC. When the member is switching from one of these, the record shows the earlier agent is stopping.",
+        "evidence_needed": [
+          "Current medication list",
+          "Documentation that earlier biologic, JAK inhibitor, or S1P modulator is being stopped if switching"
+        ],
+        "lookback_months": null,
+        "logic": null,
+        "sub_criteria": []
+      },
+      {
+        "id": "C9",
+        "policy_ref": "B.9",
+        "type": "dosing",
+        "text": "The requested regimen is the labeled adult regimen: one weight-based intravenous induction infusion (260 mg up to and including 55 kg; 390 mg above 55 kg up to and including 85 kg; 520 mg above 85 kg), then 90 mg subcutaneously every 8 weeks beginning 8 weeks after the infusion. A body weight recorded in the 90 days before the request must be on file.",
+        "evidence_needed": [
+          "Requested induction dose and maintenance dose/frequency",
+          "Body weight recorded within the 90 days before the request"
+        ],
+        "lookback_months": 3,
+        "logic": null,
+        "sub_criteria": []
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "criterion_id": "C1",
+      "status": "MET",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "doc_id": "PT-3541/gi-note-2026-11-08",
+          "quote": "- Moderately to severely active ileocolonic Crohn's disease.",
+          "doc_date": "2026-11-08"
+        }
+      ],
+      "reasoning": "The GI note dated 2026-11-08 states moderately to severely active ileocolonic Crohn's disease. This is the prescriber's statement in the clinical record.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C2",
+      "status": "MET",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "doc_id": "PT-3541/colonoscopy-2026-08-17",
+          "quote": "- Terminal ileum: multiple ulcers 1-3 cm with surrounding erythema and edema.",
+          "doc_date": "2026-08-17"
+        },
+        {
+          "doc_id": "PT-3541/colonoscopy-2026-08-17",
+          "quote": "PATHOLOGY: Chronic active inflammation. No dysplasia.",
+          "doc_date": "2026-08-17"
+        }
+      ],
+      "reasoning": "A colonoscopy on 2026-08-17, within 12 months of the request, shows terminal ileal ulcers with erythema and edema. Biopsy also shows chronic active inflammation. The finding rests on direct visualization, not on lab markers.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": true,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C3",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "confidence": 0.7,
+      "evidence": [],
+      "reasoning": "No passage from the chart states the prescriber's specialty or documents a gastroenterology consultation. Notes are titled GI follow-up, but no passage names the author or their specialty.",
+      "missing_items": [
+        "Documentation of the prescriber's specialty (gastroenterology), such as a signed GI note or provider credentials",
+        "Documentation of a gastroenterology consultation if the prescriber is not a gastroenterologist"
+      ],
+      "deterministic_checks": {
+        "quote_found": null,
+        "doc_date_matches": null,
+        "patient_matches": null,
+        "date_in_window": null,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C4",
+      "status": "MET",
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "doc_id": "PT-3541/demographics-2026-11-01",
+          "quote": "Date of birth: 07/12/2000",
+          "doc_date": "2026-11-01"
+        }
+      ],
+      "reasoning": "Date of birth 07/12/2000 makes the member 26 on the request date of 2026-11-18. That is over 18.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": true,
+        "dose_in_label": null,
+        "notes": [
+          "age 26 on 2026-11-18 from DOB 2000-07-12"
+        ]
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C5",
+      "status": "MET",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "doc_id": "PT-3541/medication-history-2026-11-04",
+          "quote": "| Adalimumab | 40 mg every 2 weeks | 07/2023 | 11/2023 | Primary non-response: no clinical improvement after induction and 8 weeks of maintenance |",
+          "doc_date": "2026-11-04"
+        },
+        {
+          "doc_id": "PT-3541/medication-history-2026-11-04",
+          "quote": "| Prednisone | 40 mg daily, tapered | 05/2020 | 01/2021 | Steroid dependent (flared each time the dose went below 15 mg) |",
+          "doc_date": "2026-11-04"
+        }
+      ],
+      "reasoning": "Adalimumab was used 07/2023 to 11/2023 and stopped for primary non-response. Prednisone was used 05/2020 to 01/2021 with steroid dependence. Either one satisfies the step requirement, and the drug, dates and reason are recorded.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C6",
+      "status": "NOT_MET",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "doc_id": "PT-3541/labs-2025-11-29",
+          "quote": "QUANTIFERON TB GOLD PLUS .......... NEGATIVE  (Negative)",
+          "doc_date": "2025-11-29"
+        },
+        {
+          "doc_id": "PT-3541/labs-2025-11-29",
+          "quote": "COLLECTED: 11/29/2025      ORDERING: Dr. A. Rivera",
+          "doc_date": "2025-11-29"
+        }
+      ],
+      "reasoning": "The only TB screen in the passages is a negative QuantiFERON collected 2025-11-29. That is about 12 months before the 2026-11-18 request, outside the 6-month window. No more recent TB result is shown.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": false,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": [
+          "no cited evidence dated on or after 2026-05-18 (6-month lookback)"
+        ]
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C7",
+      "status": "MET",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "doc_id": "PT-3541/labs-2026-09-19",
+          "quote": "HEP B SURFACE AG .................. Nonreactive  (Nonreactive)",
+          "doc_date": "2026-09-19"
+        },
+        {
+          "doc_id": "PT-3541/labs-2026-09-19",
+          "quote": "HEP B CORE AB TOTAL ............... Nonreactive  (Nonreactive)",
+          "doc_date": "2026-09-19"
+        }
+      ],
+      "reasoning": "Both HBsAg and total core antibody results are documented as nonreactive on 2026-09-19. Neither is reactive, so no prophylaxis plan is needed.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C8",
+      "status": "MET",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "doc_id": "PT-3541/medication-history-2026-11-04",
+          "quote": "- No current biologic, JAK inhibitor, or S1P receptor modulator.",
+          "doc_date": "2026-11-04"
+        }
+      ],
+      "reasoning": "The medication history states there is no current biologic, JAK inhibitor or S1P modulator. The other current medications listed, prednisone and ferrous sulfate, are not in the excluded classes.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C9",
+      "status": "MET",
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "doc_id": "PT-3541/gi-note-2026-11-08",
+          "quote": "- Start ustekinumab-aekn: 260 mg IV once (weight 55.0 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the IV dose.",
+          "doc_date": "2026-11-08"
+        },
+        {
+          "doc_id": "PT-3541/gi-note-2026-11-08",
+          "quote": "- Weight 55.0 kg.",
+          "doc_date": "2026-11-08"
+        }
+      ],
+      "reasoning": "Weight of 55.0 kg was recorded on 2026-11-08, within 90 days of the request. The 55 kg weight falls in the 260 mg tier, and the maintenance of 90 mg SC every 8 weeks starting 8 weeks after the infusion matches the policy.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": true,
+        "age_ok": null,
+        "dose_in_label": true,
+        "notes": [
+          "weight 55.0 kg (2026-11-08) -> label tier 260 mg; requested 260 mg"
+        ]
+      },
+      "status_before_checks": null
+    }
+  ],
+  "rolled_up": {
+    "C1": "MET",
+    "C2": "MET",
+    "C3": "INSUFFICIENT_EVIDENCE",
+    "C4": "MET",
+    "C5": "MET",
+    "C6": "NOT_MET",
+    "C7": "MET",
+    "C8": "MET",
+    "C9": "MET"
+  },
+  "retrieval": [
+    {
+      "criterion_id": "C1",
+      "passages": [
+        {
+          "doc_id": "PT-3541/gi-note-2026-11-08",
+          "quote": "- Moderately to severely active ileocolonic Crohn's disease.",
+          "doc_date": "2026-11-08",
+          "why_relevant": "Prescriber statement of moderately to severely active CD"
+        },
+        {
+          "doc_id": "PT-3541/gi-note-2026-05-29",
+          "quote": "- Crohn's disease, active.",
+          "doc_date": "2026-05-29",
+          "why_relevant": "Earlier active CD statement, no severity"
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-3541/labs-2025-11-29",
+        "PT-3541/gi-note-2026-05-29",
+        "PT-3541/colonoscopy-2026-08-17",
+        "PT-3541/labs-2026-09-19",
+        "PT-3541/demographics-2026-11-01",
+        "PT-3541/medication-history-2026-11-04",
+        "PT-3541/gi-note-2026-11-08",
+        "PT-3541/problem-list-2026-11-08"
+      ]
+    },
+    {
+      "criterion_id": "C2",
+      "passages": [
+        {
+          "doc_id": "PT-3541/colonoscopy-2026-08-17",
+          "quote": "- Terminal ileum: multiple ulcers 1-3 cm with surrounding erythema and edema.",
+          "doc_date": "2026-08-17",
+          "why_relevant": "Colonoscopy within 12 months showing active ulceration"
+        },
+        {
+          "doc_id": "PT-3541/colonoscopy-2026-08-17",
+          "quote": "SES-CD: 10",
+          "doc_date": "2026-08-17",
+          "why_relevant": "Endoscopic severity score"
+        },
+        {
+          "doc_id": "PT-3541/colonoscopy-2026-08-17",
+          "quote": "PATHOLOGY: Chronic active inflammation. No dysplasia.",
+          "doc_date": "2026-08-17",
+          "why_relevant": "Biopsy confirms active inflammation"
+        },
+        {
+          "doc_id": "PT-3541/labs-2026-09-19",
+          "quote": "C REACTIVE PROTEIN ................ 25.3 mg/L  (<5.0)",
+          "doc_date": "2026-09-19",
+          "why_relevant": "Lab marker only, not sufficient alone"
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-3541/labs-2025-11-29",
+        "PT-3541/gi-note-2026-05-29",
+        "PT-3541/colonoscopy-2026-08-17",
+        "PT-3541/labs-2026-09-19",
+        "PT-3541/demographics-2026-11-01",
+        "PT-3541/medication-history-2026-11-04",
+        "PT-3541/gi-note-2026-11-08",
+        "PT-3541/problem-list-2026-11-08"
+      ]
+    },
+    {
+      "criterion_id": "C3",
+      "passages": [],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-3541/labs-2025-11-29",
+        "PT-3541/gi-note-2026-05-29",
+        "PT-3541/colonoscopy-2026-08-17",
+        "PT-3541/labs-2026-09-19",
+        "PT-3541/demographics-2026-11-01",
+        "PT-3541/medication-history-2026-11-04",
+        "PT-3541/gi-note-2026-11-08",
+        "PT-3541/problem-list-2026-11-08"
+      ]
+    },
+    {
+      "criterion_id": "C4",
+      "passages": [
+        {
+          "doc_id": "PT-3541/demographics-2026-11-01",
+          "quote": "Date of birth: 07/12/2000",
+          "doc_date": "2026-11-01",
+          "why_relevant": "DOB; age 26 at request date 2026-11-18"
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-3541/labs-2025-11-29",
+        "PT-3541/gi-note-2026-05-29",
+        "PT-3541/colonoscopy-2026-08-17",
+        "PT-3541/labs-2026-09-19",
+        "PT-3541/demographics-2026-11-01",
+        "PT-3541/medication-history-2026-11-04",
+        "PT-3541/gi-note-2026-11-08",
+        "PT-3541/problem-list-2026-11-08"
+      ]
+    },
+    {
+      "criterion_id": "C5",
+      "passages": [
+        {
+          "doc_id": "PT-3541/medication-history-2026-11-04",
+          "quote": "| Prednisone | 40 mg daily, tapered | 05/2020 | 01/2021 | Steroid dependent (flared each time the dose went below 15 mg) |",
+          "doc_date": "2026-11-04",
+          "why_relevant": "Conventional agent trial with reason stopped"
+        },
+        {
+          "doc_id": "PT-3541/medication-history-2026-11-04",
+          "quote": "| Adalimumab | 40 mg every 2 weeks | 07/2023 | 11/2023 | Primary non-response: no clinical improvement after induction and 8 weeks of maintenance |",
+          "doc_date": "2026-11-04",
+          "why_relevant": "Biologic trial with inadequate response"
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-3541/labs-2025-11-29",
+        "PT-3541/gi-note-2026-05-29",
+        "PT-3541/colonoscopy-2026-08-17",
+        "PT-3541/labs-2026-09-19",
+        "PT-3541/demographics-2026-11-01",
+        "PT-3541/medication-history-2026-11-04",
+        "PT-3541/gi-note-2026-11-08",
+        "PT-3541/problem-list-2026-11-08"
+      ]
+    },
+    {
+      "criterion_id": "C6",
+      "passages": [
+        {
+          "doc_id": "PT-3541/labs-2025-11-29",
+          "quote": "QUANTIFERON TB GOLD PLUS .......... NEGATIVE  (Negative)",
+          "doc_date": "2025-11-29",
+          "why_relevant": "Negative IGRA but collected 11/29/2025, about 12 months before request (outside 6-month window)"
+        },
+        {
+          "doc_id": "PT-3541/labs-2025-11-29",
+          "quote": "COLLECTED: 11/29/2025      ORDERING: Dr. A. Rivera",
+          "doc_date": "2025-11-29",
+          "why_relevant": "Collection date"
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-3541/labs-2025-11-29",
+        "PT-3541/gi-note-2026-05-29",
+        "PT-3541/colonoscopy-2026-08-17",
+        "PT-3541/labs-2026-09-19",
+        "PT-3541/demographics-2026-11-01",
+        "PT-3541/medication-history-2026-11-04",
+        "PT-3541/gi-note-2026-11-08",
+        "PT-3541/problem-list-2026-11-08"
+      ]
+    },
+    {
+      "criterion_id": "C7",
+      "passages": [
+        {
+          "doc_id": "PT-3541/labs-2026-09-19",
+          "quote": "HEP B SURFACE AG .................. Nonreactive  (Nonreactive)",
+          "doc_date": "2026-09-19",
+          "why_relevant": "HBsAg result"
+        },
+        {
+          "doc_id": "PT-3541/labs-2026-09-19",
+          "quote": "HEP B CORE AB TOTAL ............... Nonreactive  (Nonreactive)",
+          "doc_date": "2026-09-19",
+          "why_relevant": "Total core antibody result"
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-3541/labs-2025-11-29",
+        "PT-3541/gi-note-2026-05-29",
+        "PT-3541/colonoscopy-2026-08-17",
+        "PT-3541/labs-2026-09-19",
+        "PT-3541/demographics-2026-11-01",
+        "PT-3541/medication-history-2026-11-04",
+        "PT-3541/gi-note-2026-11-08",
+        "PT-3541/problem-list-2026-11-08"
+      ]
+    },
+    {
+      "criterion_id": "C8",
+      "passages": [
+        {
+          "doc_id": "PT-3541/medication-history-2026-11-04",
+          "quote": "- No current biologic, JAK inhibitor, or S1P receptor modulator.",
+          "doc_date": "2026-11-04",
+          "why_relevant": "No current interacting agents"
+        },
+        {
+          "doc_id": "PT-3541/medication-history-2026-11-04",
+          "quote": "- Prednisone 20 mg daily, taper planned after induction",
+          "doc_date": "2026-11-04",
+          "why_relevant": "Current medication"
+        },
+        {
+          "doc_id": "PT-3541/medication-history-2026-11-04",
+          "quote": "- Ferrous sulfate 325 mg daily",
+          "doc_date": "2026-11-04",
+          "why_relevant": "Current medication"
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-3541/labs-2025-11-29",
+        "PT-3541/gi-note-2026-05-29",
+        "PT-3541/colonoscopy-2026-08-17",
+        "PT-3541/labs-2026-09-19",
+        "PT-3541/demographics-2026-11-01",
+        "PT-3541/medication-history-2026-11-04",
+        "PT-3541/gi-note-2026-11-08",
+        "PT-3541/problem-list-2026-11-08"
+      ]
+    },
+    {
+      "criterion_id": "C9",
+      "passages": [
+        {
+          "doc_id": "PT-3541/gi-note-2026-11-08",
+          "quote": "- Start ustekinumab-aekn: 260 mg IV once (weight 55.0 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the IV dose.",
+          "doc_date": "2026-11-08",
+          "why_relevant": "Requested regimen"
+        },
+        {
+          "doc_id": "PT-3541/gi-note-2026-11-08",
+          "quote": "- Weight 55.0 kg.",
+          "doc_date": "2026-11-08",
+          "why_relevant": "Weight within 90 days"
+        },
+        {
+          "doc_id": "PT-3541/gi-note-2026-05-29",
+          "quote": "- Weight 58.0 kg.",
+          "doc_date": "2026-05-29",
+          "why_relevant": "Older weight, outside 90 days"
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-3541/labs-2025-11-29",
+        "PT-3541/gi-note-2026-05-29",
+        "PT-3541/colonoscopy-2026-08-17",
+        "PT-3541/labs-2026-09-19",
+        "PT-3541/demographics-2026-11-01",
+        "PT-3541/medication-history-2026-11-04",
+        "PT-3541/gi-note-2026-11-08",
+        "PT-3541/problem-list-2026-11-08"
+      ]
+    }
+  ],
+  "injection_flags": [],
+  "gaps": [
+    {
+      "criterion_id": "C3",
+      "missing_item": "Prescriber specialty documentation or GI consult note",
+      "who_can_supply": "practice_staff",
+      "clinician_query": "For PA-3541 (criterion C3, policy B.3), the chart does not state Dr. A. Rivera's specialty or document a GI consultation. Please attach a signed GI note showing the author and specialty, or the provider credentials. If the prescriber is not a gastroenterologist, please attach documentation of a GI consultation about this treatment.",
+      "would_satisfy": "Policy B.3 accepts documentation that the prescriber is a gastroenterologist (e.g., a signed GI note or provider credentials), or documentation that the prescriber consulted a gastroenterologist about this treatment."
+    },
+    {
+      "criterion_id": "C6",
+      "missing_item": "TB screen (IGRA or TST) negative result dated within 6 months",
+      "who_can_supply": "ordering_provider",
+      "clinician_query": "For PA-3541 (criterion C6, policy B.6), the only TB screen on file is the negative QuantiFERON collected 2025-11-29 (labs-2025-11-29). This is about 12 months before the 2026-11-18 request and outside the 6-month window. Please review and advise whether a more recent TB screen result exists or will be documented.",
+      "would_satisfy": "Policy B.6 accepts a negative IGRA or TST dated on or after 2026-05-18. An indeterminate or borderline result is not negative. A positive screen qualifies only with a chest radiograph showing no active disease and documentation that latent TB treatment has begun."
+    }
+  ],
+  "outcome": "NEEDS_PHYSICIAN",
+  "packet": null,
+  "verification": null
+}

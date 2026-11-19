@@ -1,0 +1,40 @@
+{
+  "seed": 200076,
+  "request_id": "PA-2077",
+  "patient_id": "PT-2077",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Isaac",
+  "last_name": "Sorensen",
+  "sex": "M",
+  "dob": "1989-07-26",
+  "disease": "uc",
+  "weight_kg": 102.7,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_fcp",
+    "C5a": "missing",
+    "C5b": "met_clean",
+    "C6": "met_clean",
+    "C7": "met_clean",
+    "C8": "met_clean",
+    "C9": "stale_weight",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 2,
+    "provider": 2,
+    "medhx_format": "table",
+    "lab_vendor": 1,
+    "outside_quality": "fax",
+    "outside_practice": 1,
+    "distractors": 2,
+    "date_style": "iso",
+    "copy_forward": true,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

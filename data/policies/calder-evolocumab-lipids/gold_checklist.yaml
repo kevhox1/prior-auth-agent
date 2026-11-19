@@ -1,0 +1,76 @@
+# GOLD - evaluation only. The agent never sees this file; it builds its own
+# checklist from policy.md (step 3) and is scored against this one.
+# Reuse test (spec section 10): a different specialty, drug and benefit shape,
+# added as data and configuration only.
+policy_id: calder-evolocumab-lipids
+payer: calder
+drug: evolocumab
+version: "2026-09"
+effective_date: 2026-09-01
+indications:
+  - clinical atherosclerotic cardiovascular disease with LDL-C above goal (adults)
+  - heterozygous familial hypercholesterolemia (adults)
+benefit_channel:
+  sc_injection: pharmacy
+auth_duration_months: 12
+logic: ALL
+criteria:
+  - id: C1
+    policy_ref: "B.1"
+    type: diagnosis
+    text: "Clinical ASCVD (prior MI or ACS, arterial revascularization, angina with documented CAD, atherosclerotic ischemic stroke or TIA, symptomatic PAD) or HeFH confirmed by genetic testing or Dutch Lipid Clinic Network score of 6 or higher"
+    evidence_needed: ["qualifying diagnosis in a prescriber note or problem list", "for HeFH, the genetic result or DLCN score"]
+
+  - id: C2
+    policy_ref: "B.2"
+    type: lab_threshold
+    text: "LDL-C drawn within 3 months, on the current statin and ezetimibe regimen, at or above 70 mg/dL (ASCVD) or 100 mg/dL (HeFH without ASCVD). A pre-treatment LDL-C does not count"
+    evidence_needed: ["LDL-C value", "date drawn", "therapy at the time of the draw"]
+    lookback_months: 3
+
+  - id: C3
+    policy_ref: "B.3"
+    type: step_therapy
+    text: "Maximally tolerated statin therapy: on a statin (a) or unable to take one (b)"
+    logic: ANY
+    sub_criteria:
+      - id: C3a
+        policy_ref: "B.3(a)"
+        type: step_therapy
+        text: "High-intensity statin (atorvastatin 40-80 mg or rosuvastatin 20-40 mg), or the highest tolerated dose after a documented adverse effect at a higher dose, for at least 8 weeks before the LDL-C, continuing with evolocumab"
+        evidence_needed: ["statin, dose and start date", "plan to continue"]
+      - id: C3b
+        policy_ref: "B.3(b)"
+        type: step_therapy
+        text: "Statin intolerance of at least two statins (one at the lowest starting dose), each described with drug, dose, symptom and improvement after stopping; or a contraindication (statin-associated rhabdomyolysis, active liver disease). 'Statin intolerant' alone does not count"
+        evidence_needed: ["each statin with dose, symptom and resolution", "or the contraindication"]
+
+  - id: C4
+    policy_ref: "B.4"
+    type: step_therapy
+    text: "Ezetimibe 10 mg daily for at least 4 weeks (current or past) with LDL-C still at or above threshold, or documented ezetimibe intolerance or contraindication"
+    evidence_needed: ["ezetimibe start date and duration", "or intolerance or contraindication"]
+
+  - id: C5
+    policy_ref: "B.5"
+    type: prescriber
+    text: "Prescribed by, or in consultation with, a cardiologist, endocrinologist or lipid specialist"
+    evidence_needed: ["prescriber specialty or consult note"]
+
+  - id: C6
+    policy_ref: "B.6"
+    type: age
+    text: "Age 18 or older on the request date"
+    evidence_needed: ["date of birth"]
+
+  - id: C7
+    policy_ref: "B.7"
+    type: exclusion
+    text: "Not combined with alirocumab or inclisiran; any earlier PCSK9-directed agent is stopping"
+    evidence_needed: ["current medication list"]
+
+  - id: C8
+    policy_ref: "B.8"
+    type: dosing
+    text: "Labeled adult regimen: 140 mg SC every 2 weeks or 420 mg SC once monthly"
+    evidence_needed: ["requested dose and interval"]

@@ -1,0 +1,40 @@
+{
+  "seed": 200031,
+  "request_id": "PA-2032",
+  "patient_id": "PT-2032",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Teresa",
+  "last_name": "Petrakis",
+  "sex": "F",
+  "dob": "1989-09-07",
+  "disease": "cd",
+  "weight_kg": 68.4,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "missing",
+    "C5b": "met_buried",
+    "C6": "stale",
+    "C7": "met_clean",
+    "C8": "met_clean",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 0,
+    "provider": 1,
+    "medhx_format": "narrative",
+    "lab_vendor": 0,
+    "outside_quality": "clean",
+    "outside_practice": 0,
+    "distractors": 1,
+    "date_style": "iso",
+    "copy_forward": true,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

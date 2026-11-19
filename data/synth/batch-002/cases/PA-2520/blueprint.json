@@ -1,0 +1,40 @@
+{
+  "seed": 200019,
+  "request_id": "PA-2520",
+  "patient_id": "PT-2520",
+  "request_date": "2026-11-18",
+  "payer": "calder",
+  "first_name": "Eli",
+  "last_name": "Marchetti",
+  "sex": "M",
+  "dob": "1978-11-20",
+  "disease": "cd",
+  "weight_kg": 55.0,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_clean",
+    "C5b": "met_clean",
+    "C6": "met_clean",
+    "C7": "decoy",
+    "C8": "not_met_combo",
+    "C9": "met_borderline",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 2,
+    "provider": 2,
+    "medhx_format": "scattered",
+    "lab_vendor": 1,
+    "outside_quality": "ocr",
+    "outside_practice": 2,
+    "distractors": 0,
+    "date_style": "us",
+    "copy_forward": true,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

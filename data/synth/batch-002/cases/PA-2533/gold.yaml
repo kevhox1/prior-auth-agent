@@ -1,0 +1,83 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-2533
+case_type: multi_issue
+policy_id: calder-ustekinumab-ibd
+description: 'Synthetic case (seed 200032, payer calder). States: C2=met_scope, C5b=not_met_naive, C6=met_borderline,
+  C7=decoy'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-2533/gi-note-2026-11-07
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-2533/colonoscopy-2026-08-19
+      quote: 'Terminal ileum: multiple ulcers 0.3-1.5 cm with surrounding erythema and edema.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-2533/gi-note-2026-11-07
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-2533/demographics-2026-07-15
+      quote: 'Date of birth: 1957-06-14'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-2533/medication-history-2026-11-07
+      quote: 'Prednisone 40 mg daily, tapered, 2020-12 to 2021-08. Reason stopped: steroid dependent (flared each
+        time the dose went below 15 mg).'
+    - doc_id: PT-2533/medication-history-2026-11-07
+      quote: 'Mercaptopurine 1.5 mg/kg daily, 2021-09 to 2022-04. Reason stopped: inadequate response after 6 months
+        at a therapeutic metabolite level.'
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: NOT_MET
+    acceptable_alternates:
+    - INSUFFICIENT_EVIDENCE
+    evidence:
+    - doc_id: PT-2533/gi-note-2026-11-07
+      quote: Biologic-naive; no prior anti-TNF therapy.
+    note: 'synthetic state: not_met_naive'
+  C6:
+    status: NOT_MET
+    acceptable_alternates:
+    - INSUFFICIENT_EVIDENCE
+    evidence:
+    - doc_id: PT-2533/labs-2025-11-23
+      quote: QuantiFERON-TB Gold Plus | NEGATIVE | - | Negative
+    missing_item: TB screening (IGRA or TST) with a negative result dated within 6 months of the request.
+    note: 'synthetic state: met_borderline'
+  C7:
+    status: INSUFFICIENT_EVIDENCE
+    missing_item: HBsAg and total anti-HBc results (vaccination history and anti-HBs do not count).
+    note: 'synthetic state: decoy'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-2533/medication-history-2026-11-07
+      quote: Not currently on any advanced therapy (biologic, JAK inhibitor, or S1P receptor modulator).
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-2533/gi-note-2026-11-07
+      quote: Weight 103.5 kg.
+    - doc_id: PT-2533/gi-note-2026-11-07
+      quote: 520 mg IV once (weight 103.5 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+packet_outcome: NEEDS_PHYSICIAN

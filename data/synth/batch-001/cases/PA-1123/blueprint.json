@@ -1,0 +1,40 @@
+{
+  "seed": 100122,
+  "request_id": "PA-1123",
+  "patient_id": "PT-1123",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Hannah",
+  "last_name": "Nakashima",
+  "sex": "F",
+  "dob": "1976-07-23",
+  "disease": "cd",
+  "weight_kg": 72.8,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "missing",
+    "C5b": "met_clean",
+    "C6": "met_clean",
+    "C7": "met_clean",
+    "C8": "met_clean",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 1,
+    "provider": 0,
+    "medhx_format": "scattered",
+    "lab_vendor": 2,
+    "outside_quality": "ocr",
+    "outside_practice": 2,
+    "distractors": 0,
+    "date_style": "us",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

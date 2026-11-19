@@ -1,0 +1,740 @@
+{
+  "request": {
+    "request_id": "PA-0103",
+    "patient_id": "PT-0103",
+    "drug": "evolocumab",
+    "product": "evolocumab",
+    "dose": "140 mg subcutaneously every 2 weeks",
+    "indication_icd10": "Z86.73",
+    "payer": "calder",
+    "plan_type": "commercial",
+    "ordering_provider": "Dr. M. Osei, Cardiology",
+    "urgency": "standard",
+    "request_date": "2026-11-18",
+    "requested_start": "2026-12-01",
+    "requested_channel": null,
+    "expedited_reason": null
+  },
+  "intake": {
+    "request": {
+      "request_id": "PA-0103",
+      "patient_id": "PT-0103",
+      "drug": "evolocumab",
+      "product": "evolocumab",
+      "dose": "140 mg subcutaneously every 2 weeks",
+      "indication_icd10": "Z86.73",
+      "payer": "calder",
+      "plan_type": "commercial",
+      "ordering_provider": "Dr. M. Osei, Cardiology",
+      "urgency": "standard",
+      "request_date": "2026-11-18",
+      "requested_start": "2026-12-01",
+      "requested_channel": null,
+      "expedited_reason": null
+    },
+    "policy_id": "calder-evolocumab-lipids",
+    "policy_version": "2026-09",
+    "n_documents": 6,
+    "decision_clock": "Standard review. Pharmacy benefit: decision within 72 hours of receiving all required information (policy section E).",
+    "notes": []
+  },
+  "policy_id": "calder-evolocumab-lipids",
+  "policy_version": "2026-09",
+  "routing": {
+    "pa_required": true,
+    "channels": {
+      "sc_injection": "pharmacy"
+    },
+    "requested_channel_ok": null,
+    "notes": []
+  },
+  "checklist": {
+    "policy_id": "calder-evolocumab-lipids",
+    "payer": "calder",
+    "drug": "evolocumab",
+    "version": "2026-09",
+    "effective_date": "2026-09-01",
+    "indications": [
+      "Clinical atherosclerotic cardiovascular disease (ASCVD) with elevated LDL-C",
+      "Heterozygous familial hypercholesterolemia (HeFH) with elevated LDL-C"
+    ],
+    "benefit_channel": {
+      "self_administered_subcutaneous": "pharmacy"
+    },
+    "auth_duration_months": 12,
+    "logic": "ALL",
+    "criteria": [
+      {
+        "id": "C1",
+        "policy_ref": "B.1",
+        "type": "diagnosis",
+        "text": "The prescriber documents in the clinical record that the member has one of two conditions. The first is clinical ASCVD, meaning a prior myocardial infarction or acute coronary syndrome, coronary or other arterial revascularization, stable or unstable angina with documented coronary artery disease, ischemic stroke or TIA of atherosclerotic origin, or symptomatic peripheral artery disease. The second is heterozygous familial hypercholesterolemia (HeFH) confirmed by genetic testing or by a Dutch Lipid Clinic Network score of 6 or higher.",
+        "evidence_needed": [
+          "Prescriber documentation of a clinical ASCVD diagnosis, naming the qualifying event or condition (MI/ACS, revascularization, angina with documented CAD, atherosclerotic ischemic stroke/TIA, or symptomatic PAD)",
+          "OR a documented HeFH diagnosis with a genetic test result or a Dutch Lipid Clinic Network score of 6 or higher"
+        ],
+        "lookback_months": null,
+        "logic": null,
+        "sub_criteria": []
+      },
+      {
+        "id": "C2",
+        "policy_ref": "B.2",
+        "type": "lab_threshold",
+        "text": "An LDL-C result drawn in the 3 months before the request, while the member was on the lipid-lowering therapy described in B.3 and B.4, is at or above the member's threshold. The threshold is 70 mg/dL for a member with clinical ASCVD, or 100 mg/dL for a member with HeFH and no clinical ASCVD. An LDL-C drawn before the current lipid-lowering regimen was started does not meet this requirement.",
+        "evidence_needed": [
+          "LDL-C lab result with draw date within 3 months before the request",
+          "LDL-C value at or above 70 mg/dL (ASCVD) or at or above 100 mg/dL (HeFH without ASCVD)",
+          "Documentation that the LDL-C was drawn after the current statin/ezetimibe regimen was started and while the member was on it"
+        ],
+        "lookback_months": 3,
+        "logic": null,
+        "sub_criteria": []
+      },
+      {
+        "id": "C3",
+        "policy_ref": "B.3",
+        "type": "step_therapy",
+        "text": "The member is on maximally tolerated statin therapy, shown by either (a) or (b). One is enough. For any claimed intolerance, the record must describe each statin's drug, dose, symptom or adverse effect, and improvement after the statin was stopped or reduced. A statement such as \"statin intolerant\" without these details does not meet this requirement.",
+        "evidence_needed": [
+          "Evidence satisfying B.3(a) or B.3(b)"
+        ],
+        "lookback_months": null,
+        "logic": "ANY",
+        "sub_criteria": [
+          {
+            "id": "C3a",
+            "policy_ref": "B.3(a)",
+            "type": "step_therapy",
+            "text": "The member takes a high-intensity statin (atorvastatin 40 to 80 mg daily or rosuvastatin 20 to 40 mg daily), or the highest statin dose the member tolerates when a higher dose caused a documented adverse effect. The member has taken it for at least 8 weeks before the B.2 LDL-C and will continue it with evolocumab. Any intolerance of a higher dose must be described with the drug, dose, symptom or adverse effect, and improvement after stopping or reducing it. A bare \"statin intolerant\" statement does not count.",
+            "evidence_needed": [
+              "Current statin name and daily dose (atorvastatin 40-80 mg or rosuvastatin 20-40 mg, or a lower maximally tolerated dose)",
+              "If on a lower than high-intensity dose: documented adverse effect at the higher dose, with drug, dose, symptom, and improvement after stopping or reducing it",
+              "Statin start date or fill history showing at least 8 weeks of use before the B.2 LDL-C draw",
+              "Documentation that the statin will continue alongside evolocumab"
+            ],
+            "lookback_months": null,
+            "logic": null,
+            "sub_criteria": []
+          },
+          {
+            "id": "C3b",
+            "policy_ref": "B.3(b)",
+            "type": "step_therapy",
+            "text": "The member cannot take a statin for one of two reasons. (i) Intolerance of at least two different statins, at least one of them at the lowest approved starting dose. (ii) A contraindication, meaning a history of statin-associated rhabdomyolysis or active liver disease. For each statin, the intolerance must be described with the drug, dose, symptom or adverse effect, and improvement after the statin was stopped or reduced. A statement such as \"statin intolerant\" without these details does not meet this requirement.",
+            "evidence_needed": [
+              "For intolerance: at least two different statins documented, each with drug name, dose, symptom/adverse effect, and improvement after stopping or reducing it",
+              "For intolerance: at least one of the statins tried at the lowest approved starting dose",
+              "OR for contraindication: documented history of statin-associated rhabdomyolysis or active liver disease"
+            ],
+            "lookback_months": null,
+            "logic": null,
+            "sub_criteria": []
+          }
+        ]
+      },
+      {
+        "id": "C4",
+        "policy_ref": "B.4",
+        "type": "step_therapy",
+        "text": "The member has taken ezetimibe 10 mg daily for at least 4 weeks, now or in the past, and LDL-C stayed at or above the B.2 threshold. Alternatively, the record documents intolerance of or a contraindication to ezetimibe.",
+        "evidence_needed": [
+          "Ezetimibe 10 mg daily with dates or fill history showing at least 4 weeks of use (current or past), and LDL-C at or above the B.2 threshold despite it",
+          "OR documented intolerance of or contraindication to ezetimibe"
+        ],
+        "lookback_months": null,
+        "logic": null,
+        "sub_criteria": []
+      },
+      {
+        "id": "C5",
+        "policy_ref": "B.5",
+        "type": "prescriber",
+        "text": "The prescriber is a cardiologist, an endocrinologist, or a lipid specialist, or the prescriber has consulted with one about this treatment.",
+        "evidence_needed": [
+          "Prescriber specialty (cardiology, endocrinology, or lipid specialist)",
+          "OR documentation of a consultation with a cardiologist, endocrinologist, or lipid specialist about evolocumab treatment"
+        ],
+        "lookback_months": null,
+        "logic": null,
+        "sub_criteria": []
+      },
+      {
+        "id": "C6",
+        "policy_ref": "B.6",
+        "type": "age",
+        "text": "The member is at least 18 years old on the date of the request.",
+        "evidence_needed": [
+          "Member date of birth",
+          "Request date"
+        ],
+        "lookback_months": null,
+        "logic": null,
+        "sub_criteria": []
+      },
+      {
+        "id": "C7",
+        "policy_ref": "B.7",
+        "type": "exclusion",
+        "text": "Evolocumab will not be combined with another PCSK9-directed therapy (alirocumab or inclisiran). When the member is switching from one of these, the record shows the earlier agent is stopping.",
+        "evidence_needed": [
+          "Medication list showing no concurrent alirocumab or inclisiran",
+          "If switching from alirocumab or inclisiran: documentation that the earlier agent is being stopped"
+        ],
+        "lookback_months": null,
+        "logic": null,
+        "sub_criteria": []
+      },
+      {
+        "id": "C8",
+        "policy_ref": "B.8",
+        "type": "dosing",
+        "text": "The requested regimen is a labeled adult regimen: 140 mg under the skin every 2 weeks, or 420 mg under the skin once a month.",
+        "evidence_needed": [
+          "Requested dose, route, and frequency: 140 mg SC every 2 weeks or 420 mg SC once monthly"
+        ],
+        "lookback_months": null,
+        "logic": null,
+        "sub_criteria": []
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "criterion_id": "C1",
+      "status": "MET",
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "doc_id": "PT-0103/cardiology-note-2026-11-12",
+          "quote": "Clinical ASCVD: ischemic stroke from large-artery atherosclerosis, status post carotid endarterectomy, with diabetes. Very high risk.",
+          "doc_date": "2026-11-12"
+        },
+        {
+          "doc_id": "PT-0103/outside-records-2025-04-09",
+          "quote": "Acute ischemic stroke, left middle cerebral artery territory, due to large-artery atherosclerosis (70% stenosis of the left internal carotid artery).",
+          "doc_date": "2025-04-09"
+        }
+      ],
+      "reasoning": "The cardiologist documents clinical ASCVD: an ischemic stroke caused by large-artery atherosclerosis, followed by carotid endarterectomy. The outside discharge summary confirms the stroke was of atherosclerotic origin. Either one is a qualifying ASCVD condition under B.1.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C2",
+      "status": "NOT_MET",
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "doc_id": "PT-0103/cardiology-note-2026-11-12",
+          "quote": "Lipid panel 10/15/2026: LDL-C 64 mg/dL on rosuvastatin 40 mg and ezetimibe 10 mg. LDL-C at the stroke admission was 152 mg/dL off therapy.",
+          "doc_date": "2026-11-12"
+        },
+        {
+          "doc_id": "PT-0103/labs-2026-10-15",
+          "quote": "COLLECTED: 10/15/2026 07:48      ORDERING: Dr. M. Osei",
+          "doc_date": "2026-10-15"
+        }
+      ],
+      "reasoning": "The only LDL-C drawn on therapy inside the 3-month window is 64 mg/dL (10/15/2026). That is below the 70 mg/dL threshold for ASCVD. The 152 mg/dL value was drawn before therapy started and is outside the window, so it does not count, and the prescriber's own target of below 55 mg/dL is not the policy threshold.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": true,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C3a",
+      "status": "MET",
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "doc_id": "PT-0103/medication-history-2026-11-12",
+          "quote": "| Rosuvastatin | 40 mg daily | 2025-04-09 | ongoing | Started at stroke discharge. Fills on time. No side effects reported. |",
+          "doc_date": "2026-11-12"
+        },
+        {
+          "doc_id": "PT-0103/cardiology-note-2026-11-12",
+          "quote": "Continue rosuvastatin 40 mg and ezetimibe 10 mg.",
+          "doc_date": "2026-11-12"
+        }
+      ],
+      "reasoning": "Rosuvastatin 40 mg daily is a high-intensity statin. It was started 04/09/2025, well over 8 weeks before the 10/15/2026 LDL-C draw. The plan says to continue it alongside evolocumab.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C3b",
+      "status": "NOT_MET",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "doc_id": "PT-0103/medication-history-2026-11-12",
+          "quote": "| Rosuvastatin | 40 mg daily | 2025-04-09 | ongoing | Started at stroke discharge. Fills on time. No side effects reported. |",
+          "doc_date": "2026-11-12"
+        },
+        {
+          "doc_id": "PT-0103/labs-2026-10-15",
+          "quote": "ALT                                   24 U/L        7-56",
+          "doc_date": "2026-10-15"
+        }
+      ],
+      "reasoning": "The member tolerates high-intensity rosuvastatin with no side effects, and no statin intolerance or rhabdomyolysis is recorded. ALT is normal, so there is no evidence of active liver disease. This part does not apply, but C3 is satisfied through C3a.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C4",
+      "status": "NOT_MET",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "doc_id": "PT-0103/medication-history-2026-11-12",
+          "quote": "| Ezetimibe | 10 mg daily | 2025-09-15 | ongoing | Fills on time. |",
+          "doc_date": "2026-11-12"
+        },
+        {
+          "doc_id": "PT-0103/cardiology-note-2026-11-12",
+          "quote": "Lipid panel 10/15/2026: LDL-C 64 mg/dL on rosuvastatin 40 mg and ezetimibe 10 mg.",
+          "doc_date": "2026-11-12"
+        }
+      ],
+      "reasoning": "Ezetimibe 10 mg daily has been taken since 09/15/2025, which is more than 4 weeks. However, LDL-C on ezetimibe is 64 mg/dL, below the 70 mg/dL B.2 threshold, so the requirement that LDL-C stayed at or above the threshold fails. No ezetimibe intolerance or contraindication is documented.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C5",
+      "status": "MET",
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "doc_id": "PT-0103/cardiology-note-2026-11-12",
+          "quote": "Electronically signed by Dr. M. Osei, MD, Cardiology, 11/12/2026",
+          "doc_date": "2026-11-12"
+        }
+      ],
+      "reasoning": "The prescribing physician, Dr. M. Osei, signs the note as Cardiology. Cardiology is a qualifying specialty.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C6",
+      "status": "MET",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "doc_id": "PT-0103/demographics-2026-11-12",
+          "quote": "Date of birth: 01/08/1959",
+          "doc_date": "2026-11-12"
+        }
+      ],
+      "reasoning": "The member was born 01/08/1959, which makes them 67 on the 2026-11-18 request date. That is at least 18.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": true,
+        "dose_in_label": null,
+        "notes": [
+          "age 67 on 2026-11-18 from DOB 1959-01-08"
+        ]
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C7",
+      "status": "MET",
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "doc_id": "PT-0103/medication-history-2026-11-12",
+          "quote": "No current or prior PCSK9 inhibitor (alirocumab, evolocumab) or inclisiran.",
+          "doc_date": "2026-11-12"
+        }
+      ],
+      "reasoning": "The reconciled medication history states there is no current or prior alirocumab, evolocumab, or inclisiran. No combination with another PCSK9 agent and no switch are involved.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C8",
+      "status": "MET",
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "doc_id": "PT-0103/cardiology-note-2026-11-12",
+          "quote": "Add evolocumab 140 mg subcutaneously every 2 weeks",
+          "doc_date": "2026-11-12"
+        }
+      ],
+      "reasoning": "The ordered and requested regimen is 140 mg subcutaneously every 2 weeks. That is a labeled adult regimen.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    }
+  ],
+  "rolled_up": {
+    "C1": "MET",
+    "C2": "NOT_MET",
+    "C3a": "MET",
+    "C3b": "NOT_MET",
+    "C3": "MET",
+    "C4": "NOT_MET",
+    "C5": "MET",
+    "C6": "MET",
+    "C7": "MET",
+    "C8": "MET"
+  },
+  "retrieval": [
+    {
+      "criterion_id": "C1",
+      "passages": [
+        {
+          "doc_id": "PT-0103/outside-records-2025-04-09",
+          "quote": "Acute ischemic stroke, left middle cerebral artery territory, due to large-artery atherosclerosis (70% stenosis of the left internal carotid artery).",
+          "doc_date": "2025-04-09",
+          "why_relevant": "This is the hospital diagnosis of an ischemic stroke of atherosclerotic origin, which qualifies as clinical ASCVD."
+        },
+        {
+          "doc_id": "PT-0103/outside-records-2025-04-09",
+          "quote": "04/07/2025 Left carotid endarterectomy.",
+          "doc_date": "2025-04-09",
+          "why_relevant": "This is an arterial revascularization procedure."
+        },
+        {
+          "doc_id": "PT-0103/cardiology-note-2026-11-12",
+          "quote": "Clinical ASCVD: ischemic stroke from large-artery atherosclerosis, status post carotid endarterectomy, with diabetes. Very high risk.",
+          "doc_date": "2026-11-12",
+          "why_relevant": "The prescriber documents clinical ASCVD and names the qualifying events."
+        },
+        {
+          "doc_id": "PT-0103/problem-list-2026-11-12",
+          "quote": "1. History of ischemic stroke due to large-artery atherosclerosis (Z86.73), 04/2025. Left carotid endarterectomy 04/2025.",
+          "doc_date": "2026-11-12",
+          "why_relevant": "The problem list records the qualifying ASCVD diagnosis."
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-0103/outside-records-2025-04-09",
+        "PT-0103/labs-2026-10-15",
+        "PT-0103/cardiology-note-2026-11-12",
+        "PT-0103/demographics-2026-11-12",
+        "PT-0103/medication-history-2026-11-12",
+        "PT-0103/problem-list-2026-11-12"
+      ]
+    },
+    {
+      "criterion_id": "C2",
+      "passages": [
+        {
+          "doc_id": "PT-0103/labs-2026-10-15",
+          "quote": "  LDL cholesterol, calculated         64 mg/dL      <100",
+          "doc_date": "2026-10-15",
+          "why_relevant": "This LDL-C was drawn 10/15/2026, within 3 months of the request, while the patient was on therapy. 64 mg/dL is below the 70 mg/dL ASCVD threshold."
+        },
+        {
+          "doc_id": "PT-0103/labs-2026-10-15",
+          "quote": "COLLECTED: 10/15/2026 07:48      ORDERING: Dr. M. Osei",
+          "doc_date": "2026-10-15",
+          "why_relevant": "This is the draw date of the lipid panel."
+        },
+        {
+          "doc_id": "PT-0103/cardiology-note-2026-11-12",
+          "quote": "Lipid panel 10/15/2026: LDL-C 64 mg/dL on rosuvastatin 40 mg and ezetimibe 10 mg. LDL-C at the stroke admission was 152 mg/dL off therapy.",
+          "doc_date": "2026-11-12",
+          "why_relevant": "This confirms the on-therapy LDL-C is 64, below 70. The 152 value was drawn off therapy and is outside the lookback window."
+        },
+        {
+          "doc_id": "PT-0103/cardiology-note-2026-11-12",
+          "quote": "LDL-C 64 mg/dL is above my target of below 55 mg/dL.",
+          "doc_date": "2026-11-12",
+          "why_relevant": "The prescriber's rationale uses a 55 mg/dL target, not the policy threshold of 70."
+        },
+        {
+          "doc_id": "PT-0103/outside-records-2025-04-09",
+          "quote": "LDL cholesterol 152 mg/dL (on no lipid-lowering therapy). Hemoglobin A1c 7.4%.",
+          "doc_date": "2025-04-09",
+          "why_relevant": "This LDL-C was drawn before therapy started and is outside the lookback window, so it does not qualify."
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-0103/outside-records-2025-04-09",
+        "PT-0103/labs-2026-10-15",
+        "PT-0103/cardiology-note-2026-11-12",
+        "PT-0103/demographics-2026-11-12",
+        "PT-0103/medication-history-2026-11-12",
+        "PT-0103/problem-list-2026-11-12"
+      ]
+    },
+    {
+      "criterion_id": "C3a",
+      "passages": [
+        {
+          "doc_id": "PT-0103/medication-history-2026-11-12",
+          "quote": "| Rosuvastatin | 40 mg daily | 2025-04-09 | ongoing | Started at stroke discharge. Fills on time. No side effects reported. |",
+          "doc_date": "2026-11-12",
+          "why_relevant": "High-intensity statin taken since 04/2025, well over 8 weeks before the LDL-C draw."
+        },
+        {
+          "doc_id": "PT-0103/outside-records-2025-04-09",
+          "quote": "Aspirin 81 mg daily; clopidogrel 75 mg daily for 21 days; rosuvastatin 40 mg daily (new); metformin 1000 mg twice daily; amlodipine 5 mg daily.",
+          "doc_date": "2025-04-09",
+          "why_relevant": "Shows the rosuvastatin start date."
+        },
+        {
+          "doc_id": "PT-0103/cardiology-note-2026-11-12",
+          "quote": "1. Add evolocumab 140 mg subcutaneously every 2 weeks to reach LDL-C below 55 mg/dL. Continue rosuvastatin 40 mg and ezetimibe 10 mg.",
+          "doc_date": "2026-11-12",
+          "why_relevant": "The statin will continue alongside evolocumab."
+        },
+        {
+          "doc_id": "PT-0103/cardiology-note-2026-11-12",
+          "quote": "No new neurologic symptoms since the 2025 stroke. Taking rosuvastatin and ezetimibe daily without side effects.",
+          "doc_date": "2026-11-12",
+          "why_relevant": "The patient is adherent and reports no side effects."
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-0103/outside-records-2025-04-09",
+        "PT-0103/labs-2026-10-15",
+        "PT-0103/cardiology-note-2026-11-12",
+        "PT-0103/demographics-2026-11-12",
+        "PT-0103/medication-history-2026-11-12",
+        "PT-0103/problem-list-2026-11-12"
+      ]
+    },
+    {
+      "criterion_id": "C3b",
+      "passages": [
+        {
+          "doc_id": "PT-0103/medication-history-2026-11-12",
+          "quote": "| Rosuvastatin | 40 mg daily | 2025-04-09 | ongoing | Started at stroke discharge. Fills on time. No side effects reported. |",
+          "doc_date": "2026-11-12",
+          "why_relevant": "The patient tolerates a statin, so no intolerance or contraindication is documented."
+        },
+        {
+          "doc_id": "PT-0103/labs-2026-10-15",
+          "quote": "ALT                                   24 U/L        7-56",
+          "doc_date": "2026-10-15",
+          "why_relevant": "ALT is normal, with no evidence of active liver disease."
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-0103/outside-records-2025-04-09",
+        "PT-0103/labs-2026-10-15",
+        "PT-0103/cardiology-note-2026-11-12",
+        "PT-0103/demographics-2026-11-12",
+        "PT-0103/medication-history-2026-11-12",
+        "PT-0103/problem-list-2026-11-12"
+      ]
+    },
+    {
+      "criterion_id": "C4",
+      "passages": [
+        {
+          "doc_id": "PT-0103/medication-history-2026-11-12",
+          "quote": "| Ezetimibe | 10 mg daily | 2025-09-15 | ongoing | Fills on time. |",
+          "doc_date": "2026-11-12",
+          "why_relevant": "Ezetimibe 10 mg taken since 09/2025, well over 4 weeks."
+        },
+        {
+          "doc_id": "PT-0103/cardiology-note-2026-11-12",
+          "quote": "Lipid panel 10/15/2026: LDL-C 64 mg/dL on rosuvastatin 40 mg and ezetimibe 10 mg. LDL-C at the stroke admission was 152 mg/dL off therapy.",
+          "doc_date": "2026-11-12",
+          "why_relevant": "LDL-C on ezetimibe is 64, below the 70 threshold."
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-0103/outside-records-2025-04-09",
+        "PT-0103/labs-2026-10-15",
+        "PT-0103/cardiology-note-2026-11-12",
+        "PT-0103/demographics-2026-11-12",
+        "PT-0103/medication-history-2026-11-12",
+        "PT-0103/problem-list-2026-11-12"
+      ]
+    },
+    {
+      "criterion_id": "C5",
+      "passages": [
+        {
+          "doc_id": "PT-0103/cardiology-note-2026-11-12",
+          "quote": "Electronically signed by Dr. M. Osei, MD, Cardiology, 11/12/2026",
+          "doc_date": "2026-11-12",
+          "why_relevant": "The prescriber is a cardiologist."
+        },
+        {
+          "doc_id": "PT-0103/demographics-2026-11-12",
+          "quote": "Cardiologist: Dr. M. Osei",
+          "doc_date": "2026-11-12",
+          "why_relevant": "Confirms the prescriber's specialty."
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-0103/outside-records-2025-04-09",
+        "PT-0103/labs-2026-10-15",
+        "PT-0103/cardiology-note-2026-11-12",
+        "PT-0103/demographics-2026-11-12",
+        "PT-0103/medication-history-2026-11-12",
+        "PT-0103/problem-list-2026-11-12"
+      ]
+    },
+    {
+      "criterion_id": "C6",
+      "passages": [
+        {
+          "doc_id": "PT-0103/demographics-2026-11-12",
+          "quote": "Date of birth: 01/08/1959",
+          "doc_date": "2026-11-12",
+          "why_relevant": "Born 1959, so the patient is 67 on the 2026-11-18 request date."
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-0103/outside-records-2025-04-09",
+        "PT-0103/labs-2026-10-15",
+        "PT-0103/cardiology-note-2026-11-12",
+        "PT-0103/demographics-2026-11-12",
+        "PT-0103/medication-history-2026-11-12",
+        "PT-0103/problem-list-2026-11-12"
+      ]
+    },
+    {
+      "criterion_id": "C7",
+      "passages": [
+        {
+          "doc_id": "PT-0103/medication-history-2026-11-12",
+          "quote": "No current or prior PCSK9 inhibitor (alirocumab, evolocumab) or inclisiran.",
+          "doc_date": "2026-11-12",
+          "why_relevant": "No concurrent PCSK9-directed therapy."
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-0103/outside-records-2025-04-09",
+        "PT-0103/labs-2026-10-15",
+        "PT-0103/cardiology-note-2026-11-12",
+        "PT-0103/demographics-2026-11-12",
+        "PT-0103/medication-history-2026-11-12",
+        "PT-0103/problem-list-2026-11-12"
+      ]
+    },
+    {
+      "criterion_id": "C8",
+      "passages": [
+        {
+          "doc_id": "PT-0103/cardiology-note-2026-11-12",
+          "quote": "1. Add evolocumab 140 mg subcutaneously every 2 weeks to reach LDL-C below 55 mg/dL. Continue rosuvastatin 40 mg and ezetimibe 10 mg.",
+          "doc_date": "2026-11-12",
+          "why_relevant": "The ordered dose is a labeled regimen of 140 mg SC every 2 weeks."
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-0103/outside-records-2025-04-09",
+        "PT-0103/labs-2026-10-15",
+        "PT-0103/cardiology-note-2026-11-12",
+        "PT-0103/demographics-2026-11-12",
+        "PT-0103/medication-history-2026-11-12",
+        "PT-0103/problem-list-2026-11-12"
+      ]
+    }
+  ],
+  "injection_flags": [],
+  "gaps": [
+    {
+      "criterion_id": "C2",
+      "missing_item": "On-therapy LDL-C at or above 70 mg/dL within the 3 months before the request",
+      "who_can_supply": "ordering_provider",
+      "clinician_query": "Dr. Osei, for PT-0103's evolocumab request (PA-0103), criterion B.2 is not met. The only on-therapy LDL-C in the window is 64 mg/dL (labs collected 10/15/2026, on rosuvastatin 40 mg and ezetimibe 10 mg), which is below the policy's 70 mg/dL ASCVD threshold. The 152 mg/dL value from the stroke admission was drawn off therapy, so it does not count, and the policy uses 70 mg/dL rather than the <55 mg/dL target in your 11/12/2026 note. Please review and tell us whether there is any other on-therapy LDL-C result from this period, or how you would like to proceed.",
+      "would_satisfy": "Policy B.2 accepts an LDL-C of 70 mg/dL or higher (clinical ASCVD threshold), collected between 2026-08-18 and 2026-11-18 while the member was on the current statin and ezetimibe regimen."
+    },
+    {
+      "criterion_id": "C4",
+      "missing_item": "LDL-C at or above 70 mg/dL after at least 4 weeks of ezetimibe, or documented ezetimibe intolerance/contraindication",
+      "who_can_supply": "ordering_provider",
+      "clinician_query": "Dr. Osei, for PT-0103's evolocumab request (PA-0103), criterion B.4 is not met. The medication history (11/12/2026) shows ezetimibe 10 mg daily since 09/15/2025, but the on-ezetimibe LDL-C of 64 mg/dL (10/15/2026) is below the 70 mg/dL threshold, and the chart does not document any ezetimibe intolerance or contraindication. Please review and tell us whether any other documentation applies.",
+      "would_satisfy": "Policy B.4 accepts either an LDL-C of 70 mg/dL or higher drawn after at least 4 weeks of ezetimibe 10 mg daily (on or after 2025-10-13 for the current course), or documentation of intolerance of or a contraindication to ezetimibe."
+    }
+  ],
+  "outcome": "NEEDS_PHYSICIAN",
+  "packet": null,
+  "packet_code_issues": [],
+  "verification": null
+}

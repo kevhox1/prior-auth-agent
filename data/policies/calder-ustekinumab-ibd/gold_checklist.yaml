@@ -1,0 +1,83 @@
+# GOLD - evaluation only. The agent never sees this file; it builds its own
+# checklist from policy.md (step 3) and is scored against this one.
+# Extracted criteria are aligned to these by policy_ref, not by id.
+policy_id: calder-ustekinumab-ibd
+payer: calder
+drug: ustekinumab
+version: "2026-07"
+effective_date: 2026-07-01
+indications:
+  - moderately to severely active Crohn's disease (adults)
+  - moderately to severely active ulcerative colitis (adults)
+benefit_channel:
+  iv_induction: medical
+  sc_maintenance: pharmacy
+auth_duration_months: 12
+logic: ALL
+criteria:
+  - id: C1
+    policy_ref: "B.1"
+    type: diagnosis
+    text: "Moderately to severely active Crohn's disease or ulcerative colitis, as stated by the prescriber"
+    evidence_needed: ["diagnosis", "prescriber statement of moderate to severe activity"]
+
+  - id: C2
+    policy_ref: "B.2"
+    type: disease_activity
+    text: "Ileocolonoscopy, colonoscopy, or flexible sigmoidoscopy within the past 12 months documenting active mucosal inflammation. Fecal calprotectin, CRP, ESR, and imaging do not count on their own"
+    evidence_needed: ["endoscopy report", "date of procedure"]
+    lookback_months: 12
+
+  - id: C3
+    policy_ref: "B.3"
+    type: prescriber
+    text: "Prescriber is a gastroenterologist or has consulted one"
+    evidence_needed: ["prescriber specialty"]
+
+  - id: C4
+    policy_ref: "B.4"
+    type: age
+    text: "Member is at least 18 years old on the request date"
+    evidence_needed: ["date of birth"]
+
+  - id: C5
+    policy_ref: "B.5"
+    type: step_therapy
+    text: "At least one prior therapy tried: conventional agent (a) or biologic/targeted synthetic agent (b)"
+    logic: ANY
+    sub_criteria:
+      - id: C5a
+        policy_ref: "B.5(a)"
+        type: step_therapy
+        text: "Conventional agent (corticosteroid, budesonide, azathioprine, mercaptopurine, methotrexate; for UC an oral 5-ASA) stopped or insufficient for inadequate response, intolerance, or contraindication"
+        evidence_needed: ["drug name", "approximate dates", "reason stopped"]
+      - id: C5b
+        policy_ref: "B.5(b)"
+        type: step_therapy
+        text: "Biologic or targeted synthetic agent stopped or insufficient for inadequate response or intolerance, or a documented contraindication to TNF blockers"
+        evidence_needed: ["drug name", "approximate dates", "reason stopped"]
+
+  - id: C6
+    policy_ref: "B.6"
+    type: safety_screen
+    text: "Negative IGRA or TST within the past 6 months. Indeterminate or borderline is not negative. Positive screen qualifies only with a chest radiograph without active disease and latent TB treatment begun"
+    evidence_needed: ["TB test type", "result", "date"]
+    lookback_months: 6
+
+  - id: C7
+    policy_ref: "B.7"
+    type: safety_screen
+    text: "HBsAg and total anti-HBc results on file (any age). Reactive result requires a prophylaxis or monitoring plan. Surface antibody, vaccination records, and pending orders do not count"
+    evidence_needed: ["HBsAg result", "total anti-HBc result"]
+
+  - id: C8
+    policy_ref: "B.8"
+    type: exclusion
+    text: "Not combined with another biologic, JAK inhibitor, or S1P receptor modulator; any earlier such agent is stopping"
+    evidence_needed: ["current medication list", "stop of any prior advanced therapy"]
+
+  - id: C9
+    policy_ref: "B.9"
+    type: dosing
+    text: "Labeled adult regimen: weight-based IV induction (<=55 kg 260 mg; >55-85 kg 390 mg; >85 kg 520 mg), then 90 mg SC every 8 weeks from week 8. Body weight recorded within 90 days of the request"
+    evidence_needed: ["body weight and date", "requested dose"]

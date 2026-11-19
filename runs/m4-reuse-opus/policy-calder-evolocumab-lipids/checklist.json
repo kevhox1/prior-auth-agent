@@ -1,0 +1,151 @@
+{
+  "policy_id": "calder-evolocumab-lipids",
+  "payer": "calder",
+  "drug": "evolocumab",
+  "version": "2026-09",
+  "effective_date": "2026-09-01",
+  "indications": [
+    "Clinical atherosclerotic cardiovascular disease (ASCVD) with elevated LDL-C",
+    "Heterozygous familial hypercholesterolemia (HeFH) with elevated LDL-C"
+  ],
+  "benefit_channel": {
+    "self_administered_subcutaneous": "pharmacy"
+  },
+  "auth_duration_months": 12,
+  "logic": "ALL",
+  "criteria": [
+    {
+      "id": "C1",
+      "policy_ref": "B.1",
+      "type": "diagnosis",
+      "text": "The prescriber documents in the clinical record that the member has one of two conditions. The first is clinical ASCVD, meaning a prior myocardial infarction or acute coronary syndrome, coronary or other arterial revascularization, stable or unstable angina with documented coronary artery disease, ischemic stroke or TIA of atherosclerotic origin, or symptomatic peripheral artery disease. The second is heterozygous familial hypercholesterolemia (HeFH) confirmed by genetic testing or by a Dutch Lipid Clinic Network score of 6 or higher.",
+      "evidence_needed": [
+        "Prescriber documentation of a clinical ASCVD diagnosis, naming the qualifying event or condition (MI/ACS, revascularization, angina with documented CAD, atherosclerotic ischemic stroke/TIA, or symptomatic PAD)",
+        "OR a documented HeFH diagnosis with a genetic test result or a Dutch Lipid Clinic Network score of 6 or higher"
+      ],
+      "lookback_months": null,
+      "logic": null,
+      "sub_criteria": []
+    },
+    {
+      "id": "C2",
+      "policy_ref": "B.2",
+      "type": "lab_threshold",
+      "text": "An LDL-C result drawn in the 3 months before the request, while the member was on the lipid-lowering therapy described in B.3 and B.4, is at or above the member's threshold. The threshold is 70 mg/dL for a member with clinical ASCVD, or 100 mg/dL for a member with HeFH and no clinical ASCVD. An LDL-C drawn before the current lipid-lowering regimen was started does not meet this requirement.",
+      "evidence_needed": [
+        "LDL-C lab result with draw date within 3 months before the request",
+        "LDL-C value at or above 70 mg/dL (ASCVD) or at or above 100 mg/dL (HeFH without ASCVD)",
+        "Documentation that the LDL-C was drawn after the current statin/ezetimibe regimen was started and while the member was on it"
+      ],
+      "lookback_months": 3,
+      "logic": null,
+      "sub_criteria": []
+    },
+    {
+      "id": "C3",
+      "policy_ref": "B.3",
+      "type": "step_therapy",
+      "text": "The member is on maximally tolerated statin therapy, shown by either (a) or (b). One is enough. For any claimed intolerance, the record must describe each statin's drug, dose, symptom or adverse effect, and improvement after the statin was stopped or reduced. A statement such as \"statin intolerant\" without these details does not meet this requirement.",
+      "evidence_needed": [
+        "Evidence satisfying B.3(a) or B.3(b)"
+      ],
+      "lookback_months": null,
+      "logic": "ANY",
+      "sub_criteria": [
+        {
+          "id": "C3a",
+          "policy_ref": "B.3(a)",
+          "type": "step_therapy",
+          "text": "The member takes a high-intensity statin (atorvastatin 40 to 80 mg daily or rosuvastatin 20 to 40 mg daily), or the highest statin dose the member tolerates when a higher dose caused a documented adverse effect. The member has taken it for at least 8 weeks before the B.2 LDL-C and will continue it with evolocumab. Any intolerance of a higher dose must be described with the drug, dose, symptom or adverse effect, and improvement after stopping or reducing it. A bare \"statin intolerant\" statement does not count.",
+          "evidence_needed": [
+            "Current statin name and daily dose (atorvastatin 40-80 mg or rosuvastatin 20-40 mg, or a lower maximally tolerated dose)",
+            "If on a lower than high-intensity dose: documented adverse effect at the higher dose, with drug, dose, symptom, and improvement after stopping or reducing it",
+            "Statin start date or fill history showing at least 8 weeks of use before the B.2 LDL-C draw",
+            "Documentation that the statin will continue alongside evolocumab"
+          ],
+          "lookback_months": null,
+          "logic": null,
+          "sub_criteria": []
+        },
+        {
+          "id": "C3b",
+          "policy_ref": "B.3(b)",
+          "type": "step_therapy",
+          "text": "The member cannot take a statin for one of two reasons. (i) Intolerance of at least two different statins, at least one of them at the lowest approved starting dose. (ii) A contraindication, meaning a history of statin-associated rhabdomyolysis or active liver disease. For each statin, the intolerance must be described with the drug, dose, symptom or adverse effect, and improvement after the statin was stopped or reduced. A statement such as \"statin intolerant\" without these details does not meet this requirement.",
+          "evidence_needed": [
+            "For intolerance: at least two different statins documented, each with drug name, dose, symptom/adverse effect, and improvement after stopping or reducing it",
+            "For intolerance: at least one of the statins tried at the lowest approved starting dose",
+            "OR for contraindication: documented history of statin-associated rhabdomyolysis or active liver disease"
+          ],
+          "lookback_months": null,
+          "logic": null,
+          "sub_criteria": []
+        }
+      ]
+    },
+    {
+      "id": "C4",
+      "policy_ref": "B.4",
+      "type": "step_therapy",
+      "text": "The member has taken ezetimibe 10 mg daily for at least 4 weeks, now or in the past, and LDL-C stayed at or above the B.2 threshold. Alternatively, the record documents intolerance of or a contraindication to ezetimibe.",
+      "evidence_needed": [
+        "Ezetimibe 10 mg daily with dates or fill history showing at least 4 weeks of use (current or past), and LDL-C at or above the B.2 threshold despite it",
+        "OR documented intolerance of or contraindication to ezetimibe"
+      ],
+      "lookback_months": null,
+      "logic": null,
+      "sub_criteria": []
+    },
+    {
+      "id": "C5",
+      "policy_ref": "B.5",
+      "type": "prescriber",
+      "text": "The prescriber is a cardiologist, an endocrinologist, or a lipid specialist, or the prescriber has consulted with one about this treatment.",
+      "evidence_needed": [
+        "Prescriber specialty (cardiology, endocrinology, or lipid specialist)",
+        "OR documentation of a consultation with a cardiologist, endocrinologist, or lipid specialist about evolocumab treatment"
+      ],
+      "lookback_months": null,
+      "logic": null,
+      "sub_criteria": []
+    },
+    {
+      "id": "C6",
+      "policy_ref": "B.6",
+      "type": "age",
+      "text": "The member is at least 18 years old on the date of the request.",
+      "evidence_needed": [
+        "Member date of birth",
+        "Request date"
+      ],
+      "lookback_months": null,
+      "logic": null,
+      "sub_criteria": []
+    },
+    {
+      "id": "C7",
+      "policy_ref": "B.7",
+      "type": "exclusion",
+      "text": "Evolocumab will not be combined with another PCSK9-directed therapy (alirocumab or inclisiran). When the member is switching from one of these, the record shows the earlier agent is stopping.",
+      "evidence_needed": [
+        "Medication list showing no concurrent alirocumab or inclisiran",
+        "If switching from alirocumab or inclisiran: documentation that the earlier agent is being stopped"
+      ],
+      "lookback_months": null,
+      "logic": null,
+      "sub_criteria": []
+    },
+    {
+      "id": "C8",
+      "policy_ref": "B.8",
+      "type": "dosing",
+      "text": "The requested regimen is a labeled adult regimen: 140 mg under the skin every 2 weeks, or 420 mg under the skin once a month.",
+      "evidence_needed": [
+        "Requested dose, route, and frequency: 140 mg SC every 2 weeks or 420 mg SC once monthly"
+      ],
+      "lookback_months": null,
+      "logic": null,
+      "sub_criteria": []
+    }
+  ]
+}

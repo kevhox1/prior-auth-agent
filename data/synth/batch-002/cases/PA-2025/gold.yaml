@@ -1,0 +1,86 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-2025
+case_type: multi_issue
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 200024, payer northfield). States: C2=met_scope, C5a=met_buried, C5b=met_buried,
+  C7=missing, C10=not_met_reference'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-2025/gi-note-2026-11-03
+      quote: Moderately to severely active ulcerative pancolitis.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-2025/labs-2026-10-17
+      quote: CALPROTECTIN FECAL ................ 978 ug/g  (<50)
+    - doc_id: PT-2025/flexible-sigmoidoscopy-2026-10-12
+      quote: 'Rectum to 40 cm: continuous inflammation with friability and erosions; Mayo endoscopic subscore 3.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-2025/gi-note-2026-11-03
+      quote: Start ustekinumab (reference product)
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-2025/demographics-2026-04-07
+      quote: 'Date of birth: 1978-07-04'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-2025/outside-records-2026-09-18
+      quote: 'Azathioprine 2.5 mg/kg daily, 2023-01 to 2023-03. Reason stopped: intolerance (acute pancreatitis).'
+    - doc_id: PT-2025/outside-records-2026-09-18
+      quote: 'Prednisone 40 mg daily, tapered, 2023-04 to 2023-12. Reason stopped: steroid dependent (flared each
+        time the dose went below 15 mg).'
+    note: 'synthetic state: met_buried'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-2025/outside-records-2026-09-18
+      quote: 'Infliximab 5 mg/kg IV every 8 weeks, 2024-02 to 2026-08. Reason stopped: intolerance (drug-induced
+        lupus with positive anti-histone antibodies and arthralgias).'
+    note: 'synthetic state: met_buried'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-2025/labs-2026-10-17
+      quote: QUANTIFERON TB GOLD PLUS .......... NEGATIVE  (Negative)
+    note: 'synthetic state: met_clean'
+  C7:
+    status: INSUFFICIENT_EVIDENCE
+    missing_item: Hepatitis B surface antigen (HBsAg) and total core antibody (anti-HBc) results.
+    note: 'synthetic state: missing'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-2025/medication-history-2026-10-30
+      quote: Not currently on any advanced therapy (biologic, JAK inhibitor, or S1P receptor modulator).
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-2025/gi-note-2026-11-03
+      quote: Weight 53.4 kg.
+    - doc_id: PT-2025/gi-note-2026-11-03
+      quote: 260 mg IV once (weight 53.4 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+  C10:
+    status: NOT_MET
+    evidence:
+    - doc_id: PT-2025/gi-note-2026-11-03
+      quote: Start ustekinumab (reference product)
+    note: 'synthetic state: not_met_reference'
+packet_outcome: NEEDS_PHYSICIAN

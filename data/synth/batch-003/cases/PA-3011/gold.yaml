@@ -1,0 +1,103 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-3011
+case_type: multi_issue
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 300010, payer northfield). States: C2=crp_only, C5b=conflicting, C6=positive_with_plan,
+  C7=core_positive_with_plan'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-3011/gi-note-2026-10-31
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: NOT_MET
+    acceptable_alternates:
+    - INSUFFICIENT_EVIDENCE
+    missing_item: Endoscopy/colonoscopy report or fecal calprotectin result from the past 12 months (CRP alone does
+      not count).
+    note: 'synthetic state: crp_only'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-3011/gi-note-2026-10-31
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-3011/demographics-2026-11-03
+      quote: 'Date of birth: 1977-08-03'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-3011/gi-note-2026-06-06
+      quote: 'History: Methotrexate 25 mg subcutaneously weekly, 2023-10 to 2024-04. Reason stopped: intolerance
+        (nausea and ALT above 3 times the upper limit of normal).'
+    - doc_id: PT-3011/gi-note-2026-06-06
+      quote: 'History: Mercaptopurine 1.5 mg/kg daily, 2024-05 to 2024-11. Reason stopped: inadequate response after
+        6 months at a therapeutic metabolite level.'
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: CONFLICTING
+    acceptable_alternates:
+    - NOT_MET
+    evidence:
+    - doc_id: PT-3011/gi-note-2026-10-31
+      quote: 'Prior biologic: Infliximab 5 mg/kg IV every 8 weeks, 2025-01 to 2026-08. Reason stopped: per patient
+        report, worked at first and then stopped working; outside records requested.'
+    - doc_id: PT-3011/outside-records-2025-09-18
+      quote: Biologic-naive. Infliximab was recommended 2025-01 but the patient declined.
+    missing_item: Records that settle whether infliximab was ever given (pharmacy claims or fill history, or prescribing
+      records).
+    note: 'synthetic state: conflicting'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-3011/gi-note-2026-10-31
+      quote: 'Latent TB infection: rifampin daily for 4 months, started 2026-10-15.'
+    - doc_id: PT-3011/labs-2026-10-08
+      quote: QUANTIFERON TB GOLD PLUS .......... POSITIVE  (Negative)
+    - doc_id: PT-3011/chest-xray-2026-10-11
+      quote: 'IMPRESSION: No evidence of active pulmonary tuberculosis.'
+    note: 'synthetic state: positive_with_plan'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-3011/gi-note-2026-10-31
+      quote: 'Resolved prior hepatitis B infection (HBsAg negative, anti-HBc positive, HBV DNA undetectable): monitor
+        HBV DNA and liver tests every 3 months on therapy.'
+    - doc_id: PT-3011/labs-2026-10-08
+      quote: HEP B SURFACE AG .................. Nonreactive  (Nonreactive)
+    - doc_id: PT-3011/labs-2026-10-08
+      quote: HEP B CORE AB TOTAL ............... Reactive  (Nonreactive)
+    note: 'synthetic state: core_positive_with_plan'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-3011/gi-note-2026-10-31
+      quote: No biologic or small-molecule advanced therapy at present.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-3011/gi-note-2026-10-31
+      quote: Weight 87.0 kg.
+    - doc_id: PT-3011/gi-note-2026-10-31
+      quote: 520 mg IV once (weight 87.0 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-3011/gi-note-2026-10-31
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+packet_outcome: NEEDS_PHYSICIAN

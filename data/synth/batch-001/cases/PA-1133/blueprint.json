@@ -1,0 +1,40 @@
+{
+  "seed": 100132,
+  "request_id": "PA-1133",
+  "patient_id": "PT-1133",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Hannah",
+  "last_name": "Whitcombe",
+  "sex": "F",
+  "dob": "1983-08-09",
+  "disease": "cd",
+  "weight_kg": 96.3,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_buried",
+    "C5b": "met_clean",
+    "C6": "positive_with_plan",
+    "C7": "met_clean",
+    "C8": "met_clean",
+    "C9": "stale_weight",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 1,
+    "provider": 1,
+    "medhx_format": "table",
+    "lab_vendor": 2,
+    "outside_quality": "clean",
+    "outside_practice": 3,
+    "distractors": 0,
+    "date_style": "iso",
+    "copy_forward": true,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

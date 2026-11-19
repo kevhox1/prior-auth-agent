@@ -1,0 +1,40 @@
+{
+  "seed": 200044,
+  "request_id": "PA-2045",
+  "patient_id": "PT-2045",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Andre",
+  "last_name": "Delacroix",
+  "sex": "M",
+  "dob": "1978-09-05",
+  "disease": "cd",
+  "weight_kg": 111.9,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_clean",
+    "C5b": "met_clean",
+    "C6": "met_clean",
+    "C7": "met_clean",
+    "C8": "met_clean",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 2,
+    "provider": 2,
+    "medhx_format": "scattered",
+    "lab_vendor": 1,
+    "outside_quality": "clean",
+    "outside_practice": 3,
+    "distractors": 0,
+    "date_style": "us",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "seed": 200029,
+  "request_id": "PA-2030",
+  "patient_id": "PT-2030",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Eli",
+  "last_name": "Delacroix",
+  "sex": "M",
+  "dob": "1980-08-23",
+  "disease": "uc",
+  "weight_kg": 85.0,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_buried",
+    "C5a": "met_clean",
+    "C5b": "met_clean",
+    "C6": "stale",
+    "C7": "met_clean",
+    "C8": "met_clean",
+    "C9": "met_borderline",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 1,
+    "provider": 2,
+    "medhx_format": "scattered",
+    "lab_vendor": 0,
+    "outside_quality": "fax",
+    "outside_practice": 3,
+    "distractors": 2,
+    "date_style": "iso",
+    "copy_forward": true,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

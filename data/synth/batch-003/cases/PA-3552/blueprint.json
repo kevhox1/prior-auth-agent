@@ -1,0 +1,40 @@
+{
+  "seed": 300051,
+  "request_id": "PA-3552",
+  "patient_id": "PT-3552",
+  "request_date": "2026-11-18",
+  "payer": "calder",
+  "first_name": "Kwame",
+  "last_name": "Abara",
+  "sex": "M",
+  "dob": "1986-04-03",
+  "disease": "uc",
+  "weight_kg": 104.0,
+  "states": {
+    "C1": "met_clean",
+    "C2": "stale_scope",
+    "C5a": "met_buried",
+    "C5b": "met_clean",
+    "C6": "met_clean",
+    "C7": "met_clean",
+    "C8": "switch_with_stop",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 2,
+    "provider": 2,
+    "medhx_format": "scattered",
+    "lab_vendor": 0,
+    "outside_quality": "ocr",
+    "outside_practice": 0,
+    "distractors": 1,
+    "date_style": "us",
+    "copy_forward": true,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

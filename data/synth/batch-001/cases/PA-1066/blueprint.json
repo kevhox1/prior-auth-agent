@@ -1,0 +1,40 @@
+{
+  "seed": 100065,
+  "request_id": "PA-1066",
+  "patient_id": "PT-1066",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Samuel",
+  "last_name": "Ashworth",
+  "sex": "M",
+  "dob": "1994-09-23",
+  "disease": "uc",
+  "weight_kg": 49.7,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_buried",
+    "C5b": "met_clean",
+    "C6": "ordered_not_resulted",
+    "C7": "met_clean",
+    "C8": "switch_with_stop",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 2,
+    "provider": 1,
+    "medhx_format": "narrative",
+    "lab_vendor": 1,
+    "outside_quality": "fax",
+    "outside_practice": 2,
+    "distractors": 2,
+    "date_style": "iso",
+    "copy_forward": true,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

@@ -1,0 +1,87 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-1194
+case_type: multi_issue
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 100193, payer northfield). States: C2=crp_only, C6=met_borderline, C10=not_met_reference'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+  requested_channel_ok: false
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-1194/gi-note-2026-10-30
+      quote: Moderately to severely active ulcerative pancolitis.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: INSUFFICIENT_EVIDENCE
+    acceptable_alternates:
+    - NOT_MET
+    missing_item: Endoscopy/colonoscopy report or fecal calprotectin result from the past 12 months (CRP alone does
+      not count).
+    note: 'synthetic state: crp_only'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-1194/gi-note-2026-10-30
+      quote: Start ustekinumab (reference product)
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-1194/demographics-2026-10-03
+      quote: 'Date of birth: 1999-12-08'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-1194/medication-history-2026-10-30
+      quote: Intolerance (nausea and ALT above 3 times the upper limit of normal)
+    - doc_id: PT-1194/medication-history-2026-10-30
+      quote: Inadequate response after 6 months at a therapeutic metabolite level
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-1194/medication-history-2026-10-30
+      quote: 'Primary non-response: no clinical improvement after induction and 8 weeks of maintenance'
+    note: 'synthetic state: met_clean'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-1194/labs-2025-11-24
+      quote: QuantiFERON-TB Gold Plus | NEGATIVE | - | Negative
+    note: 'synthetic state: met_borderline'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-1194/labs-2026-09-11
+      quote: HBsAg | Nonreactive | - | Nonreactive
+    - doc_id: PT-1194/labs-2026-09-11
+      quote: Anti-HBc (total) | Nonreactive | - | Nonreactive
+    note: 'synthetic state: met_clean'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-1194/medication-history-2026-10-30
+      quote: Not currently on any advanced therapy (biologic, JAK inhibitor, or S1P receptor modulator).
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-1194/gi-note-2026-10-30
+      quote: Weight 51.0 kg.
+    - doc_id: PT-1194/gi-note-2026-10-30
+      quote: 260 mg IV once (weight 51.0 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+  C10:
+    status: NOT_MET
+    evidence:
+    - doc_id: PT-1194/gi-note-2026-10-30
+      quote: Start ustekinumab (reference product)
+    note: 'synthetic state: not_met_reference'
+packet_outcome: NEEDS_PHYSICIAN

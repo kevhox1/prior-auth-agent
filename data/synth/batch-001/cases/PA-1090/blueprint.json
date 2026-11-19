@@ -1,0 +1,40 @@
+{
+  "seed": 100089,
+  "request_id": "PA-1090",
+  "patient_id": "PT-1090",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Mei",
+  "last_name": "Castellano",
+  "sex": "F",
+  "dob": "1966-07-16",
+  "disease": "cd",
+  "weight_kg": 67.6,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_clean",
+    "C5b": "met_clean",
+    "C6": "positive_with_plan",
+    "C7": "core_positive_with_plan",
+    "C8": "met_clean",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 2,
+    "provider": 0,
+    "medhx_format": "narrative",
+    "lab_vendor": 0,
+    "outside_quality": "clean",
+    "outside_practice": 0,
+    "distractors": 1,
+    "date_style": "iso",
+    "copy_forward": false,
+    "requested_channel_wrong": true,
+    "expedited": false,
+    "injection": false
+  }
+}

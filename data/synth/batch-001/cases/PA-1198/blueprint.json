@@ -1,0 +1,40 @@
+{
+  "seed": 100197,
+  "request_id": "PA-1198",
+  "patient_id": "PT-1198",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Mateo",
+  "last_name": "Ibarra",
+  "sex": "M",
+  "dob": "1994-08-04",
+  "disease": "uc",
+  "weight_kg": 68.3,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_buried",
+    "C5b": "met_clean",
+    "C6": "met_borderline",
+    "C7": "met_clean",
+    "C8": "met_clean",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 2,
+    "provider": 0,
+    "medhx_format": "scattered",
+    "lab_vendor": 2,
+    "outside_quality": "fax",
+    "outside_practice": 0,
+    "distractors": 0,
+    "date_style": "us",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

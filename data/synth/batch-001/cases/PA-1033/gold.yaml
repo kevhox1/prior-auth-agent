@@ -1,0 +1,91 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-1033
+case_type: multi_issue
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 100032, payer northfield). States: C1=not_met_mild, C2=met_scope, C5b=not_met_naive,
+  C7=core_positive_with_plan, C9=met_borderline'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: NOT_MET
+    evidence:
+    - doc_id: PT-1033/gi-note-2026-10-26
+      quote: Mildly active ileocolonic Crohn's disease.
+    note: 'synthetic state: not_met_mild'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-1033/colonoscopy-2026-10-13
+      quote: 'Terminal ileum: multiple ulcers 1-3 cm with surrounding erythema and edema.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-1033/gi-note-2026-10-26
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-1033/demographics-2026-11-02
+      quote: 'Date of birth: 1984-02-16'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-1033/gi-note-2026-06-13
+      quote: 'History: Mercaptopurine 1.5 mg/kg daily, 2019-01 to 2019-08. Reason stopped: inadequate response after
+        6 months at a therapeutic metabolite level.'
+    - doc_id: PT-1033/gi-note-2026-06-13
+      quote: 'History: Methotrexate 25 mg subcutaneously weekly, 2019-09 to 2020-02. Reason stopped: intolerance
+        (nausea and ALT above 3 times the upper limit of normal).'
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: NOT_MET
+    evidence:
+    - doc_id: PT-1033/gi-note-2026-10-26
+      quote: Biologic-naive; no prior anti-TNF therapy.
+    note: 'synthetic state: not_met_naive'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-1033/labs-2026-10-14
+      quote: QUANTIFERON TB GOLD PLUS .......... NEGATIVE  (Negative)
+    note: 'synthetic state: met_clean'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-1033/gi-note-2026-10-26
+      quote: 'Resolved prior hepatitis B infection (HBsAg negative, anti-HBc positive, HBV DNA undetectable): monitor
+        HBV DNA and liver tests every 3 months on therapy.'
+    - doc_id: PT-1033/labs-2026-10-14
+      quote: HEP B SURFACE AG .................. Nonreactive  (Nonreactive)
+    - doc_id: PT-1033/labs-2026-10-14
+      quote: HEP B CORE AB TOTAL ............... Reactive  (Nonreactive)
+    note: 'synthetic state: core_positive_with_plan'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-1033/gi-note-2026-10-26
+      quote: Not currently on any advanced therapy (biologic, JAK inhibitor, or S1P receptor modulator).
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-1033/gi-note-2026-10-26
+      quote: Weight 55.0 kg.
+    - doc_id: PT-1033/gi-note-2026-10-26
+      quote: 260 mg IV once (weight 55.0 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_borderline'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-1033/gi-note-2026-10-26
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+packet_outcome: NEEDS_PHYSICIAN

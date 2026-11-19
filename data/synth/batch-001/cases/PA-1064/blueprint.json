@@ -1,0 +1,40 @@
+{
+  "seed": 100063,
+  "request_id": "PA-1064",
+  "patient_id": "PT-1064",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Dev",
+  "last_name": "Oyelaran",
+  "sex": "M",
+  "dob": "1980-10-08",
+  "disease": "uc",
+  "weight_kg": 79.0,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_clean",
+    "C5b": "met_buried",
+    "C6": "met_borderline",
+    "C7": "partial",
+    "C8": "met_clean",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 0,
+    "provider": 0,
+    "medhx_format": "scattered",
+    "lab_vendor": 0,
+    "outside_quality": "ocr",
+    "outside_practice": 2,
+    "distractors": 0,
+    "date_style": "iso",
+    "copy_forward": true,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

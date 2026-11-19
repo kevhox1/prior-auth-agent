@@ -1,0 +1,40 @@
+{
+  "seed": 200067,
+  "request_id": "PA-2568",
+  "patient_id": "PT-2568",
+  "request_date": "2026-11-18",
+  "payer": "calder",
+  "first_name": "Peter",
+  "last_name": "Sorensen",
+  "sex": "M",
+  "dob": "1978-12-03",
+  "disease": "uc",
+  "weight_kg": 101.5,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_borderline",
+    "C5a": "met_buried",
+    "C5b": "met_clean",
+    "C6": "met_clean",
+    "C7": "met_clean",
+    "C8": "met_clean",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 2,
+    "provider": 1,
+    "medhx_format": "table",
+    "lab_vendor": 1,
+    "outside_quality": "ocr",
+    "outside_practice": 2,
+    "distractors": 0,
+    "date_style": "us",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": false,
+    "injection": false
+  }
+}

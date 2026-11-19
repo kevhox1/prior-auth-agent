@@ -1,0 +1,94 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-1090
+case_type: borderline
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 100089, payer northfield). States: C2=met_scope, C6=positive_with_plan, C7=core_positive_with_plan'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+  requested_channel_ok: false
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-1090/gi-note-2026-11-03
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-1090/labs-2026-09-29
+      quote: Fecal calprotectin                    931 ug/g      <50
+    - doc_id: PT-1090/colonoscopy-2026-09-25
+      quote: 'Terminal ileum: multiple ulcers 1-3 cm with surrounding erythema and edema.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-1090/gi-note-2026-11-03
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-1090/demographics-2025-11-21
+      quote: 'Date of birth: 1966-07-16'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-1090/medication-history-2026-11-03
+      quote: 'Budesonide 9 mg daily, 2022-12 to 2023-03. Reason stopped: inadequate response after 10 weeks.'
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-1090/medication-history-2026-11-03
+      quote: 'Adalimumab 40 mg every 2 weeks, 2023-07 to 2026-07. Reason stopped: secondary loss of response; trough
+        1.4 mcg/mL with antibodies 42 U/mL (reference <10).'
+    note: 'synthetic state: met_clean'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-1090/gi-note-2026-11-03
+      quote: 'Latent TB infection: rifampin daily for 4 months, started 2026-10-08.'
+    - doc_id: PT-1090/labs-2026-09-29
+      quote: QuantiFERON-TB Gold Plus              POSITIVE      Negative
+    - doc_id: PT-1090/chest-xray-2026-10-02
+      quote: 'IMPRESSION: No evidence of active pulmonary tuberculosis.'
+    note: 'synthetic state: positive_with_plan'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-1090/gi-note-2026-11-03
+      quote: 'Resolved prior hepatitis B infection (HBsAg negative, anti-HBc positive, HBV DNA undetectable): monitor
+        HBV DNA and liver tests every 3 months on therapy.'
+    - doc_id: PT-1090/labs-2026-09-29
+      quote: Hepatitis B surface antigen           Nonreactive   Nonreactive
+    - doc_id: PT-1090/labs-2026-09-29
+      quote: Hepatitis B core antibody, total      Reactive      Nonreactive
+    note: 'synthetic state: core_positive_with_plan'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-1090/medication-history-2026-11-03
+      quote: No biologic or small-molecule advanced therapy at present.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-1090/gi-note-2026-11-03
+      quote: Weight 67.6 kg.
+    - doc_id: PT-1090/gi-note-2026-11-03
+      quote: 390 mg IV once (weight 67.6 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-1090/gi-note-2026-11-03
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+packet_outcome: READY_FOR_REVIEW

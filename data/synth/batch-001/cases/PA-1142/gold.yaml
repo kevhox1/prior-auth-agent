@@ -1,0 +1,93 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-1142
+case_type: multi_issue
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 100141, payer northfield). States: C2=met_scope, C5a=met_buried, C5b=insurance_stop,
+  C7=decoy, C8=switch_with_stop'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+  requested_channel_ok: false
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-1142/gi-note-2026-10-31
+      quote: Moderately to severely active ulcerative pancolitis.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-1142/labs-2026-10-01
+      quote: Calprotectin, fecal | 1300 ug/g | H | <50
+    - doc_id: PT-1142/flexible-sigmoidoscopy-2026-10-08
+      quote: 'Rectum to 34 cm: continuous inflammation with friability and erosions; Mayo endoscopic subscore 2.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-1142/gi-note-2026-10-31
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-1142/demographics-2026-10-04
+      quote: 'Date of birth: 01/25/1987'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-1142/outside-records-2023-12-18
+      quote: 'Mesalamine 4.8 g daily, 01/2023 to 05/2023. Reason stopped: inadequate response at full dose after
+        12 weeks.'
+    - doc_id: PT-1142/outside-records-2023-12-18
+      quote: 'Methotrexate 25 mg subcutaneously weekly, 06/2023 to 11/2023. Reason stopped: intolerance (nausea
+        and ALT above 3 times the upper limit of normal).'
+    note: 'synthetic state: met_buried'
+  C5b:
+    status: NOT_MET
+    acceptable_alternates:
+    - INSUFFICIENT_EVIDENCE
+    evidence:
+    - doc_id: PT-1142/gi-note-2026-10-31
+      quote: 'Prior biologic: Adalimumab 40 mg every 2 weeks, 01/2024 to 07/2026. Reason stopped: stopped when insurance
+        coverage changed; disease was controlled at the time.'
+    note: 'synthetic state: insurance_stop'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-1142/labs-2026-10-01
+      quote: QuantiFERON-TB Gold Plus | NEGATIVE | - | Negative
+    note: 'synthetic state: met_clean'
+  C7:
+    status: INSUFFICIENT_EVIDENCE
+    missing_item: HBsAg and total anti-HBc results (vaccination history and anti-HBs do not count).
+    note: 'synthetic state: decoy'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-1142/gi-note-2026-10-31
+      quote: Vedolizumab 300 mg IV every 8 weeks (last infusion 10/20/2026); to be discontinued when ustekinumab
+        starts.
+    - doc_id: PT-1142/gi-note-2026-10-31
+      quote: Stop vedolizumab; ustekinumab induction on the date of the next scheduled vedolizumab infusion.
+    note: 'synthetic state: switch_with_stop'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-1142/gi-note-2026-10-31
+      quote: Weight 59.6 kg.
+    - doc_id: PT-1142/gi-note-2026-10-31
+      quote: 390 mg IV once (weight 59.6 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-1142/gi-note-2026-10-31
+      quote: Start ustekinumab-aekn
+    note: 'synthetic state: met_clean'
+packet_outcome: NEEDS_PHYSICIAN

@@ -1,0 +1,89 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-2513
+case_type: multi_issue
+policy_id: calder-ustekinumab-ibd
+description: 'Synthetic case (seed 200012, payer calder). States: C1=not_met_mild, C2=met_scope, C5a=met_buried,
+  C6=met_borderline, C8=switch_with_stop'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: NOT_MET
+    evidence:
+    - doc_id: PT-2513/gi-note-2026-10-30
+      quote: Mildly active ileocolonic Crohn's disease.
+    note: 'synthetic state: not_met_mild'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-2513/colonoscopy-2026-08-24
+      quote: 'Terminal ileum: multiple ulcers 0.5-2 cm with surrounding erythema and edema.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-2513/gi-note-2026-10-30
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-2513/demographics-2026-02-06
+      quote: 'Date of birth: 11/24/1980'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-2513/outside-records-2025-01-18
+      quote: 'Methotrexate 25 mg subcutaneously weekly, 11/2023 to 04/2024. Reason stopped: intolerance (nausea
+        and ALT above 3 times the upper limit of normal).'
+    - doc_id: PT-2513/outside-records-2025-01-18
+      quote: 'Mercaptopurine 1.5 mg/kg daily, 05/2024 to 12/2024. Reason stopped: inadequate response after 6 months
+        at a therapeutic metabolite level.'
+    note: 'synthetic state: met_buried'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-2513/gi-note-2026-10-30
+      quote: 'Prior biologic: Infliximab 5 mg/kg IV every 8 weeks, 02/2025 to 05/2026. Reason stopped: intolerance
+        (drug-induced lupus with positive anti-histone antibodies and arthralgias).'
+    note: 'synthetic state: met_clean'
+  C6:
+    status: NOT_MET
+    acceptable_alternates:
+    - INSUFFICIENT_EVIDENCE
+    evidence:
+    - doc_id: PT-2513/labs-2025-11-24
+      quote: QuantiFERON-TB Gold Plus | NEGATIVE | - | Negative
+    missing_item: TB screening (IGRA or TST) with a negative result dated within 6 months of the request.
+    note: 'synthetic state: met_borderline'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-2513/labs-2026-09-20
+      quote: HBsAg | Nonreactive | - | Nonreactive
+    - doc_id: PT-2513/labs-2026-09-20
+      quote: Anti-HBc (total) | Nonreactive | - | Nonreactive
+    note: 'synthetic state: met_clean'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-2513/gi-note-2026-10-30
+      quote: Vedolizumab 300 mg IV every 8 weeks (last infusion 10/11/2026); to be discontinued when ustekinumab
+        starts.
+    - doc_id: PT-2513/gi-note-2026-10-30
+      quote: Stop vedolizumab; ustekinumab induction on the date of the next scheduled vedolizumab infusion.
+    note: 'synthetic state: switch_with_stop'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-2513/gi-note-2026-10-30
+      quote: Weight 97.4 kg.
+    - doc_id: PT-2513/gi-note-2026-10-30
+      quote: 520 mg IV once (weight 97.4 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+packet_outcome: NEEDS_PHYSICIAN

@@ -1,0 +1,86 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-2514
+case_type: not_met
+policy_id: calder-ustekinumab-ibd
+description: 'Synthetic case (seed 200013, payer calder). States: C2=stale_scope'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-2514/gi-note-2026-10-28
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: NOT_MET
+    acceptable_alternates:
+    - INSUFFICIENT_EVIDENCE
+    evidence:
+    - doc_id: PT-2514/colonoscopy-2025-09-18
+      quote: 'Terminal ileum: multiple ulcers 1-3 cm with surrounding erythema and edema.'
+    missing_item: Ileocolonoscopy, colonoscopy or flexible sigmoidoscopy report from the past 12 months showing
+      active inflammation (calprotectin and CRP do not count under this policy).
+    note: 'synthetic state: stale_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-2514/gi-note-2026-10-28
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-2514/demographics-2026-02-17
+      quote: 'Date of birth: 1958-05-14'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-2514/medication-history-2026-10-28
+      quote: 'Methotrexate 25 mg subcutaneously weekly, 2021-07 to 2021-11. Reason stopped: intolerance (nausea
+        and ALT above 3 times the upper limit of normal).'
+    - doc_id: PT-2514/medication-history-2026-10-28
+      quote: 'Mercaptopurine 1.5 mg/kg daily, 2021-12 to 2022-06. Reason stopped: inadequate response after 6 months
+        at a therapeutic metabolite level.'
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-2514/medication-history-2026-10-28
+      quote: 'Adalimumab 40 mg every 2 weeks, 2023-07 to 2026-08. Reason stopped: secondary loss of response; trough
+        1.4 mcg/mL with antibodies 53 U/mL (reference <10).'
+    note: 'synthetic state: met_clean'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-2514/labs-2026-09-10
+      quote: QUANTIFERON TB GOLD PLUS .......... NEGATIVE  (Negative)
+    note: 'synthetic state: met_clean'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-2514/labs-2026-09-10
+      quote: HEP B SURFACE AG .................. Nonreactive  (Nonreactive)
+    - doc_id: PT-2514/labs-2026-09-10
+      quote: HEP B CORE AB TOTAL ............... Nonreactive  (Nonreactive)
+    note: 'synthetic state: met_clean'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-2514/medication-history-2026-10-28
+      quote: No current biologic, JAK inhibitor, or S1P receptor modulator.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: MET
+    evidence:
+    - doc_id: PT-2514/gi-note-2026-10-28
+      quote: Weight 96.2 kg.
+    - doc_id: PT-2514/gi-note-2026-10-28
+      quote: 520 mg IV once (weight 96.2 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: met_clean'
+packet_outcome: NEEDS_PHYSICIAN

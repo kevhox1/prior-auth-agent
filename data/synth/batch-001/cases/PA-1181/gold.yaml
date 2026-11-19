@@ -1,0 +1,85 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-1181
+case_type: multi_issue
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 100180, payer northfield). States: C2=met_borderline, C9=wrong_tier, C10=not_met_reference'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-1181/gi-note-2026-11-01
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-1181/labs-2026-10-09
+      quote: Calprotectin, fecal | 79 ug/g | H | <50
+    note: 'synthetic state: met_borderline'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-1181/gi-note-2026-11-01
+      quote: Start ustekinumab (reference product)
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-1181/demographics-2026-05-26
+      quote: 'Date of birth: 06/05/1998'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-1181/medication-history-2026-10-31
+      quote: Inadequate response after 10 weeks
+    - doc_id: PT-1181/medication-history-2026-10-31
+      quote: Inadequate response after 6 months at a therapeutic metabolite level
+    note: 'synthetic state: met_clean'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-1181/medication-history-2026-10-31
+      quote: Secondary loss of response; trough 1.4 mcg/mL with antibodies 44 U/mL (reference <10)
+    note: 'synthetic state: met_clean'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-1181/labs-2026-10-09
+      quote: QuantiFERON-TB Gold Plus | NEGATIVE | - | Negative
+    note: 'synthetic state: met_clean'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-1181/labs-2026-10-09
+      quote: HBsAg | Nonreactive | - | Nonreactive
+    - doc_id: PT-1181/labs-2026-10-09
+      quote: Anti-HBc (total) | Nonreactive | - | Nonreactive
+    note: 'synthetic state: met_clean'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-1181/medication-history-2026-10-31
+      quote: No current biologic, JAK inhibitor, or S1P receptor modulator.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: NOT_MET
+    evidence:
+    - doc_id: PT-1181/gi-note-2026-11-01
+      quote: Weight 58.7 kg.
+    - doc_id: PT-1181/gi-note-2026-11-01
+      quote: 520 mg IV once (weight 58.7 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    note: 'synthetic state: wrong_tier'
+  C10:
+    status: NOT_MET
+    evidence:
+    - doc_id: PT-1181/gi-note-2026-11-01
+      quote: Start ustekinumab (reference product)
+    note: 'synthetic state: not_met_reference'
+packet_outcome: NEEDS_PHYSICIAN

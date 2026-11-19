@@ -1,0 +1,40 @@
+{
+  "seed": 100000,
+  "request_id": "PA-1001",
+  "patient_id": "PT-1001",
+  "request_date": "2026-11-18",
+  "payer": "northfield",
+  "first_name": "Lena",
+  "last_name": "Ibarra",
+  "sex": "F",
+  "dob": "1976-01-23",
+  "disease": "cd",
+  "weight_kg": 84.5,
+  "states": {
+    "C1": "met_clean",
+    "C2": "met_scope",
+    "C5a": "met_clean",
+    "C5b": "not_met_naive",
+    "C6": "met_clean",
+    "C7": "partial",
+    "C8": "met_clean",
+    "C9": "met_clean",
+    "C10": "met_clean",
+    "C3": "met_clean",
+    "C4": "met_clean"
+  },
+  "knobs": {
+    "note_template": 2,
+    "provider": 0,
+    "medhx_format": "scattered",
+    "lab_vendor": 0,
+    "outside_quality": "ocr",
+    "outside_practice": 1,
+    "distractors": 2,
+    "date_style": "iso",
+    "copy_forward": false,
+    "requested_channel_wrong": false,
+    "expedited": true,
+    "injection": false
+  }
+}

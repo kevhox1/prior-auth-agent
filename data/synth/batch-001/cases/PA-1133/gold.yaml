@@ -1,0 +1,92 @@
+# GOLD - evaluation only. Generated from blueprint.json by synth/label.py.
+request_id: PA-1133
+case_type: missing_item
+policy_id: northfield-ustekinumab-ibd
+description: 'Synthetic case (seed 100132, payer northfield). States: C2=met_scope, C5a=met_buried, C6=positive_with_plan,
+  C9=stale_weight'
+routing:
+  pa_required: true
+  channels:
+    iv_induction: medical
+    sc_maintenance: pharmacy
+criteria:
+  C1:
+    status: MET
+    evidence:
+    - doc_id: PT-1133/gi-note-2026-10-31
+      quote: Moderately to severely active ileocolonic Crohn's disease.
+    note: 'synthetic state: met_clean'
+  C2:
+    status: MET
+    evidence:
+    - doc_id: PT-1133/colonoscopy-2026-09-26
+      quote: 'Terminal ileum: multiple ulcers 0.3-1.5 cm with surrounding erythema and edema.'
+    note: 'synthetic state: met_scope'
+  C3:
+    status: MET
+    evidence:
+    - doc_id: PT-1133/gi-note-2026-10-31
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+  C4:
+    status: MET
+    evidence:
+    - doc_id: PT-1133/demographics-2026-07-22
+      quote: 'Date of birth: 1983-08-09'
+    note: 'synthetic state: met_clean'
+  C5a:
+    status: MET
+    evidence:
+    - doc_id: PT-1133/outside-records-2023-11-18
+      quote: 'Methotrexate 25 mg subcutaneously weekly, 2023-01 to 2023-06. Reason stopped: intolerance (nausea
+        and ALT above 3 times the upper limit of normal).'
+    - doc_id: PT-1133/outside-records-2023-11-18
+      quote: 'Budesonide 9 mg daily, 2023-07 to 2023-10. Reason stopped: inadequate response after 10 weeks.'
+    note: 'synthetic state: met_buried'
+  C5b:
+    status: MET
+    evidence:
+    - doc_id: PT-1133/medication-history-2026-10-31
+      quote: Secondary loss of response; trough 2.1 mcg/mL with antibodies 26 U/mL (reference <10)
+    note: 'synthetic state: met_clean'
+  C6:
+    status: MET
+    evidence:
+    - doc_id: PT-1133/gi-note-2026-10-31
+      quote: 'Latent TB infection: rifampin daily for 4 months, started 2026-10-17.'
+    - doc_id: PT-1133/labs-2026-10-09
+      quote: QUANTIFERON TB GOLD PLUS .......... POSITIVE  (Negative)
+    - doc_id: PT-1133/chest-xray-2026-10-12
+      quote: 'IMPRESSION: No evidence of active pulmonary tuberculosis.'
+    note: 'synthetic state: positive_with_plan'
+  C7:
+    status: MET
+    evidence:
+    - doc_id: PT-1133/labs-2026-10-09
+      quote: HEP B SURFACE AG .................. Nonreactive  (Nonreactive)
+    - doc_id: PT-1133/labs-2026-10-09
+      quote: HEP B CORE AB TOTAL ............... Nonreactive  (Nonreactive)
+    note: 'synthetic state: met_clean'
+  C8:
+    status: MET
+    evidence:
+    - doc_id: PT-1133/medication-history-2026-10-31
+      quote: No biologic or small-molecule advanced therapy at present.
+    note: 'synthetic state: met_clean'
+  C9:
+    status: INSUFFICIENT_EVIDENCE
+    evidence:
+    - doc_id: PT-1133/gi-note-2026-09-02
+      quote: Weight 96.3 kg.
+    - doc_id: PT-1133/gi-note-2026-10-31
+      quote: 520 mg IV once (weight 96.3 kg), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the
+        IV dose.
+    missing_item: Body weight documented within 30 days of the request (last weight is from more than 30 days ago).
+    note: 'synthetic state: stale_weight'
+  C10:
+    status: MET
+    evidence:
+    - doc_id: PT-1133/gi-note-2026-10-31
+      quote: Start ustekinumab-ttwe
+    note: 'synthetic state: met_clean'
+packet_outcome: GAPS_TO_CLOSE
