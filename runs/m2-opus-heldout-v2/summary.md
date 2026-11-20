@@ -1,5 +1,7 @@
 # Run m2-opus-heldout-v2
 
+> **Note (added later):** this is the summary written when the run finished. Two gold-label fixes made after this run (B32, B34) turn one outcome from alternate to exact: 29/30 exact. See [`docs/EVAL_REPORT.md`](../../docs/EVAL_REPORT.md).
+
 Model `claude-opus-5-5`, backend `claude_code`, effort `default`.
 
 - Cases: 30 ok, 0 errored

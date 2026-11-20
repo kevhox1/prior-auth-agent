@@ -60,3 +60,15 @@ def test_latent_tb_treatment_starts_after_positive_screen_and_xray():
         assert starts, case_id
         for st in starts:
             assert labs <= xray.date <= st, (case_id, labs, xray.date, st)
+
+
+def test_specialty_is_quotable_and_no_weight_filler(tmp_path):
+    """B38: the prescriber's specialty must be in note text (a signature block), cited as gold C3
+    evidence; and no filler sentence may claim a weight change the recorded weights don't show."""
+    out = build(batch=9, n=12, seed=5, out_root=tmp_path)
+    for case_id in intake.list_cases(out / "cases"):
+        gold = intake.load_gold(case_id, out / "cases")
+        assert any(e.quote.startswith("Electronically signed by Dr.") and "Gastroenterology" in e.quote
+                   for e in gold.criteria["C3"].evidence), case_id
+        chart = intake.load_chart(case_id.replace("PA", "PT"), out / "charts")
+        assert not any("weight down" in d.text.lower() for d in chart.documents), case_id

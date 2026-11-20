@@ -194,6 +194,8 @@ Every decision and the sign-off go to `review.jsonl` and the case audit log. Moc
 
 These are recorded but not yet applied. Regenerating would change the charts under the archived blind runs, and the reports re-check every quote against the charts on disk. Apply them at the start of the next evaluation cycle, then re-run.
 
+**Applied after M4 (B43):** the generator now writes a signature block into every GI note, and gold C3 cites it. The random weight sentence is gone. The three hand-built IBD charts gained signature lines, which only appended text, so every archived quote still checks. Batches 1 to 3 were not regenerated, so the archived runs stay reproducible; the next batch built gets the fix. The Sonnet and Haiku re-run on fixed data is still to do (about 1.5M tokens for 30 cases each).
+
 ### B39. Policy extraction is a once-per-version job for the strongest model, approved by a human (M3)
 In the blind run, Haiku mis-split Northfield 3.10 and Sonnet left Calder B.5 unsplit. Extraction runs once per policy version, not once per case, so its cost is negligible, while an error in it touches every case under that policy. The production design: the strongest model extracts, a person compares the result to the policy (`compare_to_gold` already shows the differences), and approved checklists are pinned by version. The per-case model is chosen separately. The scorer now judges an unsplit parent at the parent level, so a coarser checklist is not charged with false METs it never claimed.
 
@@ -225,7 +227,7 @@ No schema, prompt, document type or UI change was needed. Extraction found 9 of 
 - **PA-0103.** B.4 requires LDL-C to remain at or above the threshold on ezetimibe. 64 mg/dL is below 70, so B.4 is NOT_MET, not MET.
 - **PA-0102.** The chart's Dutch Lipid Clinic score of 8 counts 4 points for corneal arcus "before age 45". The only arcus finding is from an exam at age 54, so the diagnosis is not supported as written.
 
-Both gold labels were corrected with a note. The one remaining miss is real: in PA-0102 the agent called the LDL-C criterion NOT_MET because the patient is not on a statin. That makes B.2 depend on whether B.3 is resolved. The policy couples the two criteria, and the agent treated an unresolved dependency as a failure. It over-escalated to a physician, which is not a false MET. A fix would let assessment mark a criterion as depending on another, rather than failing it.
+Both gold labels were corrected with a note. The one remaining miss is real: in PA-0102 the agent called the LDL-C criterion NOT_MET because the patient is not on a statin. That makes B.2 depend on whether B.3 is resolved. The policy couples the two criteria, and the agent treated an unresolved dependency as a failure. It over-escalated to a physician, which is not a false MET. Fixed by assess@v3 (B43).
 
 ### B42. One IBD drug instead of four (M0 to M2)
 The brief lists adalimumab, infliximab, ustekinumab and vedolizumab. The build covers ustekinumab only, across two payers, plus evolocumab for the reuse test. Kevin wanted a small example to talk through, not a full build. Ustekinumab was the best single choice, for three reasons:
@@ -234,3 +236,23 @@ The brief lists adalimumab, infliximab, ustekinumab and vedolizumab. The build c
 - **Step-therapy and preferred-product rules.** Payers differ on these.
 
 Adding the other three drugs is configuration work (B41), plus a dose table for each.
+
+### B43. assess@v3: judge a coupled criterion on what it measures, plus the B38 data fixes (M5 follow-up)
+**The problem.** Some policy criteria point at another criterion. Calder B.2 asks for an LDL-C "on the B.3 and B.4 therapy". In PA-0102 the patient is on ezetimibe with no statin, and Opus failed B.2 because B.3 (statin therapy) failed. That double-counts one problem: B.3 already carries it, and code combines the statuses.
+
+**The fix.** assess@v3 adds one rule. A criterion that refers to another criterion's therapy is judged on what it measures, against the therapy the chart shows. It is never NOT_MET because the other criterion fails. If the dependency truly decides it and the chart doesn't settle it, it is INSUFFICIENT_EVIDENCE. This is a prompt rule, not a schema field. A "depends on" field in the checklist would be more explicit, but one rule fixed the miss without changing extraction.
+
+**Results** (Opus, assess@v3, about 264k tokens in all):
+
+| Run | Cases | False MET | Criteria | Outcome |
+|---|---|---|---|---|
+| Reuse test (`m5-reuse-opus-v3`) | 3 | 0 | 27/27 (was 26/27) | 2 exact, 1 acceptable alternate, 0 wrong (was 1 wrong) |
+| Hand-built IBD (`m5-ibd-hand-v3`) | 3 | 0 | 33/33 | 3/3 exact. PA-0001's packet: 44 of 44 claims verified |
+| Blind regression (`m5-blind-regress-v3`) | 6 | 0 | 63/63 | 5 exact, 1 acceptable alternate. Same as v2 on these cases |
+
+- **PA-0102 now gets B.2 right.** Its outcome is still NEEDS_PHYSICIAN rather than gold GAPS_TO_CLOSE, because Opus calls the second-statin branch NOT_MET, an acceptable alternate. With only one statin documented, that is defensible either way.
+- **The regression set was chosen to stress the change.** It is three payer pairs (PA-3006, PA-3018, PA-3045 and their Calder twins), the blind cases with the most NOT_MET criteria. That is where a rule softening NOT_MET would do harm. None changed.
+- **The B38 signature block worked.** In PA-0001, C3 is now proven by the quote "Electronically signed by Dr. A. Rivera, Gastroenterology, 10/28/2026", not by the document header.
+- **Caveat.** Twelve cases is a spot check, not a full re-run of the 30-case held-out set. The headline numbers in the README are from assess@v2.
+
+**One reliability fix.** PA-0102 failed twice, in M4 and here, with "No such file or directory: 'claude'". The binary disappears briefly while Claude Code updates itself. The backend now retries that error with the same backoff as a rate limit.

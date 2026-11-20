@@ -14,5 +14,8 @@ runs/*
 !runs/m2-blind-haiku/
 !runs/m3-opus-packets/
 !runs/m4-reuse-opus/
+!runs/m5-reuse-opus-v3/
+!runs/m5-ibd-hand-v3/
+!runs/m5-blind-regress-v3/
 runs/*/*/submission/
 runs/*/*/review.jsonl

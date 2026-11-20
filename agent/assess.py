@@ -23,7 +23,7 @@ from agent.schemas import (
     Status,
 )
 
-PROMPT = "assess@v2"
+PROMPT = "assess@v3"
 
 
 def passages_block(retrieval: list[RetrievalResult]) -> str:

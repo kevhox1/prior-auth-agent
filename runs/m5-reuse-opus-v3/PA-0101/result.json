@@ -1,0 +1,1318 @@
+{
+  "request": {
+    "request_id": "PA-0101",
+    "patient_id": "PT-0101",
+    "drug": "evolocumab",
+    "product": "evolocumab",
+    "dose": "140 mg subcutaneously every 2 weeks",
+    "indication_icd10": "I25.10",
+    "payer": "calder",
+    "plan_type": "commercial",
+    "ordering_provider": "Dr. M. Osei, Cardiology",
+    "urgency": "standard",
+    "request_date": "2026-11-18",
+    "requested_start": "2026-12-01",
+    "requested_channel": null,
+    "expedited_reason": null
+  },
+  "intake": {
+    "request": {
+      "request_id": "PA-0101",
+      "patient_id": "PT-0101",
+      "drug": "evolocumab",
+      "product": "evolocumab",
+      "dose": "140 mg subcutaneously every 2 weeks",
+      "indication_icd10": "I25.10",
+      "payer": "calder",
+      "plan_type": "commercial",
+      "ordering_provider": "Dr. M. Osei, Cardiology",
+      "urgency": "standard",
+      "request_date": "2026-11-18",
+      "requested_start": "2026-12-01",
+      "requested_channel": null,
+      "expedited_reason": null
+    },
+    "policy_id": "calder-evolocumab-lipids",
+    "policy_version": "2026-09",
+    "n_documents": 7,
+    "decision_clock": "Standard review. Pharmacy benefit: decision within 72 hours of receiving all required information (policy section E).",
+    "notes": []
+  },
+  "policy_id": "calder-evolocumab-lipids",
+  "policy_version": "2026-09",
+  "routing": {
+    "pa_required": true,
+    "channels": {
+      "sc_injection": "pharmacy"
+    },
+    "requested_channel_ok": null,
+    "notes": []
+  },
+  "checklist": {
+    "policy_id": "calder-evolocumab-lipids",
+    "payer": "calder",
+    "drug": "evolocumab",
+    "version": "2026-09",
+    "effective_date": "2026-09-01",
+    "indications": [
+      "Clinical atherosclerotic cardiovascular disease (ASCVD) with elevated LDL-C",
+      "Heterozygous familial hypercholesterolemia (HeFH) with elevated LDL-C"
+    ],
+    "benefit_channel": {
+      "self_administered_subcutaneous": "pharmacy"
+    },
+    "auth_duration_months": 12,
+    "logic": "ALL",
+    "criteria": [
+      {
+        "id": "C1",
+        "policy_ref": "B.1",
+        "type": "diagnosis",
+        "text": "The prescriber documents in the clinical record that the member has one of two conditions. The first is clinical ASCVD, meaning a prior myocardial infarction or acute coronary syndrome, coronary or other arterial revascularization, stable or unstable angina with documented coronary artery disease, ischemic stroke or TIA of atherosclerotic origin, or symptomatic peripheral artery disease. The second is heterozygous familial hypercholesterolemia (HeFH) confirmed by genetic testing or by a Dutch Lipid Clinic Network score of 6 or higher.",
+        "evidence_needed": [
+          "Prescriber documentation of a clinical ASCVD diagnosis, naming the qualifying event or condition (MI/ACS, revascularization, angina with documented CAD, atherosclerotic ischemic stroke/TIA, or symptomatic PAD)",
+          "OR a documented HeFH diagnosis with a genetic test result or a Dutch Lipid Clinic Network score of 6 or higher"
+        ],
+        "lookback_months": null,
+        "logic": null,
+        "sub_criteria": []
+      },
+      {
+        "id": "C2",
+        "policy_ref": "B.2",
+        "type": "lab_threshold",
+        "text": "An LDL-C result drawn in the 3 months before the request, while the member was on the lipid-lowering therapy described in B.3 and B.4, is at or above the member's threshold. The threshold is 70 mg/dL for a member with clinical ASCVD, or 100 mg/dL for a member with HeFH and no clinical ASCVD. An LDL-C drawn before the current lipid-lowering regimen was started does not meet this requirement.",
+        "evidence_needed": [
+          "LDL-C lab result with draw date within 3 months before the request",
+          "LDL-C value at or above 70 mg/dL (ASCVD) or at or above 100 mg/dL (HeFH without ASCVD)",
+          "Documentation that the LDL-C was drawn after the current statin/ezetimibe regimen was started and while the member was on it"
+        ],
+        "lookback_months": 3,
+        "logic": null,
+        "sub_criteria": []
+      },
+      {
+        "id": "C3",
+        "policy_ref": "B.3",
+        "type": "step_therapy",
+        "text": "The member is on maximally tolerated statin therapy, shown by either (a) or (b). One is enough. For any claimed intolerance, the record must describe each statin's drug, dose, symptom or adverse effect, and improvement after the statin was stopped or reduced. A statement such as \"statin intolerant\" without these details does not meet this requirement.",
+        "evidence_needed": [
+          "Evidence satisfying B.3(a) or B.3(b)"
+        ],
+        "lookback_months": null,
+        "logic": "ANY",
+        "sub_criteria": [
+          {
+            "id": "C3a",
+            "policy_ref": "B.3(a)",
+            "type": "step_therapy",
+            "text": "The member takes a high-intensity statin (atorvastatin 40 to 80 mg daily or rosuvastatin 20 to 40 mg daily), or the highest statin dose the member tolerates when a higher dose caused a documented adverse effect. The member has taken it for at least 8 weeks before the B.2 LDL-C and will continue it with evolocumab. Any intolerance of a higher dose must be described with the drug, dose, symptom or adverse effect, and improvement after stopping or reducing it. A bare \"statin intolerant\" statement does not count.",
+            "evidence_needed": [
+              "Current statin name and daily dose (atorvastatin 40-80 mg or rosuvastatin 20-40 mg, or a lower maximally tolerated dose)",
+              "If on a lower than high-intensity dose: documented adverse effect at the higher dose, with drug, dose, symptom, and improvement after stopping or reducing it",
+              "Statin start date or fill history showing at least 8 weeks of use before the B.2 LDL-C draw",
+              "Documentation that the statin will continue alongside evolocumab"
+            ],
+            "lookback_months": null,
+            "logic": null,
+            "sub_criteria": []
+          },
+          {
+            "id": "C3b",
+            "policy_ref": "B.3(b)",
+            "type": "step_therapy",
+            "text": "The member cannot take a statin for one of two reasons. (i) Intolerance of at least two different statins, at least one of them at the lowest approved starting dose. (ii) A contraindication, meaning a history of statin-associated rhabdomyolysis or active liver disease. For each statin, the intolerance must be described with the drug, dose, symptom or adverse effect, and improvement after the statin was stopped or reduced. A statement such as \"statin intolerant\" without these details does not meet this requirement.",
+            "evidence_needed": [
+              "For intolerance: at least two different statins documented, each with drug name, dose, symptom/adverse effect, and improvement after stopping or reducing it",
+              "For intolerance: at least one of the statins tried at the lowest approved starting dose",
+              "OR for contraindication: documented history of statin-associated rhabdomyolysis or active liver disease"
+            ],
+            "lookback_months": null,
+            "logic": null,
+            "sub_criteria": []
+          }
+        ]
+      },
+      {
+        "id": "C4",
+        "policy_ref": "B.4",
+        "type": "step_therapy",
+        "text": "The member has taken ezetimibe 10 mg daily for at least 4 weeks, now or in the past, and LDL-C stayed at or above the B.2 threshold. Alternatively, the record documents intolerance of or a contraindication to ezetimibe.",
+        "evidence_needed": [
+          "Ezetimibe 10 mg daily with dates or fill history showing at least 4 weeks of use (current or past), and LDL-C at or above the B.2 threshold despite it",
+          "OR documented intolerance of or contraindication to ezetimibe"
+        ],
+        "lookback_months": null,
+        "logic": null,
+        "sub_criteria": []
+      },
+      {
+        "id": "C5",
+        "policy_ref": "B.5",
+        "type": "prescriber",
+        "text": "The prescriber is a cardiologist, an endocrinologist, or a lipid specialist, or the prescriber has consulted with one about this treatment.",
+        "evidence_needed": [
+          "Prescriber specialty (cardiology, endocrinology, or lipid specialist)",
+          "OR documentation of a consultation with a cardiologist, endocrinologist, or lipid specialist about evolocumab treatment"
+        ],
+        "lookback_months": null,
+        "logic": null,
+        "sub_criteria": []
+      },
+      {
+        "id": "C6",
+        "policy_ref": "B.6",
+        "type": "age",
+        "text": "The member is at least 18 years old on the date of the request.",
+        "evidence_needed": [
+          "Member date of birth",
+          "Request date"
+        ],
+        "lookback_months": null,
+        "logic": null,
+        "sub_criteria": []
+      },
+      {
+        "id": "C7",
+        "policy_ref": "B.7",
+        "type": "exclusion",
+        "text": "Evolocumab will not be combined with another PCSK9-directed therapy (alirocumab or inclisiran). When the member is switching from one of these, the record shows the earlier agent is stopping.",
+        "evidence_needed": [
+          "Medication list showing no concurrent alirocumab or inclisiran",
+          "If switching from alirocumab or inclisiran: documentation that the earlier agent is being stopped"
+        ],
+        "lookback_months": null,
+        "logic": null,
+        "sub_criteria": []
+      },
+      {
+        "id": "C8",
+        "policy_ref": "B.8",
+        "type": "dosing",
+        "text": "The requested regimen is a labeled adult regimen: 140 mg under the skin every 2 weeks, or 420 mg under the skin once a month.",
+        "evidence_needed": [
+          "Requested dose, route, and frequency: 140 mg SC every 2 weeks or 420 mg SC once monthly"
+        ],
+        "lookback_months": null,
+        "logic": null,
+        "sub_criteria": []
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "criterion_id": "C1",
+      "status": "MET",
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "doc_id": "PT-0101/cardiology-note-2026-11-10",
+          "quote": "Clinical ASCVD: NSTEMI 03/2025 with drug-eluting stent to the proximal LAD.",
+          "doc_date": "2026-11-10"
+        },
+        {
+          "doc_id": "PT-0101/outside-records-2025-03-18",
+          "quote": "Percutaneous coronary intervention with one drug-eluting stent.",
+          "doc_date": "2025-03-18"
+        }
+      ],
+      "reasoning": "The prescribing cardiologist documents clinical ASCVD and names the event: NSTEMI in 03/2025 with a stent to the proximal LAD. The outside discharge summary confirms the PCI with a drug-eluting stent. Both MI and coronary revascularization are qualifying conditions.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C2",
+      "status": "MET",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "doc_id": "PT-0101/labs-2026-10-27",
+          "quote": "LDL cholesterol, calculated         98 mg/dL      <100",
+          "doc_date": "2026-10-27"
+        },
+        {
+          "doc_id": "PT-0101/cardiology-note-2026-11-10",
+          "quote": "Lipid panel 10/27/2026: LDL-C 98 mg/dL on atorvastatin 80 mg and ezetimibe 10 mg (ezetimibe since 06/02/2026).",
+          "doc_date": "2026-11-10"
+        }
+      ],
+      "reasoning": "LDL-C was 98 mg/dL on 10/27/2026, which is within 3 months of the 11/18/2026 request. That is above the 70 mg/dL ASCVD threshold. It was drawn while the member was on atorvastatin 80 mg and ezetimibe, both started before the draw.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": true,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C3a",
+      "status": "MET",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "doc_id": "PT-0101/medication-history-2026-11-10",
+          "quote": "| Atorvastatin | 80 mg nightly | 2025-03-18 | ongoing | Started at hospital discharge after NSTEMI. Fills on time every 90 days. No side effects reported. |",
+          "doc_date": "2026-11-10"
+        },
+        {
+          "doc_id": "PT-0101/cardiology-note-2026-11-10",
+          "quote": "1. Start evolocumab 140 mg subcutaneously every 2 weeks. Continue atorvastatin 80 mg and ezetimibe 10 mg.",
+          "doc_date": "2026-11-10"
+        }
+      ],
+      "reasoning": "The member has taken atorvastatin 80 mg, a high-intensity dose, since 03/18/2025 and fills it on time. That is well over 8 weeks before the 10/27/2026 LDL-C. The plan says to continue atorvastatin with evolocumab.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C3b",
+      "status": "NOT_MET",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "doc_id": "PT-0101/medication-history-2026-11-10",
+          "quote": "No side effects reported.",
+          "doc_date": "2026-11-10"
+        },
+        {
+          "doc_id": "PT-0101/cardiology-note-2026-11-10",
+          "quote": "Taking atorvastatin and ezetimibe every day, no muscle symptoms.",
+          "doc_date": "2026-11-10"
+        }
+      ],
+      "reasoning": "The chart shows the member tolerates atorvastatin 80 mg and records no intolerance of two statins. ALT and CK are normal, and there is no history of rhabdomyolysis or liver disease. This alternative path is not met, but C3 can be satisfied through C3a.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C4",
+      "status": "MET",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "doc_id": "PT-0101/medication-history-2026-11-10",
+          "quote": "| Ezetimibe | 10 mg daily | 2026-06-02 | ongoing | Added for LDL 131 on atorvastatin alone. Fills on time. |",
+          "doc_date": "2026-11-10"
+        },
+        {
+          "doc_id": "PT-0101/labs-2026-10-27",
+          "quote": "LDL cholesterol, calculated         98 mg/dL      <100",
+          "doc_date": "2026-10-27"
+        }
+      ],
+      "reasoning": "Ezetimibe 10 mg daily started 06/02/2026 and is filled on time. That is about 21 weeks before the 10/27/2026 LDL-C of 98 mg/dL, which remains at or above the 70 mg/dL threshold.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C5",
+      "status": "MET",
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "doc_id": "PT-0101/cardiology-note-2026-11-10",
+          "quote": "Electronically signed by Dr. M. Osei, MD, Cardiology, 11/10/2026",
+          "doc_date": "2026-11-10"
+        }
+      ],
+      "reasoning": "The ordering provider, Dr. M. Osei, signs the note as Cardiology. A cardiologist is a qualifying prescriber.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C6",
+      "status": "MET",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "doc_id": "PT-0101/demographics-2026-11-10",
+          "quote": "Date of birth: 06/02/1965",
+          "doc_date": "2026-11-10"
+        }
+      ],
+      "reasoning": "With a date of birth of 06/02/1965, the member is 61 on the 11/18/2026 request date, which is at least 18.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": true,
+        "dose_in_label": null,
+        "notes": [
+          "age 61 on 2026-11-18 from DOB 1965-06-02"
+        ]
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C7",
+      "status": "MET",
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "doc_id": "PT-0101/medication-history-2026-11-10",
+          "quote": "No current or prior PCSK9 inhibitor (alirocumab, evolocumab) or inclisiran.",
+          "doc_date": "2026-11-10"
+        }
+      ],
+      "reasoning": "The reconciled medication history says there is no current or prior alirocumab or inclisiran. No switch is involved, and there is no concurrent PCSK9-directed therapy.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C8",
+      "status": "MET",
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "doc_id": "PT-0101/cardiology-note-2026-11-10",
+          "quote": "1. Start evolocumab 140 mg subcutaneously every 2 weeks.",
+          "doc_date": "2026-11-10"
+        }
+      ],
+      "reasoning": "Both the request and the plan state 140 mg subcutaneously every 2 weeks. This is a labeled adult regimen.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    }
+  ],
+  "rolled_up": {
+    "C1": "MET",
+    "C2": "MET",
+    "C3a": "MET",
+    "C3b": "NOT_MET",
+    "C3": "MET",
+    "C4": "MET",
+    "C5": "MET",
+    "C6": "MET",
+    "C7": "MET",
+    "C8": "MET"
+  },
+  "retrieval": [
+    {
+      "criterion_id": "C1",
+      "passages": [
+        {
+          "doc_id": "PT-0101/outside-records-2025-03-18",
+          "quote": "Non-ST-elevation myocardial infarction.",
+          "doc_date": "2025-03-18",
+          "why_relevant": "Principal diagnosis of NSTEMI (qualifying MI/ACS)."
+        },
+        {
+          "doc_id": "PT-0101/outside-records-2025-03-18",
+          "quote": "03/15/2025 Coronary angiography: 90% stenosis of the proximal left anterior descending artery. Percutaneous coronary intervention with one drug-eluting stent. Mild nonobstructive disease elsewhere.",
+          "doc_date": "2025-03-18",
+          "why_relevant": "Coronary revascularization (PCI with DES)."
+        },
+        {
+          "doc_id": "PT-0101/cardiology-note-2026-11-10",
+          "quote": "Clinical ASCVD: NSTEMI 03/2025 with drug-eluting stent to the proximal LAD.",
+          "doc_date": "2026-11-10",
+          "why_relevant": "Prescriber documentation of clinical ASCVD naming qualifying events."
+        },
+        {
+          "doc_id": "PT-0101/problem-list-2026-11-10",
+          "quote": "1. Coronary artery disease, native vessel (I25.10). NSTEMI 03/2025 treated with drug-eluting stent to the proximal LAD.",
+          "doc_date": "2026-11-10",
+          "why_relevant": "Problem list documents CAD with NSTEMI and stent."
+        },
+        {
+          "doc_id": "PT-0101/problem-list-2026-11-10",
+          "quote": "2. Old myocardial infarction (I25.2).",
+          "doc_date": "2026-11-10",
+          "why_relevant": "Prior MI documented."
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-0101/outside-records-2025-03-18",
+        "PT-0101/labs-2026-05-12",
+        "PT-0101/labs-2026-10-27",
+        "PT-0101/cardiology-note-2026-11-10",
+        "PT-0101/demographics-2026-11-10",
+        "PT-0101/medication-history-2026-11-10",
+        "PT-0101/problem-list-2026-11-10"
+      ]
+    },
+    {
+      "criterion_id": "C2",
+      "passages": [
+        {
+          "doc_id": "PT-0101/labs-2026-10-27",
+          "quote": "LDL cholesterol, calculated         98 mg/dL      <100",
+          "doc_date": "2026-10-27",
+          "why_relevant": "LDL-C 98 mg/dL drawn 10/27/2026, within 3 months of the 11/18/2026 request, above the 70 mg/dL ASCVD threshold."
+        },
+        {
+          "doc_id": "PT-0101/cardiology-note-2026-11-10",
+          "quote": "Lipid panel 10/27/2026: LDL-C 98 mg/dL on atorvastatin 80 mg and ezetimibe 10 mg (ezetimibe since 06/02/2026). Prior LDL-C 131 mg/dL on atorvastatin alone (05/2026). ALT and CK normal.",
+          "doc_date": "2026-11-10",
+          "why_relevant": "Confirms LDL-C drawn while on current statin + ezetimibe regimen."
+        },
+        {
+          "doc_id": "PT-0101/cardiology-note-2026-11-10",
+          "quote": "LDL-C remains above 70 mg/dL despite maximally tolerated high-intensity statin plus ezetimibe.",
+          "doc_date": "2026-11-10",
+          "why_relevant": "Prescriber states LDL-C above threshold on therapy."
+        },
+        {
+          "doc_id": "PT-0101/labs-2026-05-12",
+          "quote": "LDL cholesterol, calculated         131 mg/dL     <100",
+          "doc_date": "2026-05-12",
+          "why_relevant": "Older LDL-C outside 3-month window and before ezetimibe added; does not satisfy B.2 alone."
+        },
+        {
+          "doc_id": "PT-0101/outside-records-2025-03-18",
+          "quote": "LDL cholesterol 162 mg/dL (not on lipid-lowering therapy before admission).",
+          "doc_date": "2025-03-18",
+          "why_relevant": "Pre-treatment LDL-C; outside window and before regimen, does not qualify."
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-0101/outside-records-2025-03-18",
+        "PT-0101/labs-2026-05-12",
+        "PT-0101/labs-2026-10-27",
+        "PT-0101/cardiology-note-2026-11-10",
+        "PT-0101/demographics-2026-11-10",
+        "PT-0101/medication-history-2026-11-10",
+        "PT-0101/problem-list-2026-11-10"
+      ]
+    },
+    {
+      "criterion_id": "C3a",
+      "passages": [
+        {
+          "doc_id": "PT-0101/medication-history-2026-11-10",
+          "quote": "| Atorvastatin | 80 mg nightly | 2025-03-18 | ongoing | Started at hospital discharge after NSTEMI. Fills on time every 90 days. No side effects reported. |",
+          "doc_date": "2026-11-10",
+          "why_relevant": "High-intensity statin since 03/2025, well over 8 weeks before 10/27/2026 LDL, with fill adherence."
+        },
+        {
+          "doc_id": "PT-0101/outside-records-2025-03-18",
+          "quote": "Aspirin 81 mg daily; ticagrelor 90 mg twice daily; atorvastatin 80 mg nightly (new); metoprolol succinate 50 mg daily; lisinopril 10 mg daily.",
+          "doc_date": "2025-03-18",
+          "why_relevant": "Atorvastatin 80 mg started at discharge 03/18/2025."
+        },
+        {
+          "doc_id": "PT-0101/cardiology-note-2026-11-10",
+          "quote": "Taking atorvastatin and ezetimibe every day, no muscle symptoms.",
+          "doc_date": "2026-11-10",
+          "why_relevant": "Current adherence, no intolerance."
+        },
+        {
+          "doc_id": "PT-0101/cardiology-note-2026-11-10",
+          "quote": "1. Start evolocumab 140 mg subcutaneously every 2 weeks. Continue atorvastatin 80 mg and ezetimibe 10 mg.",
+          "doc_date": "2026-11-10",
+          "why_relevant": "Statin to continue alongside evolocumab."
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-0101/outside-records-2025-03-18",
+        "PT-0101/labs-2026-05-12",
+        "PT-0101/labs-2026-10-27",
+        "PT-0101/cardiology-note-2026-11-10",
+        "PT-0101/demographics-2026-11-10",
+        "PT-0101/medication-history-2026-11-10",
+        "PT-0101/problem-list-2026-11-10"
+      ]
+    },
+    {
+      "criterion_id": "C3b",
+      "passages": [
+        {
+          "doc_id": "PT-0101/medication-history-2026-11-10",
+          "quote": "| Atorvastatin | 80 mg nightly | 2025-03-18 | ongoing | Started at hospital discharge after NSTEMI. Fills on time every 90 days. No side effects reported. |",
+          "doc_date": "2026-11-10",
+          "why_relevant": "No statin intolerance; tolerates statin, so B.3(b) does not apply."
+        },
+        {
+          "doc_id": "PT-0101/cardiology-note-2026-11-10",
+          "quote": "Taking atorvastatin and ezetimibe every day, no muscle symptoms.",
+          "doc_date": "2026-11-10",
+          "why_relevant": "Absence of statin intolerance."
+        },
+        {
+          "doc_id": "PT-0101/labs-2026-10-27",
+          "quote": "ALT                                   31 U/L        7-56",
+          "doc_date": "2026-10-27",
+          "why_relevant": "Normal ALT; no evidence of active liver disease contraindication."
+        },
+        {
+          "doc_id": "PT-0101/labs-2026-10-27",
+          "quote": "Creatine kinase                       142 U/L       39-308",
+          "doc_date": "2026-10-27",
+          "why_relevant": "Normal CK; no rhabdomyolysis."
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-0101/outside-records-2025-03-18",
+        "PT-0101/labs-2026-05-12",
+        "PT-0101/labs-2026-10-27",
+        "PT-0101/cardiology-note-2026-11-10",
+        "PT-0101/demographics-2026-11-10",
+        "PT-0101/medication-history-2026-11-10",
+        "PT-0101/problem-list-2026-11-10"
+      ]
+    },
+    {
+      "criterion_id": "C4",
+      "passages": [
+        {
+          "doc_id": "PT-0101/medication-history-2026-11-10",
+          "quote": "| Ezetimibe | 10 mg daily | 2026-06-02 | ongoing | Added for LDL 131 on atorvastatin alone. Fills on time. |",
+          "doc_date": "2026-11-10",
+          "why_relevant": "Ezetimibe 10 mg since 06/02/2026, >4 weeks before 10/27/2026 LDL."
+        },
+        {
+          "doc_id": "PT-0101/cardiology-note-2026-11-10",
+          "quote": "Lipid panel 10/27/2026: LDL-C 98 mg/dL on atorvastatin 80 mg and ezetimibe 10 mg (ezetimibe since 06/02/2026). Prior LDL-C 131 mg/dL on atorvastatin alone (05/2026). ALT and CK normal.",
+          "doc_date": "2026-11-10",
+          "why_relevant": "LDL-C 98 remains above 70 on ezetimibe."
+        },
+        {
+          "doc_id": "PT-0101/labs-2026-10-27",
+          "quote": "LDL cholesterol, calculated         98 mg/dL      <100",
+          "doc_date": "2026-10-27",
+          "why_relevant": "LDL-C result on ezetimibe."
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-0101/outside-records-2025-03-18",
+        "PT-0101/labs-2026-05-12",
+        "PT-0101/labs-2026-10-27",
+        "PT-0101/cardiology-note-2026-11-10",
+        "PT-0101/demographics-2026-11-10",
+        "PT-0101/medication-history-2026-11-10",
+        "PT-0101/problem-list-2026-11-10"
+      ]
+    },
+    {
+      "criterion_id": "C5",
+      "passages": [
+        {
+          "doc_id": "PT-0101/cardiology-note-2026-11-10",
+          "quote": "Electronically signed by Dr. M. Osei, MD, Cardiology, 11/10/2026",
+          "doc_date": "2026-11-10",
+          "why_relevant": "Prescriber is a cardiologist."
+        },
+        {
+          "doc_id": "PT-0101/demographics-2026-11-10",
+          "quote": "Cardiologist: Dr. M. Osei",
+          "doc_date": "2026-11-10",
+          "why_relevant": "Prescriber specialty cardiology."
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-0101/outside-records-2025-03-18",
+        "PT-0101/labs-2026-05-12",
+        "PT-0101/labs-2026-10-27",
+        "PT-0101/cardiology-note-2026-11-10",
+        "PT-0101/demographics-2026-11-10",
+        "PT-0101/medication-history-2026-11-10",
+        "PT-0101/problem-list-2026-11-10"
+      ]
+    },
+    {
+      "criterion_id": "C6",
+      "passages": [
+        {
+          "doc_id": "PT-0101/demographics-2026-11-10",
+          "quote": "Date of birth: 06/02/1965",
+          "doc_date": "2026-11-10",
+          "why_relevant": "DOB gives age 61 on request date 2026-11-18."
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-0101/outside-records-2025-03-18",
+        "PT-0101/labs-2026-05-12",
+        "PT-0101/labs-2026-10-27",
+        "PT-0101/cardiology-note-2026-11-10",
+        "PT-0101/demographics-2026-11-10",
+        "PT-0101/medication-history-2026-11-10",
+        "PT-0101/problem-list-2026-11-10"
+      ]
+    },
+    {
+      "criterion_id": "C7",
+      "passages": [
+        {
+          "doc_id": "PT-0101/medication-history-2026-11-10",
+          "quote": "No current or prior PCSK9 inhibitor (alirocumab, evolocumab) or inclisiran.",
+          "doc_date": "2026-11-10",
+          "why_relevant": "No concurrent or prior PCSK9-directed therapy."
+        },
+        {
+          "doc_id": "PT-0101/medication-history-2026-11-10",
+          "quote": "- Aspirin 81 mg daily\n- Metoprolol succinate 50 mg daily\n- Lisinopril 10 mg daily",
+          "doc_date": "2026-11-10",
+          "why_relevant": "Other current meds contain no alirocumab/inclisiran."
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-0101/outside-records-2025-03-18",
+        "PT-0101/labs-2026-05-12",
+        "PT-0101/labs-2026-10-27",
+        "PT-0101/cardiology-note-2026-11-10",
+        "PT-0101/demographics-2026-11-10",
+        "PT-0101/medication-history-2026-11-10",
+        "PT-0101/problem-list-2026-11-10"
+      ]
+    },
+    {
+      "criterion_id": "C8",
+      "passages": [
+        {
+          "doc_id": "PT-0101/cardiology-note-2026-11-10",
+          "quote": "1. Start evolocumab 140 mg subcutaneously every 2 weeks. Continue atorvastatin 80 mg and ezetimibe 10 mg.",
+          "doc_date": "2026-11-10",
+          "why_relevant": "Labeled regimen 140 mg SC every 2 weeks."
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-0101/outside-records-2025-03-18",
+        "PT-0101/labs-2026-05-12",
+        "PT-0101/labs-2026-10-27",
+        "PT-0101/cardiology-note-2026-11-10",
+        "PT-0101/demographics-2026-11-10",
+        "PT-0101/medication-history-2026-11-10",
+        "PT-0101/problem-list-2026-11-10"
+      ]
+    }
+  ],
+  "injection_flags": [],
+  "gaps": [],
+  "outcome": "READY_FOR_REVIEW",
+  "packet": {
+    "form_fields": [
+      {
+        "name": "Member name",
+        "value": "Lindqvist, Marcus T.",
+        "citations": [
+          {
+            "doc_id": "PT-0101/demographics-2026-11-10",
+            "quote": "Name: Lindqvist, Marcus T."
+          }
+        ]
+      },
+      {
+        "name": "Member date of birth",
+        "value": "06/02/1965",
+        "citations": [
+          {
+            "doc_id": "PT-0101/demographics-2026-11-10",
+            "quote": "Date of birth: 06/02/1965"
+          }
+        ]
+      },
+      {
+        "name": "Member ID",
+        "value": "CMU-771-430-12",
+        "citations": [
+          {
+            "doc_id": "PT-0101/demographics-2026-11-10",
+            "quote": "Member ID: CMU-771-430-12"
+          }
+        ]
+      },
+      {
+        "name": "Requested product",
+        "value": "evolocumab",
+        "citations": [
+          {
+            "doc_id": "request",
+            "quote": "evolocumab"
+          }
+        ]
+      },
+      {
+        "name": "Requested regimen",
+        "value": "140 mg subcutaneously every 2 weeks",
+        "citations": [
+          {
+            "doc_id": "request",
+            "quote": "140 mg subcutaneously every 2 weeks"
+          }
+        ]
+      },
+      {
+        "name": "Diagnosis code (ICD-10)",
+        "value": "I25.10",
+        "citations": [
+          {
+            "doc_id": "request",
+            "quote": "I25.10"
+          }
+        ]
+      },
+      {
+        "name": "Ordering provider",
+        "value": "Dr. M. Osei, Cardiology",
+        "citations": [
+          {
+            "doc_id": "request",
+            "quote": "Dr. M. Osei, Cardiology"
+          }
+        ]
+      },
+      {
+        "name": "Requested start date",
+        "value": "2026-12-01",
+        "citations": [
+          {
+            "doc_id": "request",
+            "quote": "2026-12-01"
+          }
+        ]
+      },
+      {
+        "name": "Review type",
+        "value": "Standard",
+        "citations": [
+          {
+            "doc_id": "request",
+            "quote": "standard"
+          }
+        ]
+      },
+      {
+        "name": "C1 (policy B.1)",
+        "value": "Met: clinical ASCVD documented by the prescriber (NSTEMI 03/2025 with a drug-eluting stent to the proximal LAD).",
+        "citations": [
+          {
+            "doc_id": "PT-0101/cardiology-note-2026-11-10",
+            "quote": "Clinical ASCVD: NSTEMI 03/2025 with drug-eluting stent to the proximal LAD."
+          },
+          {
+            "doc_id": "PT-0101/outside-records-2025-03-18",
+            "quote": "Percutaneous coronary intervention with one drug-eluting stent."
+          }
+        ]
+      },
+      {
+        "name": "C2 (policy B.2)",
+        "value": "Met: LDL-C 98 mg/dL on 10/27/2026 while on atorvastatin 80 mg and ezetimibe 10 mg.",
+        "citations": [
+          {
+            "doc_id": "PT-0101/labs-2026-10-27",
+            "quote": "LDL cholesterol, calculated         98 mg/dL      <100"
+          },
+          {
+            "doc_id": "PT-0101/cardiology-note-2026-11-10",
+            "quote": "Lipid panel 10/27/2026: LDL-C 98 mg/dL on atorvastatin 80 mg and ezetimibe 10 mg (ezetimibe since 06/02/2026)."
+          }
+        ]
+      },
+      {
+        "name": "C3a (policy B.3(a))",
+        "value": "Met: atorvastatin 80 mg nightly since 2025-03-18, ongoing, to be continued.",
+        "citations": [
+          {
+            "doc_id": "PT-0101/medication-history-2026-11-10",
+            "quote": "| Atorvastatin | 80 mg nightly | 2025-03-18 | ongoing | Started at hospital discharge after NSTEMI. Fills on time every 90 days. No side effects reported. |"
+          },
+          {
+            "doc_id": "PT-0101/cardiology-note-2026-11-10",
+            "quote": "1. Start evolocumab 140 mg subcutaneously every 2 weeks. Continue atorvastatin 80 mg and ezetimibe 10 mg."
+          }
+        ]
+      },
+      {
+        "name": "C4 (policy B.4)",
+        "value": "Met: ezetimibe 10 mg daily since 2026-06-02, ongoing; LDL-C 98 mg/dL on 10/27/2026 on ezetimibe.",
+        "citations": [
+          {
+            "doc_id": "PT-0101/medication-history-2026-11-10",
+            "quote": "| Ezetimibe | 10 mg daily | 2026-06-02 | ongoing | Added for LDL 131 on atorvastatin alone. Fills on time. |"
+          },
+          {
+            "doc_id": "PT-0101/labs-2026-10-27",
+            "quote": "LDL cholesterol, calculated         98 mg/dL      <100"
+          }
+        ]
+      },
+      {
+        "name": "C5 (policy B.5)",
+        "value": "Met: prescriber is a cardiologist (Dr. M. Osei, MD, Cardiology).",
+        "citations": [
+          {
+            "doc_id": "PT-0101/cardiology-note-2026-11-10",
+            "quote": "Electronically signed by Dr. M. Osei, MD, Cardiology, 11/10/2026"
+          }
+        ]
+      },
+      {
+        "name": "C6 (policy B.6)",
+        "value": "Met: date of birth 06/02/1965; age 61 on the request date of 2026-11-18.",
+        "citations": [
+          {
+            "doc_id": "PT-0101/demographics-2026-11-10",
+            "quote": "Date of birth: 06/02/1965"
+          },
+          {
+            "doc_id": "request",
+            "quote": "2026-11-18"
+          }
+        ]
+      },
+      {
+        "name": "C7 (policy B.7)",
+        "value": "Met: no current or prior PCSK9 inhibitor or inclisiran.",
+        "citations": [
+          {
+            "doc_id": "PT-0101/medication-history-2026-11-10",
+            "quote": "No current or prior PCSK9 inhibitor (alirocumab, evolocumab) or inclisiran."
+          }
+        ]
+      },
+      {
+        "name": "C8 (policy B.8)",
+        "value": "Met: 140 mg subcutaneously every 2 weeks.",
+        "citations": [
+          {
+            "doc_id": "PT-0101/cardiology-note-2026-11-10",
+            "quote": "1. Start evolocumab 140 mg subcutaneously every 2 weeks."
+          },
+          {
+            "doc_id": "request",
+            "quote": "140 mg subcutaneously every 2 weeks"
+          }
+        ]
+      }
+    ],
+    "letter": [
+      {
+        "text": "To the Calder Mutual Pharmacy Prior Authorization Review Team:",
+        "citations": [],
+        "is_factual": false
+      },
+      {
+        "text": "I am requesting prior authorization of evolocumab for my patient, Marcus T. Lindqvist (Member ID CMU-771-430-12).",
+        "citations": [
+          {
+            "doc_id": "request",
+            "quote": "evolocumab"
+          },
+          {
+            "doc_id": "PT-0101/demographics-2026-11-10",
+            "quote": "Name: Lindqvist, Marcus T."
+          },
+          {
+            "doc_id": "PT-0101/demographics-2026-11-10",
+            "quote": "Member ID: CMU-771-430-12"
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "The requested regimen is 140 mg subcutaneously every 2 weeks, with a requested start date of 2026-12-01.",
+        "citations": [
+          {
+            "doc_id": "request",
+            "quote": "140 mg subcutaneously every 2 weeks"
+          },
+          {
+            "doc_id": "request",
+            "quote": "2026-12-01"
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "The diagnosis code for this request is I25.10.",
+        "citations": [
+          {
+            "doc_id": "request",
+            "quote": "I25.10"
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "The record shows how each policy criterion is met, as follows.",
+        "citations": [],
+        "is_factual": false
+      },
+      {
+        "text": "B.1: My clinical note documents clinical ASCVD: NSTEMI in 03/2025 with a drug-eluting stent to the proximal LAD.",
+        "citations": [
+          {
+            "doc_id": "PT-0101/cardiology-note-2026-11-10",
+            "quote": "Clinical ASCVD: NSTEMI 03/2025 with drug-eluting stent to the proximal LAD."
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "Outside records from 2025-03-18 confirm percutaneous coronary intervention with one drug-eluting stent.",
+        "citations": [
+          {
+            "doc_id": "PT-0101/outside-records-2025-03-18",
+            "quote": "Percutaneous coronary intervention with one drug-eluting stent."
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "B.2: A lipid panel drawn on 10/27/2026 showed a calculated LDL-C of 98 mg/dL.",
+        "citations": [
+          {
+            "doc_id": "PT-0101/labs-2026-10-27",
+            "quote": "LDL cholesterol, calculated         98 mg/dL      <100"
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "This result was obtained while the patient was taking atorvastatin 80 mg and ezetimibe 10 mg.",
+        "citations": [
+          {
+            "doc_id": "PT-0101/cardiology-note-2026-11-10",
+            "quote": "Lipid panel 10/27/2026: LDL-C 98 mg/dL on atorvastatin 80 mg and ezetimibe 10 mg (ezetimibe since 06/02/2026)."
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "B.3(a): The patient has taken atorvastatin 80 mg nightly since 2025-03-18, and that therapy is ongoing.",
+        "citations": [
+          {
+            "doc_id": "PT-0101/medication-history-2026-11-10",
+            "quote": "| Atorvastatin | 80 mg nightly | 2025-03-18 | ongoing | Started at hospital discharge after NSTEMI. Fills on time every 90 days. No side effects reported. |"
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "My plan is to continue atorvastatin 80 mg alongside evolocumab.",
+        "citations": [
+          {
+            "doc_id": "PT-0101/cardiology-note-2026-11-10",
+            "quote": "1. Start evolocumab 140 mg subcutaneously every 2 weeks. Continue atorvastatin 80 mg and ezetimibe 10 mg."
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "B.4: The patient has taken ezetimibe 10 mg daily since 2026-06-02, and that therapy is ongoing.",
+        "citations": [
+          {
+            "doc_id": "PT-0101/medication-history-2026-11-10",
+            "quote": "| Ezetimibe | 10 mg daily | 2026-06-02 | ongoing | Added for LDL 131 on atorvastatin alone. Fills on time. |"
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "The LDL-C of 98 mg/dL on 10/27/2026 was measured while the patient was on ezetimibe.",
+        "citations": [
+          {
+            "doc_id": "PT-0101/cardiology-note-2026-11-10",
+            "quote": "Lipid panel 10/27/2026: LDL-C 98 mg/dL on atorvastatin 80 mg and ezetimibe 10 mg (ezetimibe since 06/02/2026)."
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "B.5: I am the prescriber, and I am a cardiologist.",
+        "citations": [
+          {
+            "doc_id": "PT-0101/cardiology-note-2026-11-10",
+            "quote": "Electronically signed by Dr. M. Osei, MD, Cardiology, 11/10/2026"
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "B.6: The patient's date of birth is 06/02/1965, so he was 61 years old on the request date of 2026-11-18.",
+        "citations": [
+          {
+            "doc_id": "PT-0101/demographics-2026-11-10",
+            "quote": "Date of birth: 06/02/1965"
+          },
+          {
+            "doc_id": "request",
+            "quote": "2026-11-18"
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "B.7: The patient has no current or prior use of a PCSK9 inhibitor or inclisiran.",
+        "citations": [
+          {
+            "doc_id": "PT-0101/medication-history-2026-11-10",
+            "quote": "No current or prior PCSK9 inhibitor (alirocumab, evolocumab) or inclisiran."
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "B.8: The ordered regimen is evolocumab 140 mg subcutaneously every 2 weeks.",
+        "citations": [
+          {
+            "doc_id": "PT-0101/cardiology-note-2026-11-10",
+            "quote": "1. Start evolocumab 140 mg subcutaneously every 2 weeks."
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "Thank you for reviewing this request.",
+        "citations": [],
+        "is_factual": false
+      },
+      {
+        "text": "Sincerely,",
+        "citations": [],
+        "is_factual": false
+      },
+      {
+        "text": "[Signature pending review by Dr. M. Osei, Cardiology]",
+        "citations": [],
+        "is_factual": false
+      }
+    ]
+  },
+  "packet_code_issues": [],
+  "verification": {
+    "checks": [
+      {
+        "claim_ref": "form:Member name",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "form:Member date of birth",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "form:Member ID",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "form:Requested product",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "form:Requested regimen",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "form:Diagnosis code (ICD-10)",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "form:Ordering provider",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "form:Requested start date",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "form:Review type",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "form:C1 (policy B.1)",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "form:C2 (policy B.2)",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "form:C3a (policy B.3(a))",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "form:C4 (policy B.4)",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "form:C5 (policy B.5)",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "form:C6 (policy B.6)",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "form:C7 (policy B.7)",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "form:C8 (policy B.8)",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:1",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:2",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:3",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:5",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:6",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:7",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:8",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:9",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:10",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:11",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:12",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:13",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:14",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:15",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:16",
+        "supported": true,
+        "issue": null
+      }
+    ],
+    "overall_pass": true
+  }
+}

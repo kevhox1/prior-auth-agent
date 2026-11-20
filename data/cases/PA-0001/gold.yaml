@@ -30,7 +30,9 @@ criteria:
     evidence:
       - doc_id: PT-0001/gi-note-2026-10-28
         quote: "Start ustekinumab"
-    note: "Author of the note is Dr. A. Rivera, Gastroenterology (document header and request)."
+      - doc_id: PT-0001/gi-note-2026-10-28
+        quote: "Electronically signed by Dr. A. Rivera, Gastroenterology, 10/28/2026"
+    note: "Signature block added for B38; before that the specialty was only in the document header."
   C4:
     status: MET
     evidence:

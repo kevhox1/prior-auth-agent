@@ -1,5 +1,7 @@
 # Run m2-blind-opus
 
+> **Note (added later):** this is the summary written when the run finished. Re-scored after later scorer and gold fixes; the comparison report is the authoritative version. See [`docs/MODEL_COMPARISON.md`](../../docs/MODEL_COMPARISON.md).
+
 Model `claude-opus-5-5`, backend `claude_code`, effort `default`.
 
 - Cases: 30 ok, 0 errored

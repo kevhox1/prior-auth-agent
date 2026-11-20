@@ -353,6 +353,7 @@ def main(argv: list[str] | None = None) -> int:
         (out / "result.json").write_text(res.model_dump_json(indent=2))
         audit.write(out / "audit.jsonl")
         (out / "report.md").write_text(case_report(res, audit, sc, gold))
+        (out / "error.txt").unlink(missing_ok=True)  # a re-run that succeeds clears an earlier failure
         return src, res, gold, sc, audit.totals()
 
     with ThreadPoolExecutor(max_workers=args.workers) as ex:
@@ -364,7 +365,9 @@ def main(argv: list[str] | None = None) -> int:
             except Exception as e:  # keep going; report the failure
                 print(f"  {src.request_id}: ERROR {e}", flush=True)
                 (run_dir / src.request_id).mkdir(parents=True, exist_ok=True)
-                (run_dir / src.request_id / "error.txt").write_text(traceback.format_exc())
+                # Paths relative to the repo, so a traceback never carries the local home directory.
+                tb = traceback.format_exc().replace(str(ROOT), "<repo>")
+                (run_dir / src.request_id / "error.txt").write_text(tb)
                 rows.append({"id": src.request_id, "error": str(e)[:200]})
                 continue
             fm = sum(s.false_met for s in sc)

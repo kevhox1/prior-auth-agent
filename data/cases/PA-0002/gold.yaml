@@ -32,6 +32,8 @@ criteria:
     evidence:
       - doc_id: PT-0002/gi-note-2026-10-30
         quote: "Start ustekinumab"
+      - doc_id: PT-0002/gi-note-2026-10-30
+        quote: "Electronically signed by Dr. A. Rivera, Gastroenterology, 10/30/2026"
   C4:
     status: MET
     evidence:

@@ -158,7 +158,8 @@ def _with_backoff(fn, waits=(20, 60)):
     for wait in (*waits, None):
         try:
             return fn()
-        except (LLMError, subprocess.TimeoutExpired):
+        # FileNotFoundError: the `claude` binary can vanish for a moment while Claude Code updates itself.
+        except (LLMError, subprocess.TimeoutExpired, FileNotFoundError):
             if wait is None:
                 raise
             time.sleep(wait)

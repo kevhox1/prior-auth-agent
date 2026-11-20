@@ -1,5 +1,7 @@
 # Run m2-blind-sonnet
 
+> **Note (added later):** this is the summary written when the run finished. The 3 false METs below were a scorer error, not agent errors: the scorer compared a merged parent criterion with a failed branch (B39). Re-scored: 0 false METs. See [`docs/MODEL_COMPARISON.md`](../../docs/MODEL_COMPARISON.md).
+
 Model `claude-sonnet-5-5`, backend `claude_code`, effort `default`.
 
 - Cases: 30 ok, 0 errored

@@ -1,0 +1,1871 @@
+{
+  "request": {
+    "request_id": "PA-0001",
+    "patient_id": "PT-0001",
+    "drug": "ustekinumab",
+    "product": "ustekinumab-aekn",
+    "dose": "390 mg IV once (weight 78 kg), then 90 mg SC every 8 weeks starting 8 weeks after the IV dose",
+    "indication_icd10": "K50.80",
+    "payer": "northfield",
+    "plan_type": "commercial",
+    "ordering_provider": "Dr. A. Rivera, Gastroenterology",
+    "urgency": "standard",
+    "request_date": "2026-11-18",
+    "requested_start": "2026-12-01",
+    "requested_channel": null,
+    "expedited_reason": null
+  },
+  "intake": {
+    "request": {
+      "request_id": "PA-0001",
+      "patient_id": "PT-0001",
+      "drug": "ustekinumab",
+      "product": "ustekinumab-aekn",
+      "dose": "390 mg IV once (weight 78 kg), then 90 mg SC every 8 weeks starting 8 weeks after the IV dose",
+      "indication_icd10": "K50.80",
+      "payer": "northfield",
+      "plan_type": "commercial",
+      "ordering_provider": "Dr. A. Rivera, Gastroenterology",
+      "urgency": "standard",
+      "request_date": "2026-11-18",
+      "requested_start": "2026-12-01",
+      "requested_channel": null,
+      "expedited_reason": null
+    },
+    "policy_id": "northfield-ustekinumab-ibd",
+    "policy_version": "2026-10",
+    "n_documents": 9,
+    "decision_clock": "Standard review. Pharmacy-benefit phase: decision within 72 hours of a complete request (policy section 7). Medical-benefit phase: per plan documents.",
+    "notes": []
+  },
+  "policy_id": "northfield-ustekinumab-ibd",
+  "policy_version": "2026-10",
+  "routing": {
+    "pa_required": true,
+    "channels": {
+      "iv_induction": "medical",
+      "sc_maintenance": "pharmacy"
+    },
+    "requested_channel_ok": null,
+    "notes": [
+      "Two submissions: iv induction via the medical benefit; sc maintenance via the pharmacy benefit"
+    ]
+  },
+  "checklist": {
+    "policy_id": "northfield-ustekinumab-ibd",
+    "payer": "northfield",
+    "drug": "ustekinumab",
+    "version": "2026-10",
+    "effective_date": "2026-10-01",
+    "indications": [
+      "Moderately to severely active Crohn's disease (adults 18+)",
+      "Moderately to severely active ulcerative colitis (adults 18+)"
+    ],
+    "benefit_channel": {
+      "iv_induction": "medical",
+      "subcutaneous_maintenance": "pharmacy"
+    },
+    "auth_duration_months": 6,
+    "logic": "ALL",
+    "criteria": [
+      {
+        "id": "C1",
+        "policy_ref": "3.1",
+        "type": "diagnosis",
+        "text": "The member has a diagnosis of moderately to severely active Crohn's disease or moderately to severely active ulcerative colitis. The treating provider must describe disease severity (for example, by symptom burden, a validated disease activity index, or endoscopic severity).",
+        "evidence_needed": [
+          "Documented diagnosis of Crohn's disease or ulcerative colitis",
+          "Treating-provider description of moderate to severe disease activity (symptom burden, validated disease activity index, or endoscopic severity)"
+        ],
+        "lookback_months": null,
+        "logic": null,
+        "sub_criteria": []
+      },
+      {
+        "id": "C2",
+        "policy_ref": "3.2",
+        "type": "disease_activity",
+        "text": "Objective evidence of active disease dated within the 12 months before the request: either (a) an endoscopy, colonoscopy, or flexible sigmoidoscopy report describing active inflammation (such as ulceration, erosions, or friability), or (b) a fecal calprotectin result above the upper limit of the performing laboratory's reference range. An elevated C-reactive protein or erythrocyte sedimentation rate alone does not satisfy this criterion. Imaging alone does not satisfy this criterion.",
+        "evidence_needed": [
+          "Endoscopy/colonoscopy/flexible sigmoidoscopy report describing active inflammation, dated within 12 months before the request, OR fecal calprotectin result above the lab's reference range upper limit, dated within 12 months before the request",
+          "Date of the qualifying report or result",
+          "Lab reference range for fecal calprotectin, if used"
+        ],
+        "lookback_months": 12,
+        "logic": null,
+        "sub_criteria": []
+      },
+      {
+        "id": "C3",
+        "policy_ref": "3.3",
+        "type": "prescriber",
+        "text": "The medication is prescribed by, or in consultation with, a gastroenterologist.",
+        "evidence_needed": [
+          "Prescriber specialty is gastroenterology, or documentation of consultation with a gastroenterologist"
+        ],
+        "lookback_months": null,
+        "logic": null,
+        "sub_criteria": []
+      },
+      {
+        "id": "C4",
+        "policy_ref": "3.4",
+        "type": "age",
+        "text": "The member is 18 years of age or older. Requests for members under 18 fall under policy NHP-CCP-RX-0413 and are outside this policy.",
+        "evidence_needed": [
+          "Member date of birth or age showing 18 years or older"
+        ],
+        "lookback_months": null,
+        "logic": null,
+        "sub_criteria": []
+      },
+      {
+        "id": "C5",
+        "policy_ref": "3.5",
+        "type": "step_therapy",
+        "text": "Both conventional therapy and anti-TNF therapy history are documented. For each prior therapy, the record must name the drug, give approximate start and stop dates, and state why it was stopped. Prior therapy must be supported by pharmacy or medical claims, prescription records, or treating-provider chart notes; a treating-provider history without supporting records may be accepted on prescriber attestation. If claims or other records on file are inconsistent with the reported history, the request is referred for clinical review and is not approved on the reported history alone.",
+        "evidence_needed": [
+          "Drug name, approximate start and stop dates, and reason for stopping for each prior therapy",
+          "Supporting pharmacy/medical claims, prescription records, or treating-provider chart notes, or prescriber attestation",
+          "Consistency between claims/records on file and reported history"
+        ],
+        "lookback_months": null,
+        "logic": "ALL",
+        "sub_criteria": [
+          {
+            "id": "C5a",
+            "policy_ref": "3.5(a)",
+            "type": "step_therapy",
+            "text": "Inadequate response to, intolerance of, or contraindication to at least one conventional therapy. Conventional therapies are systemic corticosteroids (budesonide counts as a corticosteroid), azathioprine, 6-mercaptopurine, and methotrexate; for ulcerative colitis only, oral aminosalicylates (such as mesalamine) also count. Inadequate response to corticosteroids includes steroid dependence (relapse during taper or within 3 months of stopping) and steroid-refractory disease. Drug name, approximate start/stop dates, and reason for stopping must be documented and supported by claims, prescription records, chart notes, or prescriber attestation.",
+            "evidence_needed": [
+              "Name of conventional therapy tried (systemic corticosteroid incl. budesonide, azathioprine, 6-mercaptopurine, methotrexate, or for UC an oral aminosalicylate)",
+              "Approximate start and stop dates",
+              "Reason stopped: inadequate response (incl. steroid dependence or steroid-refractory disease), intolerance, or contraindication",
+              "Supporting claims, prescription records, chart notes, or prescriber attestation"
+            ],
+            "lookback_months": null,
+            "logic": null,
+            "sub_criteria": []
+          },
+          {
+            "id": "C5b",
+            "policy_ref": "3.5(b)",
+            "type": "step_therapy",
+            "text": "Inadequate response to, intolerance of, or contraindication to at least one TNF blocker: adalimumab or infliximab, including any biosimilar of either. Primary non-response, secondary loss of response, and intolerance each qualify. A contraindication must be specifically documented (for example, demyelinating disease or moderate to severe heart failure). Drug name, approximate start/stop dates, and reason for stopping must be documented and supported by claims, prescription records, chart notes, or prescriber attestation.",
+            "evidence_needed": [
+              "Name of TNF blocker tried (adalimumab, infliximab, or a biosimilar of either)",
+              "Approximate start and stop dates",
+              "Reason stopped: primary non-response, secondary loss of response, or intolerance; or a specifically documented contraindication",
+              "Supporting claims, prescription records, chart notes, or prescriber attestation"
+            ],
+            "lookback_months": null,
+            "logic": null,
+            "sub_criteria": []
+          }
+        ]
+      },
+      {
+        "id": "C6",
+        "policy_ref": "3.6",
+        "type": "safety_screen",
+        "text": "Negative tuberculosis screening test (interferon-gamma release assay or tuberculin skin test) dated within the 12 months before the request. An indeterminate IGRA is not a negative result. A test ordered but not resulted does not satisfy this criterion (per 2026-10 revision history). If the screening test is positive, the record must show active tuberculosis was excluded by chest imaging and that treatment for latent tuberculosis has been started.",
+        "evidence_needed": [
+          "Resulted IGRA or tuberculin skin test dated within 12 months before the request",
+          "Negative result (indeterminate IGRA does not count)",
+          "If positive: chest imaging excluding active TB and documentation that latent TB treatment has started"
+        ],
+        "lookback_months": 12,
+        "logic": null,
+        "sub_criteria": []
+      },
+      {
+        "id": "C7",
+        "policy_ref": "3.7",
+        "type": "safety_screen",
+        "text": "Results of both hepatitis B surface antigen (HBsAg) and total hepatitis B core antibody (anti-HBc) are on file. No lookback limit applies. If either result is positive, the record must include a plan for monitoring or antiviral prophylaxis. Hepatitis B vaccination history, or a hepatitis B surface antibody (anti-HBs) result alone, does not satisfy this criterion. A test that has been ordered but not resulted does not satisfy this criterion.",
+        "evidence_needed": [
+          "Resulted HBsAg test",
+          "Resulted total anti-HBc test",
+          "If either positive: documented monitoring or antiviral prophylaxis plan"
+        ],
+        "lookback_months": null,
+        "logic": null,
+        "sub_criteria": []
+      },
+      {
+        "id": "C8",
+        "policy_ref": "3.8",
+        "type": "exclusion",
+        "text": "Ustekinumab will not be used together with another biologic agent, a Janus kinase (JAK) inhibitor (such as tofacitinib or upadacitinib), or a sphingosine 1-phosphate (S1P) receptor modulator (such as ozanimod or etrasimod). If the member is switching from one of these agents, the record must show that the prior agent has been or will be stopped.",
+        "evidence_needed": [
+          "Current medication list showing no concurrent biologic, JAK inhibitor, or S1P receptor modulator",
+          "If switching from such an agent: documentation that it has been or will be stopped"
+        ],
+        "lookback_months": null,
+        "logic": null,
+        "sub_criteria": []
+      },
+      {
+        "id": "C9",
+        "policy_ref": "3.9",
+        "type": "dosing",
+        "text": "Requested dose follows FDA-approved adult labeling. Induction: a single IV dose by body weight — 260 mg for 55 kg or less; 390 mg for more than 55 kg up to 85 kg; 520 mg for more than 85 kg. A current body weight dated within 30 days of the request must be documented for the induction dose. Maintenance: 90 mg subcutaneously every 8 weeks, starting 8 weeks after the IV dose. Maintenance intervals shorter than every 8 weeks are not approved on initial authorization.",
+        "evidence_needed": [
+          "Requested induction dose and route (single IV dose)",
+          "Body weight dated within 30 days of the request",
+          "Induction dose matching weight band (260/390/520 mg)",
+          "Requested maintenance dose of 90 mg SC every 8 weeks starting 8 weeks after IV dose"
+        ],
+        "lookback_months": null,
+        "logic": null,
+        "sub_criteria": []
+      },
+      {
+        "id": "C10",
+        "policy_ref": "3.10",
+        "type": "preferred_product",
+        "text": "The request must name the specific ustekinumab product; a request for 'ustekinumab' without a product is incomplete. Preferred products are ustekinumab-aekn and ustekinumab-ttwe (IV and SC). All other ustekinumab products, including the reference (originator) product, are non-preferred and are covered only if the record documents either (a) an inadequate response to, or intolerance of, both preferred products (intolerance of only one preferred product does not satisfy this), or (b) a contraindication or documented hypersensitivity to an inactive ingredient present in both preferred products and absent from the requested product.",
+        "evidence_needed": [
+          "Specific ustekinumab product named in the request",
+          "If non-preferred product: documented inadequate response to or intolerance of both ustekinumab-aekn and ustekinumab-ttwe, OR documented contraindication/hypersensitivity to an inactive ingredient present in both preferred products and absent from the requested product"
+        ],
+        "lookback_months": null,
+        "logic": null,
+        "sub_criteria": []
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "criterion_id": "C1",
+      "status": "MET",
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "doc_id": "PT-0001/gi-note-2026-10-28",
+          "quote": "Moderately to severely active ileocolonic Crohn's disease.",
+          "doc_date": "2026-10-28"
+        },
+        {
+          "doc_id": "PT-0001/gi-note-2026-10-28",
+          "quote": "Harvey-Bradshaw Index today: 11.",
+          "doc_date": "2026-10-28"
+        },
+        {
+          "doc_id": "PT-0001/problem-list-2026-11-03",
+          "quote": "1. Crohn's disease of both small and large intestine without complications (K50.80).",
+          "doc_date": "2026-11-03"
+        }
+      ],
+      "reasoning": "The treating gastroenterologist documents moderately to severely active ileocolonic Crohn's disease, which matches the requested ICD-10 code K50.80. Severity is described by a Harvey-Bradshaw Index of 11 and by symptom burden.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C2",
+      "status": "MET",
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "doc_id": "PT-0001/colonoscopy-2026-09-15",
+          "quote": "- Terminal ileum: multiple large ulcers (>2 cm) over 15 cm, with surrounding erythema and edema.",
+          "doc_date": "2026-09-15"
+        },
+        {
+          "doc_id": "PT-0001/labs-2026-09-22",
+          "quote": "Fecal calprotectin                    820 ug/g      <50",
+          "doc_date": "2026-09-22"
+        }
+      ],
+      "reasoning": "The colonoscopy dated 2026-09-15, about 2 months before the request, describes large ileal ulcers. Separately, fecal calprotectin on 2026-09-22 was 820 ug/g against a reference range of <50. Either one alone satisfies the criterion.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": true,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C3",
+      "status": "MET",
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "doc_id": "PT-0001/gi-note-2026-10-28",
+          "quote": "Electronically signed by Dr. A. Rivera, Gastroenterology, 10/28/2026",
+          "doc_date": "2026-10-28"
+        }
+      ],
+      "reasoning": "The prescribing note is signed by Dr. A. Rivera, Gastroenterology, who is also the ordering provider on the request.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C4",
+      "status": "MET",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "doc_id": "PT-0001/demographics-2026-11-03",
+          "quote": "Date of birth: 04/12/1991",
+          "doc_date": "2026-11-03"
+        }
+      ],
+      "reasoning": "With a date of birth of 04/12/1991, the member is 35 on the request date. The outside records list the same date of birth.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": true,
+        "dose_in_label": null,
+        "notes": [
+          "age 35 on 2026-11-18 from DOB 1991-04-12"
+        ]
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C5a",
+      "status": "MET",
+      "confidence": 0.93,
+      "evidence": [
+        {
+          "doc_id": "PT-0001/medication-history-2026-11-03",
+          "quote": "| Prednisone | 40 mg daily, tapered | 2022-07 | 2022-10 | Steroid dependent: symptoms returned at 15 mg during taper |",
+          "doc_date": "2026-11-03"
+        },
+        {
+          "doc_id": "PT-0001/medication-history-2026-11-03",
+          "quote": "| Azathioprine | 150 mg daily (2.0 mg/kg) | 2023-01 | 2024-02 | Inadequate response after 12 months; active disease on colonoscopy 12/2023 |",
+          "doc_date": "2026-11-03"
+        },
+        {
+          "doc_id": "PT-0001/gi-note-2024-02-06",
+          "quote": "Crohn's disease, ileocolonic, moderately active, with inadequate response to azathioprine at a therapeutic level. Previously steroid dependent.",
+          "doc_date": "2024-02-06"
+        },
+        {
+          "doc_id": "PT-0001/medication-history-2026-11-03",
+          "quote": "IBD MEDICATION HISTORY - reconciled against outside records and pharmacy fill history 11/03/2026",
+          "doc_date": "2026-11-03"
+        }
+      ],
+      "reasoning": "The reconciled medication history gives dates and reasons for stopping prednisone (2022-07 to 2022-10, steroid dependent) and azathioprine (2023-01 to 2024-02, inadequate response). The 2024-02-06 GI note recorded at the time and the 2022 outside plan support this history. Nothing in the chart contradicts it.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C5b",
+      "status": "MET",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "doc_id": "PT-0001/medication-history-2026-11-03",
+          "quote": "| Adalimumab | 160 mg / 80 mg induction, then 40 mg every 2 weeks; escalated to 40 mg weekly 2025-11 | 2024-02 | 2026-08-20 | Secondary loss of response despite weekly dosing; trough 1.8 mcg/mL with anti-adalimumab antibodies |",
+          "doc_date": "2026-11-03"
+        },
+        {
+          "doc_id": "PT-0001/gi-note-2026-08-20",
+          "quote": "Adalimumab trough (07/30/2026): 1.8 mcg/mL. Anti-adalimumab antibodies: 38 U/mL (reference <10; positive).",
+          "doc_date": "2026-08-20"
+        },
+        {
+          "doc_id": "PT-0001/gi-note-2026-08-20",
+          "quote": "- Discontinue adalimumab today.",
+          "doc_date": "2026-08-20"
+        }
+      ],
+      "reasoning": "Adalimumab ran from 2024-02 to 2026-08-20 and was stopped for secondary loss of response despite weekly dosing. A low trough level and positive anti-drug antibodies support this. The start and stop are each documented in the GI notes.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C6",
+      "status": "MET",
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "doc_id": "PT-0001/labs-2026-09-22",
+          "quote": "QuantiFERON-TB Gold Plus              NEGATIVE      Negative",
+          "doc_date": "2026-09-22"
+        },
+        {
+          "doc_id": "PT-0001/labs-2026-09-22",
+          "quote": "Mitogen minus Nil                   >10.00 IU/mL",
+          "doc_date": "2026-09-22"
+        }
+      ],
+      "reasoning": "QuantiFERON-TB Gold Plus was negative on 2026-09-22, which is within 12 months of the request. The mitogen control was valid, so the result is not indeterminate.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": true,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C7",
+      "status": "MET",
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "doc_id": "PT-0001/labs-2026-09-22",
+          "quote": "Hepatitis B surface antigen           Nonreactive   Nonreactive",
+          "doc_date": "2026-09-22"
+        },
+        {
+          "doc_id": "PT-0001/labs-2026-09-22",
+          "quote": "Hepatitis B core antibody, total      Nonreactive   Nonreactive",
+          "doc_date": "2026-09-22"
+        }
+      ],
+      "reasoning": "Results for both HBsAg and total anti-HBc are on file from 2026-09-22, and both are nonreactive. Because neither is positive, no monitoring or prophylaxis plan is required.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C8",
+      "status": "MET",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "doc_id": "PT-0001/medication-history-2026-11-03",
+          "quote": "No current biologic, JAK inhibitor, or S1P receptor modulator. Adalimumab discontinued 2026-08-20.",
+          "doc_date": "2026-11-03"
+        },
+        {
+          "doc_id": "PT-0001/gi-note-2026-10-28",
+          "quote": "Off adalimumab since 08/20.",
+          "doc_date": "2026-10-28"
+        }
+      ],
+      "reasoning": "The reconciled medication list shows no current biologic, JAK inhibitor or S1P receptor modulator. The prior agent, adalimumab, was stopped on 2026-08-20, and the 2026-10-28 note confirms the member is off it. Budesonide is not an excluded agent.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C9",
+      "status": "MET",
+      "confidence": 0.96,
+      "evidence": [
+        {
+          "doc_id": "PT-0001/gi-note-2026-10-28",
+          "quote": "Weight 78.0 kg. BP 118/74. HR 82.",
+          "doc_date": "2026-10-28"
+        },
+        {
+          "doc_id": "PT-0001/gi-note-2026-10-28",
+          "quote": "- Start ustekinumab-aekn (preferred biosimilar): 390 mg IV once (weight 78 kg, >55 to 85 kg tier), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the IV dose.",
+          "doc_date": "2026-10-28"
+        }
+      ],
+      "reasoning": "Weight was 78.0 kg on 2026-10-28, 21 days before the request and so within 30 days. That weight falls in the >55 to 85 kg band, which matches the 390 mg IV induction dose. Maintenance is 90 mg SC every 8 weeks starting 8 weeks after the IV dose, as the label requires.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": null,
+        "dose_in_label": true,
+        "notes": [
+          "weight 78.0 kg (2026-10-28) -> label tier 390 mg; requested 390 mg"
+        ]
+      },
+      "status_before_checks": null
+    },
+    {
+      "criterion_id": "C10",
+      "status": "MET",
+      "confidence": 0.97,
+      "evidence": [
+        {
+          "doc_id": "PT-0001/gi-note-2026-10-28",
+          "quote": "- Start ustekinumab-aekn (preferred biosimilar): 390 mg IV once",
+          "doc_date": "2026-10-28"
+        }
+      ],
+      "reasoning": "The request and the prescribing note both name ustekinumab-aekn, which is a preferred product. Because the product is preferred, no exception documentation is needed.",
+      "missing_items": [],
+      "deterministic_checks": {
+        "quote_found": true,
+        "doc_date_matches": true,
+        "patient_matches": true,
+        "date_in_window": null,
+        "age_ok": null,
+        "dose_in_label": null,
+        "notes": []
+      },
+      "status_before_checks": null
+    }
+  ],
+  "rolled_up": {
+    "C1": "MET",
+    "C2": "MET",
+    "C3": "MET",
+    "C4": "MET",
+    "C5a": "MET",
+    "C5b": "MET",
+    "C5": "MET",
+    "C6": "MET",
+    "C7": "MET",
+    "C8": "MET",
+    "C9": "MET",
+    "C10": "MET"
+  },
+  "retrieval": [
+    {
+      "criterion_id": "C1",
+      "passages": [
+        {
+          "doc_id": "PT-0001/gi-note-2026-10-28",
+          "quote": "Moderately to severely active ileocolonic Crohn's disease. Steroid dependent, inadequate response to azathioprine, secondary loss of response to adalimumab with antibodies.",
+          "doc_date": "2026-10-28",
+          "why_relevant": "Treating GI assessment of moderate-severe Crohn's disease"
+        },
+        {
+          "doc_id": "PT-0001/gi-note-2026-10-28",
+          "quote": "Harvey-Bradshaw Index today: 11.",
+          "doc_date": "2026-10-28",
+          "why_relevant": "Validated disease activity index score"
+        },
+        {
+          "doc_id": "PT-0001/gi-note-2026-10-28",
+          "quote": "Somewhat better on budesonide bridge but still 4-5 stools a day with RLQ pain. No fevers. Off adalimumab since 08/20.",
+          "doc_date": "2026-10-28",
+          "why_relevant": "Current symptom burden"
+        },
+        {
+          "doc_id": "PT-0001/colonoscopy-2026-09-15",
+          "quote": "Active ileocolonic Crohn's disease with large ileal ulcers. Endoscopically moderate to severe.",
+          "doc_date": "2026-09-15",
+          "why_relevant": "Endoscopic severity"
+        },
+        {
+          "doc_id": "PT-0001/problem-list-2026-11-03",
+          "quote": "1. Crohn's disease of both small and large intestine without complications (K50.80). Onset 2022. Ileocolonic, inflammatory (non-stricturing, non-penetrating) phenotype.",
+          "doc_date": "2026-11-03",
+          "why_relevant": "Documented diagnosis matching request ICD-10"
+        },
+        {
+          "doc_id": "PT-0001/gi-note-2026-08-20",
+          "quote": "Progressive symptoms since 04/2026: 6-7 stools a day, nocturnal stooling, RLQ pain, 3 kg weight loss.",
+          "doc_date": "2026-08-20",
+          "why_relevant": "Symptom burden"
+        },
+        {
+          "doc_id": "PT-0001/outside-records-2022-07-19",
+          "quote": "IMPRESSION: Crohn's disease, ileocolonic, newly dx, moderate-\nsevere by sx and endoscopy.",
+          "doc_date": "2022-07-19",
+          "why_relevant": "Original diagnosis with severity"
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-0001/outside-records-2022-07-19",
+        "PT-0001/gi-note-2024-02-06",
+        "PT-0001/gi-note-2026-08-20",
+        "PT-0001/colonoscopy-2026-09-15",
+        "PT-0001/labs-2026-09-22",
+        "PT-0001/gi-note-2026-10-28",
+        "PT-0001/demographics-2026-11-03",
+        "PT-0001/medication-history-2026-11-03",
+        "PT-0001/problem-list-2026-11-03"
+      ]
+    },
+    {
+      "criterion_id": "C2",
+      "passages": [
+        {
+          "doc_id": "PT-0001/colonoscopy-2026-09-15",
+          "quote": "- Terminal ileum: multiple large ulcers (>2 cm) over 15 cm, with surrounding erythema and edema.",
+          "doc_date": "2026-09-15",
+          "why_relevant": "Colonoscopy within 12 months showing ulceration"
+        },
+        {
+          "doc_id": "PT-0001/colonoscopy-2026-09-15",
+          "quote": "SES-CD: 14",
+          "doc_date": "2026-09-15",
+          "why_relevant": "Endoscopic activity score"
+        },
+        {
+          "doc_id": "PT-0001/colonoscopy-2026-09-15",
+          "quote": "PATHOLOGY (final 09/18/2026): Terminal ileum, biopsy: chronic active ileitis with ulceration. No dysplasia. CMV immunostain negative.",
+          "doc_date": "2026-09-15",
+          "why_relevant": "Histologic confirmation of active inflammation"
+        },
+        {
+          "doc_id": "PT-0001/labs-2026-09-22",
+          "quote": "Fecal calprotectin                    820 ug/g      <50",
+          "doc_date": "2026-09-22",
+          "why_relevant": "Fecal calprotectin above lab reference range within 12 months"
+        },
+        {
+          "doc_id": "PT-0001/labs-2026-09-22",
+          "quote": "C-reactive protein                    24.1 mg/L     <5.0",
+          "doc_date": "2026-09-22",
+          "why_relevant": "Elevated CRP (alone insufficient)"
+        },
+        {
+          "doc_id": "PT-0001/outside-records-2022-07-19",
+          "quote": "Colonoscopy 07/14/2022: deep ulcers in TI, patchy\naphthous ulcers ascending colon, rectum spared.",
+          "doc_date": "2022-07-19",
+          "why_relevant": "Old colonoscopy outside lookback window"
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-0001/outside-records-2022-07-19",
+        "PT-0001/gi-note-2024-02-06",
+        "PT-0001/gi-note-2026-08-20",
+        "PT-0001/colonoscopy-2026-09-15",
+        "PT-0001/labs-2026-09-22",
+        "PT-0001/gi-note-2026-10-28",
+        "PT-0001/demographics-2026-11-03",
+        "PT-0001/medication-history-2026-11-03",
+        "PT-0001/problem-list-2026-11-03"
+      ]
+    },
+    {
+      "criterion_id": "C3",
+      "passages": [
+        {
+          "doc_id": "PT-0001/gi-note-2026-10-28",
+          "quote": "Electronically signed by Dr. A. Rivera, Gastroenterology, 10/28/2026",
+          "doc_date": "2026-10-28",
+          "why_relevant": "Prescribing note signed by gastroenterologist"
+        },
+        {
+          "doc_id": "PT-0001/demographics-2026-11-03",
+          "quote": "Referring gastroenterologist: Dr. A. Rivera",
+          "doc_date": "2026-11-03",
+          "why_relevant": "Prescriber is gastroenterologist"
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-0001/outside-records-2022-07-19",
+        "PT-0001/gi-note-2024-02-06",
+        "PT-0001/gi-note-2026-08-20",
+        "PT-0001/colonoscopy-2026-09-15",
+        "PT-0001/labs-2026-09-22",
+        "PT-0001/gi-note-2026-10-28",
+        "PT-0001/demographics-2026-11-03",
+        "PT-0001/medication-history-2026-11-03",
+        "PT-0001/problem-list-2026-11-03"
+      ]
+    },
+    {
+      "criterion_id": "C4",
+      "passages": [
+        {
+          "doc_id": "PT-0001/demographics-2026-11-03",
+          "quote": "Date of birth: 04/12/1991",
+          "doc_date": "2026-11-03",
+          "why_relevant": "DOB shows age 35"
+        },
+        {
+          "doc_id": "PT-0001/outside-records-2022-07-19",
+          "quote": "PT: OKAFOR, DANIEL      DOB 04/12/1991     DOS: 07/19/2022",
+          "doc_date": "2022-07-19",
+          "why_relevant": "Consistent DOB"
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-0001/outside-records-2022-07-19",
+        "PT-0001/gi-note-2024-02-06",
+        "PT-0001/gi-note-2026-08-20",
+        "PT-0001/colonoscopy-2026-09-15",
+        "PT-0001/labs-2026-09-22",
+        "PT-0001/gi-note-2026-10-28",
+        "PT-0001/demographics-2026-11-03",
+        "PT-0001/medication-history-2026-11-03",
+        "PT-0001/problem-list-2026-11-03"
+      ]
+    },
+    {
+      "criterion_id": "C5a",
+      "passages": [
+        {
+          "doc_id": "PT-0001/medication-history-2026-11-03",
+          "quote": "| Prednisone | 40 mg daily, tapered | 2022-07 | 2022-10 | Steroid dependent: symptoms returned at 15 mg during taper |",
+          "doc_date": "2026-11-03",
+          "why_relevant": "Corticosteroid with dates and steroid dependence"
+        },
+        {
+          "doc_id": "PT-0001/medication-history-2026-11-03",
+          "quote": "| Budesonide | 9 mg daily | 2022-11 | 2023-02 | Inadequate response |",
+          "doc_date": "2026-11-03",
+          "why_relevant": "Budesonide trial with dates and reason"
+        },
+        {
+          "doc_id": "PT-0001/medication-history-2026-11-03",
+          "quote": "| Azathioprine | 150 mg daily (2.0 mg/kg) | 2023-01 | 2024-02 | Inadequate response after 12 months; active disease on colonoscopy 12/2023 |",
+          "doc_date": "2026-11-03",
+          "why_relevant": "Azathioprine trial with dates and reason"
+        },
+        {
+          "doc_id": "PT-0001/medication-history-2026-11-03",
+          "quote": "IBD MEDICATION HISTORY - reconciled against outside records and pharmacy fill history 11/03/2026",
+          "doc_date": "2026-11-03",
+          "why_relevant": "History reconciled against pharmacy fills (supporting records)"
+        },
+        {
+          "doc_id": "PT-0001/gi-note-2024-02-06",
+          "quote": "Still having 4-5 loose stools a day and periumbilical pain despite azathioprine 150 mg daily for 12 months. Thiopurine metabolites 11/2023: 6-TGN 310 pmol/8x10^8 RBC (therapeutic 235-450), 6-MMP 1,850 pmol/8x10^8 RBC (<5,700). No bleeding.",
+          "doc_date": "2024-02-06",
+          "why_relevant": "Contemporaneous note of azathioprine failure at therapeutic levels"
+        },
+        {
+          "doc_id": "PT-0001/gi-note-2024-02-06",
+          "quote": "Crohn's disease, ileocolonic, moderately active, with inadequate response to azathioprine at a therapeutic level. Previously steroid dependent.",
+          "doc_date": "2024-02-06",
+          "why_relevant": "Assessment of conventional therapy failure"
+        },
+        {
+          "doc_id": "PT-0001/gi-note-2024-02-06",
+          "quote": "- Stop azathioprine.",
+          "doc_date": "2024-02-06",
+          "why_relevant": "Stop date of azathioprine"
+        },
+        {
+          "doc_id": "PT-0001/outside-records-2022-07-19",
+          "quote": "PLAN: Prednisone 40mg qd w/ taper by 5mg/wk. Start azathio-\nprine after TPMT returns.",
+          "doc_date": "2022-07-19",
+          "why_relevant": "Outside record supporting prednisone start 2022-07"
+        },
+        {
+          "doc_id": "PT-0001/medication-history-2026-11-03",
+          "quote": "- Budesonide 9 mg daily, started 2026-08-20 as a bridge, planned taper after ustekinumab induction",
+          "doc_date": "2026-11-03",
+          "why_relevant": "Current budesonide bridge"
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-0001/outside-records-2022-07-19",
+        "PT-0001/gi-note-2024-02-06",
+        "PT-0001/gi-note-2026-08-20",
+        "PT-0001/colonoscopy-2026-09-15",
+        "PT-0001/labs-2026-09-22",
+        "PT-0001/gi-note-2026-10-28",
+        "PT-0001/demographics-2026-11-03",
+        "PT-0001/medication-history-2026-11-03",
+        "PT-0001/problem-list-2026-11-03"
+      ]
+    },
+    {
+      "criterion_id": "C5b",
+      "passages": [
+        {
+          "doc_id": "PT-0001/medication-history-2026-11-03",
+          "quote": "| Adalimumab | 160 mg / 80 mg induction, then 40 mg every 2 weeks; escalated to 40 mg weekly 2025-11 | 2024-02 | 2026-08-20 | Secondary loss of response despite weekly dosing; trough 1.8 mcg/mL with anti-adalimumab antibodies |",
+          "doc_date": "2026-11-03",
+          "why_relevant": "Adalimumab with dates and reason stopped"
+        },
+        {
+          "doc_id": "PT-0001/gi-note-2024-02-06",
+          "quote": "- Start adalimumab 160 mg, then 80 mg at week 2, then 40 mg every 2 weeks.",
+          "doc_date": "2024-02-06",
+          "why_relevant": "Adalimumab start"
+        },
+        {
+          "doc_id": "PT-0001/gi-note-2026-08-20",
+          "quote": "Symptoms first recurred 10/2025 on every-2-week dosing; escalated to adalimumab 40 mg weekly 11/2025 with partial improvement for about 3 months.",
+          "doc_date": "2026-08-20",
+          "why_relevant": "Loss of response history and dose escalation"
+        },
+        {
+          "doc_id": "PT-0001/gi-note-2026-08-20",
+          "quote": "Adalimumab trough (07/30/2026): 1.8 mcg/mL. Anti-adalimumab antibodies: 38 U/mL (reference <10; positive).",
+          "doc_date": "2026-08-20",
+          "why_relevant": "Objective immunogenic loss of response"
+        },
+        {
+          "doc_id": "PT-0001/gi-note-2026-08-20",
+          "quote": "Crohn's disease with secondary loss of response to adalimumab, immunogenic, despite dose escalation.",
+          "doc_date": "2026-08-20",
+          "why_relevant": "Assessment of secondary loss of response"
+        },
+        {
+          "doc_id": "PT-0001/gi-note-2026-08-20",
+          "quote": "- Discontinue adalimumab today.",
+          "doc_date": "2026-08-20",
+          "why_relevant": "Stop date"
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-0001/outside-records-2022-07-19",
+        "PT-0001/gi-note-2024-02-06",
+        "PT-0001/gi-note-2026-08-20",
+        "PT-0001/colonoscopy-2026-09-15",
+        "PT-0001/labs-2026-09-22",
+        "PT-0001/gi-note-2026-10-28",
+        "PT-0001/demographics-2026-11-03",
+        "PT-0001/medication-history-2026-11-03",
+        "PT-0001/problem-list-2026-11-03"
+      ]
+    },
+    {
+      "criterion_id": "C6",
+      "passages": [
+        {
+          "doc_id": "PT-0001/labs-2026-09-22",
+          "quote": "QuantiFERON-TB Gold Plus              NEGATIVE      Negative",
+          "doc_date": "2026-09-22",
+          "why_relevant": "Negative IGRA within 12 months"
+        },
+        {
+          "doc_id": "PT-0001/labs-2026-09-22",
+          "quote": "Mitogen minus Nil                   >10.00 IU/mL",
+          "doc_date": "2026-09-22",
+          "why_relevant": "Valid mitogen control (not indeterminate)"
+        },
+        {
+          "doc_id": "PT-0001/gi-note-2026-10-28",
+          "quote": "Labs 09/22/2026: CRP 24.1, fecal calprotectin 820, QuantiFERON negative, HBsAg and anti-HBc nonreactive.",
+          "doc_date": "2026-10-28",
+          "why_relevant": "Provider summary of negative TB screen"
+        },
+        {
+          "doc_id": "PT-0001/gi-note-2026-08-20",
+          "quote": "- Pre-biologic labs: QuantiFERON, hepatitis B panel, CBC, CMP, CRP, fecal calprotectin.",
+          "doc_date": "2026-08-20",
+          "why_relevant": "Order (resulted later on 09/22)"
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-0001/outside-records-2022-07-19",
+        "PT-0001/gi-note-2024-02-06",
+        "PT-0001/gi-note-2026-08-20",
+        "PT-0001/colonoscopy-2026-09-15",
+        "PT-0001/labs-2026-09-22",
+        "PT-0001/gi-note-2026-10-28",
+        "PT-0001/demographics-2026-11-03",
+        "PT-0001/medication-history-2026-11-03",
+        "PT-0001/problem-list-2026-11-03"
+      ]
+    },
+    {
+      "criterion_id": "C7",
+      "passages": [
+        {
+          "doc_id": "PT-0001/labs-2026-09-22",
+          "quote": "Hepatitis B surface antigen           Nonreactive   Nonreactive",
+          "doc_date": "2026-09-22",
+          "why_relevant": "Resulted HBsAg negative"
+        },
+        {
+          "doc_id": "PT-0001/labs-2026-09-22",
+          "quote": "Hepatitis B core antibody, total      Nonreactive   Nonreactive",
+          "doc_date": "2026-09-22",
+          "why_relevant": "Resulted total anti-HBc negative"
+        },
+        {
+          "doc_id": "PT-0001/labs-2026-09-22",
+          "quote": "Hepatitis B surface antibody          Reactive      (immune)",
+          "doc_date": "2026-09-22",
+          "why_relevant": "Anti-HBs alone insufficient; context"
+        },
+        {
+          "doc_id": "PT-0001/gi-note-2026-10-28",
+          "quote": "Labs 09/22/2026: CRP 24.1, fecal calprotectin 820, QuantiFERON negative, HBsAg and anti-HBc nonreactive.",
+          "doc_date": "2026-10-28",
+          "why_relevant": "Provider summary"
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-0001/outside-records-2022-07-19",
+        "PT-0001/gi-note-2024-02-06",
+        "PT-0001/gi-note-2026-08-20",
+        "PT-0001/colonoscopy-2026-09-15",
+        "PT-0001/labs-2026-09-22",
+        "PT-0001/gi-note-2026-10-28",
+        "PT-0001/demographics-2026-11-03",
+        "PT-0001/medication-history-2026-11-03",
+        "PT-0001/problem-list-2026-11-03"
+      ]
+    },
+    {
+      "criterion_id": "C8",
+      "passages": [
+        {
+          "doc_id": "PT-0001/medication-history-2026-11-03",
+          "quote": "No current biologic, JAK inhibitor, or S1P receptor modulator. Adalimumab discontinued 2026-08-20.",
+          "doc_date": "2026-11-03",
+          "why_relevant": "No concurrent agents; prior biologic stopped"
+        },
+        {
+          "doc_id": "PT-0001/medication-history-2026-11-03",
+          "quote": "- Ferrous sulfate 325 mg by mouth daily\n- Cholecalciferol 2000 units by mouth daily\n- Budesonide 9 mg daily, started 2026-08-20 as a bridge, planned taper after ustekinumab induction",
+          "doc_date": "2026-11-03",
+          "why_relevant": "Current medication list"
+        },
+        {
+          "doc_id": "PT-0001/gi-note-2026-10-28",
+          "quote": "Somewhat better on budesonide bridge but still 4-5 stools a day with RLQ pain. No fevers. Off adalimumab since 08/20.",
+          "doc_date": "2026-10-28",
+          "why_relevant": "Confirms off adalimumab"
+        },
+        {
+          "doc_id": "PT-0001/gi-note-2026-08-20",
+          "quote": "- Discontinue adalimumab today.",
+          "doc_date": "2026-08-20",
+          "why_relevant": "Documentation prior agent stopped"
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-0001/outside-records-2022-07-19",
+        "PT-0001/gi-note-2024-02-06",
+        "PT-0001/gi-note-2026-08-20",
+        "PT-0001/colonoscopy-2026-09-15",
+        "PT-0001/labs-2026-09-22",
+        "PT-0001/gi-note-2026-10-28",
+        "PT-0001/demographics-2026-11-03",
+        "PT-0001/medication-history-2026-11-03",
+        "PT-0001/problem-list-2026-11-03"
+      ]
+    },
+    {
+      "criterion_id": "C9",
+      "passages": [
+        {
+          "doc_id": "PT-0001/gi-note-2026-10-28",
+          "quote": "Weight 78.0 kg. BP 118/74. HR 82.",
+          "doc_date": "2026-10-28",
+          "why_relevant": "Body weight 21 days before request"
+        },
+        {
+          "doc_id": "PT-0001/gi-note-2026-10-28",
+          "quote": "- Start ustekinumab-aekn (preferred biosimilar): 390 mg IV once (weight 78 kg, >55 to 85 kg tier), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the IV dose.",
+          "doc_date": "2026-10-28",
+          "why_relevant": "Induction and maintenance dosing matching label"
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-0001/outside-records-2022-07-19",
+        "PT-0001/gi-note-2024-02-06",
+        "PT-0001/gi-note-2026-08-20",
+        "PT-0001/colonoscopy-2026-09-15",
+        "PT-0001/labs-2026-09-22",
+        "PT-0001/gi-note-2026-10-28",
+        "PT-0001/demographics-2026-11-03",
+        "PT-0001/medication-history-2026-11-03",
+        "PT-0001/problem-list-2026-11-03"
+      ]
+    },
+    {
+      "criterion_id": "C10",
+      "passages": [
+        {
+          "doc_id": "PT-0001/gi-note-2026-10-28",
+          "quote": "- Start ustekinumab-aekn (preferred biosimilar): 390 mg IV once (weight 78 kg, >55 to 85 kg tier), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the IV dose.",
+          "doc_date": "2026-10-28",
+          "why_relevant": "Specific preferred product named"
+        },
+        {
+          "doc_id": "PT-0001/gi-note-2026-08-20",
+          "quote": "- Plan to switch out of class to ustekinumab pending insurance.",
+          "doc_date": "2026-08-20",
+          "why_relevant": "Earlier plan without product name"
+        }
+      ],
+      "injection_flags": [],
+      "docs_searched": [
+        "PT-0001/outside-records-2022-07-19",
+        "PT-0001/gi-note-2024-02-06",
+        "PT-0001/gi-note-2026-08-20",
+        "PT-0001/colonoscopy-2026-09-15",
+        "PT-0001/labs-2026-09-22",
+        "PT-0001/gi-note-2026-10-28",
+        "PT-0001/demographics-2026-11-03",
+        "PT-0001/medication-history-2026-11-03",
+        "PT-0001/problem-list-2026-11-03"
+      ]
+    }
+  ],
+  "injection_flags": [],
+  "gaps": [],
+  "outcome": "READY_FOR_REVIEW",
+  "packet": {
+    "form_fields": [
+      {
+        "name": "Member name",
+        "value": "Okafor, Daniel E.",
+        "citations": [
+          {
+            "doc_id": "PT-0001/demographics-2026-11-03",
+            "quote": "Name: Okafor, Daniel E."
+          }
+        ]
+      },
+      {
+        "name": "Member date of birth",
+        "value": "04/12/1991",
+        "citations": [
+          {
+            "doc_id": "PT-0001/demographics-2026-11-03",
+            "quote": "Date of birth: 04/12/1991"
+          }
+        ]
+      },
+      {
+        "name": "Member ID",
+        "value": "NHP-448-201-77",
+        "citations": [
+          {
+            "doc_id": "PT-0001/demographics-2026-11-03",
+            "quote": "Member ID: NHP-448-201-77"
+          }
+        ]
+      },
+      {
+        "name": "Requested product",
+        "value": "ustekinumab-aekn",
+        "citations": [
+          {
+            "doc_id": "request",
+            "quote": "ustekinumab-aekn"
+          }
+        ]
+      },
+      {
+        "name": "Requested regimen",
+        "value": "390 mg IV once (weight 78 kg), then 90 mg SC every 8 weeks starting 8 weeks after the IV dose",
+        "citations": [
+          {
+            "doc_id": "request",
+            "quote": "390 mg IV once (weight 78 kg), then 90 mg SC every 8 weeks starting 8 weeks after the IV dose"
+          }
+        ]
+      },
+      {
+        "name": "Diagnosis code (ICD-10)",
+        "value": "K50.80",
+        "citations": [
+          {
+            "doc_id": "request",
+            "quote": "K50.80"
+          },
+          {
+            "doc_id": "PT-0001/problem-list-2026-11-03",
+            "quote": "1. Crohn's disease of both small and large intestine without complications (K50.80)."
+          }
+        ]
+      },
+      {
+        "name": "Ordering provider",
+        "value": "Dr. A. Rivera, Gastroenterology",
+        "citations": [
+          {
+            "doc_id": "request",
+            "quote": "Dr. A. Rivera, Gastroenterology"
+          }
+        ]
+      },
+      {
+        "name": "Requested start date",
+        "value": "2026-12-01",
+        "citations": [
+          {
+            "doc_id": "request",
+            "quote": "2026-12-01"
+          }
+        ]
+      },
+      {
+        "name": "Review type",
+        "value": "Standard",
+        "citations": [
+          {
+            "doc_id": "request",
+            "quote": "standard"
+          }
+        ]
+      },
+      {
+        "name": "C1 (policy 3.1)",
+        "value": "Met. Moderately to severely active ileocolonic Crohn's disease (K50.80); Harvey-Bradshaw Index 11 on 2026-10-28.",
+        "citations": [
+          {
+            "doc_id": "PT-0001/gi-note-2026-10-28",
+            "quote": "Moderately to severely active ileocolonic Crohn's disease."
+          },
+          {
+            "doc_id": "PT-0001/gi-note-2026-10-28",
+            "quote": "Harvey-Bradshaw Index today: 11."
+          },
+          {
+            "doc_id": "PT-0001/problem-list-2026-11-03",
+            "quote": "1. Crohn's disease of both small and large intestine without complications (K50.80)."
+          }
+        ]
+      },
+      {
+        "name": "C2 (policy 3.2)",
+        "value": "Met. (a) Colonoscopy 2026-09-15: multiple large terminal ileal ulcers (>2 cm) over 15 cm. (b) Fecal calprotectin 820 ug/g (reference <50) on 2026-09-22. Both are within 12 months of the 2026-11-18 request.",
+        "citations": [
+          {
+            "doc_id": "PT-0001/colonoscopy-2026-09-15",
+            "quote": "- Terminal ileum: multiple large ulcers (>2 cm) over 15 cm, with surrounding erythema and edema."
+          },
+          {
+            "doc_id": "PT-0001/labs-2026-09-22",
+            "quote": "Fecal calprotectin                    820 ug/g      <50"
+          },
+          {
+            "doc_id": "request",
+            "quote": "2026-11-18"
+          }
+        ]
+      },
+      {
+        "name": "C3 (policy 3.3)",
+        "value": "Met. Prescribed by Dr. A. Rivera, Gastroenterology.",
+        "citations": [
+          {
+            "doc_id": "PT-0001/gi-note-2026-10-28",
+            "quote": "Electronically signed by Dr. A. Rivera, Gastroenterology, 10/28/2026"
+          },
+          {
+            "doc_id": "request",
+            "quote": "Dr. A. Rivera, Gastroenterology"
+          }
+        ]
+      },
+      {
+        "name": "C4 (policy 3.4)",
+        "value": "Met. DOB 04/12/1991; age 35 on the request date 2026-11-18.",
+        "citations": [
+          {
+            "doc_id": "PT-0001/demographics-2026-11-03",
+            "quote": "Date of birth: 04/12/1991"
+          },
+          {
+            "doc_id": "request",
+            "quote": "2026-11-18"
+          }
+        ]
+      },
+      {
+        "name": "C5a (policy 3.5(a))",
+        "value": "Met. Prednisone 2022-07 to 2022-10: steroid dependent. Azathioprine 150 mg daily (2.0 mg/kg) 2023-01 to 2024-02: inadequate response after 12 months.",
+        "citations": [
+          {
+            "doc_id": "PT-0001/medication-history-2026-11-03",
+            "quote": "| Prednisone | 40 mg daily, tapered | 2022-07 | 2022-10 | Steroid dependent: symptoms returned at 15 mg during taper |"
+          },
+          {
+            "doc_id": "PT-0001/medication-history-2026-11-03",
+            "quote": "| Azathioprine | 150 mg daily (2.0 mg/kg) | 2023-01 | 2024-02 | Inadequate response after 12 months; active disease on colonoscopy 12/2023 |"
+          },
+          {
+            "doc_id": "PT-0001/gi-note-2024-02-06",
+            "quote": "Crohn's disease, ileocolonic, moderately active, with inadequate response to azathioprine at a therapeutic level. Previously steroid dependent."
+          }
+        ]
+      },
+      {
+        "name": "C5b (policy 3.5(b))",
+        "value": "Met. Adalimumab 2024-02 to 2026-08-20, escalated to 40 mg weekly 2025-11: secondary loss of response; trough 1.8 mcg/mL with positive anti-adalimumab antibodies (38 U/mL) on 07/30/2026; discontinued 2026-08-20.",
+        "citations": [
+          {
+            "doc_id": "PT-0001/medication-history-2026-11-03",
+            "quote": "| Adalimumab | 160 mg / 80 mg induction, then 40 mg every 2 weeks; escalated to 40 mg weekly 2025-11 | 2024-02 | 2026-08-20 | Secondary loss of response despite weekly dosing; trough 1.8 mcg/mL with anti-adalimumab antibodies |"
+          },
+          {
+            "doc_id": "PT-0001/gi-note-2026-08-20",
+            "quote": "Adalimumab trough (07/30/2026): 1.8 mcg/mL. Anti-adalimumab antibodies: 38 U/mL (reference <10; positive)."
+          },
+          {
+            "doc_id": "PT-0001/gi-note-2026-08-20",
+            "quote": "- Discontinue adalimumab today."
+          }
+        ]
+      },
+      {
+        "name": "C6 (policy 3.6)",
+        "value": "Met. QuantiFERON-TB Gold Plus negative on 2026-09-22, within 12 months of the request.",
+        "citations": [
+          {
+            "doc_id": "PT-0001/labs-2026-09-22",
+            "quote": "QuantiFERON-TB Gold Plus              NEGATIVE      Negative"
+          },
+          {
+            "doc_id": "request",
+            "quote": "2026-11-18"
+          }
+        ]
+      },
+      {
+        "name": "C7 (policy 3.7)",
+        "value": "Met. HBsAg nonreactive and total anti-HBc nonreactive, 2026-09-22.",
+        "citations": [
+          {
+            "doc_id": "PT-0001/labs-2026-09-22",
+            "quote": "Hepatitis B surface antigen           Nonreactive   Nonreactive"
+          },
+          {
+            "doc_id": "PT-0001/labs-2026-09-22",
+            "quote": "Hepatitis B core antibody, total      Nonreactive   Nonreactive"
+          }
+        ]
+      },
+      {
+        "name": "C8 (policy 3.8)",
+        "value": "Met. No current biologic, JAK inhibitor, or S1P receptor modulator; adalimumab discontinued 2026-08-20.",
+        "citations": [
+          {
+            "doc_id": "PT-0001/medication-history-2026-11-03",
+            "quote": "No current biologic, JAK inhibitor, or S1P receptor modulator. Adalimumab discontinued 2026-08-20."
+          },
+          {
+            "doc_id": "PT-0001/gi-note-2026-10-28",
+            "quote": "Off adalimumab since 08/20."
+          }
+        ]
+      },
+      {
+        "name": "C9 (policy 3.9)",
+        "value": "Met. Weight 78.0 kg; 390 mg IV once (>55 to 85 kg tier), then 90 mg SC every 8 weeks starting 8 weeks after the IV dose.",
+        "citations": [
+          {
+            "doc_id": "PT-0001/gi-note-2026-10-28",
+            "quote": "Weight 78.0 kg. BP 118/74. HR 82."
+          },
+          {
+            "doc_id": "PT-0001/gi-note-2026-10-28",
+            "quote": "- Start ustekinumab-aekn (preferred biosimilar): 390 mg IV once (weight 78 kg, >55 to 85 kg tier), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the IV dose."
+          },
+          {
+            "doc_id": "request",
+            "quote": "390 mg IV once (weight 78 kg), then 90 mg SC every 8 weeks starting 8 weeks after the IV dose"
+          }
+        ]
+      },
+      {
+        "name": "C10 (policy 3.10)",
+        "value": "Met. Product named: ustekinumab-aekn.",
+        "citations": [
+          {
+            "doc_id": "request",
+            "quote": "ustekinumab-aekn"
+          },
+          {
+            "doc_id": "PT-0001/gi-note-2026-10-28",
+            "quote": "- Start ustekinumab-aekn (preferred biosimilar): 390 mg IV once"
+          }
+        ]
+      }
+    ],
+    "letter": [
+      {
+        "text": "To the Northfield Health Plan Prior Authorization Review Team:",
+        "citations": [],
+        "is_factual": false
+      },
+      {
+        "text": "Re: Daniel E. Okafor, date of birth 04/12/1991, Member ID NHP-448-201-77.",
+        "citations": [
+          {
+            "doc_id": "PT-0001/demographics-2026-11-03",
+            "quote": "Name: Okafor, Daniel E."
+          },
+          {
+            "doc_id": "PT-0001/demographics-2026-11-03",
+            "quote": "Date of birth: 04/12/1991"
+          },
+          {
+            "doc_id": "PT-0001/demographics-2026-11-03",
+            "quote": "Member ID: NHP-448-201-77"
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "I am requesting authorization of ustekinumab-aekn for this member.",
+        "citations": [
+          {
+            "doc_id": "request",
+            "quote": "ustekinumab-aekn"
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "The requested regimen is 390 mg IV once (weight 78 kg), then 90 mg SC every 8 weeks starting 8 weeks after the IV dose.",
+        "citations": [
+          {
+            "doc_id": "request",
+            "quote": "390 mg IV once (weight 78 kg), then 90 mg SC every 8 weeks starting 8 weeks after the IV dose"
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "The requested start date is 2026-12-01.",
+        "citations": [
+          {
+            "doc_id": "request",
+            "quote": "2026-12-01"
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "The record shows the following for each policy criterion.",
+        "citations": [],
+        "is_factual": false
+      },
+      {
+        "text": "Policy 3.1: The member has moderately to severely active ileocolonic Crohn's disease.",
+        "citations": [
+          {
+            "doc_id": "PT-0001/gi-note-2026-10-28",
+            "quote": "Moderately to severely active ileocolonic Crohn's disease."
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "His Harvey-Bradshaw Index was 11 on 2026-10-28.",
+        "citations": [
+          {
+            "doc_id": "PT-0001/gi-note-2026-10-28",
+            "quote": "Harvey-Bradshaw Index today: 11."
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "The problem list records Crohn's disease of both small and large intestine (K50.80).",
+        "citations": [
+          {
+            "doc_id": "PT-0001/problem-list-2026-11-03",
+            "quote": "1. Crohn's disease of both small and large intestine without complications (K50.80)."
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "Policy 3.2: Colonoscopy on 2026-09-15 showed multiple large ulcers (>2 cm) over 15 cm of the terminal ileum, with surrounding erythema and edema.",
+        "citations": [
+          {
+            "doc_id": "PT-0001/colonoscopy-2026-09-15",
+            "quote": "- Terminal ileum: multiple large ulcers (>2 cm) over 15 cm, with surrounding erythema and edema."
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "Fecal calprotectin on 2026-09-22 was 820 ug/g, against a reference range of <50.",
+        "citations": [
+          {
+            "doc_id": "PT-0001/labs-2026-09-22",
+            "quote": "Fecal calprotectin                    820 ug/g      <50"
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "Both results fall within the 12 months before the request date of 2026-11-18.",
+        "citations": [
+          {
+            "doc_id": "request",
+            "quote": "2026-11-18"
+          },
+          {
+            "doc_id": "PT-0001/colonoscopy-2026-09-15",
+            "quote": "- Terminal ileum: multiple large ulcers (>2 cm) over 15 cm, with surrounding erythema and edema."
+          },
+          {
+            "doc_id": "PT-0001/labs-2026-09-22",
+            "quote": "Fecal calprotectin                    820 ug/g      <50"
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "Policy 3.3: The medication is prescribed by me, Dr. A. Rivera, Gastroenterology.",
+        "citations": [
+          {
+            "doc_id": "request",
+            "quote": "Dr. A. Rivera, Gastroenterology"
+          },
+          {
+            "doc_id": "PT-0001/gi-note-2026-10-28",
+            "quote": "Electronically signed by Dr. A. Rivera, Gastroenterology, 10/28/2026"
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "Policy 3.4: The member's date of birth is 04/12/1991, so he was 35 years old on the request date of 2026-11-18.",
+        "citations": [
+          {
+            "doc_id": "PT-0001/demographics-2026-11-03",
+            "quote": "Date of birth: 04/12/1991"
+          },
+          {
+            "doc_id": "request",
+            "quote": "2026-11-18"
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "Policy 3.5(a): He took prednisone 40 mg daily, tapered, from 2022-07 to 2022-10, and was steroid dependent, with symptoms returning at 15 mg during the taper.",
+        "citations": [
+          {
+            "doc_id": "PT-0001/medication-history-2026-11-03",
+            "quote": "| Prednisone | 40 mg daily, tapered | 2022-07 | 2022-10 | Steroid dependent: symptoms returned at 15 mg during taper |"
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "He took azathioprine 150 mg daily (2.0 mg/kg) from 2023-01 to 2024-02 and had an inadequate response after 12 months, with active disease on colonoscopy in 12/2023.",
+        "citations": [
+          {
+            "doc_id": "PT-0001/medication-history-2026-11-03",
+            "quote": "| Azathioprine | 150 mg daily (2.0 mg/kg) | 2023-01 | 2024-02 | Inadequate response after 12 months; active disease on colonoscopy 12/2023 |"
+          },
+          {
+            "doc_id": "PT-0001/gi-note-2024-02-06",
+            "quote": "Crohn's disease, ileocolonic, moderately active, with inadequate response to azathioprine at a therapeutic level. Previously steroid dependent."
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "Policy 3.5(b): He took adalimumab from 2024-02 to 2026-08-20, with dosing escalated to 40 mg weekly in 2025-11, and had a secondary loss of response despite weekly dosing.",
+        "citations": [
+          {
+            "doc_id": "PT-0001/medication-history-2026-11-03",
+            "quote": "| Adalimumab | 160 mg / 80 mg induction, then 40 mg every 2 weeks; escalated to 40 mg weekly 2025-11 | 2024-02 | 2026-08-20 | Secondary loss of response despite weekly dosing; trough 1.8 mcg/mL with anti-adalimumab antibodies |"
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "On 07/30/2026 his adalimumab trough was 1.8 mcg/mL and anti-adalimumab antibodies were positive at 38 U/mL (reference <10).",
+        "citations": [
+          {
+            "doc_id": "PT-0001/gi-note-2026-08-20",
+            "quote": "Adalimumab trough (07/30/2026): 1.8 mcg/mL. Anti-adalimumab antibodies: 38 U/mL (reference <10; positive)."
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "Adalimumab was discontinued on 2026-08-20.",
+        "citations": [
+          {
+            "doc_id": "PT-0001/gi-note-2026-08-20",
+            "quote": "- Discontinue adalimumab today."
+          },
+          {
+            "doc_id": "PT-0001/medication-history-2026-11-03",
+            "quote": "No current biologic, JAK inhibitor, or S1P receptor modulator. Adalimumab discontinued 2026-08-20."
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "Policy 3.6: QuantiFERON-TB Gold Plus on 2026-09-22 was negative, within the 12 months before the request.",
+        "citations": [
+          {
+            "doc_id": "PT-0001/labs-2026-09-22",
+            "quote": "QuantiFERON-TB Gold Plus              NEGATIVE      Negative"
+          },
+          {
+            "doc_id": "request",
+            "quote": "2026-11-18"
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "Policy 3.7: On 2026-09-22, hepatitis B surface antigen was nonreactive.",
+        "citations": [
+          {
+            "doc_id": "PT-0001/labs-2026-09-22",
+            "quote": "Hepatitis B surface antigen           Nonreactive   Nonreactive"
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "On the same date, total hepatitis B core antibody was nonreactive.",
+        "citations": [
+          {
+            "doc_id": "PT-0001/labs-2026-09-22",
+            "quote": "Hepatitis B core antibody, total      Nonreactive   Nonreactive"
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "Policy 3.8: The member is on no current biologic, JAK inhibitor, or S1P receptor modulator.",
+        "citations": [
+          {
+            "doc_id": "PT-0001/medication-history-2026-11-03",
+            "quote": "No current biologic, JAK inhibitor, or S1P receptor modulator. Adalimumab discontinued 2026-08-20."
+          },
+          {
+            "doc_id": "PT-0001/gi-note-2026-10-28",
+            "quote": "Off adalimumab since 08/20."
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "Policy 3.9: The member weighed 78.0 kg on 2026-10-28.",
+        "citations": [
+          {
+            "doc_id": "PT-0001/gi-note-2026-10-28",
+            "quote": "Weight 78.0 kg. BP 118/74. HR 82."
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "The plan is a single 390 mg IV dose for the >55 to 85 kg weight tier, then 90 mg subcutaneously every 8 weeks starting 8 weeks after the IV dose.",
+        "citations": [
+          {
+            "doc_id": "PT-0001/gi-note-2026-10-28",
+            "quote": "- Start ustekinumab-aekn (preferred biosimilar): 390 mg IV once (weight 78 kg, >55 to 85 kg tier), then 90 mg subcutaneously every 8 weeks starting 8 weeks after the IV dose."
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "Policy 3.10: The request names the specific product, ustekinumab-aekn.",
+        "citations": [
+          {
+            "doc_id": "request",
+            "quote": "ustekinumab-aekn"
+          },
+          {
+            "doc_id": "PT-0001/gi-note-2026-10-28",
+            "quote": "- Start ustekinumab-aekn (preferred biosimilar): 390 mg IV once"
+          }
+        ],
+        "is_factual": true
+      },
+      {
+        "text": "Thank you for reviewing this request.",
+        "citations": [],
+        "is_factual": false
+      },
+      {
+        "text": "Sincerely,",
+        "citations": [],
+        "is_factual": false
+      },
+      {
+        "text": "[Signature pending review by Dr. A. Rivera, Gastroenterology]",
+        "citations": [],
+        "is_factual": false
+      }
+    ]
+  },
+  "packet_code_issues": [],
+  "verification": {
+    "checks": [
+      {
+        "claim_ref": "form:Member name",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "form:Member date of birth",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "form:Member ID",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "form:Requested product",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "form:Requested regimen",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "form:Diagnosis code (ICD-10)",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "form:Ordering provider",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "form:Requested start date",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "form:Review type",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "form:C1 (policy 3.1)",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "form:C2 (policy 3.2)",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "form:C3 (policy 3.3)",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "form:C4 (policy 3.4)",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "form:C5a (policy 3.5(a))",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "form:C5b (policy 3.5(b))",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "form:C6 (policy 3.6)",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "form:C7 (policy 3.7)",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "form:C8 (policy 3.8)",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "form:C9 (policy 3.9)",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "form:C10 (policy 3.10)",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:1",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:2",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:3",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:4",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:6",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:7",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:8",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:9",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:10",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:11",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:12",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:13",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:14",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:15",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:16",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:17",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:18",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:19",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:20",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:21",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:22",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:23",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:24",
+        "supported": true,
+        "issue": null
+      },
+      {
+        "claim_ref": "letter:25",
+        "supported": true,
+        "issue": null
+      }
+    ],
+    "overall_pass": true
+  }
+}

@@ -350,7 +350,7 @@ class Renderer:
             sec["vitals"].append((f"BP {rng.randint(104, 138)}/{rng.randint(62, 86)}. HR {rng.randint(64, 88)}.", None))
         sec["subj"].append((rng.choice([
             "Persistent symptoms: 5-7 stools a day with urgency and nocturnal stooling.",
-            "Ongoing abdominal pain and 4-6 loose stools a day; weight down 3 kg.",
+            "Ongoing abdominal pain and 4-6 loose stools a day.",
             "Symptoms not controlled on current therapy; missing work.",
         ]), None))
         if self.k.medhx_format == "scattered" and self.antitnf and self.antitnf["where"] == "harbor":
@@ -404,14 +404,14 @@ class Renderer:
         sec["plan"].append((f"Submit prior authorization to {PAYER_NAME[self.bp.payer].split()[0]}.", None))
 
         self._write_note(older, sec_o)
-        self._write_note(latest, sec)
+        self._write_note(latest, sec, sign_cid="C3")
         # plan-line quotes for C3, C9, C10 (sub-strings of the plan line)
         for cid, q in self._plan_quotes.items():
             self.evidence.setdefault(cid, []).append(Citation(doc_id=f"{self.bp.patient_id}/{latest.stem}", quote=q))
         self._notes_docs = {"older": older, "latest": latest}
         return self._notes_docs
 
-    def _write_note(self, doc: Doc, sec: dict) -> None:
+    def _write_note(self, doc: Doc, sec: dict, sign_cid: str | None = None) -> None:
         t = self.k.note_template
         heads = {
             0: [("vitals", "VITALS"), ("subj", "SUBJECTIVE"), ("data", "DATA"), ("meds", "CURRENT MEDICATIONS"),
@@ -433,6 +433,8 @@ class Renderer:
                           2: "- "}[t]
                 self._add(doc, text, cid, prefix=prefix)
             self._add(doc, "")
+        # B38: real notes carry a signature block, so the prescriber's specialty is quotable from the text.
+        self._add(doc, f"Electronically signed by {self.provider}, {self.d(doc.date)}", sign_cid)
 
     # ---------------- labs / procedures ----------------
     def _labs(self) -> None:

@@ -20,7 +20,7 @@ A false MET means the agent claims the patient meets a rule they don't, in a pac
 - the drafter only sees verified quotes;
 - an independent verifier checks the draft.
 
-Across every Opus run (75 eval cases plus 3 reuse cases) and the Sonnet and Haiku blind runs, false METs are 0.
+Across every Opus run (75 eval cases, 3 reuse cases and the 12-case B43 spot check) and the Sonnet and Haiku blind runs, false METs are 0.
 
 **4. How do you know it works? What did you actually measure?**
 - **Held-out set** (30 cases, no prompt tuned on them): 0 false METs, 509 of 509 quotes verbatim, 315 of 315 criteria defensible, 29 of 30 outcomes exact.
@@ -56,8 +56,8 @@ I would not cut the code checks, the verifier, or the blind run. Those are what 
 
 **9. What would you build next?**
 In order:
-1. **Data fixes, then re-run the cheaper models on the approved checklist.** This isolates the real per-case model choice, which decides most of the cost.
-2. **Coupled criteria, plus numeric lab thresholds checked in code.** Coupled criteria were the one real miss in the reuse test.
+1. **Re-run the cheaper models on the fixed data and the approved checklist.** The data fixes are in (B43); the re-run is about 1.5M tokens. This isolates the real per-case model choice, which decides most of the cost.
+2. **Numeric lab thresholds checked in code.** Coupled criteria, the one real miss in the reuse test, are already fixed (B43).
 3. **Chunked retrieval for long charts.**
 
 After those, renewals (v2 scope) are the obvious product expansion. They are the same machinery with response-to-therapy evidence.
@@ -78,7 +78,7 @@ Mostly configuration. That was the point of the reuse test (B41). Adding a cardi
 - **A date check that encoded an IBD habit.** "A recent note quoting an old date" usually means a copied-forward TB result. In cardiology it was a drug start date.
 - **A to-do item for an either/or branch that didn't matter.**
 
-Dose checks and numeric lab thresholds are still drug-specific code. The honest answer is "configuration, with about a day of engineering per new specialty, mostly in code checks."
+The one real miss, a criterion failed because a different criterion failed, was then fixed with a single prompt rule and spot-checked on 12 cases (B43). Dose checks and numeric lab thresholds are still drug-specific code. The honest answer is "configuration, with about a day of engineering per new specialty, mostly in code checks."
 
 **13. How would you measure success in production?**
 Weekly:

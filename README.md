@@ -37,7 +37,8 @@ All on synthetic cases, with Opus unless noted. Full reports are in `docs/`.
 | Blind set, Opus | 30 | **0** | 100% | 25 / 30 | [`MODEL_COMPARISON.md`](docs/MODEL_COMPARISON.md) |
 | Blind set, Sonnet | 30 | **0** | 100% | 23 / 30 | same |
 | Blind set, Haiku | 30 | **0** | 100% | 20 / 30 | same |
-| Reuse test: cardiology drug, new policy | 3 | **0** | 100% | 2 / 3 | [`DECISIONS.md` B41](docs/DECISIONS.md) |
+| Reuse test: cardiology drug, new policy | 3 | **0** | 100% | 2 / 3, 0 wrong after the B43 fix | [`DECISIONS.md` B41, B43](docs/DECISIONS.md) |
+| Spot check after the B43 prompt fix (IBD + reuse) | 12 | **0** | 100% | 10 / 12, 0 wrong | [`DECISIONS.md` B43](docs/DECISIONS.md) |
 | Verifier vs planted errors in real packets | 10 errors | | | 10 / 10 caught, 0 false alarms | [`VERIFIER_REPORT.md`](docs/VERIFIER_REPORT.md) |
 
 Each held-out and blind set is 15 Northfield cases plus their Calder Mutual twins, which have the same chart and a different payer. About 1 in 4 cases is clean; the rest are built to break the agent.
@@ -46,7 +47,7 @@ What the numbers mean:
 - **Safety holds on every model tested.** Zero false METs means the agent never claimed a criterion was met when it wasn't. The models differ in how often they escalate a case that was actually fine. That costs reviewer time but sends nothing wrong.
 - **Opus's 5 blind misses are not clear agent errors.** Four are on a stale-evidence boundary the answer key accepts either way. The fifth is a contradiction my generator put in the chart, which Opus correctly flagged.
 - **Opus is the offline pick.** List price per case was about $0.29 on Opus, $0.11 on Sonnet and $0.01 on Haiku. Opus is the cheapest model that passes every gate and comes within 5 points of the best outcome accuracy (`COST_EFFECTIVENESS_SPEC.md`).
-- **The reuse test was mostly configuration.** It needed two small code fixes, and its runs exposed two errors in my own answer key (B41).
+- **The reuse test was mostly configuration.** It needed two small code fixes, and its runs exposed two errors in my own answer key (B41). Its one real miss, a criterion failed because a different criterion failed, was then fixed with a prompt rule (B43).
 - **These are small synthetic samples.** They show the design holds; they do not measure production accuracy.
 
 ## How it works
@@ -157,7 +158,8 @@ docs/       see below
 | [`WALKTHROUGH.md`](docs/WALKTHROUGH.md) | One request from start to finish, then the same request with a missing TB screen |
 | [`GLOSSARY.md`](docs/GLOSSARY.md) | Plain-language definitions |
 | [`AGENT_SPEC.md`](docs/AGENT_SPEC.md) | The agent as built: boundaries, inputs, pipeline, statuses, how to add a policy |
-| [`DECISIONS.md`](docs/DECISIONS.md) | D1-D6 owner decisions and every build decision (B1-B42) |
+| [`BUILD_LOG.md`](docs/BUILD_LOG.md) | How it was built: who did what, each milestone, what broke and what changed |
+| [`DECISIONS.md`](docs/DECISIONS.md) | D1-D6 owner decisions and every build decision (B1-B43) |
 | [`EVAL_REPORT.md`](docs/EVAL_REPORT.md) | Held-out evaluation, with the written read and the next three things to fix |
 | [`MODEL_COMPARISON.md`](docs/MODEL_COMPARISON.md) | Opus vs Sonnet vs Haiku on the blind set |
 | [`VERIFIER_REPORT.md`](docs/VERIFIER_REPORT.md) | Seeded-error test of the verifier |
@@ -194,3 +196,7 @@ These are the limits of a build done without clinical review.
 4. What do reviewers distrust most in a drafted letter of medical necessity?
 5. Which denial reasons are most common for these drugs, and would they change the criteria list?
 6. Are the synthetic charts realistic in what they omit, not only in what they include?
+
+## License
+
+MIT (see [`LICENSE`](LICENSE)). Anyone may reuse the code. The data is synthetic, and nothing here is fit for clinical use.
