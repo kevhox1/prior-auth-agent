@@ -86,6 +86,8 @@ python3 -m venv .venv
 .venv/bin/streamlit run ui/app.py
 ```
 
+The look comes from a Claude Design mockup (`docs/design/reviewer-console-mockups.html`), ported into Streamlit with `ui/styles.css`.
+
 Pick a run and a case:
 - **Checklist:** each criterion shows its status, with quotes that open the source document highlighted.
 - **Decisions:** approve, edit (with a reason code) or reject each criterion.
