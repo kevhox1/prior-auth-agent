@@ -1,0 +1,6 @@
+# Used by Streamlit Community Cloud to host the reviewer screen (ui/app.py).
+# Local installs use pyproject.toml. Streamlit is pinned because ui/styles.css targets its widget markup.
+streamlit==1.67.0
+pydantic>=2.7
+pyyaml>=6.0
+anthropic>=0.40

@@ -4,6 +4,8 @@
 >
 > Every patient, practice, payer and policy in this repo is fictional. The policies were written from scratch to follow the common structure of published coverage policies; no payer text is copied.
 
+![The reviewer console: a request the agent judged ready for review, with each policy criterion, its quoted evidence and the reviewer's decision](docs/images/reviewer-console.png)
+
 ## What it is
 
 Given a PA request, a patient chart, and a payer policy, the agent:
@@ -93,6 +95,14 @@ Pick a run and a case:
 - **Decisions:** approve, edit (with a reason code) or reject each criterion.
 - **Packet:** the to-do list, the draft form and letter, and the verifier's flags in red.
 - **Sign-off:** stays disabled until every criterion has a decision and the right role is signing. Submission is mocked to `runs/<run>/<case>/submission/`.
+
+A chart with text aimed at an automated reviewer is flagged, and the instruction is ignored:
+
+![A case where the chart contains an instruction addressed to automated reviewers; the agent ignored it and flagged it](docs/images/injection-flag.png)
+
+A physician signs off and one mock submission file is written per benefit:
+
+![Sign-off by a physician, writing mock medical and pharmacy submissions](docs/images/sign-off.png)
 
 **Run the agent.** This makes live model calls:
 

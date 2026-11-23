@@ -38,6 +38,7 @@ CSS = (Path(__file__).parent / "styles.css").read_text()
 FONTS = ("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700"
          "&family=Space+Grotesk:wght@500;600;700&display=swap")
 DISCLAIMER = "Synthetic data only. Not clinically validated. Not medical advice."
+DEFAULT_RUN = "m5-ibd-hand-v3"  # opens on the happy-path demo case (PA-0001)
 PAYER_NAMES = {"northfield": "Northfield Health Plan", "calder": "Calder Mutual"}
 
 STATUS_CLASS = {Status.MET: "met", Status.NOT_MET: "notmet", Status.INSUFFICIENT_EVIDENCE: "insuf",
@@ -152,7 +153,8 @@ def sidebar(runs: dict[str, list[str]]):
               '<div class="pa-brand-name">Prior Auth Agent</div><div class="pa-brand-sub">Reviewer console</div>'
               '</div></div>')
         block('<span class="pa-eyebrow">Case</span>')
-        run = st.selectbox("Run", list(runs))
+        names = list(runs)
+        run = st.selectbox("Run", names, index=names.index(DEFAULT_RUN) if DEFAULT_RUN in names else 0)
         case = st.selectbox("Case", runs[run])
         block('<div class="pa-sidebar-rule"></div>')
         block('<span class="pa-eyebrow">Reviewer</span>')
