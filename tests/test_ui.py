@@ -23,7 +23,7 @@ def saved_case():
 
 
 def test_ui_renders_and_gates_signoff(saved_case):
-    at = AppTest.from_file("../ui/app.py", default_timeout=30)
+    at = AppTest.from_file("../ui/console.py", default_timeout=30)
     at.run()
     assert not at.exception
     at.sidebar.selectbox[0].select(UI_RUN).run()
@@ -42,3 +42,13 @@ def test_ui_renders_and_gates_signoff(saved_case):
     button.click().run()
     assert (saved_case / "submission" / "receipt.json").exists()
     assert "10_signoff" in (saved_case / "audit.jsonl").read_text()
+
+
+def test_tour_opens_a_case_in_the_console():
+    at = AppTest.from_file("../ui/app.py", default_timeout=30)
+    at.run()
+    assert not at.exception
+    assert any(b.label == "Open the reviewer console" for b in at.button)
+    next(b for b in at.button if b.label == "Open PA-2003").click().run()
+    assert not at.exception
+    assert any("PA-2003" in t.value for t in at.title)

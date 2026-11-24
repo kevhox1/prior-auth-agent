@@ -4,6 +4,8 @@
 >
 > Every patient, practice, payer and policy in this repo is fictional. The policies were written from scratch to follow the common structure of published coverage policies; no payer text is copied.
 
+**[Live demo → pa-agent-demo.streamlit.app](https://pa-agent-demo.streamlit.app/)** (no sign-in; opens on a short tour, then the reviewer console. If it has been idle, click "wake up" and wait about 30 seconds.)
+
 ![The reviewer console: a request the agent judged ready for review, with each policy criterion, its quoted evidence and the reviewer's decision](docs/images/reviewer-console.png)
 
 ## What it is
@@ -88,7 +90,7 @@ python3 -m venv .venv
 .venv/bin/streamlit run ui/app.py
 ```
 
-The look comes from a Claude Design mockup (`docs/design/reviewer-console-mockups.html`), ported into Streamlit with `ui/styles.css`.
+It opens on a **Start here** page: a short tour that explains the screen and links to four demo cases. The **Reviewer console** is the second page. The look comes from a Claude Design mockup (`docs/design/reviewer-console-mockups.html`), ported into Streamlit with `ui/styles.css`.
 
 Pick a run and a case:
 - **Checklist:** each criterion shows its status, with quotes that open the source document highlighted.
@@ -157,7 +159,7 @@ data/
   synth/      generated batches 1-3 (200 + 2 x 100 pairs) with manifests
 synth/      synthetic case generator
 evals/      metrics, scoring, eval runner, QA agent, seeded errors, model comparison
-ui/         Streamlit reviewer screen
+ui/         Streamlit app: start-here tour (tour.py) and reviewer console (console.py)
 runs/       selected runs behind the reports (the response cache is not committed)
 tests/      offline tests, including an oracle run of every case through steps 1-9
 docs/       see below
